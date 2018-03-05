@@ -1,5 +1,5 @@
-klingon-assistant
-=================
+klingon-assistant-android
+=========================
 
 **tlhIngan Hol boQwI'** (**boQwI'** for short) is a lexicon dictionary for the Klingon language (**tlhIngan Hol**) and a tool for analysing the grammar of Klingon words and sentences.
 
