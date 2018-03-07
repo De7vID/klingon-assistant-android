@@ -553,7 +553,11 @@ This word is not used for sort order.[3]</column>
       <column name="notes_de"></column>
       <column name="hidden_notes"></column>
       <column name="components"></column>
-      <column name="examples"></column>
+      <column name="examples">
+▶ {Qo'noS wo':sen:nolink}
+   {tlhIngan wo' Degh 'oH Deghvam'e'. tlhIngan Dujmey law'qu' SommeyDaq batlh cha'lu'. juHqo' Qo'noSvo' loghDaq lengtaHvIS tlhInganpu' 'ej qo'mey Sar charghtaHvIS chaH Dat tlhIngan may'Duj luleghDI' neH qIb nganpu' buQpu' may'Duj 'ej ghIjpu' 'oH. nIteb ghIjpu' je Deghvam.:sen:nolink}
+  "Empire of Kronos
+   This marking represents the Klingon Empire and has been emblazoned upon the hulls of countless Klingon Starships. During the aggressive expansion of the Klingon people from their homeworld of Kronos into space, this symbol grew to become as feared throughout the galaxy as the menacing profiles of their battlecruisers."[2]</column>
       <column name="examples_de"></column>
       <column name="search_tags"></column>
       <column name="search_tags_de"></column>
@@ -572,7 +576,10 @@ This word is not used for sort order.[3]</column>
       <column name="notes_de"></column>
       <column name="hidden_notes"></column>
       <column name="components"></column>
-      <column name="examples"></column>
+      <column name="examples">
+▶ {Hol Sar:n}
+▶ {QIch wab Ho'DoS Sar:n}
+▶ {Sep Hol Sar:n}</column>
       <column name="examples_de"></column>
       <column name="search_tags"></column>
       <column name="search_tags_de"></column>
@@ -1254,7 +1261,7 @@ In {TNK:src}, the category title for "Countries" was translated {Sepmey tlhab:n:
       <column name="definition_de"></column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
-      <column name="see_also"></column>
+      <column name="see_also">{Hol Sar:n}, {ta' Hol:n}</column>
       <column name="notes"></column>
       <column name="notes_de"></column>
       <column name="hidden_notes"></column>
@@ -2325,7 +2332,7 @@ Verb prefixes when {SoH:n:nolink} is the object:
       <column name="notes"></column>
       <column name="notes_de"></column>
       <column name="hidden_notes"></column>
-      <column name="components">{SoH:n}, {'Iv:ques}</column>
+      <column name="components">{SoH:n}, {'Iv:ques:1h}</column>
       <column name="examples"></column>
       <column name="examples_de"></column>
       <column name="search_tags">What is your name?</column>
@@ -3511,7 +3518,7 @@ This exclamation indicates that the speaker is about to give a command, or is re
       <column name="synonyms"></column>
       <column name="antonyms">{Hop:v}</column>
       <column name="see_also">{chol:v}, {chuq:n}</column>
-      <column name="notes">The use of this word involves the concept of deixis. It usually implies the subject is near the speaker, unless the context is set up to indicate the action is taking place somewhere else (for example, using {-Daq:v}). The suffix {-chuq:v} is not used with this verb.[2]
+      <column name="notes">The use of this word involves the concept of deixis. It usually implies the subject is near the speaker, unless the context is set up to indicate the action is taking place somewhere else (for example, using {-Daq:n}). The suffix {-chuq:v} is not used with this verb.[2]
 
 The expression {jISum:sen:nolink} has an idiomatic philosophical meaning, "I'm in touch with my inner self" (in a Klingon way).[2]</column>
       <column name="notes_de"></column>
@@ -4006,7 +4013,7 @@ This can also be used for blowing out a candle. Unlike with {jo':v}, air gets ou
       <column name="notes"></column>
       <column name="notes_de"></column>
       <column name="hidden_notes"></column>
-      <column name="components">{Suv:v}, {-be':v}, {-chugh:v}, {SuvwI':n}, {tlhuH:v}, {-be':v}</column>
+      <column name="components">{Suv:v}, {-be':v}, {-chugh:v}, {SuvwI':n}, {tlhuH:v:0}, {-be':v}</column>
       <column name="examples"></column>
       <column name="examples_de"></column>
       <column name="search_tags"></column>
