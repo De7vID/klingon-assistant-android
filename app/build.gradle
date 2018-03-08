@@ -12,8 +12,8 @@ android {
         // We are targeting only Marshmallow and above.
         minSdkVersion 23
         targetSdkVersion 26
-        versionCode 470
-        versionName "2018.03.07a"
+        versionCode 473
+        versionName "2018.03.07b"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
