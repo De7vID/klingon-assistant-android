@@ -13,3 +13,6 @@ app/src/main/assets/qawHaq.db
 
 # Unexclude specific jar
 !gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration file (sdk path, etc)
+local.properties
