@@ -59,6 +59,7 @@ import android.widget.Toast;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import org.tlhInganHol.android.klingonassistant.service.KwotdService;
+import org.tlhInganHol.android.klingonassistant.service.UpdateDatabaseService;
 
 // import android.support.design.widget.Snackbar;
 
@@ -93,6 +94,10 @@ public class BaseActivity extends AppCompatActivity
   // Job ID for the KwotdService jobs. Just has to be unique.
   private static final int KWOTD_SERVICE_PERSISTED_JOB_ID = 0;
   private static final int KWOTD_SERVICE_ONE_OFF_JOB_ID = 1;
+
+  // Job ID for the UpdateDatabaseService jobs. Just has to be unique.
+  private static final int UPDATE_DB_SERVICE_PERSISTED_JOB_ID = 10;
+  private static final int UPDATE_DB_SERVICE_ONE_OFF_JOB_ID = 11;
 
   // References to UI components.
   private DrawerLayout mDrawer = null;
@@ -196,7 +201,9 @@ public class BaseActivity extends AppCompatActivity
     TextView appNameView = (TextView) headerView.findViewById(R.id.app_name_view);
     TextView versionView = (TextView) headerView.findViewById(R.id.version_view);
     appNameView.setText(klingonAppName);
-    versionView.setText("v" + KlingonContentDatabase.getDatabaseVersion());
+
+    // We use the version of the built-in database as the app's version, since they're in sync.
+    versionView.setText("v" + KlingonContentDatabase.getBundledDatabaseVersion());
 
     // If the device is in landscape orientation and the screen size is large (or bigger), then
     // lock the navigation drawer in open mode.
@@ -210,6 +217,12 @@ public class BaseActivity extends AppCompatActivity
     // Schedule the KWOTD service if it hasn't already been started.
     if (sharedPrefs.getBoolean(Preferences.KEY_KWOTD_CHECKBOX_PREFERENCE, /* default */ true)) {
       runKwotdServiceJob(/* isOneOffJob */ false);
+    }
+
+    // Schedule the update database service if it hasn't already been started.
+    if (sharedPrefs.getBoolean(
+        Preferences.KEY_UPDATE_DB_CHECKBOX_PREFERENCE, /* default */ false)) {
+      runUpdateDatabaseServiceJob(/* isOneOffJob */ false);
     }
 
     // Activate type-to-search for local search. Typing will automatically
@@ -233,6 +246,17 @@ public class BaseActivity extends AppCompatActivity
       // If the preference is unchecked, cancel the persisted job.
       JobScheduler scheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
       scheduler.cancel(KWOTD_SERVICE_PERSISTED_JOB_ID);
+    }
+
+    // Schedule the update database service if it hasn't already been started. It's necessary to do
+    // this here because the setting might have changed in Preferences.
+    if (sharedPrefs.getBoolean(
+        Preferences.KEY_UPDATE_DB_CHECKBOX_PREFERENCE, /* default */ false)) {
+      runUpdateDatabaseServiceJob(/* isOneOffJob */ false);
+    } else {
+      // If the preference is unchecked, cancel the persisted job.
+      JobScheduler scheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
+      scheduler.cancel(UPDATE_DB_SERVICE_PERSISTED_JOB_ID);
     }
   }
 
@@ -335,6 +359,9 @@ public class BaseActivity extends AppCompatActivity
 
       MenuItem kwotdButton = menu.findItem(R.id.action_kwotd);
       kwotdButton.setVisible(true);
+
+      MenuItem updateDatabaseButton = menu.findItem(R.id.action_update_db);
+      updateDatabaseButton.setVisible(true);
     }
 
     return true;
@@ -636,6 +663,9 @@ public class BaseActivity extends AppCompatActivity
       case R.id.action_kwotd:
         runKwotdServiceJob(/* isOneOffJob */ true);
         return true;
+      case R.id.action_update_db:
+        runUpdateDatabaseServiceJob(/* isOneOffJob */ true);
+        return true;
       case R.id.about:
         // Show "About" screen.
         displayHelp(QUERY_FOR_ABOUT);
@@ -718,6 +748,73 @@ public class BaseActivity extends AppCompatActivity
       builder.setExtras(extras);
 
       Log.d(TAG, "Scheduling KwotdService job, isOneOffJob: " + isOneOffJob);
+      scheduler.schedule(builder.build());
+    }
+  }
+
+  // Helper method to run the update database service job. If isOneOffJob is set to true,
+  // this will trigger a job immediately which runs only once. Otherwise, this
+  // will schedule a job to run once every 24 hours, if one hasn't already been
+  // scheduled.
+  // TODO: Refactor and combine with runKwotdServiceJob.
+  protected void runUpdateDatabaseServiceJob(boolean isOneOffJob) {
+    boolean jobAlreadyExists = false;
+    JobScheduler scheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
+    if (!isOneOffJob) {
+      // Check if persisted job is already running.
+      for (JobInfo jobInfo : scheduler.getAllPendingJobs()) {
+        if (jobInfo.getId() == UPDATE_DB_SERVICE_PERSISTED_JOB_ID) {
+          // Log.d(TAG, "Update database job already exists.");
+          jobAlreadyExists = true;
+          break;
+        }
+      }
+    }
+
+    // Start job.
+    if (!jobAlreadyExists) {
+      JobInfo.Builder builder;
+
+      if (isOneOffJob) {
+        // A one-off request to the update database server needs Internet access.
+        ConnectivityManager cm =
+            (ConnectivityManager) getBaseContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        if (activeNetwork == null || !activeNetwork.isConnectedOrConnecting()) {
+          // Inform the user the fetch will happen when there is an Internet connection.
+          Toast.makeText(
+                  this,
+                  getResources().getString(R.string.update_db_requires_internet),
+                  Toast.LENGTH_LONG)
+              .show();
+        } else {
+          // Inform the user operation is under way.
+          Toast.makeText(
+                  this, getResources().getString(R.string.update_db_fetching), Toast.LENGTH_SHORT)
+              .show();
+        }
+
+        // Either way, schedule the job for when unmetered Internet access is available.
+        builder =
+            new JobInfo.Builder(
+                UPDATE_DB_SERVICE_ONE_OFF_JOB_ID,
+                new ComponentName(this, UpdateDatabaseService.class));
+        builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED);
+
+      } else {
+        // Set the job to run every 7 days, during a window with unmetered network connectivity.
+        builder =
+            new JobInfo.Builder(
+                UPDATE_DB_SERVICE_PERSISTED_JOB_ID,
+                new ComponentName(this, UpdateDatabaseService.class));
+        builder.setPeriodic(TimeUnit.DAYS.toMillis(7));
+        builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED);
+        builder.setBackoffCriteria(TimeUnit.HOURS.toMillis(1), JobInfo.BACKOFF_POLICY_EXPONENTIAL);
+        builder.setRequiresCharging(false);
+        builder.setPersisted(true);
+      }
+
+      Log.d(TAG, "Scheduling UpdateDatabaseService job, isOneOffJob: " + isOneOffJob);
       scheduler.schedule(builder.build());
     }
   }

@@ -71,6 +71,7 @@ public class Preferences extends AppCompatPreferenceActivity
   public static final String KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE =
       "show_unsupported_features_checkbox_preference";
   public static final String KEY_KWOTD_CHECKBOX_PREFERENCE = "kwotd_checkbox_preference";
+  public static final String KEY_UPDATE_DB_CHECKBOX_PREFERENCE = "update_db_checkbox_preference";
 
   // Detect if the system language is German.
   public static boolean shouldPreferGerman() {
