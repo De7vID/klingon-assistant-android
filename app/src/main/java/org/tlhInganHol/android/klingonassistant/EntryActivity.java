@@ -369,7 +369,8 @@ public class EntryActivity extends BaseActivity
       // Update the entry name (used for TTS output). This is also set in onCreate.
       mEntryName = entry.getEntryName();
 
-      // Update share menu and set the visibility of the share button. The intent is also set in onCreate, while the visibility is also set in onCreateOptionsMenu.
+      // Update share menu and set the visibility of the share button. The intent is also set in
+      // onCreate, while the visibility is also set in onCreateOptionsMenu.
       setShareEntryIntent(entry);
       if (mShareActionProvider != null && mShareEntryIntent != null) {
         // Enable "Share" button. Note that mShareButton can be null if the device has been rotated.

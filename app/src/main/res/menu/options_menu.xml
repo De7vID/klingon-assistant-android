@@ -54,6 +54,12 @@
           android:icon="@drawable/ic_menu_kwotd"
           android:visible="false" />
 
+    <!-- This is hidden unless the "unsupported features" option has been selected. -->
+    <item android:id="@+id/action_update_db"
+          android:title="@string/menu_update_db"
+          android:icon="@drawable/ic_menu_update_db"
+          android:visible="false" />
+
     <item android:id="@+id/about"
           android:title="@string/menu_about"
           android:icon="@drawable/ic_menu_help" />

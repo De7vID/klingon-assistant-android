@@ -32,6 +32,7 @@ import android.provider.BaseColumns;
 import android.util.Log;
 import android.widget.Toast;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -99,15 +100,28 @@ public class KlingonContentDatabase {
   private static final String DATABASE_NAME = "qawHaq.db";
   private static final String FTS_VIRTUAL_TABLE = "mem";
 
+  // The name of the database for updates.
+  public static final String REPLACEMENT_DATABASE_NAME = "qawHaq_new.db";
+
   // This should be kept in sync with the version number in the database
-  // entry {boQwI':n}.
-  private static final int DATABASE_VERSION = 201803210;
+  // entry {boQwI':n} of the database which is bundled into the app.
+  private static final int BUNDLED_DATABASE_VERSION = 201803290;
+
+  // Metadata about the installed database, and the updated database, if any.
+  public static final String KEY_INSTALLED_DATABASE_VERSION = "installed_database_version";
+  public static final String KEY_ID_OF_FIRST_EXTRA_ENTRY = "id_of_first_extra_entry";
+  public static final String KEY_UPDATED_DATABASE_VERSION = "updated_database_version";
+  public static final String KEY_UPDATED_ID_OF_FIRST_EXTRA_ENTRY =
+      "updated_id_of_first_extra_entry";
+
+  // Arbitrary limit on max buffer length to prevent overflows and such.
+  private static final int MAX_BUFFER_LENGTH = 1024;
 
   // These are automatically updated by renumber.py in the data directory, and correspond to
   // the IDs of the first entry and one past the ID of the last non-hypothetical,
   // non-extended-canon entry in the database, respectively.
   private static final int ID_OF_FIRST_ENTRY = 10000;
-  private static final int ID_OF_FIRST_EXTRA_ENTRY = 14339;
+  private static final int ID_OF_FIRST_EXTRA_ENTRY = 14340;
 
   private final KlingonDatabaseOpenHelper mDatabaseOpenHelper;
   private static final HashMap<String, String> mColumnMap = buildColumnMap();
@@ -960,8 +974,10 @@ public class KlingonContentDatabase {
 
   /** Returns a cursor containing a random entry. */
   public Cursor getRandomEntry(String[] columns) {
-    int randomId =
-        new Random().nextInt(ID_OF_FIRST_EXTRA_ENTRY - ID_OF_FIRST_ENTRY) + ID_OF_FIRST_ENTRY;
+    SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+    int onePastLastId =
+        sharedPrefs.getInt(KEY_ID_OF_FIRST_EXTRA_ENTRY, /* default */ ID_OF_FIRST_EXTRA_ENTRY);
+    int randomId = new Random().nextInt(onePastLastId - ID_OF_FIRST_ENTRY) + ID_OF_FIRST_ENTRY;
     return getEntryById(Integer.toString(randomId), ALL_KEYS);
   }
 
@@ -1011,8 +1027,8 @@ public class KlingonContentDatabase {
     return cursor;
   }
 
-  public static String getDatabaseVersion() {
-    return dottedVersion(DATABASE_VERSION);
+  public static String getBundledDatabaseVersion() {
+    return dottedVersion(BUNDLED_DATABASE_VERSION);
   }
 
   private static String dottedVersion(int version) {
@@ -1041,17 +1057,12 @@ public class KlingonContentDatabase {
      * @param context
      */
     KlingonDatabaseOpenHelper(Context context) {
-      super(context, DATABASE_NAME, null, DATABASE_VERSION);
+      super(context, DATABASE_NAME, null, BUNDLED_DATABASE_VERSION);
       mHelperContext = context;
     }
 
     // The system path of the Klingon database.
     private String getDatabasePath(String name) {
-      // TODO: Change this path to support multi-user.
-      // See: https://github.com/De7vID/klingon-assistant/issues/385
-      // private static String DATABASE_PATH =
-      //     Environment.getDataDirectory()
-      //         + "/data/org.tlhInganHol.android.klingonassistant/databases/";
       return mHelperContext.getDatabasePath(name).getAbsolutePath();
     }
 
@@ -1105,13 +1116,10 @@ public class KlingonContentDatabase {
     public void initDatabase() throws IOException {
       // TODO: Besides checking whether it exists, also check if its data needs to be updated.
       // This may not be necessary due to onUpgrade(...) above.
-      boolean dbExists = checkDBExists();
-      // Log.d(TAG, "dbExists = " + dbExists);
-
-      if (dbExists) {
+      if (checkDBExists(DATABASE_NAME)) {
         // Log.d(TAG, "Database exists.");
-        // Get a writeable database so that onUpgrade will be called on
-        // it if the version number has increased.
+        // Get a writeable database so that onUpgrade will be called on it if the version number has
+        // increased. This will delete the existing datbase.
         try {
           // Log.d(TAG, "Getting writable database.");
           SQLiteDatabase writeDB = this.getWritableDatabase();
@@ -1125,15 +1133,49 @@ public class KlingonContentDatabase {
         }
       }
 
-      // Create the database if it doesn't exist.
-      dbExists = checkDBExists();
-      if (!dbExists) {
+      // Update the database if that's available.
+      SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mHelperContext);
+      String installedVersion =
+          sharedPrefs.getString(
+              KEY_INSTALLED_DATABASE_VERSION, /* default */ getBundledDatabaseVersion());
+      String updatedVersion =
+          sharedPrefs.getString(
+              KEY_UPDATED_DATABASE_VERSION, /* default */ getBundledDatabaseVersion());
+      if (updatedVersion.compareToIgnoreCase(installedVersion) > 0
+          && checkDBExists(REPLACEMENT_DATABASE_NAME)) {
+        copyDBFromReplacement();
+
+        int firstExtraEntryId =
+            sharedPrefs.getInt(
+                KEY_UPDATED_ID_OF_FIRST_EXTRA_ENTRY, /* default */ ID_OF_FIRST_EXTRA_ENTRY);
+        SharedPreferences.Editor sharedPrefsEd =
+            PreferenceManager.getDefaultSharedPreferences(mHelperContext).edit();
+        sharedPrefsEd.putString(KEY_INSTALLED_DATABASE_VERSION, updatedVersion);
+        sharedPrefsEd.putInt(KEY_ID_OF_FIRST_EXTRA_ENTRY, firstExtraEntryId);
+        sharedPrefsEd.apply();
+
+        Toast.makeText(
+                mHelperContext,
+                String.format(
+                    mHelperContext.getResources().getString(R.string.database_upgraded),
+                    installedVersion,
+                    updatedVersion),
+                Toast.LENGTH_LONG)
+            .show();
+        mNewDatabaseMessageDisplayed = true;
+
+        // Show help after database upgrade.
+        setShowHelpFlag();
+      }
+
+      // Create the database from included bundle if it doesn't exist.
+      if (!checkDBExists(DATABASE_NAME)) {
         // This will create the empty database if it doesn't already exist.
         // Log.d(TAG, "Getting readable database.");
         SQLiteDatabase readDB = this.getReadableDatabase();
         readDB.close();
 
-        // Try to create the database from the xml file.
+        // Try to create the database from the bundled database file.
         try {
           // Log.d(TAG, "Copying database from resources.");
           copyDBFromResources();
@@ -1147,7 +1189,7 @@ public class KlingonContentDatabase {
                   mHelperContext,
                   String.format(
                       mHelperContext.getResources().getString(R.string.database_created),
-                      dottedVersion(DATABASE_VERSION)),
+                      getBundledDatabaseVersion()),
                   Toast.LENGTH_LONG)
               .show();
           mNewDatabaseMessageDisplayed = true;
@@ -1164,11 +1206,11 @@ public class KlingonContentDatabase {
      *
      * @return true if the database exists, false otherwise
      */
-    private boolean checkDBExists() {
+    private boolean checkDBExists(String databaseName) {
       // The commented way below is the proper way of checking for the
       // existence of the database. However, we do it this way to
       // prevent the "sqlite3_open_v2 open failed" error.
-      File dbFile = new File(getDatabasePath(DATABASE_NAME));
+      File dbFile = new File(getDatabasePath(databaseName));
       return dbFile.exists();
 
       // TODO: Investigate the below. It may be the reason why there
@@ -1206,7 +1248,7 @@ public class KlingonContentDatabase {
       OutputStream outStream = new FileOutputStream(fullDBPath);
 
       // Transfer the database from the resources to the system path one block at a time.
-      byte[] buffer = new byte[1024];
+      byte[] buffer = new byte[MAX_BUFFER_LENGTH];
       int length;
       while ((length = inStream.read(buffer)) > 0) {
         outStream.write(buffer, 0, length);
@@ -1218,6 +1260,33 @@ public class KlingonContentDatabase {
       inStream.close();
 
       // Log.d(TAG, "Database copy successful.");
+    }
+
+    /** Copies the database from the replacement (update) database. */
+    private void copyDBFromReplacement() throws IOException {
+      String fullReplacementDBPath = getDatabasePath(REPLACEMENT_DATABASE_NAME);
+      String fullDBPath = getDatabasePath(DATABASE_NAME);
+
+      InputStream inStream = new FileInputStream(fullReplacementDBPath);
+      OutputStream outStream = new FileOutputStream(fullDBPath);
+
+      // Transfer the database from the resources to the system path one block at a time.
+      byte[] buffer = new byte[MAX_BUFFER_LENGTH];
+      int length;
+      int total = 0;
+      while ((length = inStream.read(buffer)) > 0) {
+        outStream.write(buffer, 0, length);
+        total += length;
+      }
+      Log.d(TAG, "Copied database from replacement, " + total + " bytes copied.");
+
+      // Close the streams.
+      outStream.flush();
+      outStream.close();
+      inStream.close();
+
+      // Delete the replacement database.
+      mHelperContext.deleteDatabase(REPLACEMENT_DATABASE_NAME);
     }
 
     /** Opens the database. */
