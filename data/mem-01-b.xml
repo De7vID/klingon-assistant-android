@@ -601,7 +601,7 @@ Watch Gowron say this: {YouTube video:url:http://youtu.be/kWP0lgIYMBA}</column>
       <column name="definition_de">flacher Topf zum Essen bereiten</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
-      <column name="see_also">{vut'un:n}, {mIv bargh:n}, {nevDagh:n}</column>
+      <column name="see_also">{vut'un:n}, {mIv bargh:n}, {nevDagh:n}, {'Ib:n}</column>
       <column name="notes"></column>
       <column name="notes_de"></column>
       <column name="hidden_notes">Looks like a "barge".</column>
@@ -660,7 +660,7 @@ Watch Gowron say this: {YouTube video:url:http://youtu.be/kWP0lgIYMBA}</column>
       <column name="definition_de">Metall</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
-      <column name="see_also">{Sor Hap:n}, {mep:n}</column>
+      <column name="see_also">{Sor Hap:n}, {mep:n}, {'al'on:n}</column>
       <column name="notes">Known words for metals (and metallic compounds) include:
 ▶ {ghav 'uSqan:n}
 ▶ {jey':n}
@@ -1823,9 +1823,9 @@ The {betleH:n:nolink} is also called the {betleH quv:n:nolink}, to differentiate
       <column name="antonyms"></column>
       <column name="see_also"></column>
       <column name="notes">This word refers to a financial establishment.</column>
-      <!-- There is also a chain of jewellery stores called "Bailey Banks and Biddle". -->
       <column name="notes_de"></column>
-      <column name="hidden_notes">This is a reference to the Bailey Building and Loan, from the movie "It's a Wonderful Life".</column>
+      <!-- There is also a chain of jewellery stores called "Bailey Banks and Biddle". -->
+      <column name="hidden_notes">This is a reference to the Bailey Bros. Building &amp; Loan Association, from the movie "It's a Wonderful Life".</column>
       <column name="components"></column>
       <column name="examples"></column>
       <column name="examples_de"></column>
@@ -3485,7 +3485,8 @@ When used with {-lu':v}, this prefix means "Someone (indefinite subject) does so
       <column name="notes_de"></column>
       <column name="hidden_notes"></column>
       <column name="components"></column>
-      <column name="examples"></column>
+      <column name="examples">
+▶ {ghIchwIj DabochmoHchugh ghIchlIj qanob.:sen}</column>
       <column name="examples_de"></column>
       <column name="search_tags"></column>
       <column name="search_tags_de"></column>
@@ -4614,7 +4615,7 @@ The Story of the Promise states that:
       <column name="definition_de">bedrohen</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
-      <column name="see_also">{ghIj:v}</column>
+      <column name="see_also">{ghIj:v}, {ghIchwIj DabochmoHchugh ghIchlIj qanob.:sen}</column>
       <column name="notes"></column>
       <column name="notes_de"></column>
       <column name="hidden_notes"></column>
@@ -4759,7 +4760,7 @@ The 2009 {Star Trek:src} movie has a deleted scene with the line: {buqmeylIjDaq 
       <column name="definition_de">auf etwas konzentrieren, auf eine Sache achten</column>
       <column name="synonyms"></column>
       <column name="antonyms">{buSHa':v}</column>
-      <column name="see_also">{Dugh:v}, {qIm:v}, {'uch:v:1}</column>
+      <column name="see_also">{qIm:v}, {paQ:v}, {Dugh:v}, {'uch:v:1}</column>
       <column name="notes"></column>
       <column name="notes_de"></column>
       <column name="hidden_notes"></column>

@@ -1,0 +1,7 @@
+.gradle/
+app/
+assets/qawHaq.db
+bin/
+build/
+gen/
+local.properties

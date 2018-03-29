@@ -860,7 +860,12 @@ A {chaw':n:nolink} shows that you are officially or legally allowed to do or get
       <column name="hidden_notes">This is missing from the K-E side of {TKD:src}.</column>
       <column name="components"></column>
       <column name="examples">
-▶ {cha'puj vIngevmeH chaw' HInobneS.} "Give me a permit to sell dilithium, your honor."[2]</column>
+▶ {cha'puj vIngevmeH chaw' HInobneS.} "Give me a permit to sell dilithium, your honor."[2]
+▶ {HIjmeH chaw':n}
+▶ {Huch chaw':n}
+▶ {leng chaw':n}
+▶ {yer ghajwI' chaw':n}
+▶ {'elmeH chaw':n}</column>
       <column name="examples_de"></column>
       <column name="search_tags">ticket, deed, pass, license</column>
       <column name="search_tags_de"></column>
@@ -1175,7 +1180,7 @@ A {chaw':n:nolink} shows that you are officially or legally allowed to do or get
       <column name="definition_de">zweiundzwanzig Rippen</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
-      <column name="see_also"></column>
+      <column name="see_also">{qagh Sopbe'!:sen}</column>
       <column name="notes">Klingons have twenty-three ribs ({joQ:n:1,body}). This expression means that something is not quite right.</column>
       <column name="notes_de"></column>
       <column name="hidden_notes"></column>
@@ -1768,7 +1773,7 @@ The following four examples illustrate the role of the object(s) and how to use 
       <column name="definition_de">Chang</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
-      <column name="see_also"></column>
+      <column name="see_also">{ghorqon:n:name}</column>
       <column name="notes">General Chang ({cheng Sa':n:nolink}) was a character in {Star Trek VI:src}.</column>
       <column name="notes_de"></column>
       <column name="hidden_notes"></column>
