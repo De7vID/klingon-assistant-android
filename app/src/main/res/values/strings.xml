@@ -65,7 +65,7 @@
     <!-- Other menu items. -->
     <string name="menu_lessons">Lessons</string>
     <string name="menu_kwotd">Fetch KWOTD</string>
-    <string name="menu_update_db">Update database</string>
+    <string name="menu_update_db">Check for database update</string>
     <string name="menu_about">boQwI\' - Help</string>
     <string name="menu_preferences">Preferences</string>
     <string name="menu_reference">Reference</string>
@@ -232,7 +232,7 @@
 
     <!-- Update database notification. -->
     <string name="update_db_requires_internet">Will check for database update when an Internet connection is available.</string>
-    <string name="update_db_fetching">Attempting to update database...</string>
+    <string name="update_db_fetching">Checking for database update...</string>
 
     <!-- Features in development. -->
     <string name="account_register">Sign up for an account</string>
