@@ -3,6 +3,7 @@
 # Generate the database.
 cd data
 ./generate_db.sh
+cp qawHaq.db ../app/src/main/assets/
 cd ..
 
 # Install the debug build.
