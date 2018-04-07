@@ -103,7 +103,7 @@ public class UpdateDatabaseService extends JobService {
         JSONObject manifestObject = new JSONObject(data);
         JSONObject androidObject = manifestObject.getJSONObject("Android-1");
         String latest = androidObject.getString("latest");
-        Log.d(TAG, latest);
+        Log.d(TAG, "Latest database version: " + latest);
 
         String installedVersion =
             sharedPrefs.getString(
@@ -119,10 +119,10 @@ public class UpdateDatabaseService extends JobService {
           String databaseZipUrl = ONLINE_UPGRADE_PATH + latestObject.getString("path");
           int firstExtraEntryId = latestObject.getInt("extra");
           int databaseZipFileSize = latestObject.getInt("size");
-          Log.d(TAG, databaseZipUrl);
-          Log.d(TAG, Integer.toString(firstExtraEntryId));
-          Log.d(TAG, Integer.toString(databaseZipFileSize));
-          copyDBFromZipUrl(databaseZipUrl);
+          // Log.d(TAG, "Database zip URL: " + databaseZipUrl);
+          // Log.d(TAG, "Id of first extra entry: " + Integer.toString(firstExtraEntryId));
+          // Log.d(TAG, "Expected file size: " + Integer.toString(databaseZipFileSize));
+          copyDBFromZipUrl(databaseZipUrl, databaseZipFileSize);
 
           // Save the new version and first extra entry ID.
           SharedPreferences.Editor sharedPrefsEd =
@@ -148,7 +148,7 @@ public class UpdateDatabaseService extends JobService {
       return null;
     }
 
-    private void copyDBFromZipUrl(String databaseZipUrl) throws IOException {
+    private void copyDBFromZipUrl(String databaseZipUrl , int databaseZipFileSize) throws IOException {
       // Read the database from a zip file online.
       ZipInputStream inStream =
           new ZipInputStream(new URL(databaseZipUrl).openConnection().getInputStream());
@@ -177,6 +177,11 @@ public class UpdateDatabaseService extends JobService {
       outStream.close();
       inStream.closeEntry();
       inStream.close();
+
+      // Sanity check.
+      if (total != databaseZipFileSize) {
+        throw new IOException("File size mismatch in database zip file, expected " + databaseZipFileSize + ", received " + total + ".");
+      }
     }
   }
 }
