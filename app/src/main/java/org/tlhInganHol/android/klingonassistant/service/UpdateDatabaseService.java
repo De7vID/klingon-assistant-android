@@ -119,10 +119,13 @@ public class UpdateDatabaseService extends JobService {
           String databaseZipUrl = ONLINE_UPGRADE_PATH + latestObject.getString("path");
           int firstExtraEntryId = latestObject.getInt("extra");
           int databaseZipFileSize = latestObject.getInt("size");
-          // Log.d(TAG, "Database zip URL: " + databaseZipUrl);
-          // Log.d(TAG, "Id of first extra entry: " + Integer.toString(firstExtraEntryId));
-          // Log.d(TAG, "Expected file size: " + Integer.toString(databaseZipFileSize));
-          copyDBFromZipUrl(databaseZipUrl, databaseZipFileSize);
+          Log.d(TAG, "Database zip URL: " + databaseZipUrl);
+          Log.d(TAG, "Id of first extra entry: " + Integer.toString(firstExtraEntryId));
+          Log.d(TAG, "Expected file size: " + Integer.toString(databaseZipFileSize));
+          // We don't use the zip file size, since a successful read will only
+          // occur if we manage to read the entire file, and the zip file size
+          // will differ from the number of actual bytes read.
+          copyDBFromZipUrl(databaseZipUrl);
 
           // Save the new version and first extra entry ID.
           SharedPreferences.Editor sharedPrefsEd =
@@ -148,7 +151,7 @@ public class UpdateDatabaseService extends JobService {
       return null;
     }
 
-    private void copyDBFromZipUrl(String databaseZipUrl , int databaseZipFileSize) throws IOException {
+    private void copyDBFromZipUrl(String databaseZipUrl) throws IOException {
       // Read the database from a zip file online.
       ZipInputStream inStream =
           new ZipInputStream(new URL(databaseZipUrl).openConnection().getInputStream());
@@ -177,11 +180,6 @@ public class UpdateDatabaseService extends JobService {
       outStream.close();
       inStream.closeEntry();
       inStream.close();
-
-      // Sanity check.
-      if (total != databaseZipFileSize) {
-        throw new IOException("File size mismatch in database zip file, expected " + databaseZipFileSize + ", received " + total + ".");
-      }
     }
   }
 }
