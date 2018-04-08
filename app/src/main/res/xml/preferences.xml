@@ -122,6 +122,12 @@
                 android:title="@string/kwotd_preference_title"
                 android:summary="@string/kwotd_preference_summary"
                 android:defaultValue="true" />
+
+        <CheckBoxPreference
+                android:key="update_db_checkbox_preference"
+                android:title="@string/update_db_preference_title"
+                android:summary="@string/update_db_preference_summary"
+                android:defaultValue="true" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -131,12 +137,6 @@
                 android:key="show_unsupported_features_checkbox_preference"
                 android:title="@string/show_unsupported_features_preference_title"
                 android:summary="@string/show_unsupported_features_preference_summary"
-                android:defaultValue="false" />
-
-        <CheckBoxPreference
-                android:key="update_db_checkbox_preference"
-                android:title="@string/update_db_preference_title"
-                android:summary="@string/update_db_preference_summary"
                 android:defaultValue="false" />
     </PreferenceCategory>
 

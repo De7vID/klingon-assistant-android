@@ -221,7 +221,7 @@ public class BaseActivity extends AppCompatActivity
 
     // Schedule the update database service if it hasn't already been started.
     if (sharedPrefs.getBoolean(
-        Preferences.KEY_UPDATE_DB_CHECKBOX_PREFERENCE, /* default */ false)) {
+        Preferences.KEY_UPDATE_DB_CHECKBOX_PREFERENCE, /* default */ true)) {
       runUpdateDatabaseServiceJob(/* isOneOffJob */ false);
     }
 
@@ -251,12 +251,27 @@ public class BaseActivity extends AppCompatActivity
     // Schedule the update database service if it hasn't already been started. It's necessary to do
     // this here because the setting might have changed in Preferences.
     if (sharedPrefs.getBoolean(
-        Preferences.KEY_UPDATE_DB_CHECKBOX_PREFERENCE, /* default */ false)) {
+        Preferences.KEY_UPDATE_DB_CHECKBOX_PREFERENCE, /* default */ true)) {
       runUpdateDatabaseServiceJob(/* isOneOffJob */ false);
     } else {
       // If the preference is unchecked, cancel the persisted job.
       JobScheduler scheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
       scheduler.cancel(UPDATE_DB_SERVICE_PERSISTED_JOB_ID);
+    }
+
+    // Put a notification dot in the hamburger menu if a database update is available.
+    if (sharedPrefs.getBoolean(
+        Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE, /* default */ false)) {
+      String installedVersion = sharedPrefs.getString(
+              KlingonContentDatabase.KEY_INSTALLED_DATABASE_VERSION,
+              /* default */ KlingonContentDatabase.getBundledDatabaseVersion());
+      String updatedVersion = sharedPrefs.getString(
+              KlingonContentDatabase.KEY_UPDATED_DATABASE_VERSION,
+              /* default */ installedVersion);
+      if (updatedVersion.compareToIgnoreCase(installedVersion) > 0) {
+        TextView hamburgerDot = (TextView) findViewById(R.id.hamburger_dot);
+        hamburgerDot.setVisibility(View.VISIBLE);
+      }
     }
   }
 

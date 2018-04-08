@@ -109,10 +109,14 @@ public class UpdateDatabaseService extends JobService {
             sharedPrefs.getString(
                 KlingonContentDatabase.KEY_INSTALLED_DATABASE_VERSION,
                 /* default */ KlingonContentDatabase.getBundledDatabaseVersion());
+        String updatedVersion =
+            sharedPrefs.getString(
+                KlingonContentDatabase.KEY_UPDATED_DATABASE_VERSION,
+                /* default */ installedVersion);
 
         // Only download the database if the latest version is lexicographically greater than the
-        // installed one.
-        if (latest.compareToIgnoreCase(installedVersion) > 0) {
+        // installed one and it hasn't already been downloaded.
+        if (latest.compareToIgnoreCase(updatedVersion) > 0) {
           JSONObject latestObject = androidObject.getJSONObject(latest);
 
           // Get the metadata for the latest database for Android.
