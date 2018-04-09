@@ -1,5 +1,6 @@
 CHANGELOG
 
+2018-04-09: Enable database update by default.
 2018-03-29: Add ability to update database independently of app.
 2018-03-21: Fix errors, add links between related entries, add DSC and Duolingo people names.
 2018-03-07: Fix a lot of typos. Update YouTube links.
