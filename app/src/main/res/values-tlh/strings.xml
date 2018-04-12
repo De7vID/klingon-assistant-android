@@ -82,9 +82,8 @@
     <string name="menu_kli">tlhIngan Hol yejHaD</string>
     <string name="menu_kli_lessons">ghojmeH mIw bonlu\'pu\'bogh</string>
     <string name="menu_kli_questions">yIghel!</string>
-    <!--
+    <!-- Because this may be displayed in {pIqaD}, it has to follow Klingon phonology. -->
     <string name="menu_kli_discord">DISqorD</string>
-    -->
 
     <!-- Social networks. -->
     <string name="menu_social_network">nugh</string>

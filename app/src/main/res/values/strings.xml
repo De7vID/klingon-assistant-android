@@ -82,9 +82,7 @@
     <string name="menu_kli">Klingon Language Institute</string>
     <string name="menu_kli_lessons">Online Lessons</string>
     <string name="menu_kli_questions">Ask Questions!</string>
-    <!--
     <string name="menu_kli_discord">Discord</string>
-    -->
 
     <!-- Social networks. -->
     <string name="menu_social_network">Social network</string>
