@@ -4649,7 +4649,7 @@ The 2009 {Star Trek:src} movie has a deleted scene with the line: {buqmeylIjDaq 
       <column name="examples_de"></column>
       <column name="search_tags"></column>
       <column name="search_tags_de"></column>
-      <column name="source">[1] {Letter from MO 2010.11.15:src}</column>
+      <column name="source">[1] {Letter from MO 2010.11.15:src} ({KLI mailing list 2010.12.07:src})</column>
     </table>
     <table name="mem">
       <!-- Checked on: 2013.11.10. -->
@@ -4683,7 +4683,7 @@ The 2009 {Star Trek:src} movie has a deleted scene with the line: {buqmeylIjDaq 
       <column name="see_also">{meyrI':n}, {moQ:n}</column>
       <column name="notes"></column>
       <column name="notes_de"></column>
-      <column name="hidden_notes">This is a reference to "Rubix's Cube". It is, of course, scrambled.</column>
+      <column name="hidden_notes">This is a reference to "Rubik's Cube". It is, of course, scrambled.</column>
       <column name="components"></column>
       <column name="examples"></column>
       <column name="examples_de"></column>

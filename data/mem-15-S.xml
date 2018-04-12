@@ -994,7 +994,7 @@ This word appears only in the body of {KGT:src} and not in the glossary.</column
 ▶ {Segh - bI'rel tlharghDuj:sen:nolink} "Model - B'rel Scout"[2]
 ▶ {Hem tlhIngan Segh 'ej maHemtaH 'e' wIHech.:sen}</column>
       <column name="examples_de"></column>
-      <column name="search_tags">model</column>
+      <column name="search_tags">model, type</column>
       <column name="search_tags_de"></column>
       <column name="source">[1] {TKD:src}, [2] {BoP:src}</column>
     </table>
@@ -1258,7 +1258,7 @@ In {TNK:src}, the category title for "Countries" was translated {Sepmey tlhab:n:
       <column name="entry_name">Sep Hol Sar</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">regional dialect</column>
-      <column name="definition_de"></column>
+      <column name="definition_de">Dialekt einer Region</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
       <column name="see_also">{Hol Sar:n}, {ta' Hol:n}, {QIch wab Ho'DoS Sar:n}</column>
@@ -3055,7 +3055,7 @@ This word can also refer to the "club" suit in a deck of playing cards (see {Deg
       <column name="see_also">{Sot:v}</column>
       <column name="notes"></column>
       <column name="notes_de"></column>
-      <column name="hidden_notes">Someone is "apparently in distress" ({Sotlaw':sen:nolink}).</column>
+      <column name="hidden_notes">Someone is "apparently in distress" ({Sotlaw':sen@@Sot:v, -law':v}).</column>
       <column name="components"></column>
       <column name="examples"></column>
       <column name="examples_de"></column>

@@ -1443,7 +1443,7 @@ Do not confuse with {qeq:v}.</column>
       <column name="entry_name">QIch wab</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">speech sound</column>
-      <column name="definition_de"></column>
+      <column name="definition_de">Sprachklang, Lautung</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
       <column name="see_also">{QIch wab Ho'DoS:n}</column>
@@ -1463,7 +1463,7 @@ Do not confuse with {qeq:v}.</column>
       <column name="entry_name">QIch wab Ho'DoS</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">pronunciation</column>
-      <column name="definition_de"></column>
+      <column name="definition_de">Aussprache, Lautbildung</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
       <column name="see_also"></column>
@@ -1519,7 +1519,7 @@ The names of the Klingon consonants consist of the sound followed by {ay:sen:nol
       <column name="entry_name">QIch wab Ho'DoS Sar</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">accent</column>
-      <column name="definition_de"></column>
+      <column name="definition_de">Akzent</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
       <column name="see_also">{Sep Hol Sar:n}</column>
@@ -1674,7 +1674,7 @@ The names of the Klingon consonants consist of the sound followed by {ay:sen:nol
       <column name="entry_name">QIl</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be desperate</column>
-      <column name="definition_de"></column>
+      <column name="definition_de">verzweifelt</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
       <column name="see_also">{tul:v}</column>
@@ -2480,7 +2480,7 @@ Agreement is also expressed by the idiomatic expression {wa' DoS wIqIp.:sen:idio
       <column name="examples_de"></column>
       <column name="search_tags"></column>
       <column name="search_tags_de"></column>
-      <column name="source">[1] {Letter from MO 2010.11.15:src}</column>
+      <column name="source">[1] {Letter from MO 2010.11.15:src} ({KLI mailing list 2010.12.07:src})</column>
     </table>
     <table name="mem">
       <!-- Checked on: 2016.10.31. -->
