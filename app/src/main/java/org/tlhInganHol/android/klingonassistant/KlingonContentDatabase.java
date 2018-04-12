@@ -105,7 +105,7 @@ public class KlingonContentDatabase {
 
   // This should be kept in sync with the version number in the database
   // entry {boQwI':n} of the database which is bundled into the app.
-  private static final int BUNDLED_DATABASE_VERSION = 201804090;
+  private static final int BUNDLED_DATABASE_VERSION = 201804091;
 
   // Metadata about the installed database, and the updated database, if any.
   public static final String KEY_INSTALLED_DATABASE_VERSION = "installed_database_version";
@@ -1077,21 +1077,43 @@ public class KlingonContentDatabase {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int existingVersion, int newVersion) {
-      if (newVersion <= existingVersion) {
-        // Already using a new version, do nothing.
+    public void onUpgrade(SQLiteDatabase db, int existingBundledVersion, int newBundledVersion) {
+      if (newBundledVersion <= existingBundledVersion) {
+        // Bundled version hasn't changed, do nothing.
         return;
       }
 
-      // This method is called when the database needs to be updated.
-      // db.execSQL("DROP TABLE IF EXISTS " + FTS_VIRTUAL_TABLE);
+      SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mHelperContext);
+      String installedVersion =
+          sharedPrefs.getString(
+              KEY_INSTALLED_DATABASE_VERSION, /* default */ getBundledDatabaseVersion());
+      String updatedVersion =
+          sharedPrefs.getString(
+              KEY_UPDATED_DATABASE_VERSION, /* default */ installedVersion);
+      if (updatedVersion.compareToIgnoreCase(dottedVersion(newBundledVersion)) >= 0) {
+        // Either a new database is already installed, or is about to be, so do nothing.
+        return;
+      }
+
+      // The database needs to be updated from the bundled database, so clear any existing databases.
       mHelperContext.deleteDatabase(DATABASE_NAME);
+      mHelperContext.deleteDatabase(REPLACEMENT_DATABASE_NAME);
+
+      // Reset to bundled database version.
+      SharedPreferences.Editor sharedPrefsEd =
+          PreferenceManager.getDefaultSharedPreferences(mHelperContext).edit();
+      sharedPrefsEd.remove(KEY_INSTALLED_DATABASE_VERSION);
+      sharedPrefsEd.remove(KEY_ID_OF_FIRST_EXTRA_ENTRY);
+      sharedPrefsEd.remove(KEY_UPDATED_DATABASE_VERSION);
+      sharedPrefsEd.remove(KEY_UPDATED_ID_OF_FIRST_EXTRA_ENTRY);
+      sharedPrefsEd.apply();
+
       Toast.makeText(
               mHelperContext,
               String.format(
                   mHelperContext.getResources().getString(R.string.database_upgraded),
-                  dottedVersion(existingVersion),
-                  dottedVersion(newVersion)),
+                  installedVersion,
+                  dottedVersion(newBundledVersion)),
               Toast.LENGTH_LONG)
           .show();
       mNewDatabaseMessageDisplayed = true;
@@ -1151,8 +1173,9 @@ public class KlingonContentDatabase {
         SharedPreferences.Editor sharedPrefsEd =
             PreferenceManager.getDefaultSharedPreferences(mHelperContext).edit();
         sharedPrefsEd.putString(KEY_INSTALLED_DATABASE_VERSION, updatedVersion);
-        sharedPrefsEd.remove(KEY_UPDATED_DATABASE_VERSION);
         sharedPrefsEd.putInt(KEY_ID_OF_FIRST_EXTRA_ENTRY, firstExtraEntryId);
+        sharedPrefsEd.remove(KEY_UPDATED_DATABASE_VERSION);
+        sharedPrefsEd.remove(KEY_UPDATED_ID_OF_FIRST_EXTRA_ENTRY);
         sharedPrefsEd.apply();
 
         Toast.makeText(
