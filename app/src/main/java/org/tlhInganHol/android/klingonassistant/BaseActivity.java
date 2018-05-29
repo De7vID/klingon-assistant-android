@@ -449,9 +449,12 @@ public class BaseActivity extends AppCompatActivity
         launchExternal("http://www.kli.org/questions/categories/");
         break;
 
-      case R.id.kli_discord:
-        launchExternal("https://discordapp.com/channels/235416538927202304/");
-        break;
+      // This is disabled because the KLI channel requires an invite.
+        /*
+        case R.id.kli_discord:
+          launchExternal("https://discordapp.com/channels/235416538927202304/");
+          break;
+          */
 
         // Handle social networks.
         /*
