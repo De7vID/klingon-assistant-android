@@ -23,6 +23,9 @@
     <!-- The name of the Klingon Assistant application. -->
     <string name="app_name">boQwI\'</string>
 
+    <!-- The string for displaying the app version. -->
+    <string name="app_version">app v%1$s</string>
+
     <!-- Messages for database creation and upgrade. -->
     <string name="database_created">Database v%1$s created.</string>
     <string name="database_upgraded">Database upgraded from v%1$s to v%2$s.</string>

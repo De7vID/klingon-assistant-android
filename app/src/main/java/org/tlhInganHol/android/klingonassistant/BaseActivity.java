@@ -203,7 +203,9 @@ public class BaseActivity extends AppCompatActivity
     appNameView.setText(klingonAppName);
 
     // We use the version of the built-in database as the app's version, since they're in sync.
-    versionView.setText("v" + KlingonContentDatabase.getBundledDatabaseVersion());
+    versionView.setText(
+        String.format(getBaseContext().getResources().getString(R.string.app_version),
+        KlingonContentDatabase.getBundledDatabaseVersion()));
 
     // If the device is in landscape orientation and the screen size is large (or bigger), then
     // lock the navigation drawer in open mode.
