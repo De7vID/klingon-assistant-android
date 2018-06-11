@@ -1,5 +1,6 @@
 CHANGELOG
 
+2018-06-11: Make the difference between app version and database version more clear.
 2018-04-12: Caught up to all German definitions (again).
 2018-04-09: Enable database update by default.
 2018-03-29: Add ability to update database independently of app.
