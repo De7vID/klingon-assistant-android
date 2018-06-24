@@ -68,6 +68,10 @@ public class KlingonContentDatabase {
   public static final String KEY_NOTES_DE = "notes_de";
   public static final String KEY_EXAMPLES_DE = "examples_de";
   public static final String KEY_SEARCH_TAGS_DE = "search_tags_de";
+  public static final String KEY_DEFINITION_RU = "definition_ru";
+  public static final String KEY_NOTES_RU = "notes_ru";
+  public static final String KEY_EXAMPLES_RU = "examples_ru";
+  public static final String KEY_SEARCH_TAGS_RU = "search_tags_ru";
 
   // The order of the keys to access the columns.
   public static final int COLUMN_ID = 0;
@@ -88,12 +92,17 @@ public class KlingonContentDatabase {
   public static final int COLUMN_NOTES_DE = 14;
   public static final int COLUMN_EXAMPLES_DE = 15;
   public static final int COLUMN_SEARCH_TAGS_DE = 16;
+  public static final int COLUMN_DEFINITION_RU = 17;
+  public static final int COLUMN_NOTES_RU = 18;
+  public static final int COLUMN_EXAMPLES_RU = 19;
+  public static final int COLUMN_SEARCH_TAGS_RU = 20;
 
   // All keys.
   public static final String[] ALL_KEYS = {
     KEY_ID, KEY_ENTRY_NAME, KEY_PART_OF_SPEECH, KEY_DEFINITION, KEY_SYNONYMS, KEY_ANTONYMS,
     KEY_SEE_ALSO, KEY_NOTES, KEY_HIDDEN_NOTES, KEY_COMPONENTS, KEY_EXAMPLES, KEY_SEARCH_TAGS,
     KEY_SOURCE, KEY_DEFINITION_DE, KEY_NOTES_DE, KEY_EXAMPLES_DE, KEY_SEARCH_TAGS_DE,
+    KEY_DEFINITION_RU, KEY_NOTES_RU, KEY_EXAMPLES_RU, KEY_SEARCH_TAGS_RU,
   };
 
   // The name of the database and the database object for accessing it.
@@ -105,7 +114,7 @@ public class KlingonContentDatabase {
 
   // This should be kept in sync with the version number in the database
   // entry {boQwI':n} of the database which is bundled into the app.
-  private static final int BUNDLED_DATABASE_VERSION = 201806110;
+  private static final int BUNDLED_DATABASE_VERSION = 201806240;
 
   // Metadata about the installed database, and the updated database, if any.
   public static final String KEY_INSTALLED_DATABASE_VERSION = "installed_database_version";
@@ -918,6 +927,10 @@ public class KlingonContentDatabase {
       entry.getNotes_DE(),
       entry.getExamples_DE(),
       entry.getSearchTags_DE(),
+      entry.getDefinition_RU(),
+      entry.getNotes_RU(),
+      entry.getExamples_RU(),
+      entry.getSearchTags_RU(),
     };
   }
 
@@ -940,6 +953,10 @@ public class KlingonContentDatabase {
       entry.getNotes_DE(),
       entry.getExamples_DE(),
       entry.getSearchTags_DE(),
+      entry.getDefinition_RU(),
+      entry.getNotes_RU(),
+      entry.getExamples_RU(),
+      entry.getSearchTags_RU(),
     };
   }
 

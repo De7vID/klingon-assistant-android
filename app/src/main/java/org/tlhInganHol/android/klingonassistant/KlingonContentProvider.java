@@ -387,6 +387,10 @@ public class KlingonContentProvider extends ContentProvider {
     private String mNotes_DE = "";
     private String mExamples_DE = "";
     private String mSearchTags_DE = "";
+    private String mDefinition_RU = "";
+    private String mNotes_RU = "";
+    private String mExamples_RU = "";
+    private String mSearchTags_RU = "";
 
     // Part of speech metadata.
     private enum BasePartOfSpeechEnum {
@@ -558,6 +562,11 @@ public class KlingonContentProvider extends ContentProvider {
       mNotes_DE = cursor.getString(KlingonContentDatabase.COLUMN_NOTES_DE);
       mExamples_DE = cursor.getString(KlingonContentDatabase.COLUMN_EXAMPLES_DE);
       mSearchTags_DE = cursor.getString(KlingonContentDatabase.COLUMN_SEARCH_TAGS_DE);
+
+      mDefinition_RU = cursor.getString(KlingonContentDatabase.COLUMN_DEFINITION_RU);
+      mNotes_RU = cursor.getString(KlingonContentDatabase.COLUMN_NOTES_RU);
+      mExamples_RU = cursor.getString(KlingonContentDatabase.COLUMN_EXAMPLES_RU);
+      mSearchTags_RU = cursor.getString(KlingonContentDatabase.COLUMN_SEARCH_TAGS_RU);
 
       mSynonyms = cursor.getString(KlingonContentDatabase.COLUMN_SYNONYMS);
       mAntonyms = cursor.getString(KlingonContentDatabase.COLUMN_ANTONYMS);
@@ -1023,6 +1032,30 @@ public class KlingonContentProvider extends ContentProvider {
       } else {
         return false;
       }
+    }
+
+    public String getDefinition_RU() {
+      // If there is no Russian definition, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mDefinition_RU == null) ? "" : mDefinition_RU;
+    }
+
+    public String getNotes_RU() {
+      // If there are no Russian notes, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mNotes_RU == null) ? "" : mNotes_RU;
+    }
+
+    public String getExamples_RU() {
+      // If there are no Russian examples, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mExamples_RU == null) ? "" : mExamples_RU;
+    }
+
+    public String getSearchTags_RU() {
+      // If there are no Russian search tags, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mSearchTags_RU == null) ? "" : mSearchTags_RU;
     }
 
     public String getSynonyms() {
