@@ -207,7 +207,7 @@ public class BaseActivity extends AppCompatActivity
     String installedVersion =
         sharedPrefs.getString(
             KlingonContentDatabase.KEY_INSTALLED_DATABASE_VERSION, /* default */ bundledVersion);
-    if (installedVersion == bundledVersion) {
+    if (bundledVersion.compareToIgnoreCase(installedVersion) >= 0) {
       versionsView.setText(
           String.format(
               getBaseContext().getResources().getString(R.string.app_version), bundledVersion));
