@@ -63,15 +63,28 @@ public class KlingonContentDatabase {
   public static final String KEY_EXAMPLES = "examples";
   public static final String KEY_SEARCH_TAGS = "search_tags";
   public static final String KEY_SOURCE = "source";
+
   // Languages other than English.
   public static final String KEY_DEFINITION_DE = "definition_de";
   public static final String KEY_NOTES_DE = "notes_de";
   public static final String KEY_EXAMPLES_DE = "examples_de";
   public static final String KEY_SEARCH_TAGS_DE = "search_tags_de";
+  public static final String KEY_DEFINITION_FA = "definition_fa";
+  public static final String KEY_NOTES_FA = "notes_fa";
+  public static final String KEY_EXAMPLES_FA = "examples_fa";
+  public static final String KEY_SEARCH_TAGS_FA = "search_tags_fa";
+  public static final String KEY_DEFINITION_SV = "definition_sv";
+  public static final String KEY_NOTES_SV = "notes_sv";
+  public static final String KEY_EXAMPLES_SV = "examples_sv";
+  public static final String KEY_SEARCH_TAGS_SV = "search_tags_sv";
   public static final String KEY_DEFINITION_RU = "definition_ru";
   public static final String KEY_NOTES_RU = "notes_ru";
   public static final String KEY_EXAMPLES_RU = "examples_ru";
   public static final String KEY_SEARCH_TAGS_RU = "search_tags_ru";
+  public static final String KEY_DEFINITION_ZH_HK = "definition_zh_HK";
+  public static final String KEY_NOTES_ZH_HK = "notes_zh_HK";
+  public static final String KEY_EXAMPLES_ZH_HK = "examples_zh_HK";
+  public static final String KEY_SEARCH_TAGS_ZH_HK = "search_tags_zh_HK";
 
   // The order of the keys to access the columns.
   public static final int COLUMN_ID = 0;
@@ -87,22 +100,64 @@ public class KlingonContentDatabase {
   public static final int COLUMN_EXAMPLES = 10;
   public static final int COLUMN_SEARCH_TAGS = 11;
   public static final int COLUMN_SOURCE = 12;
+
   // Languages other than English.
   public static final int COLUMN_DEFINITION_DE = 13;
   public static final int COLUMN_NOTES_DE = 14;
   public static final int COLUMN_EXAMPLES_DE = 15;
   public static final int COLUMN_SEARCH_TAGS_DE = 16;
-  public static final int COLUMN_DEFINITION_RU = 17;
-  public static final int COLUMN_NOTES_RU = 18;
-  public static final int COLUMN_EXAMPLES_RU = 19;
-  public static final int COLUMN_SEARCH_TAGS_RU = 20;
+  public static final int COLUMN_DEFINITION_FA = 17;
+  public static final int COLUMN_NOTES_FA = 18;
+  public static final int COLUMN_EXAMPLES_FA = 19;
+  public static final int COLUMN_SEARCH_TAGS_FA = 20;
+  public static final int COLUMN_DEFINITION_SV = 21;
+  public static final int COLUMN_NOTES_SV = 22;
+  public static final int COLUMN_EXAMPLES_SV = 23;
+  public static final int COLUMN_SEARCH_TAGS_SV = 25;
+  public static final int COLUMN_DEFINITION_RU = 25;
+  public static final int COLUMN_NOTES_RU = 26;
+  public static final int COLUMN_EXAMPLES_RU = 27;
+  public static final int COLUMN_SEARCH_TAGS_RU = 28;
+  public static final int COLUMN_DEFINITION_ZH_HK = 29;
+  public static final int COLUMN_NOTES_ZH_HK = 30;
+  public static final int COLUMN_EXAMPLES_ZH_HK = 31;
+  public static final int COLUMN_SEARCH_TAGS_ZH_HK = 32;
 
   // All keys.
   public static final String[] ALL_KEYS = {
-    KEY_ID, KEY_ENTRY_NAME, KEY_PART_OF_SPEECH, KEY_DEFINITION, KEY_SYNONYMS, KEY_ANTONYMS,
-    KEY_SEE_ALSO, KEY_NOTES, KEY_HIDDEN_NOTES, KEY_COMPONENTS, KEY_EXAMPLES, KEY_SEARCH_TAGS,
-    KEY_SOURCE, KEY_DEFINITION_DE, KEY_NOTES_DE, KEY_EXAMPLES_DE, KEY_SEARCH_TAGS_DE,
-    KEY_DEFINITION_RU, KEY_NOTES_RU, KEY_EXAMPLES_RU, KEY_SEARCH_TAGS_RU,
+    KEY_ID,
+    KEY_ENTRY_NAME,
+    KEY_PART_OF_SPEECH,
+    KEY_DEFINITION,
+    KEY_SYNONYMS,
+    KEY_ANTONYMS,
+    KEY_SEE_ALSO,
+    KEY_NOTES,
+    KEY_HIDDEN_NOTES,
+    KEY_COMPONENTS,
+    KEY_EXAMPLES,
+    KEY_SEARCH_TAGS,
+    KEY_SOURCE,
+    KEY_DEFINITION_DE,
+    KEY_NOTES_DE,
+    KEY_EXAMPLES_DE,
+    KEY_SEARCH_TAGS_DE,
+    KEY_DEFINITION_FA,
+    KEY_NOTES_FA,
+    KEY_EXAMPLES_FA,
+    KEY_SEARCH_TAGS_FA,
+    KEY_DEFINITION_SV,
+    KEY_NOTES_SV,
+    KEY_EXAMPLES_SV,
+    KEY_SEARCH_TAGS_SV,
+    KEY_DEFINITION_RU,
+    KEY_NOTES_RU,
+    KEY_EXAMPLES_RU,
+    KEY_SEARCH_TAGS_RU,
+    KEY_DEFINITION_ZH_HK,
+    KEY_NOTES_ZH_HK,
+    KEY_EXAMPLES_ZH_HK,
+    KEY_SEARCH_TAGS_ZH_HK,
   };
 
   // The name of the database and the database object for accessing it.
@@ -114,7 +169,7 @@ public class KlingonContentDatabase {
 
   // This should be kept in sync with the version number in the database
   // entry {boQwI':n} of the database which is bundled into the app.
-  private static final int BUNDLED_DATABASE_VERSION = 201806240;
+  private static final int BUNDLED_DATABASE_VERSION = 201806250;
 
   // Metadata about the installed database, and the updated database, if any.
   public static final String KEY_INSTALLED_DATABASE_VERSION = "installed_database_version";
@@ -927,10 +982,22 @@ public class KlingonContentDatabase {
       entry.getNotes_DE(),
       entry.getExamples_DE(),
       entry.getSearchTags_DE(),
+      entry.getDefinition_FA(),
+      entry.getNotes_FA(),
+      entry.getExamples_FA(),
+      entry.getSearchTags_FA(),
+      entry.getDefinition_SV(),
+      entry.getNotes_SV(),
+      entry.getExamples_SV(),
+      entry.getSearchTags_SV(),
       entry.getDefinition_RU(),
       entry.getNotes_RU(),
       entry.getExamples_RU(),
       entry.getSearchTags_RU(),
+      entry.getDefinition_ZH_HK(),
+      entry.getNotes_ZH_HK(),
+      entry.getExamples_ZH_HK(),
+      entry.getSearchTags_ZH_HK(),
     };
   }
 
@@ -953,10 +1020,22 @@ public class KlingonContentDatabase {
       entry.getNotes_DE(),
       entry.getExamples_DE(),
       entry.getSearchTags_DE(),
+      entry.getDefinition_FA(),
+      entry.getNotes_FA(),
+      entry.getExamples_FA(),
+      entry.getSearchTags_FA(),
+      entry.getDefinition_SV(),
+      entry.getNotes_SV(),
+      entry.getExamples_SV(),
+      entry.getSearchTags_SV(),
       entry.getDefinition_RU(),
       entry.getNotes_RU(),
       entry.getExamples_RU(),
       entry.getSearchTags_RU(),
+      entry.getDefinition_ZH_HK(),
+      entry.getNotes_ZH_HK(),
+      entry.getExamples_ZH_HK(),
+      entry.getSearchTags_ZH_HK(),
     };
   }
 
@@ -1105,14 +1184,14 @@ public class KlingonContentDatabase {
           sharedPrefs.getString(
               KEY_INSTALLED_DATABASE_VERSION, /* default */ getBundledDatabaseVersion());
       String updatedVersion =
-          sharedPrefs.getString(
-              KEY_UPDATED_DATABASE_VERSION, /* default */ installedVersion);
+          sharedPrefs.getString(KEY_UPDATED_DATABASE_VERSION, /* default */ installedVersion);
       if (updatedVersion.compareToIgnoreCase(dottedVersion(newBundledVersion)) >= 0) {
         // Either a new database is already installed, or is about to be, so do nothing.
         return;
       }
 
-      // The database needs to be updated from the bundled database, so clear any existing databases.
+      // The database needs to be updated from the bundled database, so clear any existing
+      // databases.
       mHelperContext.deleteDatabase(DATABASE_NAME);
       mHelperContext.deleteDatabase(REPLACEMENT_DATABASE_NAME);
 
@@ -1178,8 +1257,7 @@ public class KlingonContentDatabase {
           sharedPrefs.getString(
               KEY_INSTALLED_DATABASE_VERSION, /* default */ getBundledDatabaseVersion());
       String updatedVersion =
-          sharedPrefs.getString(
-              KEY_UPDATED_DATABASE_VERSION, /* default */ installedVersion);
+          sharedPrefs.getString(KEY_UPDATED_DATABASE_VERSION, /* default */ installedVersion);
       if (updatedVersion.compareToIgnoreCase(installedVersion) > 0
           && checkDBExists(REPLACEMENT_DATABASE_NAME)) {
         copyDBFromReplacement();
