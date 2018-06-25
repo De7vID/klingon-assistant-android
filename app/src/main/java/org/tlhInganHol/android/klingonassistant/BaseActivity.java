@@ -199,13 +199,26 @@ public class BaseActivity extends AppCompatActivity
 
     View headerView = navigationView.getHeaderView(0);
     TextView appNameView = (TextView) headerView.findViewById(R.id.app_name_view);
-    TextView versionView = (TextView) headerView.findViewById(R.id.version_view);
+    TextView versionsView = (TextView) headerView.findViewById(R.id.versions_view);
     appNameView.setText(klingonAppName);
 
     // We use the version of the built-in database as the app's version, since they're in sync.
-    versionView.setText(
-        String.format(getBaseContext().getResources().getString(R.string.app_version),
-        KlingonContentDatabase.getBundledDatabaseVersion()));
+    String bundledVersion = KlingonContentDatabase.getBundledDatabaseVersion();
+    String installedVersion =
+        sharedPrefs.getString(
+            KlingonContentDatabase.KEY_INSTALLED_DATABASE_VERSION, /* default */ bundledVersion);
+    if (installedVersion == bundledVersion) {
+      versionsView.setText(
+          String.format(
+              getBaseContext().getResources().getString(R.string.app_version),
+              bundledVersion));
+    } else {
+      versionsView.setText(
+          String.format(
+              getBaseContext().getResources().getString(R.string.app_and_db_versions),
+              bundledVersion,
+              installedVersion));
+    }
 
     // If the device is in landscape orientation and the screen size is large (or bigger), then
     // lock the navigation drawer in open mode.
@@ -222,8 +235,7 @@ public class BaseActivity extends AppCompatActivity
     }
 
     // Schedule the update database service if it hasn't already been started.
-    if (sharedPrefs.getBoolean(
-        Preferences.KEY_UPDATE_DB_CHECKBOX_PREFERENCE, /* default */ true)) {
+    if (sharedPrefs.getBoolean(Preferences.KEY_UPDATE_DB_CHECKBOX_PREFERENCE, /* default */ true)) {
       runUpdateDatabaseServiceJob(/* isOneOffJob */ false);
     }
 
@@ -252,8 +264,7 @@ public class BaseActivity extends AppCompatActivity
 
     // Schedule the update database service if it hasn't already been started. It's necessary to do
     // this here because the setting might have changed in Preferences.
-    if (sharedPrefs.getBoolean(
-        Preferences.KEY_UPDATE_DB_CHECKBOX_PREFERENCE, /* default */ true)) {
+    if (sharedPrefs.getBoolean(Preferences.KEY_UPDATE_DB_CHECKBOX_PREFERENCE, /* default */ true)) {
       runUpdateDatabaseServiceJob(/* isOneOffJob */ false);
     } else {
       // If the preference is unchecked, cancel the persisted job.
@@ -264,12 +275,13 @@ public class BaseActivity extends AppCompatActivity
     // Put a notification dot in the hamburger menu if a database update is available.
     if (sharedPrefs.getBoolean(
         Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE, /* default */ false)) {
-      String installedVersion = sharedPrefs.getString(
+      String installedVersion =
+          sharedPrefs.getString(
               KlingonContentDatabase.KEY_INSTALLED_DATABASE_VERSION,
               /* default */ KlingonContentDatabase.getBundledDatabaseVersion());
-      String updatedVersion = sharedPrefs.getString(
-              KlingonContentDatabase.KEY_UPDATED_DATABASE_VERSION,
-              /* default */ installedVersion);
+      String updatedVersion =
+          sharedPrefs.getString(
+              KlingonContentDatabase.KEY_UPDATED_DATABASE_VERSION, /* default */ installedVersion);
       if (updatedVersion.compareToIgnoreCase(installedVersion) > 0) {
         TextView hamburgerDot = (TextView) findViewById(R.id.hamburger_dot);
         hamburgerDot.setVisibility(View.VISIBLE);

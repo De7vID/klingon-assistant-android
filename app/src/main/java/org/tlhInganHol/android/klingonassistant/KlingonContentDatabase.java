@@ -99,10 +99,27 @@ public class KlingonContentDatabase {
 
   // All keys.
   public static final String[] ALL_KEYS = {
-    KEY_ID, KEY_ENTRY_NAME, KEY_PART_OF_SPEECH, KEY_DEFINITION, KEY_SYNONYMS, KEY_ANTONYMS,
-    KEY_SEE_ALSO, KEY_NOTES, KEY_HIDDEN_NOTES, KEY_COMPONENTS, KEY_EXAMPLES, KEY_SEARCH_TAGS,
-    KEY_SOURCE, KEY_DEFINITION_DE, KEY_NOTES_DE, KEY_EXAMPLES_DE, KEY_SEARCH_TAGS_DE,
-    KEY_DEFINITION_RU, KEY_NOTES_RU, KEY_EXAMPLES_RU, KEY_SEARCH_TAGS_RU,
+    KEY_ID,
+    KEY_ENTRY_NAME,
+    KEY_PART_OF_SPEECH,
+    KEY_DEFINITION,
+    KEY_SYNONYMS,
+    KEY_ANTONYMS,
+    KEY_SEE_ALSO,
+    KEY_NOTES,
+    KEY_HIDDEN_NOTES,
+    KEY_COMPONENTS,
+    KEY_EXAMPLES,
+    KEY_SEARCH_TAGS,
+    KEY_SOURCE,
+    KEY_DEFINITION_DE,
+    KEY_NOTES_DE,
+    KEY_EXAMPLES_DE,
+    KEY_SEARCH_TAGS_DE,
+    KEY_DEFINITION_RU,
+    KEY_NOTES_RU,
+    KEY_EXAMPLES_RU,
+    KEY_SEARCH_TAGS_RU,
   };
 
   // The name of the database and the database object for accessing it.
@@ -1105,14 +1122,14 @@ public class KlingonContentDatabase {
           sharedPrefs.getString(
               KEY_INSTALLED_DATABASE_VERSION, /* default */ getBundledDatabaseVersion());
       String updatedVersion =
-          sharedPrefs.getString(
-              KEY_UPDATED_DATABASE_VERSION, /* default */ installedVersion);
+          sharedPrefs.getString(KEY_UPDATED_DATABASE_VERSION, /* default */ installedVersion);
       if (updatedVersion.compareToIgnoreCase(dottedVersion(newBundledVersion)) >= 0) {
         // Either a new database is already installed, or is about to be, so do nothing.
         return;
       }
 
-      // The database needs to be updated from the bundled database, so clear any existing databases.
+      // The database needs to be updated from the bundled database, so clear any existing
+      // databases.
       mHelperContext.deleteDatabase(DATABASE_NAME);
       mHelperContext.deleteDatabase(REPLACEMENT_DATABASE_NAME);
 
@@ -1178,8 +1195,7 @@ public class KlingonContentDatabase {
           sharedPrefs.getString(
               KEY_INSTALLED_DATABASE_VERSION, /* default */ getBundledDatabaseVersion());
       String updatedVersion =
-          sharedPrefs.getString(
-              KEY_UPDATED_DATABASE_VERSION, /* default */ installedVersion);
+          sharedPrefs.getString(KEY_UPDATED_DATABASE_VERSION, /* default */ installedVersion);
       if (updatedVersion.compareToIgnoreCase(installedVersion) > 0
           && checkDBExists(REPLACEMENT_DATABASE_NAME)) {
         copyDBFromReplacement();

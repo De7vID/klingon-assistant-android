@@ -29,9 +29,9 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/version_view"
+        android:id="@+id/versions_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VERSION" />
+        android:text="VERSIONS" />
 
 </LinearLayout>
