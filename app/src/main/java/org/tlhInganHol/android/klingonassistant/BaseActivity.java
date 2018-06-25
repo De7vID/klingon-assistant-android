@@ -210,8 +210,7 @@ public class BaseActivity extends AppCompatActivity
     if (installedVersion == bundledVersion) {
       versionsView.setText(
           String.format(
-              getBaseContext().getResources().getString(R.string.app_version),
-              bundledVersion));
+              getBaseContext().getResources().getString(R.string.app_version), bundledVersion));
     } else {
       versionsView.setText(
           String.format(

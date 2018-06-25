@@ -387,10 +387,22 @@ public class KlingonContentProvider extends ContentProvider {
     private String mNotes_DE = "";
     private String mExamples_DE = "";
     private String mSearchTags_DE = "";
+    private String mDefinition_FA = "";
+    private String mNotes_FA = "";
+    private String mExamples_FA = "";
+    private String mSearchTags_FA = "";
+    private String mDefinition_SV = "";
+    private String mNotes_SV = "";
+    private String mExamples_SV = "";
+    private String mSearchTags_SV = "";
     private String mDefinition_RU = "";
     private String mNotes_RU = "";
     private String mExamples_RU = "";
     private String mSearchTags_RU = "";
+    private String mDefinition_ZH_HK = "";
+    private String mNotes_ZH_HK = "";
+    private String mExamples_ZH_HK = "";
+    private String mSearchTags_ZH_HK = "";
 
     // Part of speech metadata.
     private enum BasePartOfSpeechEnum {
@@ -563,10 +575,25 @@ public class KlingonContentProvider extends ContentProvider {
       mExamples_DE = cursor.getString(KlingonContentDatabase.COLUMN_EXAMPLES_DE);
       mSearchTags_DE = cursor.getString(KlingonContentDatabase.COLUMN_SEARCH_TAGS_DE);
 
+      mDefinition_FA = cursor.getString(KlingonContentDatabase.COLUMN_DEFINITION_FA);
+      mNotes_FA = cursor.getString(KlingonContentDatabase.COLUMN_NOTES_FA);
+      mExamples_FA = cursor.getString(KlingonContentDatabase.COLUMN_EXAMPLES_FA);
+      mSearchTags_FA = cursor.getString(KlingonContentDatabase.COLUMN_SEARCH_TAGS_FA);
+
+      mDefinition_SV = cursor.getString(KlingonContentDatabase.COLUMN_DEFINITION_SV);
+      mNotes_SV = cursor.getString(KlingonContentDatabase.COLUMN_NOTES_SV);
+      mExamples_SV = cursor.getString(KlingonContentDatabase.COLUMN_EXAMPLES_SV);
+      mSearchTags_SV = cursor.getString(KlingonContentDatabase.COLUMN_SEARCH_TAGS_SV);
+
       mDefinition_RU = cursor.getString(KlingonContentDatabase.COLUMN_DEFINITION_RU);
       mNotes_RU = cursor.getString(KlingonContentDatabase.COLUMN_NOTES_RU);
       mExamples_RU = cursor.getString(KlingonContentDatabase.COLUMN_EXAMPLES_RU);
       mSearchTags_RU = cursor.getString(KlingonContentDatabase.COLUMN_SEARCH_TAGS_RU);
+
+      mDefinition_ZH_HK = cursor.getString(KlingonContentDatabase.COLUMN_DEFINITION_ZH_HK);
+      mNotes_ZH_HK = cursor.getString(KlingonContentDatabase.COLUMN_NOTES_ZH_HK);
+      mExamples_ZH_HK = cursor.getString(KlingonContentDatabase.COLUMN_EXAMPLES_ZH_HK);
+      mSearchTags_ZH_HK = cursor.getString(KlingonContentDatabase.COLUMN_SEARCH_TAGS_ZH_HK);
 
       mSynonyms = cursor.getString(KlingonContentDatabase.COLUMN_SYNONYMS);
       mAntonyms = cursor.getString(KlingonContentDatabase.COLUMN_ANTONYMS);
@@ -967,6 +994,8 @@ public class KlingonContentProvider extends ContentProvider {
       return mDefinition;
     }
 
+    // TODO: Refactor the additional languages code to be much more compact.
+    // These functions should probably take a language code as a second parameter.
     public String getDefinition_DE() {
       // If there is no German definition, the cursor could've returned
       // null, so that needs to be handled.
@@ -1034,6 +1063,54 @@ public class KlingonContentProvider extends ContentProvider {
       }
     }
 
+    public String getDefinition_FA() {
+      // If there is no Persian definition, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mDefinition_FA == null) ? "" : mDefinition_FA;
+    }
+
+    public String getNotes_FA() {
+      // If there are no Persian notes, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mNotes_FA == null) ? "" : mNotes_FA;
+    }
+
+    public String getExamples_FA() {
+      // If there are no Persian examples, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mExamples_FA == null) ? "" : mExamples_FA;
+    }
+
+    public String getSearchTags_FA() {
+      // If there are no Persian search tags, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mSearchTags_FA == null) ? "" : mSearchTags_FA;
+    }
+
+    public String getDefinition_SV() {
+      // If there is no Swedish definition, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mDefinition_SV == null) ? "" : mDefinition_SV;
+    }
+
+    public String getNotes_SV() {
+      // If there are no Swedish notes, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mNotes_SV == null) ? "" : mNotes_SV;
+    }
+
+    public String getExamples_SV() {
+      // If there are no Swedish examples, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mExamples_SV == null) ? "" : mExamples_SV;
+    }
+
+    public String getSearchTags_SV() {
+      // If there are no Swedish search tags, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mSearchTags_SV == null) ? "" : mSearchTags_SV;
+    }
+
     public String getDefinition_RU() {
       // If there is no Russian definition, the cursor could've returned
       // null, so that needs to be handled.
@@ -1056,6 +1133,30 @@ public class KlingonContentProvider extends ContentProvider {
       // If there are no Russian search tags, the cursor could've returned
       // null, so that needs to be handled.
       return (mSearchTags_RU == null) ? "" : mSearchTags_RU;
+    }
+
+    public String getDefinition_ZH_HK() {
+      // If there is no Chinese (Hong Kong) definition, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mDefinition_ZH_HK == null) ? "" : mDefinition_ZH_HK;
+    }
+
+    public String getNotes_ZH_HK() {
+      // If there are no Chinese (Hong Kong) notes, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mNotes_ZH_HK == null) ? "" : mNotes_ZH_HK;
+    }
+
+    public String getExamples_ZH_HK() {
+      // If there are no Chinese (Hong Kong) examples, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mExamples_ZH_HK == null) ? "" : mExamples_ZH_HK;
+    }
+
+    public String getSearchTags_ZH_HK() {
+      // If there are no Chinese (Hong Kong) search tags, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mSearchTags_ZH_HK == null) ? "" : mSearchTags_ZH_HK;
     }
 
     public String getSynonyms() {
