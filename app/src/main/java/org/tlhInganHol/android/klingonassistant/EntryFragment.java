@@ -126,6 +126,34 @@ public class EntryFragment extends Fragment {
       expandedDefinition += englishDefinitionHeader + englishDefinition;
     }
 
+    // Experimental: Display other languages.
+    if (sharedPrefs.getBoolean(
+        Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE, /* default */ false)) {
+      String definition_DE = entry.getDefinition_DE();
+      String definition_FA = entry.getDefinition_FA();
+      String definition_SV = entry.getDefinition_SV();
+      String definition_RU = entry.getDefinition_RU();
+      String definition_ZH_HK = entry.getDefinition_ZH_HK();
+
+      // Show the German definition here only if it isn't already shown as the primary definition
+      // (and the experimental flag is set to true).
+      if (!displayGermanEntry && !definition_DE.equals("")) {
+        expandedDefinition += "\nde: " + definition_DE;
+      }
+      if (!definition_FA.equals("")) {
+        expandedDefinition += "\nfa: " + definition_FA;
+      }
+      if (!definition_SV.equals("")) {
+        expandedDefinition += "\nsv: " + definition_SV;
+      }
+      if (!definition_RU.equals("")) {
+        expandedDefinition += "\nru: " + definition_RU;
+      }
+      if (!definition_ZH_HK.equals("")) {
+        expandedDefinition += "\nzh-HK: " + definition_ZH_HK;
+      }
+    }
+
     // Show the basic notes.
     String notes;
     if (entry.shouldDisplayGermanNotes()) {
