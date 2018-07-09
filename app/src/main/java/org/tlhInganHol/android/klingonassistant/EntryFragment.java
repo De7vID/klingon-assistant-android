@@ -127,7 +127,7 @@ public class EntryFragment extends Fragment {
     }
 
     // Experimental: Display other languages.
-    if (sharedPrefs.getBoolean(
+    if (!entry.isAlternativeSpelling() && sharedPrefs.getBoolean(
         Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE, /* default */ false)) {
       String definition_DE = entry.getDefinition_DE();
       String definition_FA = entry.getDefinition_FA();
