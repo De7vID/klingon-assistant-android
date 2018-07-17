@@ -1,6 +1,7 @@
 CHANGELOG
 
-2018-06-25: Might as well add Persian, Swedish, and Chinese (Hong Kong) while we're at it.
+2018-07-17: Disable auto-backup of database which seems to cause problems. Hide other languages for alt entries.
+2018-06-25: Might as well add Persian, Swedish, and Chinese (Hong Kong) while we're at it. Also import Swedish data from Klingonska Akademien.
 2018-06-24: Add code to handle placeholders for Russian data.
 2018-06-11: Make the difference between app version and database version more clear.
 2018-04-12: Caught up to all German definitions (again).
