@@ -49,6 +49,12 @@ public class Preferences extends AppCompatPreferenceActivity
   private static final String KEY_KLINGON_UI_CHECKBOX_PREFERENCE = "klingon_ui_checkbox_preference";
   private static final String KEY_KLINGON_FONT_LIST_PREFERENCE = "klingon_font_list_preference";
   private static final String KEY_LANGUAGE_DEFAULT_ALREADY_SET = "language_default_already_set";
+  public static final String KEY_SHOW_SECONDARY_LANGUAGE_CHECKBOX_PREFERENCE =
+      "show_secondary_language_checkbox_preference";
+  public static final String KEY_SEARCH_SECONDARY_LANGUAGE_CHECKBOX_PREFERENCE =
+      "search_secondary_language_checkbox_preference";
+
+  // Legacy support for German, deprecated and replaced by secondary language support.
   public static final String KEY_SHOW_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE =
       "show_german_definitions_checkbox_preference";
   public static final String KEY_SEARCH_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE =
@@ -138,6 +144,10 @@ public class Preferences extends AppCompatPreferenceActivity
           Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
     klingonFontListPreference.setTitle(ssb);
+
+    // TODO: Expand the language list to include incomplete languages if unsupported features is
+    // selected. Switch to English if unsupported features has been deselected and an incomplete
+    // language has been selected. Enable or disable the search in secondary language checkbox.
 
     // Set the defaults for the German options based on the user's language, if it hasn't been
     // already set.
@@ -237,5 +247,6 @@ public class Preferences extends AppCompatPreferenceActivity
               })
           .show();
     }
+    // TODO: React to unsupported features and secondary language options changes here.
   }
 }

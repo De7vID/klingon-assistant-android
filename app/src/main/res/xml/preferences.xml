@@ -47,15 +47,6 @@
                 android:title="@string/klingon_ui_preference_title"
                 android:summary="@string/klingon_ui_preference_summary"
                 android:defaultValue="false" />
-        <!--
-        <CheckBoxPreference
-                android:key="klingon_font_checkbox_preference"
-                android:dependency="klingon_ui_checkbox_preference"
-                android:layout="?android:attr/preferenceLayoutChild"
-                android:title="@string/klingon_font_preference_title"
-                android:summary="@string/klingon_font_preference_summary"
-                android:defaultValue="false" />
-        -->
 
         <CheckBoxPreference
                 android:key="show_german_definitions_checkbox_preference"
@@ -138,6 +129,27 @@
                 android:title="@string/show_unsupported_features_preference_title"
                 android:summary="@string/show_unsupported_features_preference_summary"
                 android:defaultValue="false" />
+
+        <!--
+        <ListPreference
+                android:key="show_secondary_language_list_preference"
+                android:dependency="show_unsupported_features_checkbox_preference"
+                android:layout="?android:attr/preferenceLayoutChild"
+                android:title="@string/show_secondary_language_preference_title"
+                android:summary="@string/show_secondary_language_preference_summary"
+                android:defaultValue="NONE"
+                android:entries="@array/secondaryLanguageChoicesArray"
+                android:entryValues="@array/secondaryLanguageChoicesValues" />
+        <CheckBoxPreference
+                android:key="search_secondary_language_checkbox_preference"
+                android:dependency="show_unsupported_features_checkbox_preference"
+                android:layout="?android:attr/preferenceLayoutChild"
+                android:title="@string/search_secondary_language_preference_title"
+                android:summary="@string/search_secondary_language_preference_summary"
+                android:enabled="false"
+                android:defaultValue="false" />
+        -->
+
     </PreferenceCategory>
 
 </PreferenceScreen>

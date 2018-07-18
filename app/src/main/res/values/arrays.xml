@@ -31,4 +31,22 @@
     <item>TNG</item>
     <item>DSC</item>
   </string-array>
+
+  <string-array name="secondaryLanguageChoicesArray">
+    <item>@string/secondary_language_none</item>
+    <item>@string/secondary_language_german</item>
+    <item>@string/secondary_language_persian</item>
+    <item>@string/secondary_language_russian</item>
+    <item>@string/secondary_language_swedish</item>
+    <item>@string/secondary_language_chinese_hong_kong</item>
+  </string-array>
+
+  <string-array name="secondaryLanguageChoicesValues">
+    <item>NONE</item>
+    <item>de</item>
+    <item>fa</item>
+    <item>ru</item>
+    <item>sv</item>
+    <item>zh-HK</item>
+  </string-array>
 </resources>

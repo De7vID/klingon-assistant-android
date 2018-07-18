@@ -151,6 +151,10 @@
         <string name="show_german_definitions_preference_summary">Display German translations of the definitions.</string>
         <string name="search_german_definitions_preference_title">Search German definitions</string>
         <string name="search_german_definitions_preference_summary">Include German definitions when searching.</string>
+        <string name="show_secondary_language_preference_title">Non-English definitions</string>
+        <string name="show_secondary_language_preference_summary">Display entries in another language (in addition to English).</string>
+        <string name="search_secondary_language_preference_title">Search non-English definitions</string>
+        <string name="search_secondary_language_preference_summary">Include non-English definitions when searching.</string>
       <string name="input_preferences">Input preferences</string>
         <string name="xifan_hol_preference_title">Enable \"xifan hol\" input</string>
         <string name="xifan_hol_preference_summary">Allow typing \"x\" for {tlh}, \"f\" for {ng}, etc.</string>
@@ -179,6 +183,14 @@
     <string name="font_latin">Off</string>
     <string name="font_tng">TNG {pIqaD}</string>
     <string name="font_dsc">DSC {pIqaD}</string>
+
+    <!-- Choices for secondary languages. -->
+    <string name="secondary_language_none">None (show English only)</string>
+    <string name="secondary_language_german">German</string>
+    <string name="secondary_language_persian">[testing] Persian</string>
+    <string name="secondary_language_russian">[testing] Russian</string>
+    <string name="secondary_language_swedish">[testing] Swedish</string>
+    <string name="secondary_language_chinese_hong_kong">[testing] Hong Kong Chinese</string>
 
     <!-- Metadata labels and descriptions. -->
     <string name="label_see_alt_entry">See</string>
