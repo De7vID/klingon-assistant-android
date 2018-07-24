@@ -341,9 +341,14 @@ public class KlingonContentProvider extends ContentProvider {
             .replaceAll(",", "")
             .replaceAll(";", "")
             .replaceAll("!", "")
+            .replaceAll("\\(", "▹")
+            .replaceAll("\\)", "◃")
+            .replaceAll("-", "◃")
             .replaceAll("\\?", "")
             .replaceAll("\\.", "")
-            .replaceAll("", "\\.\\.\\.");
+            // Note: The LHS is in Klingon due to previous replacements.
+            // We replace three periods in a row with an ellipsis.
+            .replaceAll("", "⋯");
     return klingonString;
   }
 
