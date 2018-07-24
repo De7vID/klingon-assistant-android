@@ -1,6 +1,5 @@
     <table name="mem">
-      <!-- Checked on: 2017.08.22. -->
-      <column name="_id">11100</column>
+      <column name="_id">11140</column>
       <column name="entry_name">jay</column>
       <column name="part_of_speech">n</column>
       <column name="definition">the consonant {j:sen:nolink}</column>
@@ -19,8 +18,7 @@
       <column name="source">[1] {KLI mailing list 2009.07.27:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11101</column>
+      <column name="_id">11141</column>
       <column name="entry_name">jab</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">serve (food)</column>
@@ -39,8 +37,7 @@
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11102</column>
+      <column name="_id">11142</column>
       <column name="entry_name">jabbI'ID</column>
       <column name="part_of_speech">n</column>
       <column name="definition">data transmission</column>
@@ -59,7 +56,7 @@
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11103</column>
+      <column name="_id">11143</column>
       <column name="entry_name">jabmeH</column>
       <column name="part_of_speech">n:fic,deriv</column>
       <column name="definition">In Order to Serve</column>
@@ -80,8 +77,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11104</column>
+      <column name="_id">11144</column>
       <column name="entry_name">jabwI'</column>
       <column name="part_of_speech">n:deriv,being</column>
       <column name="definition">food server, waiter, waitress</column>
@@ -100,8 +96,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11105</column>
+      <column name="_id">11145</column>
       <column name="entry_name">jach</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">scream, cry out, shout, yell</column>
@@ -121,7 +116,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11106</column>
+      <column name="_id">11146</column>
       <column name="entry_name">jachwI'na'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">Master of the Scream</column>
@@ -140,7 +135,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {paq'batlh p.xvii,xxii,40-41:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11107</column>
+      <column name="_id">11147</column>
       <column name="entry_name">jach SuvwI' 'e' yIQoy!</column>
       <column name="part_of_speech">sen:phr</column>
       <column name="definition">Hear the warrior cry out!</column>
@@ -159,8 +154,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {TKW p.195:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11108</column>
+      <column name="_id">11148</column>
       <column name="entry_name">jaD</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">throw around, hurl about</column>
@@ -179,8 +173,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2016.10.31. -->
-      <column name="_id">11109</column>
+      <column name="_id">11149</column>
       <column name="entry_name">jaDchu'</column>
       <column name="part_of_speech">v:t_c,deriv</column>
       <column name="definition">juggle (objects, not tasks)</column>
@@ -199,8 +192,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {Saarbrücken qepHom'a' 2016:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11110</column>
+      <column name="_id">11150</column>
       <column name="entry_name">jagh</column>
       <column name="part_of_speech">n:being</column>
       <column name="definition">enemy</column>
@@ -219,7 +211,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11111</column>
+      <column name="_id">11151</column>
       <column name="entry_name">jagh DajeymeH, nIteb yISuvrup.</column>
       <column name="part_of_speech">sen:rp</column>
       <column name="definition">To defeat the enemy, be ready to fight alone.</column>
@@ -238,7 +230,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {PK:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11112</column>
+      <column name="_id">11152</column>
       <column name="entry_name">jagh lucharghlu'ta'bogh HuH ghopDu'lIj lungaSjaj.</column>
       <column name="part_of_speech">sen:nt</column>
       <column name="definition">May the bile of the vanquished fill your hands.</column>
@@ -257,7 +249,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {PK:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11113</column>
+      <column name="_id">11153</column>
       <column name="entry_name">jagh yIbuStaH!</column>
       <column name="part_of_speech">sen:rp</column>
       <column name="definition">Focus on the enemy!</column>
@@ -276,7 +268,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {qep'a' 2014:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11114</column>
+      <column name="_id">11154</column>
       <column name="entry_name">jagh 'Iw vIpoQ.</column>
       <column name="part_of_speech">sen:phr</column>
       <column name="definition">I demand the blood of the enemy.</column>
@@ -295,8 +287,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source"></column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11115</column>
+      <column name="_id">11155</column>
       <column name="entry_name">jaghla'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">enemy commander</column>
@@ -315,8 +306,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11116</column>
+      <column name="_id">11156</column>
       <column name="entry_name">jaH</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">go</column>
@@ -339,8 +329,7 @@ The title of the book may be a reference to the Twilight Zone episode "To Serve 
       <column name="source">[1] {TKD:src}, [2] {HQ 7.4, Dec. 1998:src}, [3] {Klingon Monopoly:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11117</column>
+      <column name="_id">11157</column>
       <column name="entry_name">jaj</column>
       <column name="part_of_speech">n</column>
       <column name="definition">day (from dawn to dawn)</column>
@@ -363,8 +352,7 @@ For "days ago" and "days from now", see {Hu':n} and {leS:n}, respectively.</colu
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2013.11.10. -->
-      <column name="_id">11118</column>
+      <column name="_id">11158</column>
       <column name="entry_name">jaj wa'</column>
       <column name="part_of_speech">n</column>
       <column name="definition">Sunday</column>
@@ -383,8 +371,7 @@ For "days ago" and "days from now", see {Hu':n} and {leS:n}, respectively.</colu
       <column name="source">[1] {Star Trek The Exhibition:src}, [2] {KLI mailing list 2012.04.01:src}, [3] {Saarbrücken qepHom'a' 2013:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11119</column>
+      <column name="_id">11159</column>
       <column name="entry_name">jajlo'</column>
       <column name="part_of_speech">n</column>
       <column name="definition">dawn</column>
@@ -403,8 +390,7 @@ For "days ago" and "days from now", see {Hu':n} and {leS:n}, respectively.</colu
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2016.07.26. -->
-      <column name="_id">11120</column>
+      <column name="_id">11160</column>
       <column name="entry_name">jajlo' chum</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">sunrise</column>
@@ -423,8 +409,7 @@ For "days ago" and "days from now", see {Hu':n} and {leS:n}, respectively.</colu
       <column name="source">[1] {qep'a' 2016:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11121</column>
+      <column name="_id">11161</column>
       <column name="entry_name">jajlo' Qa'</column>
       <column name="part_of_speech">n:anim,deriv</column>
       <column name="definition">A noisy animal (not a bird) known for making a ruckus at dawn, like a Terran rooster.</column>
@@ -443,7 +428,7 @@ For "days ago" and "days from now", see {Hu':n} and {leS:n}, respectively.</colu
       <column name="source">[1] {HQ 10.4, Dec. 2001:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11122</column>
+      <column name="_id">11162</column>
       <column name="entry_name">jajvam</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">today</column>
@@ -462,8 +447,7 @@ For "days ago" and "days from now", see {Hu':n} and {leS:n}, respectively.</colu
       <column name="source">[1] {TKW:src}, [2] {msn 1997.06.29:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2015.10.28. -->
-      <column name="_id">11123</column>
+      <column name="_id">11163</column>
       <column name="entry_name">jal</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">imagine, envision</column>
@@ -478,23 +462,21 @@ For "days ago" and "days from now", see {Hu':n} and {leS:n}, respectively.</colu
       <column name="examples">
 ▶ {puvbogh targh yIjal@@puv:v, -bogh:v, targh:n, yI-:v, jal:v} "Think about a flying targ."[1]
 ▶ {tlhIngan SoH 'e' vIjal@@tlhIngan:n, SoH:n, 'e':n, vI-:v, jal:v} "I imagine you are a Klingon."[1]
-▶ {tlhIngan SoH net jalchugh, qagh DatIv@@tlhIngan:n, SoH:n, net:n, jal:v, -chugh:v, qagh:n, Da-:v, tIv:v} "If you were a Klingon, you would enjoy gagh."[2]
-</column>
+▶ {tlhIngan SoH net jalchugh, qagh DatIv@@tlhIngan:n, SoH:n, net:n, jal:v, -chugh:v, qagh:n, Da-:v, tIv:v} "If you were a Klingon, you would enjoy gagh."[2]</column>
       <column name="examples_de"></column>
       <column name="search_tags">counterfactual, irrealis, subjunctive</column>
       <column name="search_tags_de"></column>
       <column name="source">[1] {Saarbrücken qepHom'a' 2015:src}, [2] {Saarbrücken qepHom'a' 2016:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11124</column>
+      <column name="_id">11164</column>
       <column name="entry_name">jan</column>
       <column name="part_of_speech">n:1</column>
       <column name="definition">device</column>
       <column name="definition_de">Gerät</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
-      <column name="see_also">{vIqraq:n}, {jom:v}, {jo':n}, {mIqta':n}, {jan:n:2}</column>
+      <column name="see_also">{SommI':n}, {vIqraq:n}, {jom:v}, {jo':n}, {mIqta':n}, {jan:n:2}</column>
       <column name="notes"></column>
       <column name="notes_de"></column>
       <column name="hidden_notes"></column>
@@ -508,8 +490,7 @@ For "days ago" and "days from now", see {Hu':n} and {leS:n}, respectively.</colu
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11125</column>
+      <column name="_id">11165</column>
       <column name="entry_name">jan</column>
       <column name="part_of_speech">n:2</column>
       <column name="definition">musical instrument</column>
@@ -528,7 +509,7 @@ For "days ago" and "days from now", see {Hu':n} and {leS:n}, respectively.</colu
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11126</column>
+      <column name="_id">11166</column>
       <column name="entry_name">jan qalI'qoS</column>
       <column name="part_of_speech">n:name</column>
       <column name="definition">John Calicos</column>
@@ -547,7 +528,26 @@ For "days ago" and "days from now", see {Hu':n} and {leS:n}, respectively.</colu
       <column name="source">[1] {STC 104:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11127</column>
+      <column name="_id">11167</column>
+      <column name="entry_name">janbI'</column>
+      <column name="part_of_speech">n</column>
+      <column name="definition">slope (mathematical term)</column>
+      <column name="definition_de"></column>
+      <column name="synonyms"></column>
+      <column name="antonyms"></column>
+      <column name="see_also">{bo'ghey:n}</column>
+      <column name="notes"></column>
+      <column name="notes_de"></column>
+      <column name="hidden_notes">This is a reference to the song "Sloop John B".</column>
+      <column name="components"></column>
+      <column name="examples"></column>
+      <column name="examples_de"></column>
+      <column name="search_tags"></column>
+      <column name="search_tags_de"></column>
+      <column name="source">[1] {qep'a' 2018:src}</column>
+    </table>
+    <table name="mem">
+      <column name="_id">11168</column>
       <column name="entry_name">janluq pIqarD</column>
       <column name="part_of_speech">n:name,fic</column>
       <column name="definition">Jean-Luc Picard</column>
@@ -568,8 +568,7 @@ In Klingon, titles generally go after the name, so "Captain Jean-Luc Picard" wou
       <column name="source">[1] {HQ 5.3, Sept. 1996:src}, [2] {SkyBox 25:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11128</column>
+      <column name="_id">11169</column>
       <column name="entry_name">jang</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">answer, reply</column>
@@ -606,8 +605,7 @@ In Klingon, titles generally go after the name, so "Captain Jean-Luc Picard" wou
       <column name="source">[1] {TKD:src}, [2] {HQ 7.4, Dec. 1998:src}, [3] {paq'batlh p.138-139:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11129</column>
+      <column name="_id">11170</column>
       <column name="entry_name">jaq</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be bold</column>
@@ -626,8 +624,7 @@ In Klingon, titles generally go after the name, so "Captain Jean-Luc Picard" wou
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11130</column>
+      <column name="_id">11171</column>
       <column name="entry_name">jaqmoH</column>
       <column name="part_of_speech">v:t_c,deriv</column>
       <column name="definition">embolden</column>
@@ -646,8 +643,7 @@ In Klingon, titles generally go after the name, so "Captain Jean-Luc Picard" wou
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.12.10. -->
-      <column name="_id">11131</column>
+      <column name="_id">11172</column>
       <column name="entry_name">jaqtala'</column>
       <column name="part_of_speech">n</column>
       <column name="definition">puberty, jak'tahla</column>
@@ -666,7 +662,7 @@ In Klingon, titles generally go after the name, so "Captain Jean-Luc Picard" wou
       <column name="source">[1] {Star Trek Insurrection:src}, [2] {KLI mailing list 2013.07.29:src}, [3] {qep'a' 2017:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11132</column>
+      <column name="_id">11173</column>
       <column name="entry_name">jaQ</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be deep</column>
@@ -687,7 +683,7 @@ Note that in Klingon, "deep space" is called {logh Hop:n}, literally, "far space
       <column name="source">[1] {KLI mailing list 2012.01.26:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11133</column>
+      <column name="_id">11174</column>
       <column name="entry_name">jaQHa'</column>
       <column name="part_of_speech">v:is,deriv</column>
       <column name="definition">be shallow</column>
@@ -706,8 +702,7 @@ Note that in Klingon, "deep space" is called {logh Hop:n}, literally, "far space
       <column name="source">[1] {KLI mailing list 2012.01.26:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11134</column>
+      <column name="_id">11175</column>
       <column name="entry_name">jar</column>
       <column name="part_of_speech">n</column>
       <column name="definition">month (Klingon)</column>
@@ -726,8 +721,7 @@ Note that in Klingon, "deep space" is called {logh Hop:n}, literally, "far space
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11135</column>
+      <column name="_id">11176</column>
       <column name="entry_name">jargh</column>
       <column name="part_of_speech">n:reg,body</column>
       <column name="definition">forehead</column>
@@ -746,8 +740,7 @@ Note that in Klingon, "deep space" is called {logh Hop:n}, literally, "far space
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11136</column>
+      <column name="_id">11177</column>
       <column name="entry_name">jaS</column>
       <column name="part_of_speech">adv</column>
       <column name="definition">differently</column>
@@ -766,7 +759,7 @@ Note that in Klingon, "deep space" is called {logh Hop:n}, literally, "far space
       <column name="source">[1] {TKDA:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11137</column>
+      <column name="_id">11178</column>
       <column name="entry_name">jaSHa'</column>
       <column name="part_of_speech">adv</column>
       <column name="definition">similarly, likewise, in the same way</column>
@@ -785,8 +778,7 @@ Note that in Klingon, "deep space" is called {logh Hop:n}, literally, "far space
       <column name="source">[1] {qep'a' 2012:src} ({KLI mailing list 2012.08.30:src}), [2] {Saarbrücken qepHom'a' 2013:src} ({KLI mailing list 2014.01.15:src})</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11138</column>
+      <column name="_id">11179</column>
       <column name="entry_name">jat</column>
       <column name="part_of_speech">n</column>
       <column name="definition">tongue</column>
@@ -805,8 +797,7 @@ Note that in Klingon, "deep space" is called {logh Hop:n}, literally, "far space
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11139</column>
+      <column name="_id">11180</column>
       <column name="entry_name">jat</column>
       <column name="part_of_speech">v:1,slang</column>
       <column name="definition">speak incoherently, mumble</column>
@@ -825,7 +816,7 @@ Note that in Klingon, "deep space" is called {logh Hop:n}, literally, "far space
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11140</column>
+      <column name="_id">11181</column>
       <column name="entry_name">jat</column>
       <column name="part_of_speech">v:2,reg</column>
       <column name="definition">be clumsy</column>
@@ -844,8 +835,7 @@ Note that in Klingon, "deep space" is called {logh Hop:n}, literally, "far space
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11141</column>
+      <column name="_id">11182</column>
       <column name="entry_name">jatyIn</column>
       <column name="part_of_speech">n</column>
       <column name="definition">spiritual possession</column>
@@ -864,8 +854,7 @@ Note that in Klingon, "deep space" is called {logh Hop:n}, literally, "far space
       <column name="source">[1] {KGT:src}, [2] {Diplomatic Implausibility:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11142</column>
+      <column name="_id">11183</column>
       <column name="entry_name">jatlh</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">speak, say</column>
@@ -900,8 +889,7 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="source">[1] {TKD:src}, [2] {TKDA:src}, [3] {msn 1997.06.29:src}, [4] {HQ 7.4, Dec. 1998:src}, [5] {ENT - Affliction:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11143</column>
+      <column name="_id">11184</column>
       <column name="entry_name">jav</column>
       <column name="part_of_speech">n:1,num</column>
       <column name="definition">six</column>
@@ -920,8 +908,7 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11144</column>
+      <column name="_id">11185</column>
       <column name="entry_name">jav</column>
       <column name="part_of_speech">n:2</column>
       <column name="definition">sixth tone of nonatonic musical scale</column>
@@ -940,8 +927,7 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11145</column>
+      <column name="_id">11186</column>
       <column name="entry_name">jav</column>
       <column name="part_of_speech">n:3,slang</column>
       <column name="definition">prisoner</column>
@@ -960,7 +946,7 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11146</column>
+      <column name="_id">11187</column>
       <column name="entry_name">javDIch</column>
       <column name="part_of_speech">n:num,deriv</column>
       <column name="definition">sixth</column>
@@ -979,8 +965,7 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2016.07.25. -->
-      <column name="_id">11147</column>
+      <column name="_id">11188</column>
       <column name="entry_name">javtIm</column>
       <column name="part_of_speech">n</column>
       <column name="definition">virus</column>
@@ -999,8 +984,7 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="source">[1] {qep'a' 2016:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11148</column>
+      <column name="_id">11189</column>
       <column name="entry_name">jaw</column>
       <column name="part_of_speech">v:t</column>
       <column name="definition">chat</column>
@@ -1019,8 +1003,7 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11149</column>
+      <column name="_id">11190</column>
       <column name="entry_name">jaw</column>
       <column name="part_of_speech">n</column>
       <column name="definition">lord, lady</column>
@@ -1030,7 +1013,9 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="see_also"></column>
       <column name="notes">It is unknown whether there is any difference between this word and {joH:n}.[2, p.41]</column>
       <column name="notes_de"></column>
-      <column name="hidden_notes">In {TKD:src} this word is defined as "lord" only, same as {joH:n:nolink}. However, {KGT:src} expanded the definition of {joH:n:nolink} to include "lady". Though not explicitly stated, this extension applies to {jaw:n:nolink} as well.</column>
+      <column name="hidden_notes">This word came about as an onscreen mispronunciation of {joH:n:nolink}.
+
+In {TKD:src} this word is defined as "lord" only, same as {joH:n:nolink}. However, {KGT:src} expanded the definition of {joH:n:nolink} to include "lady". Though not explicitly stated, this extension applies to {jaw:n:nolink} as well.</column>
       <column name="components"></column>
       <column name="examples"></column>
       <column name="examples_de"></column>
@@ -1039,8 +1024,7 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="source">[1] {TKD:src}, [2] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11150</column>
+      <column name="_id">11191</column>
       <column name="entry_name">jay'</column>
       <column name="part_of_speech">adv</column>
       <column name="definition">intensely (invective)</column>
@@ -1059,8 +1043,7 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="source">[1] {TKDA:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11151</column>
+      <column name="_id">11192</column>
       <column name="entry_name">ja'</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">tell, report</column>
@@ -1081,8 +1064,7 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="source">[1] {TKD:src}, [2] {HQ 7.4, Dec. 1998:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2013.09.02. -->
-      <column name="_id">11152</column>
+      <column name="_id">11193</column>
       <column name="entry_name">ja'chuq</column>
       <column name="part_of_speech">v:t_c,deriv</column>
       <column name="definition">discuss, confer</column>
@@ -1103,8 +1085,7 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="source">[1] {TKD:src}, [2] {PK:src}, [3] {paq'batlh p.156-157:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11153</column>
+      <column name="_id">11194</column>
       <column name="entry_name">ja'chuq</column>
       <column name="part_of_speech">n:fic</column>
       <column name="definition">succession ritual (ancient)</column>
@@ -1124,8 +1105,7 @@ In the {msn:src} newsgroup message, it says only that the verb prefix indicating
       <column name="source">[1] {TKDA:src}, [2] {Klingon Monopoly:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11154</column>
+      <column name="_id">11195</column>
       <column name="entry_name">je</column>
       <column name="part_of_speech">conj</column>
       <column name="definition">also, and (joining nouns)</column>
@@ -1146,7 +1126,7 @@ In addition to nouns, {je:sen:nolink} can also follow a verb. See {je:adv}.</col
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11155</column>
+      <column name="_id">11196</column>
       <column name="entry_name">je</column>
       <!-- This is an adverbial, despite not being labeled as such in TKD. -->
       <column name="part_of_speech">adv</column>
@@ -1167,8 +1147,7 @@ In addition to nouns, {je:sen:nolink} can also follow a verb. See {je:adv}.</col
       <column name="source">[1] {TKD 5.3:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11156</column>
+      <column name="_id">11197</column>
       <column name="entry_name">jech</column>
       <column name="part_of_speech">v:t</column>
       <column name="definition">disguise</column>
@@ -1187,8 +1166,7 @@ In addition to nouns, {je:sen:nolink} can also follow a verb. See {je:adv}.</col
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11157</column>
+      <column name="_id">11198</column>
       <column name="entry_name">jech</column>
       <column name="part_of_speech">n</column>
       <column name="definition">disguise, costume</column>
@@ -1207,8 +1185,7 @@ In addition to nouns, {je:sen:nolink} can also follow a verb. See {je:adv}.</col
       <column name="source">[1] {TKDA:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11158</column>
+      <column name="_id">11199</column>
       <column name="entry_name">jeD</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be thick, be dense, be viscous</column>
@@ -1227,8 +1204,7 @@ In addition to nouns, {je:sen:nolink} can also follow a verb. See {je:adv}.</col
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11159</column>
+      <column name="_id">11200</column>
       <column name="entry_name">jegh</column>
       <column name="part_of_speech">v:t</column>
       <column name="definition">surrender, give up</column>
@@ -1249,7 +1225,7 @@ In addition to nouns, {je:sen:nolink} can also follow a verb. See {je:adv}.</col
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11160</column>
+      <column name="_id">11201</column>
       <column name="entry_name">jeghbe' tlhInganpu'.</column>
       <column name="part_of_speech">sen:phr</column>
       <column name="definition">Klingons do not surrender.</column>
@@ -1268,8 +1244,7 @@ In addition to nouns, {je:sen:nolink} can also follow a verb. See {je:adv}.</col
       <column name="source">[1] {TKW p.89:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11161</column>
+      <column name="_id">11202</column>
       <column name="entry_name">jeghpu'wI'</column>
       <column name="part_of_speech">n:being,deriv</column>
       <column name="definition">conquered person</column>
@@ -1288,8 +1263,7 @@ In addition to nouns, {je:sen:nolink} can also follow a verb. See {je:adv}.</col
       <column name="source">[1] {Diplomatic Implausibility:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11162</column>
+      <column name="_id">11203</column>
       <column name="entry_name">jeH</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be absentminded</column>
@@ -1308,8 +1282,7 @@ In addition to nouns, {je:sen:nolink} can also follow a verb. See {je:adv}.</col
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11163</column>
+      <column name="_id">11204</column>
       <column name="entry_name">jej</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be sharp</column>
@@ -1330,8 +1303,7 @@ There is also an idiom, {jej; Daqtagh rur}.</column>
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11164</column>
+      <column name="_id">11205</column>
       <column name="entry_name">jejHa'</column>
       <column name="part_of_speech">v:is,deriv</column>
       <column name="definition">be dull, be blunt (of blades)</column>
@@ -1350,8 +1322,7 @@ There is also an idiom, {jej; Daqtagh rur}.</column>
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.07.29. -->
-      <column name="_id">11165</column>
+      <column name="_id">11206</column>
       <column name="entry_name">jel</column>
       <column name="part_of_speech">v:i_c</column>
       <column name="definition">shake, tremble</column>
@@ -1370,8 +1341,7 @@ There is also an idiom, {jej; Daqtagh rur}.</column>
       <column name="source">[1] {qep'a' 2017:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.11.13. -->
-      <column name="_id">11166</column>
+      <column name="_id">11207</column>
       <column name="entry_name">jem</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">sense, feel, perceive, detect</column>
@@ -1390,7 +1360,7 @@ There is also an idiom, {jej; Daqtagh rur}.</column>
       <column name="source">[1] {Saarbrücken qepHom'a' 2017:src}, [2] {DSC - Si Vis Pacem, Para Bellum:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11167</column>
+      <column name="_id">11208</column>
       <column name="entry_name">jemS tIy qIrq</column>
       <column name="part_of_speech">n:name,fic</column>
       <column name="definition">James T. Kirk</column>
@@ -1411,8 +1381,7 @@ Note that {jemS:n:nolink} and {qIrq:n:nolink} do not follow proper Klingon phono
       <column name="source">[1] {HQ 8.4, p.12, Dec. 1999:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2018.01.01. -->
-      <column name="_id">11168</column>
+      <column name="_id">11209</column>
       <column name="entry_name">jem'IH</column>
       <column name="part_of_speech">n</column>
       <column name="definition">castle, fortress</column>
@@ -1431,8 +1400,7 @@ Note that {jemS:n:nolink} and {qIrq:n:nolink} do not follow proper Klingon phono
       <column name="source">[1] {KLI mailing list 2018.01.01:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11169</column>
+      <column name="_id">11210</column>
       <column name="entry_name">jen</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be high</column>
@@ -1451,8 +1419,7 @@ Note that {jemS:n:nolink} and {qIrq:n:nolink} do not follow proper Klingon phono
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2013.08.11. -->
-      <column name="_id">11170</column>
+      <column name="_id">11211</column>
       <column name="entry_name">jentu'</column>
       <column name="part_of_speech">n:anim</column>
       <column name="definition">flightless aquatic bird</column>
@@ -1473,8 +1440,7 @@ Note that {jemS:n:nolink} and {qIrq:n:nolink} do not follow proper Klingon phono
       <column name="source">[1] {Twitter 2013.08.11:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11171</column>
+      <column name="_id">11212</column>
       <column name="entry_name">jengva'</column>
       <column name="part_of_speech">n:inhps</column>
       <column name="definition">plate (for eating)</column>
@@ -1493,8 +1459,7 @@ Note that {jemS:n:nolink} and {qIrq:n:nolink} do not follow proper Klingon phono
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11172</column>
+      <column name="_id">11213</column>
       <column name="entry_name">jeq</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">protrude from</column>
@@ -1515,8 +1480,7 @@ Note that {jemS:n:nolink} and {qIrq:n:nolink} do not follow proper Klingon phono
       <column name="source">[1] {KGT:src}, [2] {msn 1997.06.18:src}, [3] {FTG:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11173</column>
+      <column name="_id">11214</column>
       <column name="entry_name">jeqqIj</column>
       <column name="part_of_speech">n</column>
       <column name="definition">club, bludgeon</column>
@@ -1535,8 +1499,7 @@ Note that {jemS:n:nolink} and {qIrq:n:nolink} do not follow proper Klingon phono
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11174</column>
+      <column name="_id">11215</column>
       <column name="entry_name">jeQ</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be self-confident</column>
@@ -1555,8 +1518,7 @@ Note that {jemS:n:nolink} and {qIrq:n:nolink} do not follow proper Klingon phono
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11175</column>
+      <column name="_id">11216</column>
       <column name="entry_name">jer</column>
       <column name="part_of_speech">v:i</column>
       <column name="definition">surge (aircraft suddenly moves forward or backward)</column>
@@ -1575,8 +1537,7 @@ Note that {jemS:n:nolink} and {qIrq:n:nolink} do not follow proper Klingon phono
       <column name="source">[1] {HQ 11.2, Jun. 2002:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2016.10.20. -->
-      <column name="_id">11176</column>
+      <column name="_id">11217</column>
       <column name="entry_name">jeS</column>
       <column name="part_of_speech">v:i_c</column>
       <column name="definition">participate</column>
@@ -1599,12 +1560,11 @@ All of the following can be translated as "I participate in the {qepHom@@qep:n, 
       <column name="source">[1] {TKD:src}, [2] {Saarbrücken qepHom'a' 2016:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2018.02.24. -->
-      <column name="_id">11177</column>
+      <column name="_id">11218</column>
       <column name="entry_name">jeS 'e' Sap</column>
-      <column name="part_of_speech">sen</column>
+      <column name="part_of_speech">sen:phrase</column>
       <column name="definition">sign up (for an event)</column>
-      <column name="definition_de"></column>
+      <column name="definition_de">Anmelden (für ein Event)</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
       <column name="see_also"></column>
@@ -1619,8 +1579,7 @@ All of the following can be translated as "I participate in the {qepHom@@qep:n, 
       <column name="source">[1] {KLI mailing list 2018.02.17:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2016.10.31. -->
-      <column name="_id">11178</column>
+      <column name="_id">11219</column>
       <column name="entry_name">jeS QoQ</column>
       <column name="part_of_speech">n</column>
       <column name="definition">jazz (music)</column>
@@ -1639,8 +1598,7 @@ All of the following can be translated as "I participate in the {qepHom@@qep:n, 
       <column name="source">[1] {Saarbrücken qepHom'a' 2016:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11179</column>
+      <column name="_id">11220</column>
       <column name="entry_name">jev</column>
       <column name="part_of_speech">v:1,t</column>
       <column name="definition">storm</column>
@@ -1661,8 +1619,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {TKD:src}, [2] {KLI mailing list 2012.03.19:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11180</column>
+      <column name="_id">11221</column>
       <column name="entry_name">jev</column>
       <column name="part_of_speech">v:2,i</column>
       <column name="definition">wheeze, breathe noisily</column>
@@ -1681,8 +1638,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {HQ 12.4, Dec. 2003:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11181</column>
+      <column name="_id">11222</column>
       <column name="entry_name">jey</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">defeat</column>
@@ -1702,8 +1658,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11182</column>
+      <column name="_id">11223</column>
       <column name="entry_name">jey</column>
       <column name="part_of_speech">n</column>
       <column name="definition">itinerary</column>
@@ -1722,8 +1677,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {TKDA:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2016.10.31. -->
-      <column name="_id">11183</column>
+      <column name="_id">11224</column>
       <column name="entry_name">jey'</column>
       <column name="part_of_speech">n</column>
       <column name="definition">tin</column>
@@ -1742,8 +1696,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {Saarbrücken qepHom'a' 2016:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2016.10.31. -->
-      <column name="_id">11184</column>
+      <column name="_id">11225</column>
       <column name="entry_name">jey' Sorpuq</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">bronze</column>
@@ -1762,8 +1715,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {Saarbrücken qepHom'a' 2016:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11185</column>
+      <column name="_id">11226</column>
       <column name="entry_name">jey'naS</column>
       <column name="part_of_speech">n</column>
       <column name="definition">double-headed ax</column>
@@ -1782,7 +1734,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11186</column>
+      <column name="_id">11227</column>
       <column name="entry_name">jey'naS ghoqwI'</column>
       <column name="part_of_speech">n:deriv,slang,being</column>
       <column name="definition">double agent</column>
@@ -1801,8 +1753,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {KLI mailing list 2012.01.26:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11187</column>
+      <column name="_id">11228</column>
       <column name="entry_name">je'</column>
       <column name="part_of_speech">v:1,t_c</column>
       <column name="definition">buy, purchase</column>
@@ -1823,8 +1774,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11188</column>
+      <column name="_id">11229</column>
       <column name="entry_name">je'</column>
       <column name="part_of_speech">v:2,t_c</column>
       <column name="definition">feed (someone else), enrich spirit</column>
@@ -1845,8 +1795,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {TKD:src}, [2] {TKW:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11189</column>
+      <column name="_id">11230</column>
       <column name="entry_name">jI-</column>
       <column name="part_of_speech">v:pref</column>
       <column name="definition">I-none</column>
@@ -1865,8 +1814,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11190</column>
+      <column name="_id">11231</column>
       <column name="entry_name">jIb</column>
       <column name="part_of_speech">n:body</column>
       <column name="definition">hair (on head)</column>
@@ -1886,7 +1834,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {TKD:src}, [2] {qep'a' 2017:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11191</column>
+      <column name="_id">11232</column>
       <column name="entry_name">jIb Ho'Du'</column>
       <!-- Is this plural? -->
       <column name="part_of_speech">n:deriv</column>
@@ -1906,7 +1854,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {TNK:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11192</column>
+      <column name="_id">11233</column>
       <column name="entry_name">jIb yachwI'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">hairbrush</column>
@@ -1925,8 +1873,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {TNK:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2014.05.07. -->
-      <column name="_id">11193</column>
+      <column name="_id">11234</column>
       <column name="entry_name">jIbechrup.</column>
       <column name="part_of_speech">sen:nt</column>
       <column name="definition">I am ready to suffer.</column>
@@ -1945,8 +1892,7 @@ This verb is used in Sonnet 116, where its explicit subject is {muD:n:nolink}.[2
       <column name="source">[1] {TNG - The Icarus Factor:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11194</column>
+      <column name="_id">11235</column>
       <column name="entry_name">jIH</column>
       <column name="part_of_speech">n:1,pro</column>
       <column name="definition">I, me</column>
@@ -1980,8 +1926,7 @@ The imperative verb prefix when {jIH:n:1h,nolink} is the object is {HI-:v:pref}.
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11195</column>
+      <column name="_id">11236</column>
       <column name="entry_name">jIH</column>
       <column name="part_of_speech">n:2</column>
       <column name="definition">viewing screen</column>
@@ -2000,8 +1945,7 @@ The imperative verb prefix when {jIH:n:1h,nolink} is the object is {HI-:v:pref}.
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11196</column>
+      <column name="_id">11237</column>
       <column name="entry_name">jIH</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">monitor</column>
@@ -2021,8 +1965,7 @@ The imperative verb prefix when {jIH:n:1h,nolink} is the object is {HI-:v:pref}.
       <column name="source">[1] {TKDA:src}, [2] {Star Trek The Experience:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11197</column>
+      <column name="_id">11238</column>
       <column name="entry_name">jIj</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be cooperative, cooperate</column>
@@ -2043,7 +1986,7 @@ The imperative verb prefix when {jIH:n:1h,nolink} is the object is {HI-:v:pref}.
       <column name="source">[1] {TKD:src}, [2] {KGT:src}, [3] {SkyBox 26:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11198</column>
+      <column name="_id">11239</column>
       <column name="entry_name">jIjatlhpa' jatlh Hovmey.</column>
       <column name="part_of_speech">sen:sp</column>
       <column name="definition">The stars will talk before I will.</column>
@@ -2062,8 +2005,7 @@ The imperative verb prefix when {jIH:n:1h,nolink} is the object is {HI-:v:pref}.
       <column name="source">[1] {PK:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11199</column>
+      <column name="_id">11240</column>
       <column name="entry_name">jIl</column>
       <column name="part_of_speech">n</column>
       <column name="definition">neighbour</column>
@@ -2082,7 +2024,7 @@ The imperative verb prefix when {jIH:n:1h,nolink} is the object is {HI-:v:pref}.
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11200</column>
+      <column name="_id">11241</column>
       <column name="entry_name">jIlajneS.</column>
       <column name="part_of_speech">sen:phr</column>
       <column name="definition">I accept, your honor.</column>
@@ -2101,8 +2043,7 @@ The imperative verb prefix when {jIH:n:1h,nolink} is the object is {HI-:v:pref}.
       <column name="source">[1] {TNG - Sins of the Father:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11201</column>
+      <column name="_id">11242</column>
       <column name="entry_name">jIm</column>
       <column name="part_of_speech">v:i</column>
       <column name="definition">heave (aircraft rising or falling without pitching)</column>
@@ -2121,8 +2062,7 @@ The imperative verb prefix when {jIH:n:1h,nolink} is the object is {HI-:v:pref}.
       <column name="source">[1] {HQ 11.2, Jun. 2002:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2015.10.28. -->
-      <column name="_id">11202</column>
+      <column name="_id">11243</column>
       <column name="entry_name">jIn</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">wish</column>
@@ -2144,8 +2084,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {Saarbrücken qepHom'a' 2015:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11203</column>
+      <column name="_id">11244</column>
       <column name="entry_name">jInaq</column>
       <column name="part_of_speech">n</column>
       <column name="definition">amulet symbolizing a girl's coming of age</column>
@@ -2164,7 +2103,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11204</column>
+      <column name="_id">11245</column>
       <column name="entry_name">jInjoq</column>
       <column name="part_of_speech">n:food</column>
       <column name="definition">type of bread</column>
@@ -2183,8 +2122,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {A Burning House:src}, [2] {Saarbrücken qepHom'a' 2014:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11205</column>
+      <column name="_id">11246</column>
       <column name="entry_name">jInmol</column>
       <column name="part_of_speech">n</column>
       <column name="definition">project</column>
@@ -2203,8 +2141,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2016.10.31. -->
-      <column name="_id">11206</column>
+      <column name="_id">11247</column>
       <column name="entry_name">jInmol pa'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">studio, workspace</column>
@@ -2223,8 +2160,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {Saarbrücken qepHom'a' 2016:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11207</column>
+      <column name="_id">11248</column>
       <column name="entry_name">jIp</column>
       <column name="part_of_speech">n</column>
       <column name="definition">penalty</column>
@@ -2243,8 +2179,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2013.08.02. -->
-      <column name="_id">11208</column>
+      <column name="_id">11249</column>
       <column name="entry_name">jIr</column>
       <column name="part_of_speech">v:i_c</column>
       <column name="definition">rotate, twirl</column>
@@ -2263,8 +2198,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11209</column>
+      <column name="_id">11250</column>
       <column name="entry_name">jIrmoH</column>
       <column name="part_of_speech">v:t_c,deriv</column>
       <column name="definition">twirl bat'leth, cause bat'leth to rotate</column>
@@ -2283,8 +2217,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2015.11.04. -->
-      <column name="_id">11210</column>
+      <column name="_id">11251</column>
       <column name="entry_name">jIr</column>
       <column name="part_of_speech">excl</column>
       <column name="definition">Whoop-dee-doo!, La-dee-dah!, Who cares?!, Big deal!</column>
@@ -2304,7 +2237,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {Saarbrücken qepHom'a' 2015:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11211</column>
+      <column name="_id">11252</column>
       <column name="entry_name">jISaHbe'.</column>
       <column name="part_of_speech">sen:phr</column>
       <column name="definition">I don't care.</column>
@@ -2323,8 +2256,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {TKD p.170:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.07.30. -->
-      <column name="_id">11212</column>
+      <column name="_id">11253</column>
       <column name="entry_name">jItuj'ep</column>
       <column name="part_of_speech">n</column>
       <column name="definition">mummy</column>
@@ -2343,8 +2275,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {qep'a' 2017:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.07.30. -->
-      <column name="_id">11213</column>
+      <column name="_id">11254</column>
       <column name="entry_name">jItuj'ep ngutlh</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">mummification glyph</column>
@@ -2363,8 +2294,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {qep'a' 2017:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11214</column>
+      <column name="_id">11255</column>
       <column name="entry_name">jIv</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be ignorant</column>
@@ -2383,8 +2313,7 @@ To express a wish for something to happen, see {-jaj:v}.</column>
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2013.11.10. -->
-      <column name="_id">11215</column>
+      <column name="_id">11256</column>
       <column name="entry_name">jIvvo'</column>
       <column name="part_of_speech">n:being</column>
       <column name="definition">criminal, villain, malefactor</column>
@@ -2406,7 +2335,7 @@ The first half of the example sentence was a lip-match for {ghaH vISammeH}.</col
       <column name="source">[1] {Star Trek Into Darkness:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11216</column>
+      <column name="_id">11257</column>
       <column name="entry_name">jIwuQ.</column>
       <column name="part_of_speech">sen:phr</column>
       <column name="definition">I have a headache.</column>
@@ -2425,8 +2354,7 @@ The first half of the example sentence was a lip-match for {ghaH vISammeH}.</col
       <column name="source">[1] {TKD p.171:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.15. -->
-      <column name="_id">11217</column>
+      <column name="_id">11258</column>
       <column name="entry_name">jIyaj.</column>
       <column name="part_of_speech">sen:bc</column>
       <column name="definition">I understand.</column>
@@ -2445,8 +2373,7 @@ The first half of the example sentence was a lip-match for {ghaH vISammeH}.</col
       <column name="source">[1] {TKD p.170:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.15. -->
-      <column name="_id">11218</column>
+      <column name="_id">11259</column>
       <column name="entry_name">jIyajbe'.</column>
       <column name="part_of_speech">sen:bc</column>
       <column name="definition">I don't understand.</column>
@@ -2465,12 +2392,11 @@ The first half of the example sentence was a lip-match for {ghaH vISammeH}.</col
       <column name="source">[1] {TKD p.170:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2018.02.16. -->
-      <column name="_id">11219</column>
+      <column name="_id">11260</column>
       <column name="entry_name">jIyweS</column>
       <column name="part_of_speech">n</column>
       <column name="definition">translation, gloss</column>
-      <column name="definition_de"></column>
+      <column name="definition_de">Übersetzung, Anmerkung</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
       <column name="see_also">{mugh:v}</column>
@@ -2485,8 +2411,7 @@ The first half of the example sentence was a lip-match for {ghaH vISammeH}.</col
       <column name="source">[1] {KLI mailing list 2018.02.17:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2016.07.25. -->
-      <column name="_id">11220</column>
+      <column name="_id">11261</column>
       <column name="entry_name">jI'ev</column>
       <column name="part_of_speech">n</column>
       <column name="definition">handle, knob, doorknob</column>
@@ -2496,7 +2421,7 @@ The first half of the example sentence was a lip-match for {ghaH vISammeH}.</col
       <column name="see_also">{lojmIt:n}</column>
       <column name="notes"></column>
       <column name="notes_de"></column>
-      <column name="hidden_notes"></column>
+      <column name="hidden_notes">A reference to the composer George Frideric Handel.</column>
       <column name="components"></column>
       <column name="examples"></column>
       <column name="examples_de"></column>
@@ -2505,8 +2430,7 @@ The first half of the example sentence was a lip-match for {ghaH vISammeH}.</col
       <column name="source">[1] {qep'a' 2016:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11221</column>
+      <column name="_id">11262</column>
       <column name="entry_name">jo</column>
       <column name="part_of_speech">n:inhpl</column>
       <column name="definition">resources</column>
@@ -2525,8 +2449,7 @@ The first half of the example sentence was a lip-match for {ghaH vISammeH}.</col
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.07.29. -->
-      <column name="_id">11222</column>
+      <column name="_id">11263</column>
       <column name="entry_name">job</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">zigzag, be jagged</column>
@@ -2546,7 +2469,7 @@ The first half of the example sentence was a lip-match for {ghaH vISammeH}.</col
       <column name="source">[1] {qep'a' 2017:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11223</column>
+      <column name="_id">11264</column>
       <column name="entry_name">joch</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be harmful</column>
@@ -2565,8 +2488,7 @@ The first half of the example sentence was a lip-match for {ghaH vISammeH}.</col
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11224</column>
+      <column name="_id">11265</column>
       <column name="entry_name">joD</column>
       <column name="part_of_speech">v:i</column>
       <column name="definition">stoop</column>
@@ -2585,8 +2507,7 @@ The first half of the example sentence was a lip-match for {ghaH vISammeH}.</col
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11225</column>
+      <column name="_id">11266</column>
       <column name="entry_name">jogh</column>
       <column name="part_of_speech">n</column>
       <column name="definition">quadrant</column>
@@ -2605,8 +2526,7 @@ The first half of the example sentence was a lip-match for {ghaH vISammeH}.</col
       <column name="source">[1] {TKDA:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11226</column>
+      <column name="_id">11267</column>
       <column name="entry_name">joH</column>
       <column name="part_of_speech">n</column>
       <column name="definition">Lady, Lord (title for head of house)</column>
@@ -2628,8 +2548,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}, [2] {KGT:src}, [3] {Radio Times Star Trek 30th Anniversary Special Issue:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11227</column>
+      <column name="_id">11268</column>
       <column name="entry_name">joj</column>
       <column name="part_of_speech">n</column>
       <column name="definition">area between</column>
@@ -2648,8 +2567,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11228</column>
+      <column name="_id">11269</column>
       <column name="entry_name">jojlu'</column>
       <column name="part_of_speech">n</column>
       <column name="definition">consul</column>
@@ -2668,8 +2586,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11229</column>
+      <column name="_id">11270</column>
       <column name="entry_name">jol</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">beam (aboard)</column>
@@ -2691,8 +2608,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}, [2] {Star Trek The Experience:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11230</column>
+      <column name="_id">11271</column>
       <column name="entry_name">jol</column>
       <column name="part_of_speech">n</column>
       <column name="definition">transport beam</column>
@@ -2702,18 +2618,17 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="see_also">{jol:v}, {Qol:v}</column>
       <column name="notes"></column>
       <column name="notes_de"></column>
-      <column name="hidden_notes"></column>
+      <column name="hidden_notes">This is better known as a "transporter beam", but {TKD:src} uses "transport beam" consistently.</column>
       <column name="components"></column>
       <column name="examples">
 ▶ {jol yIchu'!:sen}</column>
       <column name="examples_de"></column>
-      <column name="search_tags"></column>
+      <column name="search_tags">transporter beam</column>
       <column name="search_tags_de"></column>
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11231</column>
+      <column name="_id">11272</column>
       <column name="entry_name">jolpat</column>
       <column name="part_of_speech">n</column>
       <column name="definition">transporter system</column>
@@ -2734,8 +2649,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {BoP:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11232</column>
+      <column name="_id">11273</column>
       <column name="entry_name">jolpa'</column>
       <column name="part_of_speech">n</column>
       <column name="definition">transport room</column>
@@ -2754,8 +2668,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.08.17. -->
-      <column name="_id">11233</column>
+      <column name="_id">11274</column>
       <column name="entry_name">jolpa' yIjaH!</column>
       <column name="part_of_speech">sen:phr</column>
       <column name="definition">Go to the transport room!</column>
@@ -2774,8 +2687,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {Star Trek III:src}, [2] {TKD p.73:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11234</column>
+      <column name="_id">11275</column>
       <column name="entry_name">jolvoy'</column>
       <column name="part_of_speech">n</column>
       <column name="definition">transporter unit ionizer</column>
@@ -2794,7 +2706,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11235</column>
+      <column name="_id">11276</column>
       <column name="entry_name">jol SeHlaw</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">transporter control panel</column>
@@ -2805,16 +2717,16 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="notes"></column>
       <column name="notes_de"></column>
       <column name="hidden_notes"></column>
-      <column name="components"></column>
+      <column name="components">{jol:n}, {SeHlaw:n}</column>
       <column name="examples">
-▶ {jol SeHlaw lItHa'!} "Get off that transporter control panel!"[1]</column>
+▶ {jol SeHlaw lItHa'!@@jol SeHlaw:n, lItHa':v} "Get off that transporter control panel!"[1]</column>
       <column name="examples_de"></column>
       <column name="search_tags"></column>
       <column name="search_tags_de"></column>
       <column name="source">[1] {PK:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11236</column>
+      <column name="_id">11277</column>
       <column name="entry_name">jol yIchu'!</column>
       <column name="part_of_speech">sen:phr</column>
       <column name="definition">Activate the transport beam!</column>
@@ -2833,8 +2745,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD p.170:src}, [2] {Star Trek III:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11237</column>
+      <column name="_id">11278</column>
       <column name="entry_name">jom</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">install (a device)</column>
@@ -2853,8 +2764,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11238</column>
+      <column name="_id">11279</column>
       <column name="entry_name">jon</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">capture</column>
@@ -2876,8 +2786,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}, [2] {s.e 1998.01.18:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.08.20. -->
-      <column name="_id">11239</column>
+      <column name="_id">11280</column>
       <column name="entry_name">jonHa'</column>
       <column name="part_of_speech">v:t_c,deriv</column>
       <column name="definition">release</column>
@@ -2896,8 +2805,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {Star Trek V:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11240</column>
+      <column name="_id">11281</column>
       <column name="entry_name">jonpIn</column>
       <column name="part_of_speech">n:being</column>
       <column name="definition">engineering officer</column>
@@ -2916,8 +2824,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.11.17. -->
-      <column name="_id">11241</column>
+      <column name="_id">11282</column>
       <column name="entry_name">jonSeH</column>
       <column name="part_of_speech">n</column>
       <column name="definition">engine control</column>
@@ -2936,8 +2843,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {Saarbrücken qepHom'a' 2017:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.11.17. -->
-      <column name="_id">11242</column>
+      <column name="_id">11283</column>
       <column name="entry_name">jonSeH yaH</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">engineering, engine-control location</column>
@@ -2956,8 +2862,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {Saarbrücken qepHom'a' 2017:src}, [2] {DSC - The Butcher's Knife Cares Not for the Lamb's Cry:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11243</column>
+      <column name="_id">11284</column>
       <column name="entry_name">jonta'</column>
       <column name="part_of_speech">n</column>
       <column name="definition">engine</column>
@@ -2977,8 +2882,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.11.17. -->
-      <column name="_id">11244</column>
+      <column name="_id">11285</column>
       <column name="entry_name">jonta' pa'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">engineering, engine room</column>
@@ -2997,8 +2901,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {Saarbrücken qepHom'a' 2017:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11245</column>
+      <column name="_id">11286</column>
       <column name="entry_name">jonwI'</column>
       <column name="part_of_speech">n:being</column>
       <column name="definition">engineer</column>
@@ -3017,8 +2920,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.08.17. -->
-      <column name="_id">11246</column>
+      <column name="_id">11287</column>
       <column name="entry_name">jonlu'meH wo'maj pop tIn law' Hoch tIn puS.</column>
       <column name="part_of_speech">sen:phr</column>
       <column name="definition">Our Empire's highest bounty has been placed on his head.</column>
@@ -3037,8 +2939,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {Star Trek V deleted scene:src}, [2] {HQ 8.4, p.12, Dec. 1999:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11247</column>
+      <column name="_id">11288</column>
       <column name="entry_name">jop</column>
       <column name="part_of_speech">v:t_c,weap</column>
       <column name="definition">lunge, thrust</column>
@@ -3053,12 +2954,11 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="examples"></column>
       <column name="examples_de"></column>
       <column name="search_tags"></column>
-      <!-- p.60 -->
       <column name="search_tags_de"></column>
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11248</column>
+      <column name="_id">11289</column>
       <column name="entry_name">jopwI' jo'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">recoil machinery</column>
@@ -3077,7 +2977,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {BoP:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11249</column>
+      <column name="_id">11290</column>
       <column name="entry_name">jop 'ej way'</column>
       <column name="part_of_speech">sen:idiom</column>
       <column name="definition">to argue, have an argument</column>
@@ -3097,8 +2997,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {KGT p.115:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2014.02.10. -->
-      <column name="_id">11250</column>
+      <column name="_id">11291</column>
       <column name="entry_name">joq</column>
       <column name="part_of_speech">v:i_c</column>
       <column name="definition">flap, flutter, wave</column>
@@ -3130,8 +3029,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}, [2] {paq'batlh:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11251</column>
+      <column name="_id">11292</column>
       <column name="entry_name">joq</column>
       <column name="part_of_speech">conj</column>
       <column name="definition">or, and/or (joining nouns)</column>
@@ -3150,8 +3048,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11252</column>
+      <column name="_id">11293</column>
       <column name="entry_name">joqwI'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">flag</column>
@@ -3170,8 +3067,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11253</column>
+      <column name="_id">11294</column>
       <column name="entry_name">joQ</column>
       <column name="part_of_speech">n:1,body</column>
       <column name="definition">rib</column>
@@ -3190,8 +3086,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11254</column>
+      <column name="_id">11295</column>
       <column name="entry_name">joQ</column>
       <column name="part_of_speech">n:2</column>
       <column name="definition">strip of material in a susdek instrument</column>
@@ -3210,8 +3105,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11255</column>
+      <column name="_id">11296</column>
       <column name="entry_name">jor</column>
       <column name="part_of_speech">v:i</column>
       <column name="definition">explode</column>
@@ -3230,8 +3124,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11256</column>
+      <column name="_id">11297</column>
       <column name="entry_name">jorneb</column>
       <column name="part_of_speech">n</column>
       <column name="definition">warhead (of a torpedo)</column>
@@ -3250,7 +3143,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11257</column>
+      <column name="_id">11298</column>
       <column name="entry_name">jornub</column>
       <column name="part_of_speech">n:alt</column>
       <column name="definition">{jorneb:n}</column>
@@ -3269,8 +3162,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11258</column>
+      <column name="_id">11299</column>
       <column name="entry_name">jorwI'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">explosive</column>
@@ -3289,7 +3181,26 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11259</column>
+      <column name="_id">11300</column>
+      <column name="entry_name">jorchan</column>
+      <column name="part_of_speech">n</column>
+      <column name="definition">view, scene, scenery, sight, landscape</column>
+      <column name="definition_de"></column>
+      <column name="synonyms"></column>
+      <column name="antonyms"></column>
+      <column name="see_also"></column>
+      <column name="notes"></column>
+      <column name="notes_de"></column>
+      <column name="hidden_notes"></column>
+      <column name="components"></column>
+      <column name="examples"></column>
+      <column name="examples_de"></column>
+      <column name="search_tags"></column>
+      <column name="search_tags_de"></column>
+      <column name="source">[1] {qep'a' 2018:src}</column>
+    </table>
+    <table name="mem">
+      <column name="_id">11301</column>
       <column name="entry_name">joS</column>
       <column name="part_of_speech">v:i</column>
       <column name="definition">gossip</column>
@@ -3308,8 +3219,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11260</column>
+      <column name="_id">11302</column>
       <column name="entry_name">joS</column>
       <column name="part_of_speech">n</column>
       <column name="definition">rumor, gossip</column>
@@ -3328,8 +3238,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11261</column>
+      <column name="_id">11303</column>
       <column name="entry_name">jot</column>
       <column name="part_of_speech">v:1,is</column>
       <column name="definition">be calm</column>
@@ -3348,7 +3257,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11262</column>
+      <column name="_id">11304</column>
       <column name="entry_name">jot</column>
       <column name="part_of_speech">v:2,is,archaic</column>
       <column name="definition">be bland (referring to food)</column>
@@ -3367,8 +3276,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {KGT p.42:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11263</column>
+      <column name="_id">11305</column>
       <column name="entry_name">jotHa'</column>
       <column name="part_of_speech">v:is,deriv</column>
       <column name="definition">be uneasy</column>
@@ -3387,7 +3295,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11264</column>
+      <column name="_id">11306</column>
       <column name="entry_name">jotlh</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">take down</column>
@@ -3406,7 +3314,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {TKD:src}, [2] {KLI mailing list 2014.07.30:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11265</column>
+      <column name="_id">11307</column>
       <column name="entry_name">jotlhHa'</column>
       <column name="part_of_speech">v:t,deriv</column>
       <column name="definition">put back up</column>
@@ -3425,8 +3333,7 @@ In the "Radio Times Star Trek 30th Anniversary Special Issue", Lady Di (Diana, P
       <column name="source">[1] {KLI mailing list 1997.04.07:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11266</column>
+      <column name="_id">11308</column>
       <column name="entry_name">joy'</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">torture</column>
@@ -3447,8 +3354,7 @@ In the novel {Sarek:src}, the word {be'joy':n:nolink} is used for a form of ritu
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11267</column>
+      <column name="_id">11309</column>
       <column name="entry_name">jo'</column>
       <column name="part_of_speech">n</column>
       <column name="definition">machinery</column>
@@ -3467,8 +3373,7 @@ In the novel {Sarek:src}, the word {be'joy':n:nolink} is used for a form of ritu
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2017.11.17. -->
-      <column name="_id">11268</column>
+      <column name="_id">11310</column>
       <column name="entry_name">jo'</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">blow into a container of some kind</column>
@@ -3489,8 +3394,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {Saarbrücken qepHom'a' 2017:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11269</column>
+      <column name="_id">11311</column>
       <column name="entry_name">ju-</column>
       <column name="part_of_speech">v:pref</column>
       <column name="definition">you-us</column>
@@ -3509,8 +3413,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11270</column>
+      <column name="_id">11312</column>
       <column name="entry_name">jub</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be immortal</column>
@@ -3529,8 +3432,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11271</column>
+      <column name="_id">11313</column>
       <column name="entry_name">jubbe'</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be mortal</column>
@@ -3549,7 +3451,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11272</column>
+      <column name="_id">11314</column>
       <column name="entry_name">jubbe'wI'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">mortal</column>
@@ -3574,8 +3476,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {paq'batlh p.122-123:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11273</column>
+      <column name="_id">11315</column>
       <column name="entry_name">juch</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">have a width of</column>
@@ -3594,8 +3495,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {msn 1997.10.22:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11274</column>
+      <column name="_id">11316</column>
       <column name="entry_name">juH</column>
       <column name="part_of_speech">n</column>
       <column name="definition">home</column>
@@ -3614,8 +3514,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11275</column>
+      <column name="_id">11317</column>
       <column name="entry_name">juHqo'</column>
       <column name="part_of_speech">n</column>
       <column name="definition">home world</column>
@@ -3635,7 +3534,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {TKDA:src}, [2] {BoP:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11276</column>
+      <column name="_id">11318</column>
       <column name="entry_name">juHwIjDaq Dochvetlh vItlhap.</column>
       <column name="part_of_speech">sen:Ql</column>
       <column name="definition">I will take that to my home.</column>
@@ -3654,7 +3553,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {PK:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11277</column>
+      <column name="_id">11319</column>
       <column name="entry_name">juH qach</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">house</column>
@@ -3674,8 +3573,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {TNK:src}, [2] {Klingon Monopoly:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11278</column>
+      <column name="_id">11320</column>
       <column name="entry_name">jul</column>
       <column name="part_of_speech">n</column>
       <column name="definition">sun</column>
@@ -3694,8 +3592,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {qep'a' 2011:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2015.10.28. -->
-      <column name="_id">11279</column>
+      <column name="_id">11321</column>
       <column name="entry_name">julSIp</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">helium</column>
@@ -3714,8 +3611,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {Saarbrücken qepHom'a' 2015:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11280</column>
+      <column name="_id">11322</column>
       <column name="entry_name">jum</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be odd</column>
@@ -3734,8 +3630,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {TKD:src}, [2] {Saarbrücken qepHom'a' 2017:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11281</column>
+      <column name="_id">11323</column>
       <column name="entry_name">jun</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">evade, take evasive action</column>
@@ -3754,7 +3649,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">11282</column>
+      <column name="_id">11324</column>
       <column name="entry_name">jungwoq</column>
       <column name="part_of_speech">n:place</column>
       <column name="definition">China</column>
@@ -3773,8 +3668,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {TNK:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11283</column>
+      <column name="_id">11325</column>
       <column name="entry_name">jup</column>
       <column name="part_of_speech">n:being</column>
       <column name="definition">friend</column>
@@ -3793,8 +3687,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11284</column>
+      <column name="_id">11326</column>
       <column name="entry_name">juS</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">overtake, pass</column>
@@ -3820,8 +3713,7 @@ If {-Daq:n} is used, it implies a miss: air was blown towards the object, but by
       <column name="source">[1] {TKD:src}, [2] {Klingon Monopoly:src}, [3] {paq'batlh p.138-139:src}</column>
     </table>
     <table name="mem">
-      <!-- Checked on: 2012.12.01. -->
-      <column name="_id">11285</column>
+      <column name="_id">11327</column>
       <column name="entry_name">juv</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">measure</column>
