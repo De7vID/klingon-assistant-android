@@ -1,5 +1,5 @@
     <table name="mem">
-      <column name="_id">14375</column>
+      <column name="_id"></column>
       <column name="entry_name">'ut</column>
       <column name="part_of_speech">n</column>
       <column name="definition">the vowel {u:sen:nolink}</column>
@@ -18,7 +18,7 @@
       <column name="source">[1] {KLI mailing list 2009.07.27:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14376</column>
+      <column name="_id"></column>
       <column name="entry_name">'uch</column>
       <column name="part_of_speech">v:1,t_c</column>
       <column name="definition">hold, grasp</column>
@@ -39,7 +39,7 @@ When the object of this verb is {'olQan:n}, it can often be translated "occupy" 
       <column name="source">[1] {KGT:src}, [2] {qep'a' 2017:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14377</column>
+      <column name="_id"></column>
       <column name="entry_name">'uch</column>
       <column name="part_of_speech">v:2,t_c,slang</column>
       <column name="definition">include, consist of, be composed of</column>
@@ -58,7 +58,7 @@ When the object of this verb is {'olQan:n}, it can often be translated "occupy" 
       <column name="source">[1] {Saarbrücken qepHom'a' 2015:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14378</column>
+      <column name="_id"></column>
       <column name="entry_name">'uchHa'</column>
       <column name="part_of_speech">v:t,deriv</column>
       <column name="definition">let go of</column>
@@ -77,7 +77,7 @@ When the object of this verb is {'olQan:n}, it can often be translated "occupy" 
       <column name="source">[1] {HQ 12.2, Jun. 2003:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14379</column>
+      <column name="_id"></column>
       <column name="entry_name">'uD</column>
       <column name="part_of_speech">n</column>
       <column name="definition">laser</column>
@@ -96,7 +96,7 @@ When the object of this verb is {'olQan:n}, it can often be translated "occupy" 
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14380</column>
+      <column name="_id"></column>
       <column name="entry_name">'uD Haqtaj</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">laser scalpel</column>
@@ -115,7 +115,7 @@ When the object of this verb is {'olQan:n}, it can often be translated "occupy" 
       <column name="source">[1] {HQ 1.3, Sept. 1992:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14381</column>
+      <column name="_id"></column>
       <column name="entry_name">'ugh</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be heavy</column>
@@ -135,7 +135,7 @@ When the object of this verb is {'olQan:n}, it can often be translated "occupy" 
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14382</column>
+      <column name="_id"></column>
       <column name="entry_name">'uH</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">have a hangover, be hung over</column>
@@ -154,7 +154,7 @@ When the object of this verb is {'olQan:n}, it can often be translated "occupy" 
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14383</column>
+      <column name="_id"></column>
       <column name="entry_name">'uj</column>
       <column name="part_of_speech">n</column>
       <column name="definition">uj (unit of linear measure, 34.83 cm)</column>
@@ -184,7 +184,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {KGT:src}, [2] {msn 1997.10.22:src}, [3] {SkyBox 32:src} (reprinted in {HQ 6.2, p.9, Jun. 1997:src}), [4] {BoP:src}, [5] {Saarbrücken qepHom'a' 2015:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14384</column>
+      <column name="_id"></column>
       <column name="entry_name">'uj'a'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">unit of length (313.47 cm)</column>
@@ -204,7 +204,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {s.k 1999.02.03:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14385</column>
+      <column name="_id"></column>
       <column name="entry_name">'uj'IllI'</column>
       <column name="part_of_speech">n:name,fic</column>
       <column name="definition">Ujilli</column>
@@ -223,7 +223,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {DSC - Battle at the Binary Stars:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14386</column>
+      <column name="_id"></column>
       <column name="entry_name">'ul</column>
       <column name="part_of_speech">n</column>
       <column name="definition">electricity</column>
@@ -242,7 +242,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14387</column>
+      <column name="_id"></column>
       <column name="entry_name">'ul pat mutlhwI'</column>
       <column name="part_of_speech">n:deriv,being</column>
       <column name="definition">electrician</column>
@@ -261,11 +261,11 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {KLI mailing list 2012.01.10:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14388</column>
+      <column name="_id"></column>
       <column name="entry_name">'ul rarwI'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">electrical plug</column>
-      <column name="definition_de"></column>
+      <column name="definition_de">Steckverbinder</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
       <column name="see_also"></column>
@@ -280,7 +280,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {qep'a' 2018:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14389</column>
+      <column name="_id"></column>
       <column name="entry_name">'ul Sech</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">flashlight</column>
@@ -299,7 +299,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TNK:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14390</column>
+      <column name="_id"></column>
       <column name="entry_name">'ul 'aplo'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">battery, electrochemical cell</column>
@@ -319,7 +319,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TNK:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14391</column>
+      <column name="_id"></column>
       <column name="entry_name">'um</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be qualified</column>
@@ -338,7 +338,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14392</column>
+      <column name="_id"></column>
       <column name="entry_name">'umHa'</column>
       <column name="part_of_speech">v:is,deriv</column>
       <column name="definition">be unqualified</column>
@@ -363,7 +363,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {paq'batlh p.96-97:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14393</column>
+      <column name="_id"></column>
       <column name="entry_name">'uma'</column>
       <column name="part_of_speech">n</column>
       <column name="definition">petal</column>
@@ -382,7 +382,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {qep'a' 2016:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14394</column>
+      <column name="_id"></column>
       <column name="entry_name">'un</column>
       <column name="part_of_speech">n:food</column>
       <column name="definition">pot (for food preparation) (general term)</column>
@@ -401,7 +401,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14395</column>
+      <column name="_id"></column>
       <column name="entry_name">'un naQ</column>
       <column name="part_of_speech">n:deriv,food</column>
       <column name="definition">stirring stick, mixing stick</column>
@@ -420,7 +420,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14396</column>
+      <column name="_id"></column>
       <column name="entry_name">'un quD</column>
       <column name="part_of_speech">n:deriv,food</column>
       <column name="definition">artificially produced [qud]</column>
@@ -439,11 +439,11 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14397</column>
+      <column name="_id"></column>
       <column name="entry_name">'unwat</column>
       <column name="part_of_speech">n</column>
       <column name="definition">basket</column>
-      <column name="definition_de"></column>
+      <column name="definition_de">Korb</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
       <column name="see_also"></column>
@@ -458,11 +458,11 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {qep'a' 2018:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14398</column>
+      <column name="_id"></column>
       <column name="entry_name">'ung</column>
       <column name="part_of_speech">v:i_c</column>
       <column name="definition">squat (down)</column>
-      <column name="definition_de"></column>
+      <column name="definition_de">in die Hocke gehen</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
       <column name="see_also">{ba':v}</column>
@@ -477,7 +477,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {qep'a' 2018:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14399</column>
+      <column name="_id"></column>
       <column name="entry_name">'up</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be unsavory, disgusting, repugnant, loathsome, icky</column>
@@ -496,11 +496,11 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14400</column>
+      <column name="_id"></column>
       <column name="entry_name">'uq</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">whistle</column>
-      <column name="definition_de"></column>
+      <column name="definition_de">pfeifen</column>
       <column name="synonyms"></column>
       <column name="antonyms"></column>
       <column name="see_also">{bom:v}</column>
@@ -515,7 +515,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {qep'a' 2018:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14401</column>
+      <column name="_id"></column>
       <column name="entry_name">'uQ</column>
       <column name="part_of_speech">n</column>
       <column name="definition">dinner</column>
@@ -535,7 +535,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14402</column>
+      <column name="_id"></column>
       <column name="entry_name">'uQ'a'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">banquet, feast</column>
@@ -554,7 +554,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14403</column>
+      <column name="_id"></column>
       <column name="entry_name">'uQ pa'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">dinner room, dining room</column>
@@ -573,7 +573,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {msn 1997.06.18:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14404</column>
+      <column name="_id"></column>
       <column name="entry_name">'ur</column>
       <column name="part_of_speech">v:t</column>
       <column name="definition">treason, commit treason</column>
@@ -592,7 +592,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TKDA:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14405</column>
+      <column name="_id"></column>
       <column name="entry_name">'urwI'</column>
       <column name="part_of_speech">n:deriv,being</column>
       <column name="definition">traitor</column>
@@ -611,7 +611,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TKDA:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14406</column>
+      <column name="_id"></column>
       <column name="entry_name">'urgh</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">jab, poke</column>
@@ -630,7 +630,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {Saarbrücken qepHom'a' 2014:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14407</column>
+      <column name="_id"></column>
       <column name="entry_name">'urghwI'</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">Poker (card game)</column>
@@ -649,7 +649,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {Saarbrücken qepHom'a' 2014:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14408</column>
+      <column name="_id"></column>
       <column name="entry_name">'urmang</column>
       <column name="part_of_speech">n</column>
       <column name="definition">treason</column>
@@ -668,7 +668,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14409</column>
+      <column name="_id"></column>
       <column name="entry_name">'uS</column>
       <column name="part_of_speech">n:body</column>
       <column name="definition">leg</column>
@@ -687,7 +687,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14410</column>
+      <column name="_id"></column>
       <column name="entry_name">'uSgheb</column>
       <column name="part_of_speech">n:anim</column>
       <column name="definition">a kind of bird, rooster</column>
@@ -706,7 +706,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {HQ 10.4, Dec. 2001:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14411</column>
+      <column name="_id"></column>
       <column name="entry_name">'uSqan</column>
       <column name="part_of_speech">n</column>
       <column name="definition">iron (element)</column>
@@ -725,7 +725,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {Saarbrücken qepHom'a' 2015:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14412</column>
+      <column name="_id"></column>
       <column name="entry_name">'uSu'</column>
       <column name="part_of_speech">n:food</column>
       <column name="definition">sauce for gladst</column>
@@ -744,7 +744,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {KGT:src}, [2] {KCD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14413</column>
+      <column name="_id"></column>
       <column name="entry_name">'ut</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be essential, necessary</column>
@@ -764,7 +764,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14414</column>
+      <column name="_id"></column>
       <column name="entry_name">'utbe'</column>
       <column name="part_of_speech">v:is</column>
       <column name="definition">be nonessential, unnecessary</column>
@@ -784,7 +784,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source"></column>
     </table>
     <table name="mem">
-      <column name="_id">14415</column>
+      <column name="_id"></column>
       <column name="entry_name">'utbe' bel.</column>
       <column name="part_of_speech">sen:phr</column>
       <column name="definition">Pleasure is nonessential.</column>
@@ -803,7 +803,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TKW p.45:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14416</column>
+      <column name="_id"></column>
       <column name="entry_name">'ut'at</column>
       <column name="part_of_speech">n</column>
       <column name="definition">chest of drawers</column>
@@ -822,7 +822,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {qep'a' 2016:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14417</column>
+      <column name="_id"></column>
       <column name="entry_name">'utlh</column>
       <column name="part_of_speech">n:being</column>
       <column name="definition">officer, officer emeritus</column>
@@ -841,7 +841,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TKD:src}, [2] {KGT:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14418</column>
+      <column name="_id"></column>
       <column name="entry_name">'uy</column>
       <column name="part_of_speech">v:t_c</column>
       <column name="definition">press down</column>
@@ -860,7 +860,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TKD:src}, [2] {Saarbrücken qepHom'a' 2014:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14419</column>
+      <column name="_id"></column>
       <column name="entry_name">'uy'</column>
       <column name="part_of_speech">n:num</column>
       <column name="definition">million</column>
@@ -879,7 +879,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14420</column>
+      <column name="_id"></column>
       <column name="entry_name">'u'</column>
       <column name="part_of_speech">n</column>
       <column name="definition">universe</column>
@@ -898,7 +898,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {TKD:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14421</column>
+      <column name="_id"></column>
       <column name="entry_name">'u' Dop</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">mirror universe</column>
@@ -917,7 +917,7 @@ Drei {'uj:n:nolink} sind etwa 3 Fuß 5 Zoll, fünf {'uj:n:nolink} sind etwa 5 Fu
       <column name="source">[1] {KLI mailing list 2018.01.08:src}</column>
     </table>
     <table name="mem">
-      <column name="_id">14422</column>
+      <column name="_id"></column>
       <column name="entry_name">'u' quq</column>
       <column name="part_of_speech">n:deriv</column>
       <column name="definition">parallel universe</column>

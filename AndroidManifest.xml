@@ -19,11 +19,12 @@
 <!-- For the regular version (with TTS), the versionCode must be odd. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="org.tlhInganHol.android.klingonassistant"
-        android:versionCode="491"
-        android:versionName="2018.07.24a (no TTS)"
+        android:versionCode="496"
+        android:versionName="2018.07.29b (no TTS)"
         android:installLocation="auto">
 
-    <!-- Minimum Android version 2.1 (7), targeted version 4.4 (19). -->
+    <!-- Minimum Android version 2.1 (7), targeted version 4.4 (19). The targeted
+         version must be frozen at 19 as it won't compile to release otherwise. -->
     <!-- For TUTORIAL, minimum is version 4.0 (14). For TTS, it's 4.1 (16). -->
     <uses-sdk android:minSdkVersion="7"
               android:targetSdkVersion="19"/>
