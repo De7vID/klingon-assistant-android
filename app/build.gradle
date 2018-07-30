@@ -12,8 +12,8 @@ android {
         // Minimum Android version needed for TTS is 4.1 (16), targeted version 4.4.4 (20). -->
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 492
-        versionName "2018.07.24a"
+        versionCode 497
+        versionName "2018.07.29b"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
