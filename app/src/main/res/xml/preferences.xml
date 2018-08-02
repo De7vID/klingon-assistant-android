@@ -130,7 +130,6 @@
                 android:summary="@string/show_unsupported_features_preference_summary"
                 android:defaultValue="false" />
 
-        <!--
         <ListPreference
                 android:key="show_secondary_language_list_preference"
                 android:dependency="show_unsupported_features_checkbox_preference"
@@ -140,6 +139,7 @@
                 android:defaultValue="NONE"
                 android:entries="@array/secondaryLanguageChoicesArray"
                 android:entryValues="@array/secondaryLanguageChoicesValues" />
+        <!--
         <CheckBoxPreference
                 android:key="search_secondary_language_checkbox_preference"
                 android:dependency="show_unsupported_features_checkbox_preference"
