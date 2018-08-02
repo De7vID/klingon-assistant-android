@@ -49,12 +49,13 @@ public class Preferences extends AppCompatPreferenceActivity
   private static final String KEY_KLINGON_UI_CHECKBOX_PREFERENCE = "klingon_ui_checkbox_preference";
   private static final String KEY_KLINGON_FONT_LIST_PREFERENCE = "klingon_font_list_preference";
   private static final String KEY_LANGUAGE_DEFAULT_ALREADY_SET = "language_default_already_set";
-  public static final String KEY_SHOW_SECONDARY_LANGUAGE_CHECKBOX_PREFERENCE =
-      "show_secondary_language_checkbox_preference";
+  public static final String KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE =
+      "show_secondary_language_list_preference";
   public static final String KEY_SEARCH_SECONDARY_LANGUAGE_CHECKBOX_PREFERENCE =
       "search_secondary_language_checkbox_preference";
 
-  // Legacy support for German, deprecated and replaced by secondary language support.
+  // Legacy support for German, will eventually be deprecated and replaced by secondary language
+  // support.
   public static final String KEY_SHOW_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE =
       "show_german_definitions_checkbox_preference";
   public static final String KEY_SEARCH_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE =

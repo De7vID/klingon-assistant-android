@@ -33,7 +33,6 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -146,28 +145,6 @@ public class BaseActivity extends AppCompatActivity
         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     getSupportActionBar().setTitle(klingonAppName);
     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-
-    // FAB:
-    // TODO: Use this to display a "sentence maker".
-    // if (sharedPrefs.getBoolean(Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE,
-    //       /* default */ false)) {
-    //   FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    //   fab.setVisibility(View.VISIBLE);
-    //   fab.setOnClickListener(
-    //       new View.OnClickListener() {
-    //         @Override
-    //         public void onClick(View view) {
-    //           // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-    //           //     .setAction("Action", null)
-    //           //     .show();
-    //           // displaySearchResults("This button doesn't work yet!:sen@@wej:adv, Qap:v:2, leQ:n,
-    //           // -vam:n");
-
-    //           Intent intent = new Intent(getBaseContext(), LessonActivity.class);
-    //           startActivity(intent);
-    //         }
-    //       });
-    // }
 
     mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     if (mDrawer != null) {
@@ -462,7 +439,7 @@ public class BaseActivity extends AppCompatActivity
         launchExternal("http://www.kli.org/questions/categories/");
         break;
 
-      // This is disabled because the KLI channel requires an invite.
+        // This is disabled because the KLI channel requires an invite.
         /*
         case R.id.kli_discord:
           launchExternal("https://discordapp.com/channels/235416538927202304/");

@@ -17,13 +17,17 @@
 package org.tlhInganHol.android.klingonassistant;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -36,6 +40,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -48,8 +54,8 @@ public class EntryActivity extends BaseActivity
 
   private static final String TAG = "EntryActivity";
 
-  // The name of this entry.
-  private String mEntryName = null;
+  // The currently-displayed entry (which can change due to page selection).
+  private KlingonContentProvider.Entry mEntry = null;
 
   // The parent query that this entry is a part of.
   // private String mParentQuery = null;
@@ -135,8 +141,8 @@ public class EntryActivity extends BaseActivity
         new KlingonContentProvider.Entry(cursor, getBaseContext());
     int entryId = entry.getId();
 
-    // Update the entry name, which is used for TTS output. This is also updated in onPageSelected.
-    mEntryName = entry.getEntryName();
+    // Update the entry, which is used for TTS output. This is also updated in onPageSelected.
+    mEntry = entry;
 
     if (entryIdsList.size() == 1 && entryIdsList.get(0).equals("get_random_entry")) {
       // For a random entry, replace "get_random_entry" with the ID of randomly
@@ -150,6 +156,9 @@ public class EntryActivity extends BaseActivity
 
     // Update the bottom navigation buttons. This is also done in onPageSelected.
     updateBottomNavigationButtons(entryId);
+
+    // Update the edit button. This is also done in onPageSelected.
+    updateEditButton();
 
     // Instantiate a ViewPager and a PagerAdapter.
     mPager = (ViewPager) findViewById(R.id.entry_pager);
@@ -274,11 +283,11 @@ public class EntryActivity extends BaseActivity
           launchExternal(
               "https://play.google.com/store/apps/details?id=org.tlhInganHol.android.klingonttsengine");
         }
-      } else if (mEntryName != null) {
+      } else if (mEntry != null) {
         // The TTS engine is working, and there's something to say, say it.
         // Log.d(TAG, "Speaking");
-        // Toast.makeText(getBaseContext(), mEntryName, Toast.LENGTH_LONG).show();
-        mTts.speak(mEntryName, TextToSpeech.QUEUE_FLUSH, null);
+        // Toast.makeText(getBaseContext(), mEntry.getEntryName(), Toast.LENGTH_LONG).show();
+        mTts.speak(mEntry.getEntryName(), TextToSpeech.QUEUE_FLUSH, null);
       }
     }
     return super.onOptionsItemSelected(item);
@@ -366,8 +375,8 @@ public class EntryActivity extends BaseActivity
           new KlingonContentProvider.Entry(cursor, getBaseContext());
       int entryId = entry.getId();
 
-      // Update the entry name (used for TTS output). This is also set in onCreate.
-      mEntryName = entry.getEntryName();
+      // Update the entry (used for TTS output). This is also set in onCreate.
+      mEntry = entry;
 
       // Update share menu and set the visibility of the share button. The intent is also set in
       // onCreate, while the visibility is also set in onCreateOptionsMenu.
@@ -387,6 +396,9 @@ public class EntryActivity extends BaseActivity
 
       // Update the bottom navigation buttons. This is also done in onCreate.
       updateBottomNavigationButtons(entryId);
+
+      // Update the edit button. This is also done in onCreate.
+      updateEditButton();
     }
 
     @Override
@@ -458,6 +470,55 @@ public class EntryActivity extends BaseActivity
         });
   }
 
+  private void updateEditButton() {
+    // Enable FAB if conditions are met:
+    SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+    final String editLang =
+        sharedPrefs.getString(
+            Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */ "NONE");
+    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+    if (sharedPrefs.getBoolean(
+            Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE, /* default */ false)
+        && mEntry != null
+        && !editLang.equals("NONE")) {
+      fab.setVisibility(View.VISIBLE);
+      fab.setOnClickListener(
+          new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              String definitionTranslation = null;
+              switch (editLang) {
+                case "de":
+                  definitionTranslation = mEntry.getDefinition_DE();
+                  break;
+                case "fa":
+                  definitionTranslation = mEntry.getDefinition_FA();
+                  break;
+                case "ru":
+                  definitionTranslation = mEntry.getDefinition_RU();
+                  break;
+                case "sv":
+                  definitionTranslation = mEntry.getDefinition_SV();
+                  break;
+                case "zh-HK":
+                  definitionTranslation = mEntry.getDefinition_ZH_HK();
+                  break;
+              }
+              // Open a form with fields filled in.
+              SubmitCorrectionTask submitCorrectionTask = new SubmitCorrectionTask();
+              submitCorrectionTask.execute(
+                  mEntry.getEntryName(),
+                  mEntry.getPartOfSpeech(),
+                  mEntry.getDefinition(),
+                  editLang,
+                  definitionTranslation);
+            }
+          });
+    } else {
+      fab.setVisibility(View.INVISIBLE);
+    }
+  }
+
   private Intent getEntryByIdIntent(int entryId) {
     Cursor cursor;
     cursor =
@@ -500,6 +561,55 @@ public class EntryActivity extends BaseActivity
   private void goToNextEntry() {
     if (mNextEntryIntent != null) {
       startActivity(mNextEntryIntent);
+    }
+  }
+
+  // Generate a Google Forms form for submitting corrections to non-English definitions.
+  private class SubmitCorrectionTask extends AsyncTask<String, Void, Boolean> {
+    private static final String CORRECTION_FORM_URL =
+        "https://docs.google.com/forms/d/e/1FAIpQLSdubRpIpbPFHAclzNx3jrOT85nQLGYCgWPOjIHxPocrecZUzw/viewform";
+    private static final String CORRECTION_ENTRY_NAME_KEY = "entry.1852970057";
+    private static final String CORRECTION_PART_OF_SPEECH_KEY = "entry.1015346696";
+    private static final String CORRECTION_DEFINITION_KEY = "entry.166391661";
+    private static final String CORRECTION_LANGUAGE_KEY = "entry.2030201514";
+    private static final String CORRECTION_DEFINITION_TRANSLATION_KEY = "entry.1343345";
+
+    @Override
+    protected Boolean doInBackground(String... correction) {
+      Boolean result = true;
+      String entry_name = correction[0];
+      String part_of_speech = correction[1];
+      String definition = correction[2];
+      String language = correction[3];
+      String definition_translation = correction[4];
+      String params = "";
+      try {
+        params =
+            CORRECTION_ENTRY_NAME_KEY
+                + "="
+                + URLEncoder.encode(entry_name, "UTF-8")
+                + "&"
+                + CORRECTION_PART_OF_SPEECH_KEY
+                + "="
+                + URLEncoder.encode(part_of_speech, "UTF-8")
+                + "&"
+                + CORRECTION_DEFINITION_KEY
+                + "="
+                + URLEncoder.encode(definition, "UTF-8")
+                + "&"
+                + CORRECTION_LANGUAGE_KEY
+                + "="
+                + URLEncoder.encode(language, "UTF-8")
+                + "&"
+                + CORRECTION_DEFINITION_TRANSLATION_KEY
+                + "="
+                + URLEncoder.encode(definition_translation, "UTF-8");
+      } catch (UnsupportedEncodingException e) {
+        Log.e(TAG, "Failed to encode params.");
+        return false;
+      }
+      launchExternal(CORRECTION_FORM_URL + "?" + params);
+      return true;
     }
   }
 }
