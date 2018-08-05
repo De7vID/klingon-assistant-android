@@ -142,7 +142,8 @@ public class EntryFragment extends Fragment {
         expandedDefinition += "\nde: " + definition_DE;
       }
       if (!definition_FA.equals("")) {
-        expandedDefinition += "\nfa: " + definition_FA;
+        // Wrap Persian text with RLI/PDI pair.
+        expandedDefinition += "\nfa: \u2067" + definition_FA + "\u2069";
       }
       if (!definition_SV.equals("")) {
         expandedDefinition += "\nsv: " + definition_SV;
