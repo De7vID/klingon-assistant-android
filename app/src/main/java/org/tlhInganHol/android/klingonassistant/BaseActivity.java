@@ -808,12 +808,12 @@ public class BaseActivity extends AppCompatActivity
         builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED);
 
       } else {
-        // Set the job to run every 7 days, during a window with unmetered network connectivity.
+        // Set the job to run every 30, during a window with unmetered network connectivity.
         builder =
             new JobInfo.Builder(
                 UPDATE_DB_SERVICE_PERSISTED_JOB_ID,
                 new ComponentName(this, UpdateDatabaseService.class));
-        builder.setPeriodic(TimeUnit.DAYS.toMillis(7));
+        builder.setPeriodic(TimeUnit.DAYS.toMillis(30));
         builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED);
         builder.setBackoffCriteria(TimeUnit.HOURS.toMillis(1), JobInfo.BACKOFF_POLICY_EXPONENTIAL);
         builder.setRequiresCharging(false);
