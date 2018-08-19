@@ -120,6 +120,9 @@ public class BaseActivity extends AppCompatActivity
     // Change locale to Klingon if Klingon UI option is set.
     updateLocaleConfiguration();
 
+    // Set default secondary language if it isn't already set.
+    Preferences.setDefaultSecondaryLanguage(getBaseContext());
+
     setContentView(R.layout.activity_base);
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);

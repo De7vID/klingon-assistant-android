@@ -96,6 +96,17 @@ public class Preferences extends AppCompatPreferenceActivity
     return "NONE";
   }
 
+  public static void setDefaultSecondaryLanguage(Context context) {
+    SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+    if (!sharedPrefs.getBoolean(KEY_LANGUAGE_DEFAULT_ALREADY_SET, /* default */ false)) {
+      SharedPreferences.Editor sharedPrefsEd = sharedPrefs.edit();
+      sharedPrefsEd.putString(
+          KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, getSystemPreferredLanguage());
+      sharedPrefsEd.putBoolean(KEY_LANGUAGE_DEFAULT_ALREADY_SET, true);
+      sharedPrefsEd.apply();
+    }
+  }
+
   // Whether the UI (menus, hints, etc.) should be displayed in Klingon.
   public static boolean useKlingonUI(Context context) {
     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);

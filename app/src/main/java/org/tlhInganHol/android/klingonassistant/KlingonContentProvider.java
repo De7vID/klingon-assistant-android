@@ -1059,8 +1059,7 @@ public class KlingonContentProvider extends ContentProvider {
         String otherLanguageDefinition = getOtherLanguageDefinition();
         return otherLanguageDefinition != null
             && !otherLanguageDefinition.equals("")
-            && !otherLanguageDefinition.equals(mDefinition)
-            && !isName();
+            && !otherLanguageDefinition.equals(mDefinition);
       } else {
         return false;
       }
