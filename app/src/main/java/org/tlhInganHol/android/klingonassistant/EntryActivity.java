@@ -475,12 +475,11 @@ public class EntryActivity extends BaseActivity
     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
     final String editLang =
         sharedPrefs.getString(
-            Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */ "NONE");
+            Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */
+            Preferences.getSystemPreferredLanguage());
     FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    if (sharedPrefs.getBoolean(
-            Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE, /* default */ false)
-        && mEntry != null
-        && !editLang.equals("NONE")) {
+    // Show the "edit" button for secondary languages other than German.
+    if (mEntry != null && !editLang.equals("NONE") && !editLang.equals("de")) {
       fab.setVisibility(View.VISIBLE);
       fab.setOnClickListener(
           new View.OnClickListener() {

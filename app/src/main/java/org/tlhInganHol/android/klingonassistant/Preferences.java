@@ -24,7 +24,6 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
@@ -51,8 +50,6 @@ public class Preferences extends AppCompatPreferenceActivity
   private static final String KEY_LANGUAGE_DEFAULT_ALREADY_SET = "language_default_already_set";
   public static final String KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE =
       "show_secondary_language_list_preference";
-  public static final String KEY_SEARCH_SECONDARY_LANGUAGE_CHECKBOX_PREFERENCE =
-      "search_secondary_language_checkbox_preference";
 
   // Legacy support for German, will eventually be deprecated and replaced by secondary language
   // support.
@@ -80,10 +77,23 @@ public class Preferences extends AppCompatPreferenceActivity
   public static final String KEY_KWOTD_CHECKBOX_PREFERENCE = "kwotd_checkbox_preference";
   public static final String KEY_UPDATE_DB_CHECKBOX_PREFERENCE = "update_db_checkbox_preference";
 
-  // Detect if the system language is German.
-  public static boolean shouldPreferGerman() {
-    Locale locale = KlingonAssistant.getSystemLocale();
-    return locale.getLanguage().equals(Locale.GERMAN.getLanguage());
+  // Detect if the system language is a supported language.
+  public static String getSystemPreferredLanguage() {
+    String language = KlingonAssistant.getSystemLocale().getLanguage();
+    if (language == Locale.GERMAN.getLanguage()) {
+      return "de";
+    } else if (language == new Locale("fa").getLanguage()) {
+      return "fa";
+    } else if (language == new Locale("ru").getLanguage()) {
+      return "ru";
+    } else if (language == new Locale("sv").getLanguage()) {
+      return "sv";
+    } else if (language == Locale.CHINESE.getLanguage()) {
+      // TODO: Distinguish different topolects of Chinese. For now, prefer Hong Kong Chinese if the
+      // system locale is any topolect of Chinese.
+      return "zh-HK";
+    }
+    return "NONE";
   }
 
   // Whether the UI (menus, hints, etc.) should be displayed in Klingon.
@@ -149,22 +159,37 @@ public class Preferences extends AppCompatPreferenceActivity
     // TODO: Expand the language list to include incomplete languages if unsupported features is
     // selected. Switch to English if unsupported features has been deselected and an incomplete
     // language has been selected. Enable or disable the search in secondary language checkbox.
-
-    // Set the defaults for the German options based on the user's language, if it hasn't been
-    // already set.
     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-    if (!sharedPrefs.getBoolean(KEY_LANGUAGE_DEFAULT_ALREADY_SET, /* default */ false)) {
-      CheckBoxPreference mShowGermanCheckBoxPreference =
-          (CheckBoxPreference)
-              getPreferenceScreen().findPreference(KEY_SHOW_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE);
-      CheckBoxPreference mSearchGermanCheckBoxPreference =
-          (CheckBoxPreference)
-              getPreferenceScreen()
-                  .findPreference(KEY_SEARCH_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE);
-      mShowGermanCheckBoxPreference.setChecked(shouldPreferGerman());
-      mSearchGermanCheckBoxPreference.setChecked(shouldPreferGerman());
+    SharedPreferences.Editor sharedPrefsEd = sharedPrefs.edit();
 
-      SharedPreferences.Editor sharedPrefsEd = sharedPrefs.edit();
+    // Support the legacy German options.
+    final boolean showGerman =
+        sharedPrefs.getBoolean(
+            KEY_SHOW_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE, /* default */ false);
+    if (showGerman) {
+      final boolean searchGerman =
+          sharedPrefs.getBoolean(
+              KEY_SEARCH_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE, /* default */ false);
+
+      // Copy to the new settings.
+      sharedPrefsEd.putString(KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, "de");
+
+      // Clear the legacy settings.
+      sharedPrefsEd.putBoolean(KEY_SHOW_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE, false);
+      sharedPrefsEd.putBoolean(KEY_SEARCH_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE, false);
+
+      sharedPrefsEd.putBoolean(KEY_LANGUAGE_DEFAULT_ALREADY_SET, true);
+      sharedPrefsEd.apply();
+    }
+
+    // Set the defaults for the other-language options based on the user's language, if it hasn't
+    // been already set.
+    if (!sharedPrefs.getBoolean(KEY_LANGUAGE_DEFAULT_ALREADY_SET, /* default */ false)) {
+      ListPreference mShowOtherLanguageListPreference =
+          (ListPreference)
+              getPreferenceScreen().findPreference(KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE);
+      mShowOtherLanguageListPreference.setValue(getSystemPreferredLanguage());
+
       sharedPrefsEd.putBoolean(KEY_LANGUAGE_DEFAULT_ALREADY_SET, true);
       sharedPrefsEd.apply();
     }

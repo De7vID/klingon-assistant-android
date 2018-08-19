@@ -109,19 +109,21 @@ public class EntryFragment extends Fragment {
     String pos = entry.getFormattedPartOfSpeech(/* isHtml */ false);
     String expandedDefinition = pos;
 
-    // Determine whether to show the German definition. If shown, it is primary, and the English
-    // definition is shown as secondary.
+    // Determine whether to show the other-language definition. If shown, it is primary, and the
+    // English definition is shown as secondary.
     String englishDefinition = entry.getDefinition();
-    boolean displayGermanEntry = entry.shouldDisplayGermanDefinition();
+    boolean displayOtherLanguageEntry = entry.shouldDisplayOtherLanguageDefinition();
     int englishDefinitionStart = -1;
     String englishDefinitionHeader = "\n" + resources.getString(R.string.label_english) + ": ";
-    if (!displayGermanEntry) {
+    String otherLanguageDefinition = "";
+    if (!displayOtherLanguageEntry) {
       // The simple case: just the English definition.
       expandedDefinition += englishDefinition;
     } else {
-      // We display the German definition as the primary one, but keep track of the location of the
-      // English definition to change its font size later.
-      expandedDefinition += entry.getDefinition_DE();
+      // We display the other-language definition as the primary one, but keep track of the location
+      // of the English definition to change its font size later.
+      otherLanguageDefinition = entry.getOtherLanguageDefinition();
+      expandedDefinition += otherLanguageDefinition;
       englishDefinitionStart = expandedDefinition.length();
       expandedDefinition += englishDefinitionHeader + englishDefinition;
     }
@@ -136,30 +138,30 @@ public class EntryFragment extends Fragment {
       String definition_RU = entry.getDefinition_RU();
       String definition_ZH_HK = entry.getDefinition_ZH_HK();
 
-      // Show the German definition here only if it isn't already shown as the primary definition
-      // (and the experimental flag is set to true).
-      if (!displayGermanEntry && !definition_DE.equals("")) {
+      // Show the other-language definition here only if it isn't already shown as the primary
+      // definition (and the experimental flag is set to true).
+      if (!definition_DE.equals("") && !definition_DE.equals(otherLanguageDefinition)) {
         expandedDefinition += "\nde: " + definition_DE;
       }
-      if (!definition_FA.equals("")) {
+      if (!definition_FA.equals("") && !definition_FA.equals(otherLanguageDefinition)) {
         // Wrap Persian text with RLI/PDI pair.
         expandedDefinition += "\nfa: \u2067" + definition_FA + "\u2069";
       }
-      if (!definition_SV.equals("")) {
+      if (!definition_SV.equals("") && !definition_SV.equals(otherLanguageDefinition)) {
         expandedDefinition += "\nsv: " + definition_SV;
       }
-      if (!definition_RU.equals("")) {
+      if (!definition_RU.equals("") && !definition_RU.equals(otherLanguageDefinition)) {
         expandedDefinition += "\nru: " + definition_RU;
       }
-      if (!definition_ZH_HK.equals("")) {
+      if (!definition_ZH_HK.equals("") && !definition_ZH_HK.equals(otherLanguageDefinition)) {
         expandedDefinition += "\nzh-HK: " + definition_ZH_HK;
       }
     }
 
     // Show the basic notes.
     String notes;
-    if (entry.shouldDisplayGermanNotes()) {
-      notes = entry.getNotes_DE();
+    if (entry.shouldDisplayOtherLanguageNotes()) {
+      notes = entry.getOtherLanguageNotes();
     } else {
       notes = entry.getNotes();
     }
@@ -254,8 +256,8 @@ public class EntryFragment extends Fragment {
 
     // Show the examples.
     String examples;
-    if (entry.shouldDisplayGermanExamples()) {
-      examples = entry.getExamples_DE();
+    if (entry.shouldDisplayOtherLanguageExamples()) {
+      examples = entry.getOtherLanguageExamples();
     } else {
       examples = entry.getExamples();
     }
@@ -309,7 +311,7 @@ public class EntryFragment extends Fragment {
       // Italicise the part of speech.
       ssb.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), 0, pos.length(), FINAL_FLAGS);
     }
-    if (displayGermanEntry) {
+    if (displayOtherLanguageEntry) {
       // Reduce the size of the secondary (English) definition.
       ssb.setSpan(
           new RelativeSizeSpan(smallTextScale),
