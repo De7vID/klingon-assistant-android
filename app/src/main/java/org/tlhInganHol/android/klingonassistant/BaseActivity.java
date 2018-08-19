@@ -90,6 +90,9 @@ public class BaseActivity extends AppCompatActivity
   private static final String QUERY_FOR_BEGINNERS_CONVERSATION = "*:sen:bc";
   private static final String QUERY_FOR_JOKES = "*:sen:joke";
 
+  // For beta languages, query for autotranslated definitions.
+  private static final String QUERY_FOR_AUTOTRANSLATED_DEFINITIONS = "[AUTOTRANSLATED]";
+
   // Job ID for the KwotdService jobs. Just has to be unique.
   private static final int KWOTD_SERVICE_PERSISTED_JOB_ID = 0;
   private static final int KWOTD_SERVICE_ONE_OFF_JOB_ID = 1;
@@ -358,7 +361,7 @@ public class BaseActivity extends AppCompatActivity
       applyTypefaceToMenuItem(menuItem, /* enlarge */ false);
     }
 
-    // Show "Lessons" and "Fetch KWOTD" buttons if "unsupported features" option is selected.
+    // Show normally-hidden menu items if "unsupported features" option is selected.
     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
     if (sharedPrefs.getBoolean(
         Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE, /* default */ false)) {
@@ -370,6 +373,15 @@ public class BaseActivity extends AppCompatActivity
 
       MenuItem updateDatabaseButton = menu.findItem(R.id.action_update_db);
       updateDatabaseButton.setVisible(true);
+
+      final String editLang =
+          sharedPrefs.getString(
+              Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */
+              Preferences.getSystemPreferredLanguage());
+      if (!editLang.equals("NONE") && !editLang.equals("de")) {
+        MenuItem autotranslateButton = menu.findItem(R.id.action_autotranslate);
+        autotranslateButton.setVisible(true);
+      }
     }
 
     return true;
@@ -674,6 +686,9 @@ public class BaseActivity extends AppCompatActivity
         return true;
       case R.id.action_update_db:
         runUpdateDatabaseServiceJob(/* isOneOffJob */ true);
+        return true;
+      case R.id.action_autotranslate:
+        displaySearchResults(QUERY_FOR_AUTOTRANSLATED_DEFINITIONS);
         return true;
       case R.id.about:
         // Show "About" screen.
