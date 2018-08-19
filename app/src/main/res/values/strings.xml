@@ -181,10 +181,10 @@
     <!-- Choices for secondary languages. -->
     <string name="secondary_language_none">None</string>
     <string name="secondary_language_german">German</string>
-    <string name="secondary_language_persian">Persian</string>
-    <string name="secondary_language_russian">Russian</string>
-    <string name="secondary_language_swedish">Swedish</string>
-    <string name="secondary_language_chinese_hong_kong">Hong Kong Chinese</string>
+    <string name="secondary_language_persian">Persian (beta)</string>
+    <string name="secondary_language_russian">Russian (beta)</string>
+    <string name="secondary_language_swedish">Swedish (beta)</string>
+    <string name="secondary_language_chinese_hong_kong">Hong Kong Chinese (beta)</string>
 
     <!-- Metadata labels and descriptions. -->
     <string name="label_see_alt_entry">See</string>
