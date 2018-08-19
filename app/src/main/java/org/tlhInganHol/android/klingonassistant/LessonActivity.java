@@ -382,10 +382,10 @@ public class LessonActivity extends AppCompatActivity
     }
     KlingonContentProvider.Entry entry = new KlingonContentProvider.Entry(cursor, this);
     String definition;
-    if (!entry.shouldDisplayGermanDefinition()) {
+    if (!entry.shouldDisplayOtherLanguageDefinition()) {
       definition = entry.getDefinition();
     } else {
-      definition = entry.getDefinition_DE();
+      definition = entry.getOtherLanguageDefinition();
     }
     return definition;
   }

@@ -169,7 +169,7 @@ public class KlingonContentDatabase {
 
   // This should be kept in sync with the version number in the database
   // entry {boQwI':n} of the database which is bundled into the app.
-  private static final int BUNDLED_DATABASE_VERSION = 201808020;
+  private static final int BUNDLED_DATABASE_VERSION = 201808190;
 
   // Metadata about the installed database, and the updated database, if any.
   public static final String KEY_INSTALLED_DATABASE_VERSION = "installed_database_version";
@@ -185,7 +185,7 @@ public class KlingonContentDatabase {
   // the IDs of the first entry and one past the ID of the last non-hypothetical,
   // non-extended-canon entry in the database, respectively.
   private static final int ID_OF_FIRST_ENTRY = 10000;
-  private static final int ID_OF_FIRST_EXTRA_ENTRY = 14486;
+  private static final int ID_OF_FIRST_EXTRA_ENTRY = 14488;
 
   private final KlingonDatabaseOpenHelper mDatabaseOpenHelper;
   private static final HashMap<String, String> mColumnMap = buildColumnMap();
@@ -408,17 +408,6 @@ public class KlingonContentDatabase {
       looseQuery = expandShorthand(queryBase);
     }
 
-    // Get the preference for whether we should search the German definitions or not.
-    // Note that the search preference is dependent on the show preference.
-    SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-    boolean searchGermanDefinitions =
-        sharedPrefs.getBoolean(
-                Preferences.KEY_SHOW_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE, /* default */
-                Preferences.shouldPreferGerman())
-            && sharedPrefs.getBoolean(
-                Preferences.KEY_SEARCH_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE, /* default */
-                Preferences.shouldPreferGerman());
-
     if (queryEntry.basePartOfSpeechIsUnknown() && queryEntry.getEntryName().length() > 4) {
       // If the POS is unknown and the query is greater than 4 characters, try to parse it
       // as a complex word or sentence.
@@ -454,60 +443,68 @@ public class KlingonContentDatabase {
 
       // Match definitions, from beginning. Since the definition is (almost
       // always) canonical, always search in English. Additionally search in
-      // German if that option is set.
+      // other-language if that option is set.
       matchDefinitionsOrSearchTags(
           queryBase,
           true, /* isPrefix */
           false, /* useSearchTags */
-          false, /* searchGermanDefinitions */
+          false, /* searchOtherLanguageDefinitions */
           resultsCursor,
           resultsSet);
-      if (searchGermanDefinitions) {
-        matchDefinitionsOrSearchTags(
-            queryBase,
-            true, /* isPrefix */
-            false, /* useSearchTags */
-            true, /* searchGermanDefinitions */
-            resultsCursor,
-            resultsSet);
-      }
+      matchDefinitionsOrSearchTags(
+          queryBase,
+          true, /* isPrefix */
+          false, /* useSearchTags */
+          true, /* searchOtherLanguageDefinitions */
+          resultsCursor,
+          resultsSet);
 
       // Match definitions, anywhere else. Again, always search in English, and
-      // additionally search in German if that option is set. Limit to 3
+      // additionally search in other-language if that option is set. Limit to 3
       // characters as there would be too many coincidental hits otherwise.
       if (queryEntry.getEntryName().length() >= 3) {
         matchDefinitionsOrSearchTags(
             queryBase,
             false, /* isPrefix */
             false, /* useSearchTags */
-            false, /* searchGermanDefinitions */
+            false, /* searchOtherLanguageDefinitions */
             resultsCursor,
             resultsSet);
-        if (searchGermanDefinitions) {
-          matchDefinitionsOrSearchTags(
-              queryBase,
-              false, /* isPrefix */
-              false, /* useSearchTags */
-              true, /* searchGermanDefinitions */
-              resultsCursor,
-              resultsSet);
-        }
+        matchDefinitionsOrSearchTags(
+            queryBase,
+            false, /* isPrefix */
+            false, /* useSearchTags */
+            true, /* searchOtherLanguageDefinitions */
+            resultsCursor,
+            resultsSet);
 
-        // Match search tags, from beginning, then anywhere else. Don't bother
-        // searching the search tags in English if the option to search German
-        // is set.
+        // Match search tags, from beginning, then anywhere else.
         matchDefinitionsOrSearchTags(
             queryBase,
             true, /* isPrefix */
             true, /* useSearchTags */
-            searchGermanDefinitions,
+            false, /* searchOtherLanguageDefinitions */
+            resultsCursor,
+            resultsSet);
+        matchDefinitionsOrSearchTags(
+            queryBase,
+            true, /* isPrefix */
+            true, /* useSearchTags */
+            true, /* searchOtherLanguageDefinitions */
             resultsCursor,
             resultsSet);
         matchDefinitionsOrSearchTags(
             queryBase,
             false, /* isPrefix */
             true, /* useSearchTags */
-            searchGermanDefinitions,
+            false, /* searchOtherLanguageDefinitions */
+            resultsCursor,
+            resultsSet);
+        matchDefinitionsOrSearchTags(
+            queryBase,
+            false, /* isPrefix */
+            true, /* useSearchTags */
+            true, /* searchOtherLanguageDefinitions */
             resultsCursor,
             resultsSet);
       }
@@ -698,20 +695,58 @@ public class KlingonContentDatabase {
   // Helper method to search for entries whose definitions or search tags match the query.
   // Note that matches are case-insensitive.
   private Cursor getEntriesMatchingDefinition(
-      String piece, boolean isPrefix, boolean useSearchTags, boolean searchGermanDefinitions) {
+      String piece,
+      boolean isPrefix,
+      boolean useSearchTags,
+      boolean searchOtherLanguageDefinitions) {
 
     // The search key is either the definition or the search tags.
-    String key;
-    if (searchGermanDefinitions) {
-      key =
-          useSearchTags
-              ? KlingonContentDatabase.KEY_SEARCH_TAGS_DE
-              : KlingonContentDatabase.KEY_DEFINITION_DE;
-    } else {
-      key =
-          useSearchTags
-              ? KlingonContentDatabase.KEY_SEARCH_TAGS
-              : KlingonContentDatabase.KEY_DEFINITION;
+    SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+    final String otherLang =
+        sharedPrefs.getString(
+            Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */
+            Preferences.getSystemPreferredLanguage());
+    String key =
+        useSearchTags
+            ? KlingonContentDatabase.KEY_SEARCH_TAGS
+            : KlingonContentDatabase.KEY_DEFINITION;
+    if (searchOtherLanguageDefinitions) {
+      switch (otherLang) {
+        case "de":
+          key =
+              useSearchTags
+                  ? KlingonContentDatabase.KEY_SEARCH_TAGS_DE
+                  : KlingonContentDatabase.KEY_DEFINITION_DE;
+          break;
+
+        case "fa":
+          key =
+              useSearchTags
+                  ? KlingonContentDatabase.KEY_SEARCH_TAGS_FA
+                  : KlingonContentDatabase.KEY_DEFINITION_FA;
+          break;
+
+        case "ru":
+          key =
+              useSearchTags
+                  ? KlingonContentDatabase.KEY_SEARCH_TAGS_RU
+                  : KlingonContentDatabase.KEY_DEFINITION_RU;
+          break;
+
+        case "sv":
+          key =
+              useSearchTags
+                  ? KlingonContentDatabase.KEY_SEARCH_TAGS_SV
+                  : KlingonContentDatabase.KEY_DEFINITION_SV;
+          break;
+
+        case "zh-HK":
+          key =
+              useSearchTags
+                  ? KlingonContentDatabase.KEY_SEARCH_TAGS_ZH_HK
+                  : KlingonContentDatabase.KEY_DEFINITION_ZH_HK;
+          break;
+      }
     }
 
     // If searching for a prefix, nothing can precede the query; otherwise,
@@ -741,16 +776,17 @@ public class KlingonContentDatabase {
   }
 
   // Helper method to make it easier to search either definitions or search tags, in either English
-  // or German.
+  // or other-language.
   private void matchDefinitionsOrSearchTags(
       String piece,
       boolean isPrefix,
       boolean useSearchTags,
-      boolean searchGermanDefinitions,
+      boolean searchOtherLanguageDefinitions,
       MatrixCursor resultsCursor,
       HashSet<Integer> resultsSet) {
     Cursor matchingResults =
-        getEntriesMatchingDefinition(piece, isPrefix, useSearchTags, searchGermanDefinitions);
+        getEntriesMatchingDefinition(
+            piece, isPrefix, useSearchTags, searchOtherLanguageDefinitions);
     copyCursorEntries(resultsCursor, resultsSet, matchingResults, /* filter */ false, null);
     if (matchingResults != null) {
       matchingResults.close();

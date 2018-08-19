@@ -908,11 +908,11 @@ public class KlingonContentProvider extends ContentProvider {
     public String getFormattedDefinition(boolean isHtml) {
       String pos = getFormattedPartOfSpeech(isHtml);
 
-      // Get definition, and append German definition if appropriate.
+      // Get definition, and append other-language definition if appropriate.
       String definition = mDefinition;
-      if (shouldDisplayGermanDefinition()) {
-        // Display the German as the primary definition and the English as the secondary.
-        definition = getDefinition_DE() + " / " + definition;
+      if (shouldDisplayOtherLanguageDefinition()) {
+        // Display the other-language as the primary definition and the English as the secondary.
+        definition = getOtherLanguageDefinition() + " / " + definition;
       }
 
       // Replace brackets in definition with bold.
@@ -1001,6 +1001,27 @@ public class KlingonContentProvider extends ContentProvider {
 
     // TODO: Refactor the additional languages code to be much more compact.
     // These functions should probably take a language code as a second parameter.
+    public String getOtherLanguageDefinition() {
+      SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+      final String otherLang =
+          sharedPrefs.getString(
+              Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */ "NONE");
+      switch (otherLang) {
+        case "de":
+          return getDefinition_DE();
+        case "fa":
+          return getDefinition_FA();
+        case "ru":
+          return getDefinition_RU();
+        case "sv":
+          return getDefinition_SV();
+        case "zh-HK":
+          return getDefinition_ZH_HK();
+        default:
+          return getDefinition();
+      }
+    }
+
     public String getDefinition_DE() {
       // If there is no German definition, the cursor could've returned
       // null, so that needs to be handled.
@@ -1025,44 +1046,54 @@ public class KlingonContentProvider extends ContentProvider {
       return (mSearchTags_DE == null) ? "" : mSearchTags_DE;
     }
 
-    // Returns true iff the German definition should displayed.
-    public boolean shouldDisplayGermanDefinition() {
+    // Returns true iff the other-language definition should displayed.
+    public boolean shouldDisplayOtherLanguageDefinition() {
       SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-      if (sharedPrefs.getBoolean(
-          Preferences.KEY_SHOW_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE, /* default */
-          Preferences.shouldPreferGerman())) {
-        // Show German definitions preference set to true and German definition is not empty or
-        // identical to the English.
-        return mDefinition_DE != null
-            && !mDefinition_DE.equals("")
-            && !mDefinition_DE.equals(mDefinition)
-            && !isName();
+      final String otherLang =
+          sharedPrefs.getString(
+              Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */
+              Preferences.getSystemPreferredLanguage());
+      if (otherLang != "NONE") {
+        // Show other-language definitions preference set to a language and that other-language
+        // definition is not empty or identical to the English.
+        String otherLanguageDefinition = getOtherLanguageDefinition();
+        return otherLanguageDefinition != null
+            && !otherLanguageDefinition.equals("")
+            && !otherLanguageDefinition.equals(mDefinition);
       } else {
         return false;
       }
     }
 
-    // Returns true iff the German notes should be displayed.
-    public boolean shouldDisplayGermanNotes() {
+    // Returns true iff the other-language notes should be displayed.
+    public boolean shouldDisplayOtherLanguageNotes() {
       SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-      if (sharedPrefs.getBoolean(
-          Preferences.KEY_SHOW_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE, /* default */
-          Preferences.shouldPreferGerman())) {
-        // Show German definitions preference set to true and German notes are not empty.
-        return mNotes_DE != null && !mNotes_DE.equals("");
+      final String otherLang =
+          sharedPrefs.getString(
+              Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */
+              Preferences.getSystemPreferredLanguage());
+      if (otherLang != "NONE") {
+        // Show other-language definitions preference set to a language and that other-language
+        // notes are not empty.
+        String otherLanguageNotes = getOtherLanguageNotes();
+        return otherLanguageNotes != null && !otherLanguageNotes.equals("");
       } else {
         return false;
       }
     }
 
-    // Returns true iff the German examples should be displayed.
-    public boolean shouldDisplayGermanExamples() {
+    // Returns true iff the other-language examples should be displayed.
+    public boolean shouldDisplayOtherLanguageExamples() {
       SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-      if (sharedPrefs.getBoolean(
-          Preferences.KEY_SHOW_GERMAN_DEFINITIONS_CHECKBOX_PREFERENCE, /* default */
-          Preferences.shouldPreferGerman())) {
-        // Show German definitions preference set to true and German examples are not empty.
-        return mExamples_DE != null && !mExamples_DE.equals("");
+      final String otherLang =
+          sharedPrefs.getString(
+              Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */
+              Preferences.getSystemPreferredLanguage());
+      if (otherLang != "NONE") {
+        // Show other-language definitions preference set to a language and that other-language
+        // examples are not empty.
+        String otherLanguageExamples = getOtherLanguageExamples();
+        return otherLanguageExamples != null && !otherLanguageExamples.equals("");
       } else {
         return false;
       }
@@ -1180,6 +1211,28 @@ public class KlingonContentProvider extends ContentProvider {
       return mNotes;
     }
 
+    // TODO: Refactor.
+    public String getOtherLanguageNotes() {
+      SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+      final String otherLang =
+          sharedPrefs.getString(
+              Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */ "NONE");
+      switch (otherLang) {
+        case "de":
+          return getNotes_DE();
+        case "fa":
+          return getNotes_FA();
+        case "ru":
+          return getNotes_RU();
+        case "sv":
+          return getNotes_SV();
+        case "zh-HK":
+          return getNotes_ZH_HK();
+        default:
+          return getNotes();
+      }
+    }
+
     public String getHiddenNotes() {
       return mHiddenNotes;
     }
@@ -1207,6 +1260,28 @@ public class KlingonContentProvider extends ContentProvider {
 
     public String getExamples() {
       return mExamples;
+    }
+
+    // TODO: Refactor.
+    public String getOtherLanguageExamples() {
+      SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+      final String otherLang =
+          sharedPrefs.getString(
+              Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */ "NONE");
+      switch (otherLang) {
+        case "de":
+          return getExamples_DE();
+        case "fa":
+          return getExamples_FA();
+        case "ru":
+          return getExamples_RU();
+        case "sv":
+          return getExamples_SV();
+        case "zh-HK":
+          return getExamples_ZH_HK();
+        default:
+          return getExamples();
+      }
     }
 
     public String getSearchTags() {

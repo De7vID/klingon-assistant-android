@@ -5,4 +5,5 @@ cd data
 ./generate_db.sh --noninteractive
 cp qawHaq.db ../app/src/main/assets/
 ./unnumber.sh
+./stats.sh
 cd ..
