@@ -510,7 +510,7 @@ public class EntryActivity extends BaseActivity
                   mEntry.getPartOfSpeech(),
                   mEntry.getDefinition(),
                   editLang,
-                  definitionTranslation);
+                  definitionTranslation.replace(" [AUTOTRANSLATED]", ""));
             }
           });
     } else {
