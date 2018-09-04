@@ -408,6 +408,9 @@ public class KlingonContentDatabase {
       looseQuery = expandShorthand(queryBase);
     }
 
+    // TODO: Add option to search English and other-language fields first, followed by Klingon.
+    // (Many users are searching for a Klingon word using a non-Klingon search query, rather
+    // than the other way around.)
     if (queryEntry.basePartOfSpeechIsUnknown() && queryEntry.getEntryName().length() > 4) {
       // If the POS is unknown and the query is greater than 4 characters, try to parse it
       // as a complex word or sentence.
@@ -425,13 +428,14 @@ public class KlingonContentDatabase {
 
     // If the query was made without a base part of speech, expand the
     // search to include entries not beginning with the query, and also
-    // search on the (English) definition and search tags. Limit to at
-    // least 2 characters as anything less than that isn't meaningful in
-    // Klingon, but 2 characters allow searching from the end for
-    // "rhyming" purposes.
+    // search on the (English) definition and search tags.
     if (queryEntry.basePartOfSpeechIsUnknown()) {
-      // Try the entries, but not from the beginning.
-      if (queryEntry.getEntryName().length() >= 2) {
+      // Try the entries, but not from the beginning. Limit to at
+      // least 2 characters as anything less than that isn't meaningful in
+      // Klingon, but 2 characters allow searching from the end for
+      // "rhyming" purposes.
+      int klingonNonPrefixMinLength = 2;
+      if (queryEntry.getEntryName().length() >= klingonNonPrefixMinLength) {
         Cursor resultsWithGivenQueryCursor =
             getEntriesContainingQuery(looseQuery, /* isPrefix */ false);
         copyCursorEntries(
@@ -461,24 +465,37 @@ public class KlingonContentDatabase {
 
       // Match definitions, anywhere else. Again, always search in English, and
       // additionally search in other-language if that option is set. Limit to 3
-      // characters as there would be too many coincidental hits otherwise.
-      if (queryEntry.getEntryName().length() >= 3) {
-        matchDefinitionsOrSearchTags(
-            queryBase,
-            false, /* isPrefix */
-            false, /* useSearchTags */
-            false, /* searchOtherLanguageDefinitions */
-            resultsCursor,
-            resultsSet);
-        matchDefinitionsOrSearchTags(
-            queryBase,
-            false, /* isPrefix */
-            false, /* useSearchTags */
-            true, /* searchOtherLanguageDefinitions */
-            resultsCursor,
-            resultsSet);
+      // characters as there would be too many coincidental hits otherwise, except
+      // if other-language is Chinese.
+      SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+      final String otherLang =
+          sharedPrefs.getString(
+              Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */
+              Preferences.getSystemPreferredLanguage());
+      int englishNonPrefixMinLength = 3;
+      int otherLanguageNonPrefixMinLength = otherLang.equals("zh-HK") ? 1 : 3;
 
-        // Match search tags, from beginning, then anywhere else.
+      if (queryEntry.getEntryName().length() >= englishNonPrefixMinLength) {
+        matchDefinitionsOrSearchTags(
+            queryBase,
+            false, /* isPrefix */
+            false, /* useSearchTags */
+            false, /* searchOtherLanguageDefinitions */
+            resultsCursor,
+            resultsSet);
+      }
+      if (queryEntry.getEntryName().length() >= otherLanguageNonPrefixMinLength) {
+        matchDefinitionsOrSearchTags(
+            queryBase,
+            false, /* isPrefix */
+            false, /* useSearchTags */
+            true, /* searchOtherLanguageDefinitions */
+            resultsCursor,
+            resultsSet);
+      }
+
+      // Match search tags, from beginning, then anywhere else.
+      if (queryEntry.getEntryName().length() >= englishNonPrefixMinLength) {
         matchDefinitionsOrSearchTags(
             queryBase,
             true, /* isPrefix */
@@ -486,6 +503,8 @@ public class KlingonContentDatabase {
             false, /* searchOtherLanguageDefinitions */
             resultsCursor,
             resultsSet);
+      }
+      if (queryEntry.getEntryName().length() >= otherLanguageNonPrefixMinLength) {
         matchDefinitionsOrSearchTags(
             queryBase,
             true, /* isPrefix */
@@ -493,6 +512,8 @@ public class KlingonContentDatabase {
             true, /* searchOtherLanguageDefinitions */
             resultsCursor,
             resultsSet);
+      }
+      if (queryEntry.getEntryName().length() >= englishNonPrefixMinLength) {
         matchDefinitionsOrSearchTags(
             queryBase,
             false, /* isPrefix */
@@ -500,6 +521,8 @@ public class KlingonContentDatabase {
             false, /* searchOtherLanguageDefinitions */
             resultsCursor,
             resultsSet);
+      }
+      if (queryEntry.getEntryName().length() >= otherLanguageNonPrefixMinLength) {
         matchDefinitionsOrSearchTags(
             queryBase,
             false, /* isPrefix */
@@ -749,9 +772,12 @@ public class KlingonContentDatabase {
       }
     }
 
-    // If searching for a prefix, nothing can precede the query; otherwise,
-    // it must be preceded by a space (it begins a word).
-    String precedingWildcard = isPrefix ? "" : "% ";
+    // If searching for a prefix (here, this means not a verb prefix, but
+    // a query which is a prefix of the definition), nothing can precede
+    // the query; otherwise, it must be preceded by a space (it begins a word),
+    // except in Chinese.
+    String nonPrefixPrecedingWildCard = otherLang.equals("zh-HK") ? "%" : "% ";
+    String precedingWildcard = isPrefix ? "" : nonPrefixPrecedingWildCard;
 
     SQLiteDatabase db = mDatabaseOpenHelper.getReadableDatabase();
     db.rawQuery("PRAGMA case_sensitive_like = OFF", null);
