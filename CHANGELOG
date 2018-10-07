@@ -1,5 +1,6 @@
 CHANGELOG
 
+2018-10-07: Deprecate API_7 version (target SDK 19), will no longer be updated.
 2018-09-04: Fix Chinese search.
 2018-08-19: Change German language options to broader secondary language options.
 2018-08-02: Add ability to submit corrections to Google Forms.
