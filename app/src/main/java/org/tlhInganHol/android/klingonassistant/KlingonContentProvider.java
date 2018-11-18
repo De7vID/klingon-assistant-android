@@ -839,6 +839,13 @@ public class KlingonContentProvider extends ContentProvider {
         }
         attr += maybeItalics("slang", isHtml);
       }
+      // While whether an entry is a name isn't actually an attribute, treat it as one.
+      if (isName()) {
+        if (!attr.equals("")) {
+          attr += ", ";
+        }
+        attr += maybeItalics("name", isHtml);
+      }
       if (!attr.equals("")) {
         if (isHtml) {
           // Should also set color to android:textColorSecondary.
@@ -993,9 +1000,6 @@ public class KlingonContentProvider extends ContentProvider {
     }
 
     public String getDefinition() {
-      if (mBasePartOfSpeech == BasePartOfSpeechEnum.NOUN && mNounType == NounType.NAME) {
-        return mDefinition + " (name)";
-      }
       return mDefinition;
     }
 
