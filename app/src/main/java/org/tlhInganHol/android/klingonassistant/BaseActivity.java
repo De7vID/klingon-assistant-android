@@ -778,7 +778,7 @@ public class BaseActivity extends AppCompatActivity
 
   // Helper method to run the update database service job. If isOneOffJob is set to true,
   // this will trigger a job immediately which runs only once. Otherwise, this
-  // will schedule a job to run once every 24 hours, if one hasn't already been
+  // will schedule a job to run once every 30 days, if one hasn't already been
   // scheduled.
   // TODO: Refactor and combine with runKwotdServiceJob.
   protected void runUpdateDatabaseServiceJob(boolean isOneOffJob) {
@@ -826,7 +826,7 @@ public class BaseActivity extends AppCompatActivity
         builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED);
 
       } else {
-        // Set the job to run every 30, during a window with unmetered network connectivity.
+        // Set the job to run every 30 days, during a window with unmetered network connectivity.
         builder =
             new JobInfo.Builder(
                 UPDATE_DB_SERVICE_PERSISTED_JOB_ID,

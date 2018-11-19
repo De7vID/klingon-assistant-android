@@ -839,6 +839,13 @@ public class KlingonContentProvider extends ContentProvider {
         }
         attr += maybeItalics("slang", isHtml);
       }
+      // While whether an entry is a name isn't actually an attribute, treat it as one.
+      if (isName()) {
+        if (!attr.equals("")) {
+          attr += ", ";
+        }
+        attr += maybeItalics("name", isHtml);
+      }
       if (!attr.equals("")) {
         if (isHtml) {
           // Should also set color to android:textColorSecondary.
@@ -993,9 +1000,6 @@ public class KlingonContentProvider extends ContentProvider {
     }
 
     public String getDefinition() {
-      if (mBasePartOfSpeech == BasePartOfSpeechEnum.NOUN && mNounType == NounType.NAME) {
-        return mDefinition + " (name)";
-      }
       return mDefinition;
     }
 
@@ -2074,7 +2078,11 @@ public class KlingonContentProvider extends ContentProvider {
           if (BuildConfig.DEBUG) {
             Log.d(TAG, "found suffix: " + suffixes[i] + ", remainder: " + partWithSuffixRemoved);
           }
-          if (!partWithSuffixRemoved.equals("")) {
+          // A suffix was successfully stripped if there's something left. Also, if the suffix had
+          // been {-oy}, check that the noun doesn't end in a vowel. The suffix {-oy} preceded by a
+          // vowel is handled separately in maybeStripApostropheOy.
+          if (!partWithSuffixRemoved.equals("") &&
+              (suffixes[i] != "oy" || !partWithSuffixRemoved.matches(".*[aeIou]"))) {
             ComplexWord anotherComplexWord = new ComplexWord(partWithSuffixRemoved, this);
             // mSuffixLevel already decremented above.
             anotherComplexWord.mSuffixLevel = mSuffixLevel;
@@ -2088,6 +2096,21 @@ public class KlingonContentProvider extends ContentProvider {
         }
       }
       return null;
+    }
+
+    // Special-case processing for the suffix {-oy} when preceded by a vowel.
+    public ComplexWord maybeStripApostropheOy() {
+        if (mSuffixLevel == 1 && mIsNounCandidate && mUnparsedPart.endsWith("'oy")) {
+            // Remove "'oy" from the end.
+            String partWithSuffixRemoved = mUnparsedPart.substring(0, mUnparsedPart.length() - 3);
+            if (!partWithSuffixRemoved.equals("")) {
+                ComplexWord anotherComplexWord = new ComplexWord(partWithSuffixRemoved, this);
+                anotherComplexWord.mSuffixLevel = 0;  // No more suffixes.
+                anotherComplexWord.mNounSuffixes[0] = 3;  // Index of "oy".
+                return anotherComplexWord;
+             }
+        }
+        return null;
     }
 
     private boolean hasNoMoreSuffixes() {
@@ -2606,6 +2629,15 @@ public class KlingonContentProvider extends ContentProvider {
               + (complexWord.mIsNounCandidate ? "noun" : "verb")
               + " suffix: "
               + suffixType);
+    }
+
+    // Special check for the suffix {-oy} attached to a noun ending in a vowel. This needs to be
+    // done additionally to the regular check, since it may be possible to parse a word either way,
+    // e.g., {ghu'oy} could be {ghu} + {-'oy} or {ghu'} + {-oy}.
+    ComplexWord apostropheOyComplexWord = complexWord.maybeStripApostropheOy();
+    if (apostropheOyComplexWord != null) {
+        // "'oy" was stripped, branch using it as a new candidate.
+        stripSuffix(apostropheOyComplexWord, complexWordsList);
     }
 
     // Attempt to strip one level of suffix.
