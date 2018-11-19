@@ -13,7 +13,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 26
         versionCode 509
-        versionName "2018.11.15a"
+        versionName "2018.11.15d"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
