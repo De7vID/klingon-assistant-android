@@ -12,7 +12,7 @@ android {
         // We are targeting only Marshmallow and above.
         minSdkVersion 23
         targetSdkVersion 26
-        versionCode 509
+        versionCode 511
         versionName "2018.11.15d"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
