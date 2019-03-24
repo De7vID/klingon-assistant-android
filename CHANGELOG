@@ -1,5 +1,6 @@
 CHANGELOG
 
+2019-03-24: Enable edit definition for German when unsupported features are enabled.
 2018-11-20: Bug fixes: correctly handle {-oy}, fix display of names
 2018-11-15: Vocabulary from qepHom'a' 2018.
 2018-10-07: Deprecate API_7 version (target SDK 19), will no longer be updated.

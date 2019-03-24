@@ -477,9 +477,13 @@ public class EntryActivity extends BaseActivity
         sharedPrefs.getString(
             Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */
             Preferences.getSystemPreferredLanguage());
+    final boolean showUnsupportedFeatures =
+        sharedPrefs.getBoolean(
+            Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE, /* default */ false);
     FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    // Show the "edit" button for secondary languages other than German.
-    if (mEntry != null && !editLang.equals("NONE") && !editLang.equals("de")) {
+    // Show the "edit" button for secondary languages other than German,
+    // but also show German if unsupported features are enabled.
+    if (mEntry != null && !editLang.equals("NONE") && (!editLang.equals("de") || showUnsupportedFeatures)) {
       fab.setVisibility(View.VISIBLE);
       fab.setOnClickListener(
           new View.OnClickListener() {
