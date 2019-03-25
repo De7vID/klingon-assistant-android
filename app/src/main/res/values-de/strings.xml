@@ -124,8 +124,8 @@
         <string name="klingon_font_preference_summary">Klingonische Schriftzeichen anzeigen.</string>
         <string name="klingon_ui_preference_title">Klingonische Menüs</string>
         <string name="klingon_ui_preference_summary">Benutzeroberfläche auf Klingonisch anzeigen.</string>
-        <string name="show_secondary_language_preference_title">Deutsche Definitionen</string>
-        <string name="show_secondary_language_preference_summary">Deutsche Übersetzungen anzeigen.</string>
+        <string name="show_secondary_language_preference_title">Nicht-englische Definitionen anzeigen</string>
+        <string name="show_secondary_language_preference_summary">Übersetzungen der Definitionen für eine andere Sprache als Englisch anzeigen.</string>
       <string name="input_preferences">Eingabeeinstellungen</string>
         <string name="xifan_hol_preference_title">\"xifan hol\" Eingabe</string>
         <string name="xifan_hol_preference_summary">Erlaube \"x\" für {tlh}, \"f\" für {ng}, usw.</string>
@@ -141,6 +141,9 @@
         <string name="show_additional_information_preference_summary">Hintergrundinfos wie Wortspiele, Fehler, usw. anzeigen</string>
         <string name="kwotd_preference_title">KWDT Benachrichtigungen</string>
         <string name="kwotd_preference_summary">Informieren sobald ein neues Klingonisches Wort des Tages (KWDT) vom hol.kag.org Server verfügbar ist. Internetzugang erforderlich.</string>
+      <string name="under_construction_preferences">Im Bau</string>
+        <string name="show_unsupported_features_preference_title">Nicht unterstützte Funktionen</string>
+        <string name="show_unsupported_features_preference_summary">Aktivieren Sie diese Option nicht, wenn Sie kein Betatester sind.</string>
 
     <string name="warning">Warnung</string>
     <string name="change_ui_language_warning">Die Änderungen der Sprachauswahl sind eventuell erst nach dem Neustart der Anwendung sichtbar.</string>
