@@ -1891,7 +1891,7 @@ public class KlingonContentProvider extends ContentProvider {
         if (mSuffixLevel == 1 && mIsNounCandidate && mUnparsedPart.endsWith("'oy")) {
             // Remove "'oy" from the end.
             String partWithSuffixRemoved = mUnparsedPart.substring(0, mUnparsedPart.length() - 3);
-            if (!partWithSuffixRemoved.equals("")) {
+            if (partWithSuffixRemoved.matches(".*[aeIou]")) {
                 ComplexWord anotherComplexWord = new ComplexWord(partWithSuffixRemoved, this);
                 anotherComplexWord.mSuffixLevel = 0;  // No more suffixes.
                 anotherComplexWord.mNounSuffixes[0] = 3;  // Index of "oy".
