@@ -101,7 +101,7 @@ public class KlingonContentDatabase {
 
   // This should be kept in sync with the version number in the database
   // entry {boQwI':n}.
-  private static final int DATABASE_VERSION = 201811200;
+  private static final int DATABASE_VERSION = 201905030;
 
   private final KlingonDatabaseOpenHelper mDatabaseOpenHelper;
   private static final HashMap<String, String> mColumnMap = buildColumnMap();
@@ -222,13 +222,16 @@ public class KlingonContentDatabase {
         .replaceAll("d", "D") // do unambiguous replacements
         .replaceAll("f", "ng")
         .replaceAll("i", "I")
-        .replaceAll("k", "Q") // If the swap Qs
-        // preference was
-        // selected, this will
-        // have no effect.
+        .replaceAll("k", "Q") // If the swap Qs preference was selected, this will have no effect.
         .replaceAll("s", "S")
         .replaceAll("z", "'")
-        .replaceAll("x", "tlh");
+        .replaceAll("x", "tlh")
+        // At this point, "ngH" is definitely {ng} + {H}, but "ngh" might be either {n} + {gh}
+        // (nenghep}, {QIngheb}, {tlhonghaD}) or {ng} + {H} ({chungHa'wI'}, {mangHom}, {qengHoD},
+        // {tungHa'}, {vengHom}). Instead of checking both, cheat by hardcoding the possibilities.
+        // TODO: This means this code has to be updated whenever an entry with {ngH} is added to the
+        // database.
+        .replaceAll("(chung|mang|qeng|tung|veng)h", "$1H");
   }
 
   /**
