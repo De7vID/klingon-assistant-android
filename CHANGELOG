@@ -1,5 +1,6 @@
 CHANGELOG
 
+2019-05-03: Fix {ngh} bug.
 2019-03-24: Enable edit definition for German when unsupported features are enabled.
 2018-11-20: Bug fixes: correctly handle {-oy}, fix display of names
 2018-11-15: Vocabulary from qepHom'a' 2018.
