@@ -81,7 +81,7 @@
     <string name="menu_kli">Klingonisch-Institut</string>
     <string name="menu_kli_lessons">Onlinekurs</string>
     <string name="menu_kli_questions">Frage stellen</string>
-   
+
     <!-- Social networks. -->
     <string name="menu_social_network">Soziale Netzwerke</string>
     <string name="menu_gplus">Forum auf Google+</string>
@@ -160,14 +160,14 @@
     <string name="font_latin">Aus</string>
     <string name="font_tng">TNG {pIqaD}</string>
     <string name="font_dsc">DSC {pIqaD}</string>
-    
+
     <!-- Choices for secondary languages. -->
     <string name="secondary_language_none">keine</string>
     <string name="secondary_language_german">Deutsch</string>
     <string name="secondary_language_persian">Persisch (beta)</string>
     <string name="secondary_language_russian">Russisch (beta)</string>
     <string name="secondary_language_swedish">Schwedisch (beta)</string>
-<string name="secondary_language_chinese_hong_kong">Hong Kong Chinesisch (beta)</string>
+    <string name="secondary_language_chinese_hong_kong">Hong Kong Chinesisch (beta)</string>
 
     <!-- Metadata labels and descriptions. -->
     <string name="label_see_alt_entry">Siehe</string>
@@ -196,19 +196,19 @@
     <string name="info_singular_form">Die unregelmäßige Mehrzahlform dieses Wortes lautet %1$s.</string>
     <string name="warning_hypothetical">Achtung: Dieser Eintrag ist hypothetisch. Vorsichtig benutzen!</string>
     <string name="warning_extended_canon">Achtung: Dieses Wort wurde nicht von Marc Okrand bestätigt und sollte nur von erfahrenen Sprechern benutzt werden.</string>
-    
+
     <!-- Bottom navigation menu. -->
     <string name="menu_previous">Voriger</string>
     <string name="menu_random">Zufall</string>
     <string name="menu_next">Nächster</string>
-    
+
     <!-- KWOTD notification, or KWDT as it is abbreviated in German. -->
     <string name="kwotd_footer"><![CDATA[Das klingonische Wort des Tages wird durch <b>Hol \'ampaS</b> bereitgestellt.]]></string>
     <string name="kwotd_requires_internet">KWDT wird abgerufen sobald eine Internetverbindung verfügbar ist.</string>
     <string name="kwotd_fetching">KWDT wird vom KAG-Server abgerufen...</string>
     <string name="kwotd_one_off_job_failed">Abrufen des KWDT vom KAG-Server fehlgeschlagen.</string>
     <string name="kwotd_notification_channel_name">Klingonisches Wort des Tages</string>
-    
+
     <!-- Update database notification. -->
     <string name="update_db_requires_internet">Datenbank-Update wird überprüft sobald eine Internetverbindung besteht.</string>
     <string name="update_db_fetching">Datenbank-Update wird überprüft...</string>
