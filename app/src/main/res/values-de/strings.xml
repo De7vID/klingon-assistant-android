@@ -195,7 +195,7 @@
     <string name="info_inherent_plural">Dieses Wort ist eine unregelmäßge Mehrzahlform. Seine Einzahl heißt %1$s.</string>
     <string name="info_singular_form">Die unregelmäßige Mehrzahlform dieses Wortes lautet %1$s.</string>
     <string name="warning_hypothetical">Achtung: Dieser Eintrag ist hypothetisch. Vorsichtig benutzen!</string>
-    <string name="warning_extended_canon">Achtung: Dieses Wort wurde nicht von Marc Okrand besätigt und sollte nicht benutzt werden.</string>
+    <string name="warning_extended_canon">Achtung: Dieses Wort wurde nicht von Marc Okrand bestätigt und sollte nur von erfahrenen Sprechern benutzt werden.</string>
     
     <!-- Bottom navigation menu. -->
     <string name="menu_previous">Voriger</string>
