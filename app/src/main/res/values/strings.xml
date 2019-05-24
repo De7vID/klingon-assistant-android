@@ -213,7 +213,7 @@
     <string name="info_inherent_plural">This word is inherently plural. Its singular form is %1$s.</string>
     <string name="info_singular_form">This word has an inherently plural form in %1$s.</string>
     <string name="warning_hypothetical">Warning: This entry is hypothetical. Use with caution!</string>
-    <string name="warning_extended_canon">Warning: This entry is from extended canon. Use with caution!</string>
+    <string name="warning_extended_canon">Warning: This entry is not known to have been approved by Marc Okrand. Use with caution!</string>
 
     <!-- Bottom navigation menu. -->
     <string name="menu_previous">Previous</string>
