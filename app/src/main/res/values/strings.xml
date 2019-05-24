@@ -212,8 +212,8 @@
     <string name="info_body">This word refers to a body part. It takes the plural suffix {-Du\':n:suff}.</string>
     <string name="info_inherent_plural">This word is inherently plural. Its singular form is %1$s.</string>
     <string name="info_singular_form">This word has an inherently plural form in %1$s.</string>
-    <string name="warning_hypothetical">Warning: This entry is hypothetical. Use with caution!</string>
-    <string name="warning_extended_canon">Warning: This entry is not known to have been approved by Marc Okrand. Use with caution!</string>
+    <string name="warning_hypothetical">Warning: This entry is hypothetical. Do not use unless you know what you\'re doing!</string>
+    <string name="warning_extended_canon">Warning: This entry is not known to have been approved by Marc Okrand. Do not use unless you know what you\'re doing!</string>
 
     <!-- Bottom navigation menu. -->
     <string name="menu_previous">Previous</string>
@@ -222,8 +222,8 @@
 
     <!-- Buttons for lessons. -->
     <string name="button_check_answer">Check answer</string>
-    <string name="button_check_answer_correct">Correct\!</string>
-    <string name="button_check_answer_incorrect">Incorrect\!</string>
+    <string name="button_check_answer_correct">Correct!</string>
+    <string name="button_check_answer_incorrect">Incorrect!</string>
     <string name="button_continue">Continue</string>
     <string name="button_go_back_one_section">Go back to previous section</string>
     <string name="button_redo_section">Do this section again</string>
