@@ -69,6 +69,8 @@ task checkAudioFiles(type: Exec) {
     commandLine './check_audio_files.pl'
 }
 
+checkAudioFiles.onlyIf { file("../../scripts/check_audio_files.pl").exists() }
+
 preBuild.dependsOn 'updateDatabase'
 preBuild.dependsOn 'checkAudioFiles'
 
