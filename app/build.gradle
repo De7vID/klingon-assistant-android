@@ -5,15 +5,15 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
     defaultConfig {
         applicationId "org.tlhInganHol.android.klingonassistant"
         // We are targeting only Marshmallow and above.
         minSdkVersion 23
-        targetSdkVersion 26
-        versionCode 517
-        versionName "2019.05.24a"
+        targetSdkVersion 29
+        versionCode 519
+        versionName "2019.07.22b"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

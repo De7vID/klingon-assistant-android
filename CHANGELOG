@@ -1,5 +1,6 @@
 CHANGELOG
 
+2019-07-22: upgrade SDK version to 29. remove build dependency on TTS.
 2019-05-24: Update "extended canon" string in en and de, also some other strings in de.
 2019-05-03: Fix {ngh} bug.
 2019-03-24: Enable edit definition for German when unsupported features are enabled.
