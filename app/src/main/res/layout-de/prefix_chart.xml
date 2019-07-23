@@ -144,7 +144,7 @@
 
             <!-- Subject: you (plural imperative) -->
             <TableRow>
-                <TextView android:text="sie (imp, pl) " android:textSize="18sp" android:textStyle="italic" />
+                <TextView android:text="ihr (imp, pl) " android:textSize="18sp" android:textStyle="italic" />
                 <TextView android:text="pe- " android:textSize="18sp" android:textStyle="bold" android:fontFamily="serif" />
                 <TextView android:text="HI- " android:textSize="18sp" android:textStyle="bold" android:fontFamily="serif" />
                 <TextView android:text="- " android:textSize="18sp" android:textStyle="bold" android:fontFamily="serif" />
