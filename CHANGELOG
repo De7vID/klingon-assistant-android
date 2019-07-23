@@ -1,3 +1,4 @@
 CHANGELOG
 
+2019-07-23: upgrade compile and target SDK to API 29 (aim to be last version, no more updates after this)
 2017-09-18: deprecate API 16 version
