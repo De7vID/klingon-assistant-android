@@ -5,15 +5,15 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
     defaultConfig {
         applicationId "org.tlhInganHol.android.klingonassistant"
         // Minimum Android version needed for TTS is 4.1 (16), targeted version 4.4.4 (20). -->
         minSdkVersion 16
-        targetSdkVersion 26
-        versionCode 515
-        versionName "2019.05.03a"
+        targetSdkVersion 29
+        versionCode 520
+        versionName "2019.07.23a"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
