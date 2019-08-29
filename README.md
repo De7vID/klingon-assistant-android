@@ -7,4 +7,4 @@ Please support the Klingon language by purchasing "The Klingon Dictionary", "Kli
 
 Klingon, [Star Trek](http://startrek.com/), and related marks are trademarks of CBS Studios, Inc., and are used under "fair use" guidelines.
 
-Get this app [on Google Play](https://play.google.com/store/apps/details?id=org.tlhInganHol.android.klingonassistant). An accompanying [Text-To-Speech Engine](https://play.google.com/store/apps/details?id=org.tlhInganHol.android.klingonttsengine) is also available.
+Get this app [on Google Play](https://play.google.com/store/apps/details?id=org.tlhInganHol.android.klingonassistant) or [F-Droid](https://f-droid.org/packages/org.tlhInganHol.android.klingonassistant/). An accompanying [Text-To-Speech Engine](https://play.google.com/store/apps/details?id=org.tlhInganHol.android.klingonttsengine) is also available.
