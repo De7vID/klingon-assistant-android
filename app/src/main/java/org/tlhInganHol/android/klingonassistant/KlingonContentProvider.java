@@ -1826,7 +1826,7 @@ public class KlingonContentProvider extends ContentProvider {
     static String[] verbType2String = {"", "nIS", "qang", "rup", "beH", "vIp"};
     static String[] verbType3String = {"", "choH", "qa'"};
     static String[] verbType4String = {"", "moH"};
-    static String[] verbType5String = {"", "lu'", "laH"};
+    static String[] verbType5String = {"", "lu'", "laH", "luH", "la'"};
     static String[] verbType6String = {"", "chu'", "bej", "ba'", "law'"};
     static String[] verbType7String = {"", "pu'", "ta'", "taH", "lI'"};
     static String[] verbType8String = {"", "neS"};
