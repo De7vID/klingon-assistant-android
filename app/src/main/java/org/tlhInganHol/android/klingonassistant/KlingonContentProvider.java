@@ -1861,7 +1861,7 @@ public class KlingonContentProvider extends ContentProvider {
       "", "wa'", "cha'", "wej", "loS", "vagh", "jav", "Soch", "chorgh", "Hut"
     };
     static String[] numberModifierString = {
-      "", "maH", "vatlh", "SaD", "SanID", "netlh", "bIp", "'uy'"
+      "", "maH", "vatlh", "SaD", "SanID", "netlh", "bIp", "'uy'", "Saghan"
     };
     int mNumberDigit;
     int mNumberModifier;
