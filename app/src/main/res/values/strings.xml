@@ -201,10 +201,10 @@
     <string name="label_sources">Source(s)</string>
     <string name="label_transitivity">Transitivity</string>
       <string name="transitivity_ambi">The role played by the subject of this verb changes depending on whether or not there is a direct object.</string>
-      <string name="transitivity_intransitive">This verb probably cannot take a direct object.</string>
+      <string name="transitivity_intransitive">This verb is treated as if it probably cannot take a direct object for the purpose of analysis.</string>
       <string name="transitivity_intransitive_confirmed">This verb cannot take a direct object.</string>
       <string name="transitivity_stative">This verb describes a state or quality and cannot take an object.</string>
-      <string name="transitivity_transitive">This verb can probably take a direct object.</string>
+      <string name="transitivity_transitive">This verb is treated as if it can probably take a direct object for the purpose of analysis.</string>
       <string name="transitivity_transitive_confirmed">This verb can take a direct object.</string>
       <string name="transitivity_unknown">It is unknown whether this verb can take a direct object.</string>
     <string name="label_additional_information">Additional information</string>
