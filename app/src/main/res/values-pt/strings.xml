@@ -1,139 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<!--
+/*
+** Copyright (C) 2020 De'vID jonpIn (David Yonge-Mallo)
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:ignore="MissingTranslation">
+
+    <!-- The name of the Klingon Assistant application. -->
     <string name="app_name">boQwI\'</string>
-    <string name="menu_random">Aleatório</string>
-    <string name="menu_about">boQwI\' - Ajuda</string>
-    <string name="klingon_assistant_settings">boQwI\' - Configurações</string>
-    <string name="search_label">Banco de Dados</string>
-    <string name="update_db_preference_summary">Atualizar o banco de dados quando uma nova versão estiver disponível no servidor do github.io. Essa função requer conexão com a internet.</string>
-    <string name="database_upgraded">Banco de dados atualizado de  v%1$s para v%2$s.</string>
-    <string name="search_hint">Buscar no banco de dados</string>
-    <string name="update_db_preference_title">Atalização online do banco de dados</string>
-    <string name="update_db_fetching">Verificando atualização no banco de dados...</string>
-    <string name="update_db_requires_internet">Atualização do banco de dados será efetuada quando conexão com internet estiver disponível.</string>
+
+    <!-- Messages for database creation and upgrade. -->
     <string name="database_created">Banco de dados v%1$s criado.</string>
-    <string name="secondary_language_german">Alemão</string>
-    <string name="label_german">Alemão</string>
-    <string name="change_ui_language_warning">Alteração da linguage de exibição pode não estar complete ate que a aplicação seja reiniciada.</string>
-    <string name="label_additional_information">Informações adicionais</string>
-    <string name="show_additional_information_preference_title">Mostrar informações adicionais</string>
-    <string name="jokes">Piadas e histórias engraçadas</string>
-    <string name="warning">Atenção</string>
-    <string name="menu_prefix_chart">Tabela de prefixos</string>
-    <string name="menu_prefixes">Prefixos</string>
-    <string name="menu_previous">Anterior</string>
-    <string name="menu_verb_suffixes">Sufixos verbais</string>
-    <string name="transitivity_unknown">Não se sabe se este verbo pode ter um objeto direto.</string>
-    <string name="menu_request_translation">Solicitar tradução</string>
-    <string name="toasts">Brindes</string>
-    <string name="show_transitivity_preference_title">Visualizar transitividade</string>
-    <string name="label_transitivity">Transitividade</string>
-    <string name="font_tng">TNG {pIqaD}</string>
-    <string name="label_synonyms">Sinônimos</string>
+    <string name="database_upgraded">Banco de dados atualizado de  v%1$s para v%2$s.</string>
+
+    <!-- The label for use as a searchable item, e.g., "Dictionary". -->
+    <string name="search_label">Banco de Dados</string>
+
+    <!-- The hint text that appears in the search box, e.g., "Search the dictionary". -->
+    <string name="search_hint">Buscar no banco de dados</string>
+
+    <!-- The primary menu entry that invokes search, e.g., "Search". -->
     <string name="menu_search">Pesquisar</string>
-    <string name="language_preferences">Preferências de idioma</string>
-    <string name="social_network_preference_summary">Selecione a sua rede social preferida</string>
-    <string name="social_network_preference_title">Rede Social</string>
-    <string name="menu_social">Social</string>
-    <string name="menu_social_network">Rede social</string>
-    <string name="social_preferences">Preferências Sociais</string>
-    <string name="label_see_also">Veja também</string>
-    <string name="label_see_alt_entry">Veja</string>
-    <string name="share_popup_title">Compartilhe com...</string>
-    <string name="menu_share">Compartilhe</string>
-    <string name="secondary_language_swedish">Sueco (beta)</string>
-    <string name="beginners_conversation">Frases para iniciantes</string>
-    <string name="secondary_language_russian">Russo (beta)</string>
-    <string name="nentay">Ritual de Ascensão</string>
-    <string name="empire_union_day">Dia da União do Império</string>
-    <string name="idioms">Provérbios</string>
-    <string name="menu_sources">Fontes</string>
-    <string name="label_sources">Fonte(s)</string>
-    <string name="military_celebration">Celebraçao QI\'lop</string>
-    <string name="media_1_list_id">PLJrTr05h0I0OcaX5G6_5TCuIisvS4Xed6</string>
-    <string name="klingon_font_preference_title">pIqaD</string>
-    <string name="secondary_language_persian">Persa (beta)</string>
-    <string name="menu_kli_lessons">Cursos Online</string>
-    <string name="menu_phrases">Frases úteis</string>
-    <string name="search_instructions">Use o botão de busca para encontrar informações, ou selecione um item no menu.</string>
-    <string name="menu_noun_suffixes">Sufixos nominais</string>
-    <string name="show_unsupported_features_preference_title">Funções não suportadas</string>
-    <string name="show_secondary_language_preference_title">Mostrar definições não-Inglês</string>
-    <string name="list_names">Nomes</string>
-    <string name="menu_next">Proximo</string>
-    <string name="menu_update_db">Verificar atualização do banco de dados (beta)</string>
-    <string name="menu_media">Mídia</string>
-    <string name="menu_lists">Ouça</string>
-    <string name="lyrics">Músicas</string>
-    <string name="kwotd_fetching">Buscando KWOTD do servidor KAG...</string>
-    <string name="kwotd_requires_internet">KWOTD será buscada quando a conexão com internet estiver disponível.</string>
-    <string name="kwotd_preference_title">Notificação KWOTD</string>
-    <string name="menu_kwotd">Buscar KWOTD (beta)</string>
-    <string name="menu_lessons">Lissões (descontinuada)</string>
-    <string name="media_2_title">Converssação</string>
-    <string name="media_1_title">Lissões de Klingon</string>
-    <string name="menu_kli">Institudo da Língua Klingon</string>
-    <string name="settings_description">Palavras e sentenças em Klingon</string>
-    <string name="kwotd_notification_channel_name">Palaavra Klingon do Dia</string>
-    <string name="klingon_font_preference_summary">Mostrar texto em Klingon usando {pIqaD}.</string>
-    <string name="klingon_ui_preference_title">Menus em Klingon</string>
-    <string name="menu_kidc">Klingon Imperial Forums</string>
-    <string name="secondary_language_none">Nenhum</string>
-    <string name="label_category">Categoria</string>
-    <string name="media_3_title">Comandos de batalha</string>
-    <string name="menu_kag">Canal de comunicação KAG</string>
-    <string name="kwotd_preference_summary">Notificar quando uma nova palavra Klingon do dia (KWOTD) estiver disponível no servidor hol.kag.org. Requer conexão com internet.</string>
-    <string name="under_construction_preferences">Em construção</string>
-    <string name="secondary_language_chinese_hong_kong">Chines de Hong Kong (beta)</string>
-    <string name="show_additional_information_preference_summary">"Mostrar notas detalhadas em "</string>
-    <string name="list_places">Geografia</string>
-    <string name="secrecy_proverbs">Provérbios do sigilo</string>
-    <string name="label_antonyms">Antônimo</string>
-    <string name="menu_kli_questions">Faça uma pergunta!</string>
-    <string name="menu_gplus">Comunidade G+</string>
-    <string name="media_5_title">Insultos</string>
-    <string name="menu_facebook">Grupo no Facebook</string>
-    <string name="replacement_proverbs">Provérbios de Substituição</string>
-    <string name="xifan_hol_preference_summary">Permitir digitação de \"x\" para {tlh}, \"f\" para {ng}, etc.</string>
-    <string name="label_english">Inglês</string>
-    <string name="label_components">Componentes</string>
-    <string name="menu_preferences">Preferências</string>
-    <string name="input_preferences">Preferências de entrada</string>
-    <string name="show_transitivity_preference_summary">Mostrar \"melhor chute\" se um verbo recebe ou não um objeto.</string>
-    <string name="font_dsc">DSC {pIqaD}</string>
-    <string name="label_examples">Exemplos</string>
-    <string name="font_latin">Off</string>
-    <string name="label_analyze">Analisar</string>
-    <string name="media_4_title">Outros comandos</string>
-    <string name="proverbs">Outros provérbios</string>
-    <string name="media_6_title">Outras palavras e frases</string>
-    <string name="menu_pronunciation">Pronúncia</string>
-    <string name="menu_reference">Referência</string>
-    <string name="xifan_hol_preference_title">Habilitar entrada \"xifan hol\"</string>
-    <string name="swap_qs_preference_title">Trocar {Q} e {q}</string>
-    <string name="rejection">Rejeitando um pretendente</string>
-    <string name="show_unsupported_features_preference_summary">Não marque isso se você não é um testador beta.</string>
-    <string name="warning_extended_canon">Aviso: Não se sabe se esta entrada foi aprovada por Marc Okrand. Não use a menos que saiba o que está fazendo!</string>
-    <string name="warning_hypothetical">Aviso: Esta entrada é hipotética. Não use a menos que saiba o que está fazendo!</string>
-    <string name="kwotd_one_off_job_failed">Erro ao buscar KWOTD do servidor KAG.</string>
-    <string name="no_results"><![CDATA[Nenhum resultado encontrado para  &lt;<b>%s</b>&gt;.]]></string>
-    <string name="kwotd_footer"><![CDATA[Palavra Klingon do dia trazida a você por <b>Hol \'ampaS</b>]]></string>
-    <string name="shared_from">Compartlhado do {boQwI\'}.</string>
-    <string name="menu_autotranslate">Mostrar definições de tradução automática (beta)</string>
-    <string name="klingon_ui_preference_summary">Use {tlhIngan Hol} como língua de interface do usuário.</string>
-    <string name="transitivity_ambi">O papel desempenhado pelo sujeito desse verbo muda dependendo se existe ou não um objeto direto.</string>
+
+    <!-- The "Speak" button. -->
     <string name="menu_speak">Reproduzir</string>
-    <string name="transitivity_stative">Este verbo descreve um estado ou qualidade e não pode receber um objeto.</string>
-    <string name="transitivity_transitive_confirmed">Este verbo pode levar um objeto direto.</string>
-    <string name="transitivity_intransitive_confirmed">Este verbo não pode receber um objeto direto.</string>
-    <string name="transitivity_transitive">Esse verbo provavelmente pode levar um objeto direto.</string>
-    <string name="transitivity_intransitive">Esse verbo provavelmente não pode receber um objeto direto.</string>
-    <string name="info_body">Esta palavra refere-se a uma parte do corpo. É preciso o sufixo plural {-Du\':n:suff}.</string>
+
+    <!-- The "Share" button, popup menu, and "shared from" string. -->
+    <string name="menu_share">Compartilhe</string>
+    <string name="share_popup_title">Compartilhe com...</string>
+    <string name="shared_from">Compartlhado do {boQwI\'}.</string>
+
+    <!-- The menu entry that sends a request for translation to the G+ Klingon language community. -->
+    <string name="menu_request_translation">Solicitar tradução</string>
+
+    <!-- The description that will show up in the search settings for this source, e.g., "Definitions of words".  -->
+    <string name="settings_description">Palavras e sentenças em Klingon</string>
+
+    <!-- General instructions in the main activity. -->
+    <string name="search_instructions">Use o botão de busca para encontrar informações, ou selecione um item no menu.</string>
+
+    <!-- Search failure message, e.g., "No results found for \"%s\"". -->
+    <string name="no_results"><![CDATA[Nenhum resultado encontrado para  &lt;<b>%s</b>&gt;.]]></string>
+
+    <!-- Other menu items. -->
+    <string name="menu_lessons">Lissões (descontinuada)</string>
+    <string name="menu_kwotd">Buscar KWOTD (beta)</string>
+    <string name="menu_update_db">Verificar atualização do banco de dados (beta)</string>
+    <string name="menu_autotranslate">Mostrar definições de tradução automática (beta)</string>
+    <string name="menu_about">boQwI\' - Ajuda</string>
+    <string name="menu_preferences">Preferências</string>
+    <string name="menu_reference">Referência</string>
+    <string name="menu_pronunciation">Pronúncia</string>
+    <string name="menu_prefixes">Prefixos</string>
+    <string name="menu_prefix_chart">Tabela de prefixos</string>
+    <string name="menu_noun_suffixes">Sufixos nominais</string>
+    <string name="menu_verb_suffixes">Sufixos verbais</string>
+    <string name="menu_sources">Fontes</string>
+    <string name="menu_phrases">Frases úteis</string>
+    <string name="menu_lists">Ouça</string>
+    <string name="menu_media">Mídia</string>
+    <string name="menu_social">Social</string>
+    <string name="menu_kli">Institudo da Língua Klingon</string>
+    <string name="menu_kli_lessons">Cursos Online</string>
+    <string name="menu_kli_questions">Faça uma pergunta!</string>
+
+    <!-- Social networks. -->
+    <string name="menu_social_network">Rede social</string>
+    <string name="menu_gplus">Comunidade G+</string>
+    <string name="menu_facebook">Grupo no Facebook</string>
+    <string name="menu_kag">Canal de comunicação KAG</string>
+    <string name="menu_kidc">Klingon Imperial Forums</string>
+
+    <!-- Media. -->
+    <string name="media_1_title">Lissões de Klingon</string>
+    <string name="media_2_title">Converssação</string>
+    <string name="media_3_title">Comandos de batalha</string>
+    <string name="media_4_title">Outros comandos</string>
+    <string name="media_5_title">Insultos</string>
+    <string name="media_6_title">Outras palavras e frases</string>
+
+    <!-- Classes of phrases. -->
+    <string name="empire_union_day">Dia da União do Império</string>
+    <string name="curse_warfare">Insultos</string>
+    <string name="nentay">Ritual de Ascensão</string>
+    <string name="military_celebration">Celebraçao QI\'lop</string>
+    <string name="rejection">Rejeitando um pretendente</string>
+    <string name="replacement_proverbs">Provérbios de Substituição</string>
+    <string name="secrecy_proverbs">Provérbios do sigilo</string>
+    <string name="proverbs">Outros provérbios</string>
+    <string name="toasts">Brindes</string>
+    <string name="lyrics">Músicas</string>
+    <string name="idioms">Provérbios</string>
+    <string name="beginners_conversation">Frases para iniciantes</string>
+    <string name="jokes">Piadas e histórias engraçadas</string>
+
+    <!-- Lists. -->
+    <string name="list_names">Nomes</string>
+    <string name="list_places">Geografia</string>
+
+    <!-- Strings for the Preferences settings. -->
+    <string name="klingon_assistant_settings">boQwI\' - Configurações</string>
+      <string name="language_preferences">Language preferences</string>
+        <string name="klingon_font_preference_title">pIqaD</string>
+        <string name="klingon_font_preference_summary">Mostrar texto em Klingon usando {pIqaD}.</string>
+        <string name="klingon_ui_preference_title">Menus em Klingon</string>
+        <string name="klingon_ui_preference_summary">Use {tlhIngan Hol} como língua de interface do usuário.</string>
+        <string name="show_secondary_language_preference_title">Mostrar definições não-Inglês</string>
+        <string name="show_secondary_language_preference_summary">Exiba traduções das definições para um idioma diferente do inglês. Nota: somente o alemão tem definições completas.</string>
+      <string name="input_preferences">Preferências de entrada</string>
+        <string name="xifan_hol_preference_title">Habilitar entrada \"xifan hol\"</string>
+        <string name="xifan_hol_preference_summary">Permitir digitação de \"x\" para {tlh}, \"f\" para {ng}, etc.</string>
+        <string name="swap_qs_preference_title">Trocar {Q} e {q}</string>
+        <string name="swap_qs_preference_summary">Mapear \"k\" em {q} e \"q\" to {Q}.</string>
+      <string name="social_preferences">Preferências Sociais</string>
+        <string name="social_network_preference_title">Rede Social</string>
+        <string name="social_network_preference_summary">Selecione a sua rede social preferida</string>
+      <string name="informational_preferences">Informações adicionais</string>
+        <string name="show_transitivity_preference_title">Visualizar transitividade</string>
+        <string name="show_transitivity_preference_summary">Mostrar \"melhor chute\" se um verbo recebe ou não um objeto.</string>
+        <string name="show_additional_information_preference_title">Mostrar informações adicionais</string>
+        <string name="show_additional_information_preference_summary">"Mostrar notas detalhadas em "</string>
+        <string name="kwotd_preference_title">Notificação KWOTD</string>
+        <string name="kwotd_preference_summary">Notificar quando uma nova palavra Klingon do dia (KWOTD) estiver disponível no servidor hol.kag.org. Requer conexão com internet.</string>
+        <string name="update_db_preference_title">Atalização online do banco de dados</string>
+        <string name="update_db_preference_summary">Atualizar o banco de dados quando uma nova versão estiver disponível no servidor do github.io. Essa função requer conexão com a internet.</string>
+      <string name="under_construction_preferences">Em construção</string>
+        <string name="show_unsupported_features_preference_title">Funções não suportadas</string>
+        <string name="show_unsupported_features_preference_summary">Não marque isso se você não é um testador beta.</string>
+
+    <string name="warning">Atenção</string>
+    <string name="change_ui_language_warning">Alteração da linguage de exibição pode não estar complete ate que a aplicação seja reiniciada.</string>
+
+    <!-- Choices for showing Klingon text using {pIqaD}. -->
+    <string name="font_latin">Off</string>
+    <string name="font_tng">TNG {pIqaD}</string>
+    <string name="font_dsc">DSC {pIqaD}</string>
+
+    <!-- Choices for secondary languages. -->
+    <string name="secondary_language_none">Nenhum</string>
+    <string name="secondary_language_german">Alemão</string>
+    <string name="secondary_language_persian">Persa (beta)</string>
+    <string name="secondary_language_russian">Russo (beta)</string>
+    <string name="secondary_language_swedish">Sueco (beta)</string>
+    <string name="secondary_language_chinese_hong_kong">Chines de Hong Kong (beta)</string>
+    <string name="secondary_language_portuguese_brazil">Portugues do Brasil (beta)</string>
+
+    <!-- Metadata labels and descriptions. -->
+    <string name="label_see_alt_entry">Veja</string>
+    <string name="label_english">Inglês</string>
+    <string name="label_german">Alemão</string>
+    <string name="label_synonyms">Sinônimos</string>
+    <string name="label_antonyms">Antônimo</string>
+    <string name="label_see_also">Veja também</string>
+    <string name="label_category">Categoria</string>
+    <string name="label_analyze">Analisar</string>
+    <string name="label_components">Componentes</string>
+    <string name="label_examples">Exemplos</string>
+    <string name="label_sources">Fonte(s)</string>
+    <string name="label_transitivity">Transitividade</string>
+      <string name="transitivity_ambi">O papel desempenhado pelo sujeito desse verbo muda dependendo se existe ou não um objeto direto.</string>
+      <string name="transitivity_intransitive">Esse verbo provavelmente não pode receber um objeto direto.</string>
+      <string name="transitivity_intransitive_confirmed">Este verbo não pode receber um objeto direto.</string>
+      <string name="transitivity_stative">Este verbo descreve um estado ou qualidade e não pode receber um objeto.</string>
+      <string name="transitivity_transitive">Esse verbo provavelmente pode levar um objeto direto.</string>
+      <string name="transitivity_transitive_confirmed">Este verbo pode levar um objeto direto.</string>
+      <string name="transitivity_unknown">Não se sabe se este verbo pode ter um objeto direto.</string>
+    <string name="label_additional_information">Informações adicionais</string>
     <string name="info_being">Esta palavra refere-se a um ser capaz de linguagem. É preciso o sufixo plural {-pu\':n:suff}.</string>
+    <string name="info_body">Esta palavra refere-se a uma parte do corpo. É preciso o sufixo plural {-Du\':n:suff}.</string>
     <string name="info_inherent_plural">Esta palavra é inerentemente plural. Sua forma singular é %1$s.</string>
     <string name="info_singular_form">Esta palavra tem uma forma inerentemente plural em %1$s.</string>
-    <string name="swap_qs_preference_summary">Mapear \"k\" em {q} e \"q\" to {Q}.</string>
-    <string name="show_secondary_language_preference_summary">Exiba traduções das definições para um idioma diferente do inglês. Nota: somente o alemão tem definições completas.</string>
-    <string name="curse_warfare">Insultos</string>
-    <string name="informational_preferences">Informações adicionais</string>
+    <string name="warning_hypothetical">Aviso: Esta entrada é hipotética. Não use a menos que saiba o que está fazendo!</string>
+    <string name="warning_extended_canon">Aviso: Não se sabe se esta entrada foi aprovada por Marc Okrand. Não use a menos que saiba o que está fazendo!</string>
+
+    <!-- Bottom navigation menu. -->
+    <string name="menu_previous">Anterior</string>
+    <string name="menu_random">Aleatório</string>
+    <string name="menu_next">Proximo</string>
+
+    <!-- KWOTD notification. -->
+    <string name="kwotd_footer"><![CDATA[Palavra Klingon do dia trazida a você por <b>Hol \'ampaS</b>]]></string>
+    <string name="kwotd_requires_internet">KWOTD será buscada quando a conexão com internet estiver disponível.</string>
+    <string name="kwotd_fetching">Buscando KWOTD do servidor KAG...</string>
+    <string name="kwotd_one_off_job_failed">Erro ao buscar KWOTD do servidor KAG.</string>
+    <string name="kwotd_notification_channel_name">Palaavra Klingon do Dia</string>
+
+    <!-- Update database notification. -->
+    <string name="update_db_requires_internet">Atualização do banco de dados será efetuada quando conexão com internet estiver disponível.</string>
+    <string name="update_db_fetching">Verificando atualização no banco de dados...</string>
 </resources>

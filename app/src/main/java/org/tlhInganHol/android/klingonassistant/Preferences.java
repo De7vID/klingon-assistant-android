@@ -92,8 +92,7 @@ public class Preferences extends AppCompatPreferenceActivity
       // TODO: Distinguish different topolects of Chinese. For now, prefer Hong Kong Chinese if the
       // system locale is any topolect of Chinese.
       return "zh-HK";
-    }
-    else if (language == new Locale("pt").getLanguage()) {
+    } else if (language == new Locale("pt").getLanguage()) {
       return "pt";
     }
     return "NONE";
