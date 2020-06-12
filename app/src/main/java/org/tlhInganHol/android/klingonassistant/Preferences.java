@@ -93,6 +93,9 @@ public class Preferences extends AppCompatPreferenceActivity
       // system locale is any topolect of Chinese.
       return "zh-HK";
     }
+    else if (language == new Locale("pt").getLanguage()) {
+      return "pt";
+    }
     return "NONE";
   }
 
