@@ -157,7 +157,7 @@
     <string name="secondary_language_russian">Russo (beta)</string>
     <string name="secondary_language_swedish">Sueco (beta)</string>
     <string name="secondary_language_chinese_hong_kong">Chines de Hong Kong (beta)</string>
-    <string name="secondary_language_portuguese_brazil">Portugues do Brasil (beta)</string>
+    <string name="secondary_language_portuguese">Português (beta)</string>
 
     <!-- Metadata labels and descriptions. -->
     <string name="label_see_alt_entry">Veja</string>
