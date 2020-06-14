@@ -70,7 +70,7 @@
     <string name="menu_lessons">Lessons (deprecated)</string>
     <string name="menu_kwotd">Fetch KWOTD (beta)</string>
     <string name="menu_update_db">Check for database update (beta)</string>
-    <string name="menu_autotranslate">Show autotranslated definitions (beta)</string>
+    <string name="menu_autotranslate">List autotranslated definitions (beta)</string>
     <string name="menu_about">boQwI\' - Help</string>
     <string name="menu_preferences">Preferences</string>
     <string name="menu_reference">Reference</string>
