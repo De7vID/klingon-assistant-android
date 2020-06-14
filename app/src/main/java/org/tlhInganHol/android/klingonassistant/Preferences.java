@@ -93,6 +93,7 @@ public class Preferences extends AppCompatPreferenceActivity
       // system locale is any topolect of Chinese.
       return "zh-HK";
     } else if (language == new Locale("pt").getLanguage()) {
+      // Note: The locale code "pt" is Brazilian Portuguese. (European Portuguese is "pt-PT".)
       return "pt";
     }
     return "NONE";
