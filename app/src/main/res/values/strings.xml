@@ -209,8 +209,8 @@
       <string name="transitivity_transitive_confirmed">This verb can take a direct object.</string>
       <string name="transitivity_unknown">It is unknown whether this verb can take a direct object.</string>
     <string name="label_additional_information">Additional information</string>
-    <string name="info_being">This word refers to a being capable of language. It takes the plural suffix {-pu\':n:suff}.</string>
-    <string name="info_body">This word refers to a body part. It takes the plural suffix {-Du\':n:suff}.</string>
+    <string name="info_being">Beings capable of language take the plural suffix {-pu\':n:suff}.</string>
+    <string name="info_body">Body parts take the plural suffix {-Du\':n:suff}.</string>
     <string name="info_inherent_plural">This word is inherently plural. Its singular form is %1$s.</string>
     <string name="info_singular_form">This word has an inherently plural form in %1$s.</string>
     <string name="warning_hypothetical">Warning: This entry is hypothetical. Do not use unless you know what you\'re doing!</string>
