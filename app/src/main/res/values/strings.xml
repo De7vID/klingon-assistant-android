@@ -170,6 +170,11 @@
       <string name="under_construction_preferences">Under construction</string>
         <string name="show_unsupported_features_preference_title">Unsupported features</string>
         <string name="show_unsupported_features_preference_summary">Don\'t check this if you\'re not a beta tester.</string>
+      <string name="changelog_preferences">Changelogs</string>
+        <string name="data_changelog_preference_title">Database</string>
+        <string name="data_changelog_preference_summary">Open GitHub commit history for database.</string>
+        <string name="code_changelog_preference_title">App</string>
+        <string name="code_changelog_preference_summary">Open GitHub commit history for app.</string>
 
     <string name="warning">Warning</string>
     <string name="change_ui_language_warning">Changing the UI language may not completely take effect until this application is restarted.</string>

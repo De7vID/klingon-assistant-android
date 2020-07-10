@@ -547,6 +547,7 @@ public class BaseActivity extends AppCompatActivity
   }
 
   // Method to launch an external app or web site.
+  // TODO: Refactor the identical code in Preferences (and deprecated LessonActivity).
   protected void launchExternal(String externalUrl) {
     Intent intent = new Intent(Intent.ACTION_VIEW);
     // Set NEW_TASK so the external app or web site is independent.
