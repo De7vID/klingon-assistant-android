@@ -125,7 +125,20 @@
                 android:title="@string/show_unsupported_features_preference_title"
                 android:summary="@string/show_unsupported_features_preference_summary"
                 android:defaultValue="false" />
+    </PreferenceCategory>
 
+    <PreferenceCategory
+            android:title="@string/changelog_preferences">
+
+        <Preference
+                android:key="data_changelog_button_preference"
+                android:title="@string/data_changelog_preference_title"
+                android:summary="@string/data_changelog_preference_summary" />
+
+        <Preference
+                android:key="code_changelog_button_preference"
+                android:title="@string/code_changelog_preference_title"
+                android:summary="@string/code_changelog_preference_summary" />
     </PreferenceCategory>
 
 </PreferenceScreen>
