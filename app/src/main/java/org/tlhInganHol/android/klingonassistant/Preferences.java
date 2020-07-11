@@ -19,12 +19,15 @@ package org.tlhInganHol.android.klingonassistant;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.ListPreference;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
@@ -70,12 +73,18 @@ public class Preferences extends AppCompatPreferenceActivity
       "show_transitivity_checkbox_preference";
   public static final String KEY_SHOW_ADDITIONAL_INFORMATION_CHECKBOX_PREFERENCE =
       "show_additional_information_checkbox_preference";
+  public static final String KEY_KWOTD_CHECKBOX_PREFERENCE = "kwotd_checkbox_preference";
+  public static final String KEY_UPDATE_DB_CHECKBOX_PREFERENCE = "update_db_checkbox_preference";
 
   // Under construction.
   public static final String KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE =
       "show_unsupported_features_checkbox_preference";
-  public static final String KEY_KWOTD_CHECKBOX_PREFERENCE = "kwotd_checkbox_preference";
-  public static final String KEY_UPDATE_DB_CHECKBOX_PREFERENCE = "update_db_checkbox_preference";
+
+  // Changelogs.
+  public static final String KEY_DATA_CHANGELOG_BUTTON_PREFERENCE =
+      "data_changelog_button_preference";
+  public static final String KEY_CODE_CHANGELOG_BUTTON_PREFERENCE =
+      "code_changelog_button_preference";
 
   // Detect if the system language is a supported language.
   public static String getSystemPreferredLanguage() {
@@ -92,8 +101,8 @@ public class Preferences extends AppCompatPreferenceActivity
       // TODO: Distinguish different topolects of Chinese. For now, prefer Hong Kong Chinese if the
       // system locale is any topolect of Chinese.
       return "zh-HK";
-    }
-    else if (language == new Locale("pt").getLanguage()) {
+    } else if (language == new Locale("pt").getLanguage()) {
+      // Note: The locale code "pt" is Brazilian Portuguese. (European Portuguese is "pt-PT".)
       return "pt";
     }
     return "NONE";
@@ -208,6 +217,27 @@ public class Preferences extends AppCompatPreferenceActivity
       sharedPrefsEd.apply();
     }
 
+    Preference dataChangelogButtonPreference =
+        getPreferenceScreen().findPreference(KEY_DATA_CHANGELOG_BUTTON_PREFERENCE);
+    dataChangelogButtonPreference.setOnPreferenceClickListener(
+        new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                launchExternal("https://github.com/De7vID/klingon-assistant-data/commits/master");
+                return true;
+            }
+        });
+    Preference codeChangelogButtonPreference =
+        getPreferenceScreen().findPreference(KEY_CODE_CHANGELOG_BUTTON_PREFERENCE);
+    codeChangelogButtonPreference.setOnPreferenceClickListener(
+        new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                launchExternal("https://github.com/De7vID/klingon-assistant-android/commits/master");
+                return true;
+            }
+        });
+
     // TUTORIAL
     // if (KlingonAssistant.INCLUDE_TUTORIAL) {
     //   Preference tutorialPreference = findPreference(KEY_RUN_TUTORIAL_CHECKBOX_PREFERENCE);
@@ -288,5 +318,15 @@ public class Preferences extends AppCompatPreferenceActivity
           .show();
     }
     // TODO: React to unsupported features and secondary language options changes here.
+  }
+
+  // Method to launch an external app or web site.
+  // See identical method in BaseActivity.
+  private void launchExternal(String externalUrl) {
+    Intent intent = new Intent(Intent.ACTION_VIEW);
+    // Set NEW_TASK so the external app or web site is independent.
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    intent.setData(Uri.parse(externalUrl));
+    startActivity(intent);
   }
 }

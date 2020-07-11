@@ -168,6 +168,7 @@
     <string name="secondary_language_russian">Russisch (beta)</string>
     <string name="secondary_language_swedish">Schwedisch (beta)</string>
     <string name="secondary_language_chinese_hong_kong">Hong Kong Chinesisch (beta)</string>
+    <string name="secondary_language_portuguese">Portugiesisch (beta)</string>
 
     <!-- Metadata labels and descriptions. -->
     <string name="label_see_alt_entry">Siehe</string>

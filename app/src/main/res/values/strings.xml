@@ -70,7 +70,7 @@
     <string name="menu_lessons">Lessons (deprecated)</string>
     <string name="menu_kwotd">Fetch KWOTD (beta)</string>
     <string name="menu_update_db">Check for database update (beta)</string>
-    <string name="menu_autotranslate">Show autotranslated definitions (beta)</string>
+    <string name="menu_autotranslate">List autotranslated definitions (beta)</string>
     <string name="menu_about">boQwI\' - Help</string>
     <string name="menu_preferences">Preferences</string>
     <string name="menu_reference">Reference</string>
@@ -170,6 +170,11 @@
       <string name="under_construction_preferences">Under construction</string>
         <string name="show_unsupported_features_preference_title">Unsupported features</string>
         <string name="show_unsupported_features_preference_summary">Don\'t check this if you\'re not a beta tester.</string>
+      <string name="changelog_preferences">Changelogs</string>
+        <string name="data_changelog_preference_title">Database</string>
+        <string name="data_changelog_preference_summary">Open GitHub commit history for database.</string>
+        <string name="code_changelog_preference_title">App</string>
+        <string name="code_changelog_preference_summary">Open GitHub commit history for app.</string>
 
     <string name="warning">Warning</string>
     <string name="change_ui_language_warning">Changing the UI language may not completely take effect until this application is restarted.</string>
@@ -186,6 +191,7 @@
     <string name="secondary_language_russian">Russian (beta)</string>
     <string name="secondary_language_swedish">Swedish (beta)</string>
     <string name="secondary_language_chinese_hong_kong">Hong Kong Chinese (beta)</string>
+    <string name="secondary_language_portuguese">Portuguese (beta)</string>
 
     <!-- Metadata labels and descriptions. -->
     <string name="label_see_alt_entry">See</string>
@@ -201,15 +207,15 @@
     <string name="label_sources">Source(s)</string>
     <string name="label_transitivity">Transitivity</string>
       <string name="transitivity_ambi">The role played by the subject of this verb changes depending on whether or not there is a direct object.</string>
-      <string name="transitivity_intransitive">This verb probably cannot take a direct object.</string>
+      <string name="transitivity_intransitive">This verb is treated as if it probably cannot take a direct object for the purpose of analysis.</string>
       <string name="transitivity_intransitive_confirmed">This verb cannot take a direct object.</string>
       <string name="transitivity_stative">This verb describes a state or quality and cannot take an object.</string>
-      <string name="transitivity_transitive">This verb can probably take a direct object.</string>
+      <string name="transitivity_transitive">This verb is treated as if it can probably take a direct object for the purpose of analysis.</string>
       <string name="transitivity_transitive_confirmed">This verb can take a direct object.</string>
       <string name="transitivity_unknown">It is unknown whether this verb can take a direct object.</string>
     <string name="label_additional_information">Additional information</string>
-    <string name="info_being">This word refers to a being capable of language. It takes the plural suffix {-pu\':n:suff}.</string>
-    <string name="info_body">This word refers to a body part. It takes the plural suffix {-Du\':n:suff}.</string>
+    <string name="info_being">Beings capable of language take the plural suffix {-pu\':n:suff}.</string>
+    <string name="info_body">Body parts take the plural suffix {-Du\':n:suff}.</string>
     <string name="info_inherent_plural">This word is inherently plural. Its singular form is %1$s.</string>
     <string name="info_singular_form">This word has an inherently plural form in %1$s.</string>
     <string name="warning_hypothetical">Warning: This entry is hypothetical. Do not use unless you know what you\'re doing!</string>

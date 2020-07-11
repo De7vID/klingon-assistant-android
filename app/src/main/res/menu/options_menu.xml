@@ -43,12 +43,6 @@
           android:visible="false" />
 
     <!-- This is hidden unless the "unsupported features" option has been selected. -->
-    <item android:id="@+id/action_lessons"
-          android:title="@string/menu_lessons"
-          android:icon="@drawable/ic_menu_lessons"
-          android:visible="false" />
-
-    <!-- This is hidden unless the "unsupported features" option has been selected. -->
     <item android:id="@+id/action_kwotd"
           android:title="@string/menu_kwotd"
           android:icon="@drawable/ic_menu_kwotd"
@@ -60,9 +54,15 @@
           android:icon="@drawable/ic_menu_update_db"
           android:visible="false" />
 
-    <!-- This is hidden unless the "unsupported features" option has been selected. -->
+    <!-- This is hidden unless the "unsupported features" option has been selected and the language is one with autotranslated definitions. -->
     <item android:id="@+id/action_autotranslate"
           android:title="@string/menu_autotranslate"
+          android:visible="false" />
+
+    <!-- This is hidden unless the "unsupported features" option has been selected. -->
+    <item android:id="@+id/action_lessons"
+          android:title="@string/menu_lessons"
+          android:icon="@drawable/ic_menu_lessons"
           android:visible="false" />
 
     <item android:id="@+id/about"
