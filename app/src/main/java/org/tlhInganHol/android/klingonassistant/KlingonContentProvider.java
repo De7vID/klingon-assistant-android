@@ -408,6 +408,10 @@ public class KlingonContentProvider extends ContentProvider {
     private String mNotes_ZH_HK = "";
     private String mExamples_ZH_HK = "";
     private String mSearchTags_ZH_HK = "";
+    private String mDefinition_PT = "";
+    private String mNotes_PT = "";
+    private String mExamples_PT = "";
+    private String mSearchTags_PT = "";
 
     // Part of speech metadata.
     private enum BasePartOfSpeechEnum {
@@ -599,6 +603,11 @@ public class KlingonContentProvider extends ContentProvider {
       mNotes_ZH_HK = cursor.getString(KlingonContentDatabase.COLUMN_NOTES_ZH_HK);
       mExamples_ZH_HK = cursor.getString(KlingonContentDatabase.COLUMN_EXAMPLES_ZH_HK);
       mSearchTags_ZH_HK = cursor.getString(KlingonContentDatabase.COLUMN_SEARCH_TAGS_ZH_HK);
+
+      mDefinition_PT = cursor.getString(KlingonContentDatabase.COLUMN_DEFINITION_PT);
+      mNotes_PT = cursor.getString(KlingonContentDatabase.COLUMN_NOTES_PT);
+      mExamples_PT = cursor.getString(KlingonContentDatabase.COLUMN_EXAMPLES_PT);
+      mSearchTags_PT = cursor.getString(KlingonContentDatabase.COLUMN_SEARCH_TAGS_PT);
 
       mSynonyms = cursor.getString(KlingonContentDatabase.COLUMN_SYNONYMS);
       mAntonyms = cursor.getString(KlingonContentDatabase.COLUMN_ANTONYMS);
@@ -1021,6 +1030,8 @@ public class KlingonContentProvider extends ContentProvider {
           return getDefinition_SV();
         case "zh-HK":
           return getDefinition_ZH_HK();
+        case "pt":
+          return getDefinition_PT();
         default:
           return getDefinition();
       }
@@ -1199,6 +1210,30 @@ public class KlingonContentProvider extends ContentProvider {
       return (mSearchTags_ZH_HK == null) ? "" : mSearchTags_ZH_HK;
     }
 
+    public String getDefinition_PT() {
+      // If there is no Portuguese definition, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mDefinition_PT == null) ? "" : mDefinition_PT;
+    }
+
+    public String getNotes_PT() {
+      // If there are no Portuguese notes, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mNotes_PT == null) ? "" : mNotes_PT;
+    }
+
+    public String getExamples_PT() {
+      // If there are no Portuguese examples, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mExamples_PT == null) ? "" : mExamples_PT;
+    }
+
+    public String getSearchTags_PT() {
+      // If there are no Portuguese search tags, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mSearchTags_PT == null) ? "" : mSearchTags_PT;
+    }
+
     public String getSynonyms() {
       return mSynonyms;
     }
@@ -1232,6 +1267,8 @@ public class KlingonContentProvider extends ContentProvider {
           return getNotes_SV();
         case "zh-HK":
           return getNotes_ZH_HK();
+        case "pt":
+          return getNotes_PT();
         default:
           return getNotes();
       }
@@ -1283,6 +1320,8 @@ public class KlingonContentProvider extends ContentProvider {
           return getExamples_SV();
         case "zh-HK":
           return getExamples_ZH_HK();
+        case "pt":
+          return getExamples_PT();
         default:
           return getExamples();
       }

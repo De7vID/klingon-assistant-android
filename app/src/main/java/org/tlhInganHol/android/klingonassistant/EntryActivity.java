@@ -506,6 +506,9 @@ public class EntryActivity extends BaseActivity
                 case "zh-HK":
                   definitionTranslation = mEntry.getDefinition_ZH_HK();
                   break;
+                case "pt":
+                  definitionTranslation = mEntry.getDefinition_PT();
+                  break;
               }
               // Open a form with fields filled in.
               SubmitCorrectionTask submitCorrectionTask = new SubmitCorrectionTask();
