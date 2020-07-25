@@ -191,7 +191,7 @@
     <string name="secondary_language_russian">Russian (beta)</string>
     <string name="secondary_language_swedish">Swedish (beta)</string>
     <string name="secondary_language_chinese_hong_kong">Hong Kong Chinese (beta)</string>
-    <string name="secondary_language_portuguese">Portuguese (beta)</string>
+    <string name="secondary_language_portuguese">Portuguese</string>
 
     <!-- Metadata labels and descriptions. -->
     <string name="label_see_alt_entry">See</string>

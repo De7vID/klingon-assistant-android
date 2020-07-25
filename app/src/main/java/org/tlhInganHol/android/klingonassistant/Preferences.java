@@ -223,7 +223,14 @@ public class Preferences extends AppCompatPreferenceActivity
         new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                launchExternal("https://github.com/De7vID/klingon-assistant-data/commits/master");
+                SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(
+                    getBaseContext());
+                String installedVersion =
+                    sharedPrefs.getString(
+                        KlingonContentDatabase.KEY_INSTALLED_DATABASE_VERSION,
+                        /* default */ KlingonContentDatabase.getBundledDatabaseVersion());
+                launchExternal("https://github.com/De7vID/klingon-assistant-data/commits/master@{" +
+                    installedVersion + "}");
                 return true;
             }
         });
@@ -233,7 +240,10 @@ public class Preferences extends AppCompatPreferenceActivity
         new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                launchExternal("https://github.com/De7vID/klingon-assistant-android/commits/master");
+                // The bundled database version is the app's built date.
+                launchExternal(
+                    "https://github.com/De7vID/klingon-assistant-android/commits/master@{" +
+                    KlingonContentDatabase.getBundledDatabaseVersion() + "}");
                 return true;
             }
         });
