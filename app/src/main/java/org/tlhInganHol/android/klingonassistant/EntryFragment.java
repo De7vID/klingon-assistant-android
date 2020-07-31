@@ -129,9 +129,10 @@ public class EntryFragment extends Fragment {
     }
 
     // Experimental: Display other languages.
-    if (!entry.isAlternativeSpelling()
-        && sharedPrefs.getBoolean(
-            Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE, /* default */ false)) {
+    final boolean showUnsupportedFeatures =
+        sharedPrefs.getBoolean(
+            Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE, /* default */ false);
+    if (!entry.isAlternativeSpelling() && showUnsupportedFeatures) {
       String definition_DE = entry.getDefinition_DE();
       String definition_FA = entry.getDefinition_FA();
       String definition_SV = entry.getDefinition_SV();
@@ -166,8 +167,9 @@ public class EntryFragment extends Fragment {
     String notes;
     if (entry.shouldDisplayOtherLanguageNotes()) {
       notes = entry.getOtherLanguageNotes();
-      if (notes.contains("[AUTOTRANSLATED]")) {
-        // If notes are autotranslated, display original English notes also.
+      if (notes.contains("[AUTOTRANSLATED]") || (showUnsupportedFeatures && !notes.equal(""))) {
+        // If notes are autotranslated, or unsupported features are enabled, display original
+        // English notes also.
         notes += "\n\n" + entry.getNotes();
       }
     } else {
