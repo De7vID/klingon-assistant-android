@@ -378,7 +378,10 @@ public class BaseActivity extends AppCompatActivity
           sharedPrefs.getString(
               Preferences.KEY_SHOW_SECONDARY_LANGUAGE_LIST_PREFERENCE, /* default */
               Preferences.getSystemPreferredLanguage());
-      if (!editLang.equals("NONE") && !editLang.equals("de")) {
+      // Display menu item to list autotranslated definitions. (Do this even
+      // for German and Portuguese, as a database update might mean there are
+      // new autotranslations.)
+      if (!editLang.equals("NONE")) {
         MenuItem autotranslateButton = menu.findItem(R.id.action_autotranslate);
         autotranslateButton.setVisible(true);
       }
