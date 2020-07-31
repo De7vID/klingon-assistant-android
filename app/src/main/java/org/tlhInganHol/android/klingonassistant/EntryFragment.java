@@ -167,7 +167,7 @@ public class EntryFragment extends Fragment {
     String notes;
     if (entry.shouldDisplayOtherLanguageNotes()) {
       notes = entry.getOtherLanguageNotes();
-      if (notes.contains("[AUTOTRANSLATED]") || (showUnsupportedFeatures && !notes.equal(""))) {
+      if (notes.contains("[AUTOTRANSLATED]") || (showUnsupportedFeatures && !notes.equals(""))) {
         // If notes are autotranslated, or unsupported features are enabled, display original
         // English notes also.
         notes += "\n\n" + entry.getNotes();
