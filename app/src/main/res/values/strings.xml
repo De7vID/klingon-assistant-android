@@ -193,6 +193,22 @@
     <string name="secondary_language_chinese_hong_kong">Hong Kong Chinese (beta)</string>
     <string name="secondary_language_portuguese">Portuguese</string>
 
+    <!-- Entry parts of speech and attributes. -->
+    <string name="pos_noun">n</string>
+    <string name="pos_number">num</string>
+    <string name="pos_name">name</string>
+    <string name="pos_pronoun">pro</string>
+    <string name="pos_verb">v</string>
+    <string name="pos_adv">adv</string>
+    <string name="pos_conj">conj</string>
+    <string name="pos_ques">ques</string>
+    <string name="pos_excl">excl</string>
+    <string name="attribute_separator">, </string>
+    <string name="attribute_archaic">archaic</string>
+    <string name="attribute_regional">regional</string>
+    <string name="attribute_slang">slang</string>
+    <string name="homophone_number">def\'n</string>
+
     <!-- Metadata labels and descriptions. -->
     <string name="label_see_alt_entry">See</string>
     <string name="label_english">English</string>
