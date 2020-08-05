@@ -149,7 +149,7 @@
         <string name="klingon_ui_preference_title">Klingon UI</string>
         <string name="klingon_ui_preference_summary">Use {tlhIngan Hol} for the user interface language.</string>
         <string name="show_secondary_language_preference_title">Show non-English definitions</string>
-        <string name="show_secondary_language_preference_summary">Display translations of the definitions for a language other than English. Note: only German has complete definitions.</string>
+        <string name="show_secondary_language_preference_summary">Display translations of the definitions for a language other than English.</string>
       <string name="input_preferences">Input preferences</string>
         <string name="xifan_hol_preference_title">Enable \"xifan hol\" input</string>
         <string name="xifan_hol_preference_summary">Allow typing \"x\" for {tlh}, \"f\" for {ng}, etc.</string>
