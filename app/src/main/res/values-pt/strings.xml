@@ -120,7 +120,7 @@
         <string name="klingon_ui_preference_title">Menus em Klingon</string>
         <string name="klingon_ui_preference_summary">Use {tlhIngan Hol} como língua de interface do usuário.</string>
         <string name="show_secondary_language_preference_title">Mostrar definições não-Inglês</string>
-        <string name="show_secondary_language_preference_summary">Exiba traduções das definições para um idioma diferente do inglês. Nota: somente o alemão tem definições completas.</string>
+        <string name="show_secondary_language_preference_summary">Exiba traduções das definições para um idioma diferente do inglês.</string>
       <string name="input_preferences">Preferências de entrada</string>
         <string name="xifan_hol_preference_title">Habilitar entrada \"xifan hol\"</string>
         <string name="xifan_hol_preference_summary">Permitir digitação de \"x\" para {tlh}, \"f\" para {ng}, etc.</string>

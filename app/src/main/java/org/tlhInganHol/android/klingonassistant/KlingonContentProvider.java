@@ -833,27 +833,29 @@ public class KlingonContentProvider extends ContentProvider {
       // Note that an entry may have more than one of the archaic,
       // regional, or slang attributes.
       String attr = "";
+      final String separator = mContext.getResources().getString(R.string.attribute_separator);
       if (mIsArchaic) {
-        attr = maybeItalics("archaic", isHtml);
+        attr = maybeItalics(mContext.getResources().getString(R.string.attribute_archaic), isHtml);
       }
       if (mIsRegional) {
         if (!attr.equals("")) {
-          attr += ", ";
+          attr += separator;
         }
-        attr = maybeItalics("regional", isHtml);
+        attr = maybeItalics(mContext.getResources().getString(R.string.attribute_regional), isHtml);
       }
       if (mIsSlang) {
         if (!attr.equals("")) {
-          attr += ", ";
+          attr += separator;
         }
-        attr += maybeItalics("slang", isHtml);
+        attr = maybeItalics(mContext.getResources().getString(R.string.attribute_slang), isHtml);
       }
       // While whether an entry is a name isn't actually an attribute, treat it as one.
       if (isName()) {
         if (!attr.equals("")) {
-          attr += ", ";
+          attr += separator;
         }
-        attr += maybeItalics("name", isHtml);
+        attr = maybeItalics(mContext.getResources().getString(R.string.pos_name),
+            isHtml);
       }
       if (!attr.equals("")) {
         if (isHtml) {
@@ -887,11 +889,11 @@ public class KlingonContentProvider extends ContentProvider {
       String pos = basePartOfSpeechAbbreviations[mBasePartOfSpeech.ordinal()];
       if (mBasePartOfSpeech == BasePartOfSpeechEnum.NOUN) {
         if (mNounType == NounType.NUMBER) {
-          pos = "num";
+          pos =  mContext.getResources().getString(R.string.pos_number);
         } else if (mNounType == NounType.NAME) {
-          pos = "name";
+          pos =  mContext.getResources().getString(R.string.pos_name);
         } else if (mNounType == NounType.PRONOUN) {
-          pos = "pro";
+          pos =  mContext.getResources().getString(R.string.pos_pronoun);
         }
       }
       return pos;
@@ -976,13 +978,14 @@ public class KlingonContentProvider extends ContentProvider {
           || (mBasePartOfSpeech == BasePartOfSpeechEnum.NOUN && mNounType == NounType.NAME)) {
         return "";
       }
-      String pos = getSpecificPartOfSpeech();
+      final String pos = getSpecificPartOfSpeech();
 
+      final String defn =  mContext.getResources().getString(R.string.homophone_number);
       if (isHtml) {
         // This is used in the "results found" string.
         String bracketedPos = " <small>(<i>" + pos + "</i>)";
         if (mHomophoneNumber != -1 && mShowHomophoneNumber) {
-          bracketedPos += " (def'n " + mHomophoneNumber + ")";
+          bracketedPos += " (" + defn + " " + mHomophoneNumber + ")";
         }
         bracketedPos += "</small>";
         return bracketedPos;
@@ -990,7 +993,7 @@ public class KlingonContentProvider extends ContentProvider {
         // This is used in an entry body next to linked entries.
         String bracketedPos = " (" + pos + ")";
         if (mHomophoneNumber != -1 && mShowHomophoneNumber) {
-          bracketedPos += " (def'n " + mHomophoneNumber + ")";
+          bracketedPos += " (" + defn + " " + mHomophoneNumber + ")";
         }
         return bracketedPos;
       }

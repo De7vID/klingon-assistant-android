@@ -72,7 +72,7 @@ task checkAudioFiles(type: Exec) {
 checkAudioFiles.onlyIf { file("../../scripts/check_audio_files.pl").exists() }
 
 preBuild.dependsOn 'updateDatabase'
-preBuild.dependsOn 'checkAudioFiles'
+// preBuild.dependsOn 'checkAudioFiles'
 
 // allprojects {
 //     tasks.withType(JavaCompile) {
