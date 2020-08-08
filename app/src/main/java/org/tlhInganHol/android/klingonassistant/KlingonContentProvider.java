@@ -894,7 +894,19 @@ public class KlingonContentProvider extends ContentProvider {
           pos =  mContext.getResources().getString(R.string.pos_name);
         } else if (mNounType == NounType.PRONOUN) {
           pos =  mContext.getResources().getString(R.string.pos_pronoun);
+        } else {
+          pos =  mContext.getResources().getString(R.string.pos_noun);
         }
+      } else if (mBasePartOfSpeech == BasePartOfSpeechEnum.VERB) {
+        pos =  mContext.getResources().getString(R.string.pos_verb);
+      } else if (mBasePartOfSpeech == BasePartOfSpeechEnum.ADVERBIAL) {
+        pos =  mContext.getResources().getString(R.string.pos_adv);
+      } else if (mBasePartOfSpeech == BasePartOfSpeechEnum.CONJUNCTION) {
+        pos =  mContext.getResources().getString(R.string.pos_conj);
+      } else if (mBasePartOfSpeech == BasePartOfSpeechEnum.QUESTION) {
+        pos =  mContext.getResources().getString(R.string.pos_ques);
+      } else if (mBasePartOfSpeech == BasePartOfSpeechEnum.EXCLAMATION) {
+        pos =  mContext.getResources().getString(R.string.pos_excl);
       }
       return pos;
     }
