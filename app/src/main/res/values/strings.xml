@@ -232,8 +232,8 @@
     <string name="label_additional_information">Additional information</string>
     <string name="info_being">Beings capable of language take the plural suffix {-pu\':n:suff}.</string>
     <string name="info_body">Body parts take the plural suffix {-Du\':n:suff}.</string>
-    <string name="info_inherent_plural">This word is inherently plural. Its singular form is %1$s.</string>
-    <string name="info_singular_form">This word has an inherently plural form in %1$s.</string>
+    <string name="info_inherent_plural">This noun is inherently plural (grammatically treated as singular). Its singular form is %1$s. See {TKD 3.3.2:src}.</string>
+    <string name="info_singular_form">This noun has an inherently plural form in %1$s. See {TKD 3.3.2:src}.</string>
     <string name="warning_hypothetical">Warning: This entry is hypothetical. Do not use unless you know what you\'re doing!</string>
     <string name="warning_extended_canon">Warning: This entry is not known to have been approved by Marc Okrand. Do not use unless you know what you\'re doing!</string>
 
