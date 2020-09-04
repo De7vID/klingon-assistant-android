@@ -1048,6 +1048,8 @@ public class KlingonContentProvider extends ContentProvider {
         case "pt":
           return getDefinition_PT();
         default:
+          // All definitions should exist (even if they are autotranslated), so this should never
+          // be reached, but in case it is, return the English definition by default.
           return getDefinition();
       }
     }
@@ -1104,9 +1106,11 @@ public class KlingonContentProvider extends ContentProvider {
               Preferences.getSystemPreferredLanguage());
       if (otherLang != "NONE") {
         // Show other-language definitions preference set to a language and that other-language
-        // notes are not empty.
+        // notes are not empty or identical to the English.
         String otherLanguageNotes = getOtherLanguageNotes();
-        return otherLanguageNotes != null && !otherLanguageNotes.equals("");
+        return otherLanguageNotes != null
+            && !otherLanguageNotes.equals("")
+            && !otherLanguageNotes.equals(mNotes);
       } else {
         return false;
       }
@@ -1285,6 +1289,7 @@ public class KlingonContentProvider extends ContentProvider {
         case "pt":
           return getNotes_PT();
         default:
+          // By default, return the English notes if other-language notes don't exist.
           return getNotes();
       }
     }
