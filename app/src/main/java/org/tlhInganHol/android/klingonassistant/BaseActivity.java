@@ -559,33 +559,6 @@ public class BaseActivity extends AppCompatActivity
     startActivity(intent);
   }
 
-  // Private method to request a translation.
-  private void requestTranslation() {
-    /* TUTORIAL
-    //  // See: https://developers.google.com/+/mobile/android/share/prefill
-    //  // TODO: Ideally, this should post to the "Klingon language" community under the "Requests for
-    //  // translation" category.
-    //  ArrayList<Person> recipients = new ArrayList<Person>();
-    //  recipients.add(PlusShare.createPerson("+KlingonTeacher","KlingonTeacher"));
-    //  recipients.add(PlusShare.createPerson("110116202842822234244","De'vID"));
-
-    //  try {
-    //    Intent requestTranslationIntent = new PlusShare.Builder(this)
-    //                                                   .setType("text/plain")
-    //                                                   .setText("I request a Klingon translation for:\n\n")
-    //                                                   .setRecipients(recipients)
-    //                                                   .getIntent();
-    //    startActivity(requestTranslationIntent);
-    //  } catch(Exception e) {
-    //    // Fail gracefully if Google+ is not found.
-    //    Toast.makeText(
-    //            getBaseContext(),
-    //            getBaseContext().getResources().getString(R.string.gplus_missing),
-    //            Toast.LENGTH_LONG).show();
-    //  }
-    */
-  }
-
   // Private method to launch a Facebook group.
   private void launchFacebook(String groupId) {
     Intent intent;
@@ -674,12 +647,6 @@ public class BaseActivity extends AppCompatActivity
             // Launch Facebook "Learn Klingon" group.
             launchFacebook("LearnKlingon");
           }
-          break;
-          */
-        /* TUTORIAL */
-        /*
-        case R.id.request_translation:
-          requestTranslation();
           break;
           */
         /*
