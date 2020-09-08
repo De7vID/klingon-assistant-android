@@ -59,11 +59,13 @@
           android:title="@string/menu_autotranslate"
           android:visible="false" />
 
-    <!-- This is hidden unless the "unsupported features" option has been selected. -->
+    <!-- This is deprecated. -->
+    <!--
     <item android:id="@+id/action_lessons"
           android:title="@string/menu_lessons"
           android:icon="@drawable/ic_menu_lessons"
           android:visible="false" />
+          -->
 
     <item android:id="@+id/about"
           android:title="@string/menu_about"

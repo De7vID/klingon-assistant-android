@@ -43,10 +43,6 @@ import java.util.Locale;
 public class Preferences extends AppCompatPreferenceActivity
     implements OnSharedPreferenceChangeListener {
 
-  // Tutorial preferences.
-  // public static final String KEY_RUN_TUTORIAL_CHECKBOX_PREFERENCE =
-  // "run_tutorial_checkbox_preference";
-
   // Language preferences.
   private static final String KEY_KLINGON_UI_CHECKBOX_PREFERENCE = "klingon_ui_checkbox_preference";
   private static final String KEY_KLINGON_FONT_LIST_PREFERENCE = "klingon_font_list_preference";
@@ -247,12 +243,6 @@ public class Preferences extends AppCompatPreferenceActivity
                 return true;
             }
         });
-
-    // TUTORIAL
-    // if (KlingonAssistant.INCLUDE_TUTORIAL) {
-    //   Preference tutorialPreference = findPreference(KEY_RUN_TUTORIAL_CHECKBOX_PREFERENCE);
-    //   tutorialPreference.setEnabled(true);
-    // }
   }
 
   private void restoreLocaleConfiguration() {

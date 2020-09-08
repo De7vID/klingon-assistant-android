@@ -1,5 +1,6 @@
 CHANGELOG
 
+2020-09-07: Remove some deprecated features. Fix KWOTD bug.
 2020-07-17: Handle autotranslated notes.
 2020-07-12: Add support for Portuguese (pt) language.
 2020-02-23: Add {Saghan}, {-luH}, and {-la'} to grammar analsysi.
