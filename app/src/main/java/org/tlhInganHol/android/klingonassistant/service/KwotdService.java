@@ -110,7 +110,7 @@ public class KwotdService extends JobService {
     private static final String KWOTD_RSS_URL = "https://hol.kag.org/kwotd.rss";
 
     // URL from which to fetch KWOTD JSON.
-    private static final String KWOTD_JSON_URL = "http://hol.kag.org/alexa.php?KWOTD=1";
+    private static final String KWOTD_JSON_URL = "https://hol.kag.org/alexa.php?KWOTD=1";
 
     // Arbitrary limit on max buffer length to prevent overflows and such.
     private static final int MAX_BUFFER_LENGTH = 1024;
