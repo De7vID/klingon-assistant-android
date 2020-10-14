@@ -29,6 +29,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.URL;
+import java.net.URLConnection;
+import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipInputStream;
 import org.json.JSONObject;
 import org.tlhInganHol.android.klingonassistant.KlingonContentDatabase;
@@ -152,8 +154,14 @@ public class UpdateDatabaseService extends JobService {
 
     private void copyDBFromZipUrl(String databaseZipUrl) throws IOException {
       // Read the database from a zip file online.
-      ZipInputStream inStream =
-          new ZipInputStream(new URL(databaseZipUrl).openConnection().getInputStream());
+      URLConnection urlConnection = new URL(databaseZipUrl).openConnection();
+      urlConnection.setRequestProperty("Accept-Encoding", "gzip");
+      ZipInputStream inStream;
+      if ("gzip".equals(urlConnection.getContentEncoding())) {
+        inStream = new ZipInputStream(new GZIPInputStream(urlConnection.getInputStream()));
+      } else {
+        inStream = new ZipInputStream(urlConnection.getInputStream());
+      }
 
       // Write to the replacement database.
       String fullReplacementDBPath =
