@@ -412,6 +412,10 @@ public class KlingonContentProvider extends ContentProvider {
     private String mNotes_PT = "";
     private String mExamples_PT = "";
     private String mSearchTags_PT = "";
+    private String mDefinition_FI = "";
+    private String mNotes_FI = "";
+    private String mExamples_FI = "";
+    private String mSearchTags_FI = "";
 
     // Part of speech metadata.
     private enum BasePartOfSpeechEnum {
@@ -608,6 +612,11 @@ public class KlingonContentProvider extends ContentProvider {
       mNotes_PT = cursor.getString(KlingonContentDatabase.COLUMN_NOTES_PT);
       mExamples_PT = cursor.getString(KlingonContentDatabase.COLUMN_EXAMPLES_PT);
       mSearchTags_PT = cursor.getString(KlingonContentDatabase.COLUMN_SEARCH_TAGS_PT);
+
+      mDefinition_FI = cursor.getString(KlingonContentDatabase.COLUMN_DEFINITION_FI);
+      mNotes_FI = cursor.getString(KlingonContentDatabase.COLUMN_NOTES_FI);
+      mExamples_FI = cursor.getString(KlingonContentDatabase.COLUMN_EXAMPLES_FI);
+      mSearchTags_FI = cursor.getString(KlingonContentDatabase.COLUMN_SEARCH_TAGS_FI);
 
       mSynonyms = cursor.getString(KlingonContentDatabase.COLUMN_SYNONYMS);
       mAntonyms = cursor.getString(KlingonContentDatabase.COLUMN_ANTONYMS);
@@ -1047,6 +1056,8 @@ public class KlingonContentProvider extends ContentProvider {
           return getDefinition_ZH_HK();
         case "pt":
           return getDefinition_PT();
+        case "fi":
+          return getDefinition_FI();
         default:
           // All definitions should exist (even if they are autotranslated), so this should never
           // be reached, but in case it is, return the English definition by default.
@@ -1253,6 +1264,30 @@ public class KlingonContentProvider extends ContentProvider {
       return (mSearchTags_PT == null) ? "" : mSearchTags_PT;
     }
 
+    public String getDefinition_FI() {
+      // If there is no Finnish definition, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mDefinition_FI == null) ? "" : mDefinition_FI;
+    }
+
+    public String getNotes_FI() {
+      // If there are no Finnish notes, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mNotes_FI == null) ? "" : mNotes_FI;
+    }
+
+    public String getExamples_FI() {
+      // If there are no Finnish examples, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mExamples_FI == null) ? "" : mExamples_FI;
+    }
+
+    public String getSearchTags_FI() {
+      // If there are no Finnish search tags, the cursor could've returned
+      // null, so that needs to be handled.
+      return (mSearchTags_FI == null) ? "" : mSearchTags_FI;
+    }
+
     public String getSynonyms() {
       return mSynonyms;
     }
@@ -1288,6 +1323,8 @@ public class KlingonContentProvider extends ContentProvider {
           return getNotes_ZH_HK();
         case "pt":
           return getNotes_PT();
+        case "fi":
+          return getNotes_FI();
         default:
           // By default, return the English notes if other-language notes don't exist.
           return getNotes();
@@ -1342,6 +1379,8 @@ public class KlingonContentProvider extends ContentProvider {
           return getExamples_ZH_HK();
         case "pt":
           return getExamples_PT();
+        case "fi":
+          return getExamples_FI();
         default:
           return getExamples();
       }

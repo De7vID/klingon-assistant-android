@@ -89,6 +89,10 @@ public class KlingonContentDatabase {
   public static final String KEY_NOTES_PT = "notes_pt";
   public static final String KEY_EXAMPLES_PT = "examples_pt";
   public static final String KEY_SEARCH_TAGS_PT = "search_tags_pt";
+  public static final String KEY_DEFINITION_FI = "definition_fi";
+  public static final String KEY_NOTES_FI = "notes_fi";
+  public static final String KEY_EXAMPLES_FI = "examples_fi";
+  public static final String KEY_SEARCH_TAGS_FI = "search_tags_fi";
 
   // The order of the keys to access the columns.
   public static final int COLUMN_ID = 0;
@@ -130,6 +134,10 @@ public class KlingonContentDatabase {
   public static final int COLUMN_NOTES_PT = 34;
   public static final int COLUMN_EXAMPLES_PT = 35;
   public static final int COLUMN_SEARCH_TAGS_PT = 36;
+  public static final int COLUMN_DEFINITION_FI = 37;
+  public static final int COLUMN_NOTES_FI = 38;
+  public static final int COLUMN_EXAMPLES_FI = 39;
+  public static final int COLUMN_SEARCH_TAGS_FI = 40;
 
   // All keys.
   public static final String[] ALL_KEYS = {
@@ -170,6 +178,10 @@ public class KlingonContentDatabase {
     KEY_NOTES_PT,
     KEY_EXAMPLES_PT,
     KEY_SEARCH_TAGS_PT,
+    KEY_DEFINITION_FI,
+    KEY_NOTES_FI,
+    KEY_EXAMPLES_FI,
+    KEY_SEARCH_TAGS_FI,
   };
 
   // The name of the database and the database object for accessing it.
@@ -792,6 +804,13 @@ public class KlingonContentDatabase {
                   ? KlingonContentDatabase.KEY_SEARCH_TAGS_PT
                   : KlingonContentDatabase.KEY_DEFINITION_PT;
           break;
+
+        case "fi":
+          key =
+              useSearchTags
+                  ? KlingonContentDatabase.KEY_SEARCH_TAGS_FI
+                  : KlingonContentDatabase.KEY_DEFINITION_FI;
+          break;
       }
     }
 
@@ -1087,6 +1106,10 @@ public class KlingonContentDatabase {
       entry.getNotes_PT(),
       entry.getExamples_PT(),
       entry.getSearchTags_PT(),
+      entry.getDefinition_FI(),
+      entry.getNotes_FI(),
+      entry.getExamples_FI(),
+      entry.getSearchTags_FI(),
     };
   }
 
@@ -1129,6 +1152,10 @@ public class KlingonContentDatabase {
       entry.getNotes_PT(),
       entry.getExamples_PT(),
       entry.getSearchTags_PT(),
+      entry.getDefinition_FI(),
+      entry.getNotes_FI(),
+      entry.getExamples_FI(),
+      entry.getSearchTags_FI(),
     };
   }
 

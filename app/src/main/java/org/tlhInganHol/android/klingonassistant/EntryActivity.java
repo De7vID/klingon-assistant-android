@@ -511,6 +511,9 @@ public class EntryActivity extends BaseActivity
                 case "pt":
                   definitionTranslation = mEntry.getDefinition_PT();
                   break;
+                case "fi":
+                  definitionTranslation = mEntry.getDefinition_FI();
+                  break;
               }
               // Open a form with fields filled in.
               SubmitCorrectionTask submitCorrectionTask = new SubmitCorrectionTask();
