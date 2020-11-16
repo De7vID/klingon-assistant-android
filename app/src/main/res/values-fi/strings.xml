@@ -59,12 +59,12 @@
 
     <!-- Shown above search results when we receive a search request. -->
     <plurals name="search_results">
-      <item quantity="one"><![CDATA[%1$d result for &lt;<b>%2$s</b>&gt;: ]]></item>
-      <item quantity="other"><![CDATA[%1$d results for &lt;<b>%2$s</b>&gt;: ]]></item>
+      <item quantity="one"><![CDATA[%1$d tulos haulle &lt;<b>%2$s</b>&gt;: ]]></item>
+      <item quantity="other"><![CDATA[%1$d tulosta haulle &lt;<b>%2$s</b>&gt;: ]]></item>
     </plurals>
 
     <!-- Search failure message, e.g., "No results found for \"%s\"". -->
-    <string name="no_results"><![CDATA[No results found for &lt;<b>%s</b>&gt;.]]></string>
+    <string name="no_results"><![CDATA[Ei tuloksia haulle &lt;<b>%s</b>&gt;.]]></string>
 
     <!-- Other menu items. -->
     <string name="menu_lessons">Luennot (vanhentuneita)</string>
