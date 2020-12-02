@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2014 De'vID jonpIn (David Yonge-Mallo)
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:ignore="MissingTranslation">
+
+    <!-- The name of the Klingon Assistant application. -->
+    <string name="app_name">boQwI\'</string>
+
+    <!-- The string for displaying the app and database versions in the side menu. -->
+    <string name="app_version">%1$s</string>
+    <string name="app_and_db_versions">%1$s [db %2$s]</string>
+
+    <!-- Messages for database creation and upgrade. -->
+    <string name="database_created">Tietokanta v%1$s luotu.</string>
+    <string name="database_upgraded">Tietokanta päivitetty versiosta v%1$s versioon v%2$s.</string>
+
+    <!-- The label for use as a searchable item, e.g., "Dictionary". -->
+    <string name="search_label">Tietopankki</string>
+
+    <!-- The hint text that appears in the search box, e.g., "Search the dictionary". -->
+    <string name="search_hint">Hae tietopankista</string>
+
+    <!-- The primary menu entry that invokes search, e.g., "Search". -->
+    <string name="menu_search">Hae</string>
+
+    <!-- The "Speak" button. -->
+    <string name="menu_speak">Puhu</string>
+
+    <!-- The "Share" button, popup menu, and "shared from" string. -->
+    <string name="menu_share">Jaa</string>
+    <string name="share_popup_title">jaa ohjelmalla...</string>
+    <string name="shared_from">Jaettu {boQwI\'}sta.</string>
+
+    <!-- The menu entry that sends a request for translation to the G+ Klingon language community. -->
+    <string name="menu_request_translation">Tee käännöspyyntö</string>
+
+    <!-- The description that will show up in the search settings for this source, e.g., "Definitions of words".  -->
+    <string name="settings_description">Klingonin sanat ja lauseet</string>
+
+    <!-- General instructions in the main activity. -->
+    <string name="search_instructions">Käytä hakunappia löytääksesi tietoa tai valitse kohta valikosta.</string>
+
+    <!-- Shown above search results when we receive a search request. -->
+    <plurals name="search_results">
+      <item quantity="one"><![CDATA[%1$d tulos haulle &lt;<b>%2$s</b>&gt;: ]]></item>
+      <item quantity="other"><![CDATA[%1$d tulosta haulle &lt;<b>%2$s</b>&gt;: ]]></item>
+    </plurals>
+
+    <!-- Search failure message, e.g., "No results found for \"%s\"". -->
+    <string name="no_results"><![CDATA[Ei tuloksia haulle &lt;<b>%s</b>&gt;.]]></string>
+
+    <!-- Other menu items. -->
+    <string name="menu_lessons">Luennot (vanhentuneita)</string>
+    <string name="menu_kwotd">Hae KPS (beta)</string>
+    <string name="menu_update_db">Etsi tietokantapäivityksiä (beta)</string>
+    <string name="menu_autotranslate">Näytä konekäännetyt määritelmät (beta)</string>
+    <string name="menu_about">boQwI\' - Ohjeet</string>
+    <string name="menu_preferences">Asetukset</string>
+    <string name="menu_reference">Referenssi</string>
+    <string name="menu_pronunciation">Ääntäminen</string>
+    <string name="menu_prefixes">Etuliitteet</string>
+    <string name="menu_prefix_chart">Etuliitetaulukko</string>
+    <string name="menu_noun_suffixes">Substantiiviliitteet</string>
+    <string name="menu_verb_suffixes">Verbipäätteet</string>
+    <string name="menu_sources">Lähteet</string>
+    <string name="menu_phrases">Hyödyllisiä fraaseja</string>
+    <string name="menu_lists">Listat</string>
+    <string name="menu_media">Media</string>
+    <string name="menu_social">Sosiaalinen media</string>
+    <string name="menu_kli">Klingon Language Institute</string>
+    <string name="menu_kli_lessons">Online Lessons</string>
+    <string name="menu_kli_questions">Ask Questions!</string>
+    <!--
+    <string name="menu_kli_discord">Discord</string>
+    -->
+
+    <!-- Social networks. -->
+    <string name="menu_social_network">Sosiaalinen verkosto</string>
+    <string name="menu_gplus">G+-yhteisö</string>
+    <string name="menu_facebook">Facebook-ryhmä</string>
+    <string name="menu_kag">KAG Communications</string>
+    <string name="menu_kidc">Klingon Imperial Forums</string>
+
+    <!-- Media. -->
+    <string name="media_1_title">Klingonin oppitunnit</string>
+    <string name="media_1_list_id">PLJrTr05h0I0OcaX5G6_5TCuIisvS4Xed6</string>
+
+    <string name="media_2_title">Keskustelufraasit</string>
+    <string name="media_2_list_id">PLJrTr05h0I0MazOxYJq47Eqdsa9F2glPg</string>
+
+    <string name="media_3_title">Taistelukomennot</string>
+    <string name="media_3_list_id">PLJrTr05h0I0Mwfo-f1YJv1VC7pNgiqicp</string>
+
+    <string name="media_4_title">Muut komennot</string>
+    <string name="media_4_list_id">PLJrTr05h0I0PuQHLzrhp0n4TXsOZVzYzo</string>
+
+    <string name="media_5_title">Kiroukset</string>
+    <string name="media_5_list_id">PLJrTr05h0I0NHU5zsb7rd7Vz0Ed_4hLhg</string>
+
+    <string name="media_6_title">Muut sanat ja fraasit</string>
+    <string name="media_6_list_id">PLJrTr05h0I0MsVYmwqMCXp8rwDjSKZzWC</string>
+
+    <!-- Classes of phrases. -->
+    <string name="empire_union_day">Keisarikunnan yhtenäisyyden päivä</string>
+    <string name="curse_warfare">Kiroussota</string>
+    <string name="nentay">Rite of Ascension</string>
+    <string name="military_celebration">QI\'lop-juhla</string>
+    <string name="rejection">Kosijan torjuminen</string>
+    <string name="replacement_proverbs">Korvaussanonnat</string>
+    <string name="secrecy_proverbs">Salaussanonnat</string>
+    <string name="proverbs">Muut sanonnat</string>
+    <string name="toasts">Maljapuheet</string>
+    <string name="lyrics">Laulut</string>
+    <string name="idioms">Idiomit</string>
+    <string name="beginners_conversation">Aloittelijan fraasit</string>
+    <string name="jokes">Vitsit ja hauskat tarinat</string>
+
+    <!-- Lists. -->
+    <string name="list_names">Nimet</string>
+    <string name="list_places">Paikat</string>
+
+    <!-- Strings for the Preferences settings. -->
+    <string name="klingon_assistant_settings">boQwI\'n asetukset</string>
+      <!--
+      <string name="tutorial_preferences">Tutorial</string>
+        <string name="run_tutorial_preference_title">Enable tutorial</string>
+        <string name="run_tutorial_preference_summary">Run through the tutorial the next time this app starts (requires Android 4.1+).</string>
+      -->
+      <string name="language_preferences">Kieliasetukset</string>
+        <string name="klingon_font_preference_title">pIqaD</string>
+        <string name="klingon_font_preference_summary">Näytetäänkö klingoninkielinen teksti {pIqaD}illa vai ei.</string>
+        <string name="klingon_ui_preference_title">Klingoninkielinen käyttöliittymä</string>
+        <string name="klingon_ui_preference_summary">Käytetäänkö {tlhIngan Hol}ia käyttöliittymän kielenä.</string>
+        <string name="show_secondary_language_preference_title">Näytä ei-englanninkieliset määritelmät</string>
+        <string name="show_secondary_language_preference_summary">Näytetäänkö käännökset muilla kielillä kuin englanniksi.</string>
+      <string name="input_preferences">Syöteasetukset</string>
+        <string name="xifan_hol_preference_title">Ota käyttöön \"xifan hol\" -syöte</string>
+        <string name="xifan_hol_preference_summary">Salli \"x\":n kirjoittaminen {tlh}:n sijasta, \"f\":n {ng}:n sijasta, jne.</string>
+        <string name="swap_qs_preference_title">Vaihda {Q} ja {q}</string>
+        <string name="swap_qs_preference_summary">Korvaa \"k\" kirjaimella {q} ja \"q\" kirjaimella {Q}.</string>
+      <string name="social_preferences">Someasetukset</string>
+        <string name="social_network_preference_title">Sosiaalinen verkosto</string>
+        <string name="social_network_preference_summary">Valitse ensisijainen sosiaalinen verkosto.</string>
+      <string name="informational_preferences">Tietoasetukset</string>
+        <string name="show_transitivity_preference_title">Näytä transitiivisuus</string>
+        <string name="show_transitivity_preference_summary">Näytä \"paras arvaus\" siitä, ottaako verbi objektin vai ei.</string>
+        <string name="show_additional_information_preference_title">Näytä lisätietoja</string>
+        <string name="show_additional_information_preference_summary">Näytä yksityiskohtaisia tietoja sanaleikeistä, vitseistä, virheistä tms.</string>
+        <string name="kwotd_preference_title">KPS</string>
+        <string name="kwotd_preference_summary">Ilmoita kun uusi Klingonin Päivän Sana (KPS) on saatavilla hol.kag.org-palvelimella. Tämä vaatii Internet-yhteyden.</string>
+        <string name="update_db_preference_title">Päivitä sanakirja automaattisesti</string>
+        <string name="update_db_preference_summary">Päivitä tietokanta kun uusi versio on haettavissa github.io-palvelimelta. Tämä vaatii Internet-yhteyden.</string>
+      <string name="under_construction_preferences">Työn alla</string>
+        <string name="show_unsupported_features_preference_title">Ei-tuetut ominaisuudet</string>
+        <string name="show_unsupported_features_preference_summary">Älä valitse tätä ellet ole beta-testaaja.</string>
+      <string name="changelog_preferences">Muutoslokit</string>
+        <string name="data_changelog_preference_title">Tietokanta</string>
+        <string name="data_changelog_preference_summary">Avaa tietokannan commit-historia Githubissa.</string>
+        <string name="code_changelog_preference_title">Sovellus</string>
+        <string name="code_changelog_preference_summary">Avaa sovelluksen commit-historia Githubissa.</string>
+
+    <string name="warning">Varoitus</string>
+    <string name="change_ui_language_warning">Kielen vaihtaminen ei välttämättä astu voimaan ennen sovelluksen käynnistämistä uudelleen.</string>
+
+    <!-- Choices for showing Klingon text using {pIqaD}. -->
+    <string name="font_latin">Pois</string>
+    <string name="font_tng">TNG-{pIqaD}</string>
+    <string name="font_dsc">DSC-{pIqaD}</string>
+
+    <!-- Choices for secondary languages. -->
+    <string name="secondary_language_none">Ei mitään</string>
+    <string name="secondary_language_german">saksa</string>
+    <string name="secondary_language_persian">persia (beta)</string>
+    <string name="secondary_language_russian">venäjä (beta)</string>
+    <string name="secondary_language_swedish">ruotsi (beta)</string>
+    <string name="secondary_language_chinese_hong_kong">Hong Kongin kiina (beta)</string>
+    <string name="secondary_language_portuguese">portugali</string>
+    <string name="secondary_language_finnish">suomi</string>
+
+    <!-- Entry parts of speech and attributes. -->
+    <string name="pos_noun">subs</string>
+    <string name="pos_number">num</string>
+    <string name="pos_name">erisnimi</string>
+    <string name="pos_pronoun">pron</string>
+    <string name="pos_verb">v</string>
+    <string name="pos_adv">adv</string>
+    <string name="pos_conj">konj</string>
+    <string name="pos_ques">kys</string>
+    <string name="pos_excl">huu</string>
+    <string name="attribute_separator">, </string>
+    <string name="attribute_archaic">vanhahtava</string>
+    <string name="attribute_regional">alueellinen</string>
+    <string name="attribute_slang">slangi</string>
+    <string name="homophone_number">homonyymi</string>
+
+    <!-- Metadata labels and descriptions. -->
+    <string name="label_see_alt_entry">Katso</string>
+    <string name="label_english">Englanti</string>
+    <string name="label_german">Saksa</string>
+    <string name="label_synonyms">Synonyymit</string>
+    <string name="label_antonyms">Antonyymit</string>
+    <string name="label_see_also">Katso myös</string>
+    <string name="label_category">Kategoria</string>
+    <string name="label_analyze">Analysoi</string>
+    <string name="label_components">Osat</string>
+    <string name="label_examples">Esimerkkejä</string>
+    <string name="label_sources">Lähde</string>
+    <string name="label_transitivity">Transitiivisuus</string>
+      <string name="transitivity_ambi">Tällä verbillä on eri merkitys riippuen siitä, onko sillä suora objekti vai ei.</string>
+      <string name="transitivity_intransitive">Tätä verbiä kohdellaan kuin sillä ei luultavasti voisi olla suoraa objektia analyysissä.</string>
+      <string name="transitivity_intransitive_confirmed">Tällä verbillä ei voi olla suoraa objektia.</string>
+      <string name="transitivity_stative">Tämä verbi kuvaa tilaa tai ominaisuutta eikä sillä voi olla suoraa objektia.</string>
+      <string name="transitivity_transitive">Tätä verbiä kohdellaan kuin sillä voisi luultavasti olla suora objekti analyysissä.</string>
+      <string name="transitivity_transitive_confirmed">Tällä verbillä voi olla suora objekti.</string>
+      <string name="transitivity_unknown">Ei tiedetä voiko tällä verbillä olla suoraa objektia vai ei.</string>
+    <string name="label_additional_information">Lisätietoja</string>
+    <string name="info_being">Henkilöiden/kielenkäyttäjien monikon tunnus on {-pu\':n:suff}.</string>
+    <string name="info_body">Ruumiinosien monikon tunnus on {-Du\':n:suff}.</string>
+    <string name="info_inherent_plural">Tämä substantiivi on luontaisesti monikollinen (kieliopillisesti yksiköllinen). Sen yksiköllinen muoto on %1$s. Katso {TKD 3.3.2:src}.</string>
+    <string name="info_singular_form">Tässä substantiivilla on luontaisesti monikollinen muoto %1$s. Katso {TKD 3.3.2:src}.</string>
+    <string name="warning_hypothetical">Varoitus: Tämä sana on hypoteettinen! Älä käytä ellet tiedä, mitä olet tekemässä!</string>
+    <string name="warning_extended_canon">Varoitus: Tämä sana ei ole tiedettävästi Marc Okrandin hyväksymä. Älä käytä ellet tiedä, mitä olet tekemässä!</string>
+
+    <!-- Bottom navigation menu. -->
+    <string name="menu_previous">Edellinen</string>
+    <string name="menu_random">Satunnainen</string>
+    <string name="menu_next">Seuraava</string>
+
+    <!-- Buttons for lessons. -->
+    <string name="button_check_answer">Tarkista vastaus</string>
+    <string name="button_check_answer_correct">Oikein!</string>
+    <string name="button_check_answer_incorrect">Väärin!</string>
+    <string name="button_continue">Jatka</string>
+    <string name="button_go_back_one_section">Mene edelliseen osioon</string>
+    <string name="button_redo_section">Tee tämä osio uudestaan</string>
+    <string name="button_next_section">Jatka seuraavaan osioon</string>
+    <string name="button_next_lesson">Jatka seuraavaan oppituntiin</string>
+    <string name="button_next_unit">Jatka seuraavaan yksikköön</string>
+    <string name="exit_lesson_confirmation">Oletko varma, että haluat poistua oppitunnilta? Kaikki edistys menetetään!</string>
+    <string name="exit_lesson_yes">Kyllä</string>
+    <string name="exit_lesson_no">En</string>
+
+    <!-- KWOTD notification. -->
+    <string name="kwotd_footer"><![CDATA[<b>Hol \'ampaS</b>in Klingonin Päivän Sana]]></string>
+    <string name="kwotd_requires_internet">KPS haetaan kun Internet-yhteys on muodostettu.</string>
+    <string name="kwotd_fetching">Haetaan KPS:ää KAGin palvelimelta...</string>
+    <string name="kwotd_one_off_job_failed">KPS:n hakeminen KAGin palvelimelta epäonnistui.</string>
+    <string name="kwotd_notification_channel_name">Klingonin Päivän Sana</string>
+
+    <!-- Update database notification. -->
+    <string name="update_db_requires_internet">Tietokantapäivitys tarkistetaan kun Internet-yhteys on muodostettu.</string>
+    <string name="update_db_fetching">Tarkistetaan tietokantapäivitystä...</string>
+
+    <!-- Features in development. -->
+    <string name="account_register">Rekisteröi tunnus</string>
+    <string name="account_exists">Tunnus on jo olemassa</string>
+    <string name="account_login">Kirjaudu sisään</string>
+    <string name="account_logout">Kirjaudu ulos</string>
+
+    <!-- From the generated app, can probably delete. -->
+    <string name="navigation_drawer_open">Avaa valikko</string>
+    <string name="navigation_drawer_close">Sulje valikko</string>
+</resources>

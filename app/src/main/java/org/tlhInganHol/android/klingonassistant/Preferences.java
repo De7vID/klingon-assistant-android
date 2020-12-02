@@ -100,6 +100,8 @@ public class Preferences extends AppCompatPreferenceActivity
     } else if (language == new Locale("pt").getLanguage()) {
       // Note: The locale code "pt" is Brazilian Portuguese. (European Portuguese is "pt-PT".)
       return "pt";
+    } else if (language == new Locale("fi").getLanguage()) {
+      return "fi";
     }
     return "NONE";
   }

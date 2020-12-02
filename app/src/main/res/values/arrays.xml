@@ -37,6 +37,7 @@
     <item>@string/secondary_language_none</item>
     <item>@string/secondary_language_german</item>
     <item>@string/secondary_language_portuguese</item>
+    <item>@string/secondary_language_finnish</item>
     <item>@string/secondary_language_swedish</item>
     <item>@string/secondary_language_russian</item>
     <item>@string/secondary_language_chinese_hong_kong</item>
@@ -47,6 +48,7 @@
     <item>NONE</item>
     <item>de</item>
     <item>pt</item>
+    <item>fi</item>
     <item>sv</item>
     <item>ru</item>
     <item>zh-HK</item>
