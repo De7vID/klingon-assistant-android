@@ -103,7 +103,7 @@ public class UpdateDatabaseService extends JobService {
         }
         String data = sb.toString();
         JSONObject manifestObject = new JSONObject(data);
-        JSONObject androidObject = manifestObject.getJSONObject("Android-3");
+        JSONObject androidObject = manifestObject.getJSONObject("Android-4");
         String latest = androidObject.getString("latest");
         Log.d(TAG, "Latest database version: " + latest);
 

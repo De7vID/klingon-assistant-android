@@ -136,6 +136,16 @@
     <!-- Strings for the Preferences settings. -->
     <string name="klingon_assistant_settings">boQwI\' SeHlaw</string>
 
+    <!-- Choices for secondary languages. -->
+    <string name="secondary_language_none">pagh</string>
+    <string name="secondary_language_german">DoyIchlan Hol</string>
+    <string name="secondary_language_persian">\'Iran Hol (ngong)</string>
+    <string name="secondary_language_russian">raSya\' Hol (ngong)</string>
+    <string name="secondary_language_swedish">Suverya\' Hol (ngong)</string>
+    <string name="secondary_language_chinese_hong_kong">jungwoq Hol Hong qong Sep Hol Sar (ngong)</string>
+    <string name="secondary_language_portuguese">portughal Hol</string>
+    <string name="secondary_language_finnish">SuwomIy Hol</string>
+
     <!-- Bottom navigation menu. -->
     <string name="menu_previous">vorgh</string>
     <string name="menu_random">SuD</string>
