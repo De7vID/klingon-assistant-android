@@ -193,7 +193,7 @@ public class KlingonContentDatabase {
 
   // This should be kept in sync with the version number in the database
   // entry {boQwI':n} of the database which is bundled into the app.
-  private static final int BUNDLED_DATABASE_VERSION = 202009070;
+  private static final int BUNDLED_DATABASE_VERSION = 202012020;
 
   // Metadata about the installed database, and the updated database, if any.
   public static final String KEY_INSTALLED_DATABASE_VERSION = "installed_database_version";
