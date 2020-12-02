@@ -12,7 +12,7 @@ android {
         // We are targeting only Marshmallow and above.
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 537
+        versionCode 539
         versionName "2020.12.02a"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
