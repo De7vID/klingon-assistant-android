@@ -1,5 +1,6 @@
 CHANGELOG
 
+2020-12-16: New vocabulary from qepHom'a' 2020.
 2020-12-02: Add support for Finnish (fi) language.
 2020-09-07: Remove some deprecated features. Fix KWOTD bug.
 2020-07-17: Handle autotranslated notes.

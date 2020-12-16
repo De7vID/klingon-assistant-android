@@ -193,7 +193,7 @@ public class KlingonContentDatabase {
 
   // This should be kept in sync with the version number in the database
   // entry {boQwI':n} of the database which is bundled into the app.
-  private static final int BUNDLED_DATABASE_VERSION = 202012020;
+  private static final int BUNDLED_DATABASE_VERSION = 202012161;
 
   // Metadata about the installed database, and the updated database, if any.
   public static final String KEY_INSTALLED_DATABASE_VERSION = "installed_database_version";
@@ -209,7 +209,7 @@ public class KlingonContentDatabase {
   // the IDs of the first entry and one past the ID of the last non-hypothetical,
   // non-extended-canon entry in the database, respectively.
   private static final int ID_OF_FIRST_ENTRY = 10000;
-  private static final int ID_OF_FIRST_EXTRA_ENTRY = 14849;
+  private static final int ID_OF_FIRST_EXTRA_ENTRY = 14907;
 
   private final KlingonDatabaseOpenHelper mDatabaseOpenHelper;
   private static final HashMap<String, String> mColumnMap = buildColumnMap();
