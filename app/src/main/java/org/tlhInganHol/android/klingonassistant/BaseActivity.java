@@ -267,6 +267,15 @@ public class BaseActivity extends AppCompatActivity
       if (updatedVersion.compareToIgnoreCase(installedVersion) > 0) {
         TextView hamburgerDot = (TextView) findViewById(R.id.hamburger_dot);
         hamburgerDot.setVisibility(View.VISIBLE);
+
+        // TODO: Write this as a separate message instead of overwriting the app version.
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView versionsView = (TextView) headerView.findViewById(R.id.versions_view);
+        versionsView.setText(
+            String.format(
+                getBaseContext().getResources().getString(R.string.database_upgrade_available),
+                updatedVersion));
       }
     }
   }
