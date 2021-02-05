@@ -1,5 +1,6 @@
 CHANGELOG
 
+2021-02-06: Improve database upgrade logic.
 2020-12-16: New vocabulary from qepHom'a' 2020.
 2020-12-02: Add support for Finnish (fi) language.
 2020-09-07: Remove some deprecated features. Fix KWOTD bug.

@@ -193,7 +193,7 @@ public class KlingonContentDatabase {
 
   // This should be kept in sync with the version number in the data/VERSION
   // file used to generate the database which is bundled into the app.
-  private static final int BUNDLED_DATABASE_VERSION = 202102050;
+  private static final int BUNDLED_DATABASE_VERSION = 202102060;
 
   // Metadata about the installed database, and the updated database, if any.
   public static final String KEY_INSTALLED_DATABASE_VERSION = "installed_database_version";
@@ -1311,7 +1311,7 @@ public class KlingonContentDatabase {
       SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mHelperContext);
       String installedVersion =
           sharedPrefs.getString(
-              KEY_INSTALLED_DATABASE_VERSION, /* default */ existingBundledVersion)
+              KEY_INSTALLED_DATABASE_VERSION, /* default */ dottedVersion(existingBundledVersion));
       String updatedVersion =
           sharedPrefs.getString(KEY_UPDATED_DATABASE_VERSION, /* default */ installedVersion);
       if (updatedVersion.compareToIgnoreCase(dottedVersion(newBundledVersion)) >= 0) {
