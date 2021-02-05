@@ -12,8 +12,8 @@ android {
         // We are targeting only Marshmallow and above.
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 541
-        versionName "2020.12.16b"
+        versionCode 543
+        versionName "2021.02.05b"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
