@@ -1304,10 +1304,14 @@ public class KlingonContentDatabase {
         return;
       }
 
+      // Note that if the previous version of the app was bundled with database version A, and an
+      // updated database version B has been downloaded (but not installed), and this is the first
+      // run of a new version bundled with database version C , the installedVersion should
+      // default to A (not C).
       SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mHelperContext);
       String installedVersion =
           sharedPrefs.getString(
-              KEY_INSTALLED_DATABASE_VERSION, /* default */ getBundledDatabaseVersion());
+              KEY_INSTALLED_DATABASE_VERSION, /* default */ existingBundledVersion)
       String updatedVersion =
           sharedPrefs.getString(KEY_UPDATED_DATABASE_VERSION, /* default */ installedVersion);
       if (updatedVersion.compareToIgnoreCase(dottedVersion(newBundledVersion)) >= 0) {
