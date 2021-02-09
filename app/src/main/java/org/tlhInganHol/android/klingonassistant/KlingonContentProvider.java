@@ -850,20 +850,20 @@ public class KlingonContentProvider extends ContentProvider {
         if (!attr.equals("")) {
           attr += separator;
         }
-        attr = maybeItalics(mContext.getResources().getString(R.string.attribute_regional), isHtml);
+        attr += maybeItalics(mContext.getResources().getString(R.string.attribute_regional), isHtml);
       }
       if (mIsSlang) {
         if (!attr.equals("")) {
           attr += separator;
         }
-        attr = maybeItalics(mContext.getResources().getString(R.string.attribute_slang), isHtml);
+        attr += maybeItalics(mContext.getResources().getString(R.string.attribute_slang), isHtml);
       }
       // While whether an entry is a name isn't actually an attribute, treat it as one.
       if (isName()) {
         if (!attr.equals("")) {
           attr += separator;
         }
-        attr = maybeItalics(mContext.getResources().getString(R.string.pos_name),
+        attr += maybeItalics(mContext.getResources().getString(R.string.pos_name),
             isHtml);
       }
       if (!attr.equals("")) {
