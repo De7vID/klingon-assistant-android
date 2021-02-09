@@ -782,6 +782,10 @@ public class KlingonContentProvider extends ContentProvider {
           mIsExtendedCanon = true;
         } else if (attr.equals("nolink")) {
           mDoNotLink = true;
+        } else if (attr.equals("noanki")) {
+          // This is an attribute which does not appear in the database and is not used by this app.
+          // It's used by the export_to_anki.py script to exclude entries which should be skipped
+          // when generating an Anki deck.
 
           // We have only a few homophonous entries.
         } else if (attr.equals("1")) {
@@ -850,20 +854,20 @@ public class KlingonContentProvider extends ContentProvider {
         if (!attr.equals("")) {
           attr += separator;
         }
-        attr = maybeItalics(mContext.getResources().getString(R.string.attribute_regional), isHtml);
+        attr += maybeItalics(mContext.getResources().getString(R.string.attribute_regional), isHtml);
       }
       if (mIsSlang) {
         if (!attr.equals("")) {
           attr += separator;
         }
-        attr = maybeItalics(mContext.getResources().getString(R.string.attribute_slang), isHtml);
+        attr += maybeItalics(mContext.getResources().getString(R.string.attribute_slang), isHtml);
       }
       // While whether an entry is a name isn't actually an attribute, treat it as one.
       if (isName()) {
         if (!attr.equals("")) {
           attr += separator;
         }
-        attr = maybeItalics(mContext.getResources().getString(R.string.pos_name),
+        attr += maybeItalics(mContext.getResources().getString(R.string.pos_name),
             isHtml);
       }
       if (!attr.equals("")) {
