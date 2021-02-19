@@ -787,6 +787,10 @@ public class KlingonContentProvider extends ContentProvider {
           // This is an attribute which does not appear in the database and is not used by this app.
           // It's used by the export_to_anki.py script to exclude entries which should be skipped
           // when generating an Anki deck.
+        } else if (attr.equals("klcp1")) {
+          // This is an attribute which does not appear in the database and is not used by this app.
+          // It's used by the export_to_anki.py script to tag KLCP1 (Klingon Language Certification
+          // Program level 1) vocabulary.
 
           // We have only a few homophonous entries.
         } else if (attr.equals("1")) {
