@@ -687,8 +687,9 @@ public class KlingonContentProvider extends ContentProvider {
           mTransitivity = VerbTransitivityType.INTRANSITIVE;
           mTransitivityConfirmed = true;
         } else if (attr.equals("is")) {
-          // All stative verbs are considered confirmed for being intransitive, since they are all
-          // of the form "to be [a quality]".
+          // All stative verbs are considered confirmed, since they are all of the form "to be [a
+          // quality]". They behave like confirmed intransitive verbs in most cases, except in the
+          // analysis of verbs with a type 5 noun suffix attached.
           mTransitivity = VerbTransitivityType.STATIVE;
           mTransitivityConfirmed = true;
         } else if (attr.equals("t")) {
@@ -1838,17 +1839,21 @@ public class KlingonContentProvider extends ContentProvider {
             return false;
           }
         }
-        // However, if we're looking for a verb with a type 5 noun suffix attached, then
-        // we disallow transitive verbs as well as pronouns. Note that pronouns with a
-        // type 5 noun suffix are already covered under nouns, so if we allowed it here
-        // they would be duplicated. Also, even though only adjectival verbs can take a
-        // type 5 noun suffix, we allow not only stative verbs (like {tIn}) and
-        // ambitransitive verbs (like {pegh}), but also intransitive verbs, since it's
-        // possible some of them can be used adjectivally.
+        // However, if we're looking for a verb with a type 5 noun suffix attached, then we disallow
+        // transitive verbs as well as pronouns. We also disallow (confirmed) intransitive verbs.
+        // Note that pronouns with a type 5 noun suffix are already covered under nouns, so if we
+        // allowed it here they would be duplicated. Also, even though only adjectival verbs can
+        // take a type 5 noun suffix, we allow not only stative verbs (like {tIn}) and
+        // ambitransitive verbs (like {pegh}), but also unconfirmed intransitive verbs, since it's
+        // possible they've been misclassified and are actually stative.
+        // (So this should exclude the erroneous analysis for {lervaD:n} as {ler:v} + {-vaD:n},
+        // since {ler:v} is confirmed intransitive.)
         if (mBasePartOfSpeech == BasePartOfSpeechEnum.VERB
             && mTransitivity == VerbTransitivityType.HAS_TYPE_5_NOUN_SUFFIX
             && (candidate.isPronoun()
-                || candidate.getTransitivity() == VerbTransitivityType.TRANSITIVE)) {
+                || candidate.getTransitivity() == VerbTransitivityType.TRANSITIVE
+                || (candidate.getTransitivity() == VerbTransitivityType.INTRANSITIVE &&
+                    candidate.mTransitivityConfirmed))) {
           return false;
         }
       }
