@@ -1827,7 +1827,8 @@ public class KlingonContentProvider extends ContentProvider {
         // the question words {nuq} and {'Iv} are accepted. We have these exceptions because we want
         // to allow constructions like {ghaHtaH} and for those two question words to take the place
         // of the nouns they are asking about. Note that entries knows nothing about affixes, so
-        // it's up to the caller to exclude, e.g., prefixes on pronouns.
+        // it's up to the caller to exclude, e.g., prefixes on pronouns. The homophony of {'Iv:ques}
+        // and {'Iv:n} necessitates adding a homophone number to distinguish them.
         // TODO: Remove redundant {nuq} + {-Daq}.
         Log.d(TAG, "mBasePartOfSpeech: " + mBasePartOfSpeech);
         Log.d(TAG, "candidate.getBasePartOfSpeech: " + candidate.getBasePartOfSpeech());
