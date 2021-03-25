@@ -229,7 +229,7 @@ public class EntryFragment extends Fragment {
     }
 
     // Display plural information.
-    if (!entry.isPlural() && !entry.isInherentPlural() && !entry.isPlural()) {
+    if (!entry.isPlural() && !entry.isInherentPlural() && !entry.isSingularFormOfInherentPlural()) {
       if (entry.isBeingCapableOfLanguage()) {
         expandedDefinition += "\n\n" + resources.getString(R.string.info_being);
       } else if (entry.isBodyPart()) {
