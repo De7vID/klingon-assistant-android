@@ -1,5 +1,6 @@
 CHANGELOG
 
+2021-03-28: Fixed bug where inhps words displayed wrong message about plural suffix.
 2021-02-22: Minor bug fixes. Added support for Anki decks and KLCP1 vocabulary.
 2021-02-06: Improve database upgrade logic.
 2020-12-16: New vocabulary from qepHom'a' 2020.
