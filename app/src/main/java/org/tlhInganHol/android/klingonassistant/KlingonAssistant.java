@@ -55,6 +55,7 @@ public class KlingonAssistant extends BaseActivity {
   // These holds the {pIqaD} typefaces.
   private static Typeface mTNGKlingonFontTypeface = null;
   private static Typeface mDSCKlingonFontTypeface = null;
+  private static Typeface mCoreKlingonFontTypeface = null;
 
   // The two main views in app's main screen.
   private TextView mTextView;
@@ -147,13 +148,22 @@ public class KlingonAssistant extends BaseActivity {
   }
 
   public static Typeface getKlingonFontTypeface(Context context) {
-    if (Preferences.useDSCKlingonFont(context)) {
+    String klingonFontCode = Preferences.getKlingonFontCode(context);
+    if (klingonFontCode.equals("CORE")) {
+      if (mCoreKlingonFontTypeface == null) {
+        mCoreKlingonFontTypeface =
+            Typeface.createFromAsset(context.getAssets(), "fonts/qolqoS-pIqaD.ttf");
+      }
+      return mCoreKlingonFontTypeface;
+    } else if (klingonFontCode.equals("DSC")) {
       if (mDSCKlingonFontTypeface == null) {
         mDSCKlingonFontTypeface =
             Typeface.createFromAsset(context.getAssets(), "fonts/DSC-pIqaD.ttf");
       }
       return mDSCKlingonFontTypeface;
     } else {
+      // Return TNG-style as the default as that's how we want to display the app name
+      // when Latin is chosen.
       if (mTNGKlingonFontTypeface == null) {
         mTNGKlingonFontTypeface =
             Typeface.createFromAsset(context.getAssets(), "fonts/TNG-pIqaD.ttf");

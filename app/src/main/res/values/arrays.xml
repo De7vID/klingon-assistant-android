@@ -24,12 +24,14 @@
     <item>@string/font_latin</item>
     <item>@string/font_tng</item>
     <item>@string/font_dsc</item>
+    <item>@string/font_core</item>
   </string-array>
 
   <string-array name="klingonFontChoicesValues">
     <item>LATIN</item>
     <item>TNG</item>
     <item>DSC</item>
+    <item>CORE</item>
   </string-array>
 
   <!-- Note: These are sorted by completeness (languages in beta come after completed ones). -->
