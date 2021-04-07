@@ -1,5 +1,6 @@
 CHANGELOG
 
+2021-04-07: Add {qolqoS} font.
 2021-03-28: Fixed bug where inhps words displayed wrong message about plural suffix.
 2021-02-22: Minor bug fixes. Added support for Anki decks and KLCP1 vocabulary.
 2021-02-06: Improve database upgrade logic.
