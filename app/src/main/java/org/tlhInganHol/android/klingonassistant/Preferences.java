@@ -128,14 +128,13 @@ public class Preferences extends AppCompatPreferenceActivity
   public static boolean useKlingonFont(Context context) {
     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
     String value = sharedPrefs.getString(KEY_KLINGON_FONT_LIST_PREFERENCE, /* default */ "LATIN");
-    return value.equals("TNG") || value.equals("DSC");
+    return value.equals("TNG") || value.equals("DSC") || value.equals("CORE");
   }
 
-  // Whether the DSC font should be used instead of the TNG one.
-  public static boolean useDSCKlingonFont(Context context) {
+  // Returns which font should be used for Klingon: returns one of "LATIN", "TNG", "DSC", or "CORE".
+  public static String getKlingonFontCode(Context context) {
     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-    String value = sharedPrefs.getString(KEY_KLINGON_FONT_LIST_PREFERENCE, /* default */ "LATIN");
-    return value.equals("DSC");
+    return sharedPrefs.getString(KEY_KLINGON_FONT_LIST_PREFERENCE, /* default */ "LATIN");
   }
 
   @Override
