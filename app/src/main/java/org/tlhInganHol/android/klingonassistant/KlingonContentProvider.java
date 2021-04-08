@@ -482,6 +482,9 @@ public class KlingonContentProvider extends ContentProvider {
 
     private SentenceType mSentenceType = SentenceType.PHRASE;
 
+    // Exclamation attributes.
+    boolean mIsEpithet = false;
+
     // Categories of words and phrases.
     boolean mIsAnimal = false;
     boolean mIsArchaic = false;
@@ -747,6 +750,12 @@ public class KlingonContentProvider extends ContentProvider {
           mSentenceType = SentenceType.BEGINNERS_CONVERSATION;
         } else if (attr.equals("joke")) {
           mSentenceType = SentenceType.JOKE;
+
+          // Exclamation attributes.
+        } else if (attr.equals("epithet")) {
+          mIsEpithet = true;
+          // TODO: Determine whether epithets are treated as if they always implicitly refer to
+          // beings capable of language, and if so, set mIsBeingCapableOfLanguage to true here.
 
           // Categories.
         } else if (attr.equals("anim")) {
@@ -1422,6 +1431,10 @@ public class KlingonContentProvider extends ContentProvider {
       return mIsPlural;
     }
 
+    public boolean isEpithet() {
+      return mIsEpithet;
+    }
+
     public boolean isArchaic() {
       return mIsArchaic;
     }
@@ -1824,11 +1837,13 @@ public class KlingonContentProvider extends ContentProvider {
         }
         // The parts of speech must match, except when: we're looking for a verb, in which
         // case a pronoun will satisfy the requirement; or we're looking for a noun, in which case
-        // the question words {nuq} and {'Iv} are accepted. We have these exceptions because we want
-        // to allow constructions like {ghaHtaH} and for those two question words to take the place
-        // of the nouns they are asking about. Note that entries knows nothing about affixes, so
-        // it's up to the caller to exclude, e.g., prefixes on pronouns. The homophony of {'Iv:ques}
-        // and {'Iv:n} necessitates adding a homophone number to distinguish them.
+        // the question words {nuq} and {'Iv}, as well as exclamations which are epithets, are
+        // accepted. We have these exceptions because we want to allow constructions like {ghaHtaH},
+        // for those two question words to take the place of the nouns they are asking about, and
+        // to parse constructions such as {petaQpu'}. Note that entries knows nothing about affixes,
+        // so it's up to the caller to exclude, e.g., prefixes on pronouns. The homophony of
+        // {'Iv:ques} and {'Iv:n} necessitates adding a homophone number (in the database) to
+        // distinguish them.
         // TODO: Remove redundant {nuq} + {-Daq}.
         Log.d(TAG, "mBasePartOfSpeech: " + mBasePartOfSpeech);
         Log.d(TAG, "candidate.getBasePartOfSpeech: " + candidate.getBasePartOfSpeech());
@@ -1839,8 +1854,12 @@ public class KlingonContentProvider extends ContentProvider {
             (mBasePartOfSpeech == BasePartOfSpeechEnum.NOUN
                 && (candidate.getEntryName().equals("nuq")
                     || candidate.getEntryName().equals("'Iv")));
+        boolean candidateIsExclamationActingAsNoun =
+            (mBasePartOfSpeech == BasePartOfSpeechEnum.NOUN && candidate.isEpithet());
         if (mBasePartOfSpeech != candidate.getBasePartOfSpeech()) {
-          if (!candidateIsPronounActingAsVerb && !candidateIsQuestionWordActingAsNoun) {
+          if (!candidateIsPronounActingAsVerb
+              && !candidateIsQuestionWordActingAsNoun
+              && !candidateIsExclamationActingAsNoun) {
             return false;
           }
         }

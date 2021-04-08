@@ -184,7 +184,7 @@
     <string name="font_latin">Off</string>
     <string name="font_tng">TNG-style</string>
     <string name="font_dsc">DSC-style</string>
-    <string name="font_core">{qolqoS}</string>
+    <string name="font_core">\"Sans-serif\"-style</string>
 
     <!-- Choices for secondary languages. -->
     <string name="secondary_language_none">None</string>
