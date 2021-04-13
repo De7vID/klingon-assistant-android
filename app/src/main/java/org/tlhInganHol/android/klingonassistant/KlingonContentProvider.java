@@ -23,12 +23,18 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.UriMatcher;
+import android.graphics.Typeface;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.graphics.Color;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.provider.BaseColumns;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.StyleSpan;
+import android.text.style.TypefaceSpan;
 import android.util.Log;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -903,8 +909,81 @@ public class KlingonContentProvider extends ContentProvider {
         }
       }
 
-      // Return name plus possible attribute.
+      // Return name plus possible attributes.
       return formattedEntryName;
+    }
+
+    // Get the name of the entry written in {pIqaD} with its attributes.
+    public SpannableStringBuilder getFormattedEntryNameInKlingonFont() {
+      String entryName = getEntryNameInKlingonFont();
+      SpannableStringBuilder ssb = new SpannableStringBuilder(entryName);
+      Typeface klingonTypeface = KlingonAssistant.getKlingonFontTypeface(mContext);
+      ssb.setSpan(new KlingonTypefaceSpan("", klingonTypeface), 0, entryName.length(),
+          Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+      // TODO: Refactor and combine this with the logic in getFormattedEntryName().
+      // TODO: Italicise the attributes.
+      SpannableStringBuilder attr = new SpannableStringBuilder("");
+      final String separator = mContext.getResources().getString(R.string.attribute_separator);
+      final String archaic = mContext.getResources().getString(R.string.attribute_archaic);
+      final String regional = mContext.getResources().getString(R.string.attribute_regional);
+      final String slang = mContext.getResources().getString(R.string.attribute_slang);
+      final String name = mContext.getResources().getString(R.string.pos_name);
+      int start = 0;
+      int end = 0;
+      if (mIsArchaic) {
+        end = start + archaic.length();
+        attr.append(archaic);
+        attr.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), start,
+            start + archaic.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        start = end;
+      }
+      if (mIsRegional) {
+        if (!attr.toString().equals("")) {
+          attr.append(separator);
+          start += separator.length();
+        }
+        end = start + regional.length();
+        attr.append(regional);
+        attr.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), start, start +
+            regional.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        start = end;
+      }
+      if (mIsSlang) {
+        if (!attr.toString().equals("")) {
+          attr.append(separator);
+          start += separator.length();
+        }
+        end = start + slang.length();
+        attr.append(slang);
+        attr.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), start,
+            start + slang.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        start = end;
+      }
+      // While whether an entry is a name isn't actually an attribute, treat it as one.
+      if (isName()) {
+        if (!attr.toString().equals("")) {
+          attr.append(separator);
+          start += separator.length();
+        }
+        end = start + name.length();
+        attr.append(name);
+        attr.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), start,
+            start + name.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        start = end;
+      }
+      if (!attr.toString().equals("")) {
+        attr.append(")");
+        attr = new SpannableStringBuilder(" (").append(attr);
+        attr.setSpan(new RelativeSizeSpan(0.5f), 0, attr.toString().length(),
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ssb.append(attr);
+      }
+      if (mIsHypothetical || mIsExtendedCanon) {
+        ssb = new SpannableStringBuilder("?").append(ssb);
+      }
+
+      return ssb;
     }
 
     // Get the name of the entry written in {pIqaD}.
