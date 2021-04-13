@@ -30,6 +30,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Html;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -263,8 +264,9 @@ public class KlingonAssistant extends BaseActivity {
           PreferenceManager.getDefaultSharedPreferences(getBaseContext());
       if (Preferences.useKlingonFont(getBaseContext())) {
         // Preference is set to display this in {pIqaD}!
-        view.getText1().setTypeface(KlingonAssistant.getKlingonFontTypeface(getBaseContext()));
-        view.getText1().setText(Html.fromHtml(indent1 + entry.getEntryNameInKlingonFont()));
+        view.getText1().setText(
+            new SpannableStringBuilder(Html.fromHtml(indent1)).append(
+                entry.getFormattedEntryNameInKlingonFont()));
       } else {
         // Use serif for the entry, so capital-I and lowercase-l are distinguishable.
         view.getText1().setTypeface(Typeface.SERIF);

@@ -94,8 +94,7 @@ public class EntryFragment extends Fragment {
         KlingonAssistant.getKlingonFontTypeface(getActivity().getBaseContext());
     if (useKlingonFont) {
       // Preference is set to display this in {pIqaD}!
-      entryTitle.setTypeface(klingonTypeface);
-      entryTitle.setText(entry.getEntryNameInKlingonFont());
+      entryTitle.setText(entry.getFormattedEntryNameInKlingonFont());
     } else {
       // Boring transcription based on English (Latin) alphabet.
       entryTitle.setText(Html.fromHtml(entry.getFormattedEntryName(/* isHtml */ true)));
