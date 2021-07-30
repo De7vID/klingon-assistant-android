@@ -2,10 +2,8 @@
 
 # Generate the database.
 cd data
-./renumber.py
 ./generate_db.sh
 cp qawHaq.db ../app/src/main/assets/
-./unnumber.sh
 cd ..
 
 # Install the debug build.
