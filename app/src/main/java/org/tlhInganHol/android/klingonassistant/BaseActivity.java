@@ -800,12 +800,13 @@ public class BaseActivity extends AppCompatActivity
               .show();
         }
 
-        // Either way, schedule the job for when unmetered Internet access is available.
+        // Either way, schedule the job for when Internet access is available. For a one-off job,
+        // we don't care if Internet access is metered, since the job was triggered by the user.
         builder =
             new JobInfo.Builder(
                 UPDATE_DB_SERVICE_ONE_OFF_JOB_ID,
                 new ComponentName(this, UpdateDatabaseService.class));
-        builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED);
+        builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
 
       } else {
         // Set the job to run every 30 days, during a window with unmetered network connectivity.
