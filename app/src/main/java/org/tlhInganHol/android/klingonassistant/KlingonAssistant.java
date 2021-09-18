@@ -133,12 +133,12 @@ public class KlingonAssistant extends BaseActivity {
           if (sharedText.length() > 140) {
             sharedText = sharedText.substring(0, 140);
           }
-          // TODO: Turn off "xifan hol" mode for this search, since it doesn't really make sense
-          // here.
           /* if (BuildConfig.DEBUG) {
             Log.d(TAG, "Shared text:\n" + sharedText);
           } */
-          showResults(sharedText);
+          // Override (disable) "xifan hol" mode for this search, since it doesn't really make sense
+          // here.
+          showResults("+" + sharedText);
         }
       }
 
@@ -310,7 +310,8 @@ public class KlingonAssistant extends BaseActivity {
   }
 
   /**
-   * Searches the dictionary and displays results for the given query.
+   * Searches the dictionary and displays results for the given query. The query may be prepended
+   * with a plus to disable "xifan hol" mode.
    *
    * @param query The search query
    */
@@ -324,6 +325,14 @@ public class KlingonAssistant extends BaseActivity {
             null,
             new String[] {query},
             null);
+
+    // A query may be preceded by a plus to override (disable) "xifan hol" mode. This is used
+    // for internal searches. After it is passed to managedQuery (above), it can be removed.
+    boolean disableXifanHol = false;
+    if (!query.isEmpty() && query.charAt(0) == '+') {
+      disableXifanHol = true;
+      query = query.substring(1);
+    }
 
     KlingonContentProvider.Entry queryEntry =
         new KlingonContentProvider.Entry(query, getBaseContext());
@@ -360,9 +369,17 @@ public class KlingonAssistant extends BaseActivity {
                 .getQuantityString(
                     R.plurals.search_results, count, new Object[] {count, entryNameWithPoS});
         if (queryEntry.basePartOfSpeechIsUnknown()) {
-          // If the query was not tagged with a part of speech, then allow the use to edit it by
+          // If the query was not tagged with a part of speech, then allow the user to edit it by
           // pressing the search button.
           mPrepopulatedQuery = queryEntry.getEntryName();
+          // If "xifan hol" mode was disabled to get this set of search results, but it is currently
+          // enabled by the user with q mapped to Q, then we ensure that if the user edits the
+          // search query, that it performs a search with "xifan hol" disabled again.
+          if (disableXifanHol &&
+              sharedPrefs.getBoolean(Preferences.KEY_XIFAN_HOL_CHECKBOX_PREFERENCE, /* default */ false) &&
+              sharedPrefs.getBoolean(Preferences.KEY_SWAP_QS_CHECKBOX_PREFERENCE, /* default */ false)) {
+              mPrepopulatedQuery = "+" + mPrepopulatedQuery;
+          }
         }
       }
       mTextView.setText(Html.fromHtml(countString));
