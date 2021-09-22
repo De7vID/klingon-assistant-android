@@ -522,7 +522,8 @@ public class EntryFragment extends Fragment {
     public void onClick(View view) {
       Intent intent = new Intent(view.getContext(), KlingonAssistant.class);
       intent.setAction(Intent.ACTION_SEARCH);
-      intent.putExtra(SearchManager.QUERY, mQuery);
+      // Internal searches are preceded by a plus to disable "xifan hol" mode.
+      intent.putExtra(SearchManager.QUERY, "+" + mQuery);
 
       view.getContext().startActivity(intent);
     }

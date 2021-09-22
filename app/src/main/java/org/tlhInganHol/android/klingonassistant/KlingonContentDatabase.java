@@ -399,6 +399,14 @@ public class KlingonContentDatabase {
    * @return Cursor over all entries that match, or null if none found.
    */
   public Cursor getEntryMatches(String query) {
+    // A query may be preceded by a plus to override (disable) "xifan hol" mode. This is used
+    // for internal searches.
+    boolean disableXifanHol = false;
+    if (!query.isEmpty() && query.charAt(0) == '+') {
+      disableXifanHol = true;
+      query = query.substring(1);
+    }
+
     // Sanitize input.
     query = sanitizeInput(query);
 
@@ -435,6 +443,8 @@ public class KlingonContentDatabase {
         // We know the query begins with "*:" so strip that to get the sentence class.
         return getMatchingSentences(query.substring(2));
       }
+    } else if (disableXifanHol) {
+      looseQuery = queryBase;
     } else {
       // Assume the user is searching for an "exact" Klingon word or phrase, subject to
       // "xifan hol" loosening.
