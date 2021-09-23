@@ -328,9 +328,9 @@ public class KlingonAssistant extends BaseActivity {
 
     // A query may be preceded by a plus to override (disable) "xifan hol" mode. This is used
     // for internal searches. After it is passed to managedQuery (above), it can be removed.
-    boolean disableXifanHol = false;
+    boolean overrideXifanHol = false;
     if (!query.isEmpty() && query.charAt(0) == '+') {
-      disableXifanHol = true;
+      overrideXifanHol = true;
       query = query.substring(1);
     }
 
@@ -368,18 +368,15 @@ public class KlingonAssistant extends BaseActivity {
             getResources()
                 .getQuantityString(
                     R.plurals.search_results, count, new Object[] {count, entryNameWithPoS});
-        if (queryEntry.basePartOfSpeechIsUnknown()) {
-          // If the query was not tagged with a part of speech, then allow the user to edit it by
-          // pressing the search button.
-          mPrepopulatedQuery = queryEntry.getEntryName();
-          // If "xifan hol" mode was disabled to get this set of search results, but it is currently
-          // enabled by the user with q mapped to Q, then we ensure that if the user edits the
-          // search query, that it performs a search with "xifan hol" disabled again.
-          if (disableXifanHol &&
-              sharedPrefs.getBoolean(Preferences.KEY_XIFAN_HOL_CHECKBOX_PREFERENCE, /* default */ false) &&
-              sharedPrefs.getBoolean(Preferences.KEY_SWAP_QS_CHECKBOX_PREFERENCE, /* default */ false)) {
-              mPrepopulatedQuery = "+" + mPrepopulatedQuery;
-          }
+        // Allow the user to edit the query by pressing the search button.
+        mPrepopulatedQuery = queryEntry.getEntryName();
+        // If "xifan hol" mode was overridden (disabled) to get this set of search results, but it
+        // is currently enabled by the user with q mapped to Q, then we ensure that if the user
+        // edits the search query, that it performs a search with "xifan hol" overridden again.
+        if (overrideXifanHol &&
+            sharedPrefs.getBoolean(Preferences.KEY_XIFAN_HOL_CHECKBOX_PREFERENCE, /* default */ false) &&
+            sharedPrefs.getBoolean(Preferences.KEY_SWAP_QS_CHECKBOX_PREFERENCE, /* default */ false)) {
+            mPrepopulatedQuery = "+" + mPrepopulatedQuery;
         }
       }
       mTextView.setText(Html.fromHtml(countString));

@@ -209,7 +209,7 @@ public class KlingonContentDatabase {
   // the IDs of the first entry and one past the ID of the last non-hypothetical,
   // non-extended-canon entry in the database, respectively.
   private static final int ID_OF_FIRST_ENTRY = 10000;
-  private static final int ID_OF_FIRST_EXTRA_ENTRY = 15027;
+  private static final int ID_OF_FIRST_EXTRA_ENTRY = 15028;
 
   private final KlingonDatabaseOpenHelper mDatabaseOpenHelper;
   private static final HashMap<String, String> mColumnMap = buildColumnMap();
@@ -401,9 +401,9 @@ public class KlingonContentDatabase {
   public Cursor getEntryMatches(String query) {
     // A query may be preceded by a plus to override (disable) "xifan hol" mode. This is used
     // for internal searches.
-    boolean disableXifanHol = false;
+    boolean overrideXifanHol = false;
     if (!query.isEmpty() && query.charAt(0) == '+') {
-      disableXifanHol = true;
+      overrideXifanHol = true;
       query = query.substring(1);
     }
 
@@ -443,7 +443,7 @@ public class KlingonContentDatabase {
         // We know the query begins with "*:" so strip that to get the sentence class.
         return getMatchingSentences(query.substring(2));
       }
-    } else if (disableXifanHol) {
+    } else if (overrideXifanHol) {
       looseQuery = queryBase;
     } else {
       // Assume the user is searching for an "exact" Klingon word or phrase, subject to
