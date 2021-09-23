@@ -334,12 +334,22 @@ public class KlingonAssistant extends BaseActivity {
       query = query.substring(1);
     }
 
+    SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
     KlingonContentProvider.Entry queryEntry =
         new KlingonContentProvider.Entry(query, getBaseContext());
+    boolean qWillBeRemapped = queryEntry.getEntryName().indexOf('q') != -1 &&
+            sharedPrefs.getBoolean(Preferences.KEY_XIFAN_HOL_CHECKBOX_PREFERENCE, /* default */ false) &&
+            sharedPrefs.getBoolean(Preferences.KEY_SWAP_QS_CHECKBOX_PREFERENCE, /* default */ false);
     String entryNameWithPoS =
         queryEntry.getEntryName() + queryEntry.getBracketedPartOfSpeech(/* isHtml */ true);
+    if (!overrideXifanHol && qWillBeRemapped) {
+      // Alert the user to the visual inconsistency of the query containing "q" but the results
+      // containing {Q} instead, as some users forget that they have this option activated in their
+      // settings. (Note that "k" would be mapped to {q} in that case, and "Q" would still be mapped
+      // to {Q}. It's only "q" which isn't obvious.)
+      entryNameWithPoS += " [q=Q]";
+    }
 
-    SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
     if (cursor == null || cursor.getCount() == 0) {
       // There are no results.
       mTextView.setText(
@@ -373,9 +383,7 @@ public class KlingonAssistant extends BaseActivity {
         // If "xifan hol" mode was overridden (disabled) to get this set of search results, but it
         // is currently enabled by the user with q mapped to Q, then we ensure that if the user
         // edits the search query, that it performs a search with "xifan hol" overridden again.
-        if (overrideXifanHol &&
-            sharedPrefs.getBoolean(Preferences.KEY_XIFAN_HOL_CHECKBOX_PREFERENCE, /* default */ false) &&
-            sharedPrefs.getBoolean(Preferences.KEY_SWAP_QS_CHECKBOX_PREFERENCE, /* default */ false)) {
+        if (overrideXifanHol && qWillBeRemapped) {
             mPrepopulatedQuery = "+" + mPrepopulatedQuery;
         }
       }
