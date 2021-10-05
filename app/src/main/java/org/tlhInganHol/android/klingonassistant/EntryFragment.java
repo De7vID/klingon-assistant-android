@@ -171,9 +171,20 @@ public class EntryFragment extends Fragment {
     if (entry.shouldDisplayOtherLanguageNotes()) {
       notes = entry.getOtherLanguageNotes();
       if (notes.contains("[AUTOTRANSLATED]") || (showUnsupportedFeatures && !notes.equals(""))) {
+        // In showUnsupportedFeatures mode, if the notes are suppressed, display a message so it's
+        // clear that this is what's happened (i.e., not just that the non-English notes were
+        // empty because they have not been translated), since the English notes will be displayed
+        // in this mode.
+        if (notes.equals("-")) {
+          notes = "[English notes will not be shown in other language]";
+        }
         // If notes are autotranslated, or unsupported features are enabled, display original
         // English notes also.
         notes += "\n\n" + entry.getNotes();
+      } else if (notes.equals("-")) {
+        // If the non-English notes is just the string "-", this indicates that the display of
+        // notes should be suppressed. 
+        notes = "";
       }
     } else {
       notes = entry.getNotes();

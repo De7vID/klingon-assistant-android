@@ -1205,7 +1205,10 @@ public class KlingonContentProvider extends ContentProvider {
       }
     }
 
-    // Returns true iff the other-language notes should be displayed.
+    // Returns true iff the other-language notes should be displayed. Note that the other-language
+    // notes can be set to the string "-" (meaning the other-language notes are empty, but these
+    // empty notes override the English notes), in which case this function will still return true.
+    // It's up to the caller to "display" these empty notes (i.e., suppress the English notes).
     public boolean shouldDisplayOtherLanguageNotes() {
       SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
       final String otherLang =
