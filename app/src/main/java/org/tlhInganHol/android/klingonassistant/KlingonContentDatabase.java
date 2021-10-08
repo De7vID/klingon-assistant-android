@@ -209,7 +209,7 @@ public class KlingonContentDatabase {
   // the IDs of the first entry and one past the ID of the last non-hypothetical,
   // non-extended-canon entry in the database, respectively.
   private static final int ID_OF_FIRST_ENTRY = 10000;
-  private static final int ID_OF_FIRST_EXTRA_ENTRY = 15028;
+  private static final int ID_OF_FIRST_EXTRA_ENTRY = 15029;
 
   private final KlingonDatabaseOpenHelper mDatabaseOpenHelper;
   private static final HashMap<String, String> mColumnMap = buildColumnMap();
@@ -338,9 +338,10 @@ public class KlingonContentDatabase {
         // These are the possible words with {n} + {gh}: {nenghep}, {QIngheb}, {tlhonghaD}
         // These are the possible words with {ng} + {H}: {chungHa'wI'}, {mangHom}, {qengHoD},
         // {tungHa'}, {vengHom}. Instead of checking both, cheat by hardcoding the possibilities.
-        // TODO: This means this code has to be updated whenever an entry with {ngH} or {ngh} is
+        // This means this code has to be updated whenever an entry with {ngH} or {ngh} is
         // added to the database.
         .replaceAll("(chung|mang|qeng|tung|veng)h", "$1H")
+        .replaceAll("Hanguq", "Hanghuq")
         .replaceAll("nengep", "nenghep")
         .replaceAll("QIngeb", "QIngheb")
         .replaceAll("tlhongaD", "tlhonghaD");
@@ -390,6 +391,35 @@ public class KlingonContentDatabase {
         .replaceAll("‘", "'") // "smart" left quote
         .replaceAll("\u2011", "-") // non-breaking hyphen
         .trim();
+  }
+
+  private boolean IsPotentialComplexWordOrSentence(KlingonContentProvider.Entry queryEntry,
+      String query) {
+    // If the POS is unknown and the query is greater than 4 characters, try to parse it
+    // as a complex word or sentence. Most queries of 4 characters or fewer are not complex,
+    // so for efficiency reasons we don't try to parse them, but there are a few exceptional
+    // verbs which are two letters long, which need to be handled as a special case.
+    if (queryEntry.basePartOfSpeechIsUnknown()) {
+      if (query.length() > 4) {
+        return true;
+      }
+
+      // A shortlist of two-letter verbs. These plus a prefix or suffix might make a 4-character
+      // complex word. This check needs to be updated whenever a 2-letter verb is added to the
+      // database.
+      if (query.length() == 4) {
+        switch(query.substring(2,4)) {
+          case "Da":
+          case "lu":
+          case "Qu":
+          case "Sa":
+          case "tu":
+          case "yo":
+            return true;
+        }
+      }
+    }
+    return false;
   }
 
   /**
@@ -447,16 +477,15 @@ public class KlingonContentDatabase {
       looseQuery = queryBase;
     } else {
       // Assume the user is searching for an "exact" Klingon word or phrase, subject to
-      // "xifan hol" loosening.
+      // "xifan hol" loosening (if enabled).
       looseQuery = expandShorthand(queryBase);
     }
 
     // TODO: Add option to search English and other-language fields first, followed by Klingon.
     // (Many users are searching for a Klingon word using a non-Klingon search query, rather
     // than the other way around.)
-    if (queryEntry.basePartOfSpeechIsUnknown() && queryEntry.getEntryName().length() > 4) {
-      // If the POS is unknown and the query is greater than 4 characters, try to parse it
-      // as a complex word or sentence.
+    if (IsPotentialComplexWordOrSentence(queryEntry, looseQuery)) {
+      // If the query matches some heuristics, try to parse it as a complex word or sentence.
       parseQueryAsComplexWordOrSentence(looseQuery, resultsCursor, resultsSet);
     } else {
       // Otherwise, assume the base query is a prefix of the desired result.
@@ -932,12 +961,13 @@ public class KlingonContentDatabase {
           }
           // Log.d(TAG, "parseQueryAsComplexWordOrSentence: compoundNoun = " + compoundNoun);
           KlingonContentProvider.parseComplexWord(
-              compoundNoun, /* isNoun */ true, complexWordsList);
+              compoundNoun, /* isNounCandidate */ true, complexWordsList);
         }
 
         // Next, try to parse this as a verb.
         // Log.d(TAG, "parseQueryAsComplexWordOrSentence: verb = " + word);
-        KlingonContentProvider.parseComplexWord(word, /* isNoun */ false, complexWordsList);
+        KlingonContentProvider.parseComplexWord(
+            word, /* isNounCandidate */ false, complexWordsList);
       }
     }
     for (KlingonContentProvider.ComplexWord complexWord : complexWordsList) {
