@@ -1,5 +1,6 @@
 CHANGELOG
 
+2021-11-09: Add {Qa} to two-letter verb shortlist. New vocabulary from {QelIS boqHarmey}.
 2021-10-08: Fix bug with parsing 4-letter complex words containing 2-letter verbs.
 2021-10-05: Add ability to suppress display of notes in non-English language.
 2021-09-27: Target to API 30 and fix TTS query permission. Fix the "xifan hol" q to Q search bug.
