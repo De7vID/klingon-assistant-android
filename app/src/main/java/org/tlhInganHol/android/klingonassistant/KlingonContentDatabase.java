@@ -411,6 +411,7 @@ public class KlingonContentDatabase {
         switch(query.substring(2,4)) {
           case "Da":
           case "lu":
+          case "Qa":
           case "Qu":
           case "Sa":
           case "tu":
