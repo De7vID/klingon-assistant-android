@@ -28,10 +28,10 @@
     <string name="database_upgraded">Banco de dados atualizado de  v%1$s para v%2$s.</string>
 
     <!-- The label for use as a searchable item, e.g., "Dictionary". -->
-    <string name="search_label">Banco de Dados</string>
+    <string name="search_label">Bancos de dados</string>
 
     <!-- The hint text that appears in the search box, e.g., "Search the dictionary". -->
-    <string name="search_hint">Buscar no banco de dados</string>
+    <string name="search_hint">Buscar nos bancos de dados</string>
 
     <!-- The primary menu entry that invokes search, e.g., "Search". -->
     <string name="menu_search">Pesquisar</string>
@@ -48,16 +48,16 @@
     <string name="menu_request_translation">Solicitar tradução</string>
 
     <!-- The description that will show up in the search settings for this source, e.g., "Definitions of words".  -->
-    <string name="settings_description">Palavras e sentenças em Klingon</string>
+    <string name="settings_description">Palavras e frases em klingon</string>
 
     <!-- General instructions in the main activity. -->
     <string name="search_instructions">Use o botão de busca para encontrar informações, ou selecione um item no menu.</string>
 
     <!-- Search failure message, e.g., "No results found for \"%s\"". -->
-    <string name="no_results"><![CDATA[Nenhum resultado encontrado para  &lt;<b>%s</b>&gt;.]]></string>
+    <string name="no_results"><![CDATA[Nenhum resultado encontrado para &lt;<b>%s</b>&gt;.]]></string>
 
     <!-- Other menu items. -->
-    <string name="menu_lessons">Lissões (descontinuada)</string>
+    <string name="menu_lessons">Lições (descontinuada)</string>
     <string name="menu_kwotd">Buscar KWOTD (beta)</string>
     <string name="menu_update_db">Verificar atualização do banco de dados (beta)</string>
     <string name="menu_autotranslate">Mostrar definições de tradução automática (beta)</string>
@@ -74,7 +74,7 @@
     <string name="menu_lists">Ouça</string>
     <string name="menu_media">Mídia</string>
     <string name="menu_social">Social</string>
-    <string name="menu_kli">Institudo da Língua Klingon</string>
+    <string name="menu_kli">Klingon Language Institute</string>
     <string name="menu_kli_lessons">Cursos Online</string>
     <string name="menu_kli_questions">Faça uma pergunta!</string>
 
@@ -86,8 +86,8 @@
     <string name="menu_kidc">Klingon Imperial Forums</string>
 
     <!-- Media. -->
-    <string name="media_1_title">Lissões de Klingon</string>
-    <string name="media_2_title">Converssação</string>
+    <string name="media_1_title">Lições de Klingon</string>
+    <string name="media_2_title">Conversação</string>
     <string name="media_3_title">Comandos de batalha</string>
     <string name="media_4_title">Outros comandos</string>
     <string name="media_5_title">Insultos</string>
@@ -97,30 +97,30 @@
     <string name="empire_union_day">Dia da União do Império</string>
     <string name="curse_warfare">Insultos</string>
     <string name="nentay">Ritual de Ascensão</string>
-    <string name="military_celebration">Celebraçao QI\'lop</string>
+    <string name="military_celebration">Celebração QI\'lop</string>
     <string name="rejection">Rejeitando um pretendente</string>
-    <string name="replacement_proverbs">Provérbios de Substituição</string>
+    <string name="replacement_proverbs">Provérbios de substituição</string>
     <string name="secrecy_proverbs">Provérbios do sigilo</string>
     <string name="proverbs">Outros provérbios</string>
     <string name="toasts">Brindes</string>
     <string name="lyrics">Músicas</string>
-    <string name="idioms">Provérbios</string>
+    <string name="idioms">Expressões idiomáticas</string>
     <string name="beginners_conversation">Frases para iniciantes</string>
     <string name="jokes">Piadas e histórias engraçadas</string>
 
     <!-- Lists. -->
     <string name="list_names">Nomes</string>
-    <string name="list_places">Geografia</string>
+    <string name="list_places">Locais</string>
 
     <!-- Strings for the Preferences settings. -->
     <string name="klingon_assistant_settings">boQwI\' - Configurações</string>
-      <string name="language_preferences">Language preferences</string>
+      <string name="language_preferences">Preferências de língua</string>
         <string name="klingon_font_preference_title">pIqaD</string>
-        <string name="klingon_font_preference_summary">Mostrar texto em Klingon usando {pIqaD}.</string>
-        <string name="klingon_ui_preference_title">Menus em Klingon</string>
-        <string name="klingon_ui_preference_summary">Use {tlhIngan Hol} como língua de interface do usuário.</string>
-        <string name="show_secondary_language_preference_title">Mostrar definições não-Inglês</string>
-        <string name="show_secondary_language_preference_summary">Exiba traduções das definições para um idioma diferente do inglês.</string>
+        <string name="klingon_font_preference_summary">Mostrar texto em klingon usando {pIqaD}.</string>
+        <string name="klingon_ui_preference_title">Menus em klingon</string>
+        <string name="klingon_ui_preference_summary">Usar {tlhIngan Hol} como língua de interface do usuário.</string>
+        <string name="show_secondary_language_preference_title">Mostrar definições além das inglesas</string>
+        <string name="show_secondary_language_preference_summary">Exibir traduções das definições para um idioma diferente do inglês.</string>
       <string name="input_preferences">Preferências de entrada</string>
         <string name="xifan_hol_preference_title">Habilitar entrada \"xifan hol\"</string>
         <string name="xifan_hol_preference_summary">Permitir digitação de \"x\" para {tlh}, \"f\" para {ng}, etc.</string>
@@ -131,41 +131,41 @@
         <string name="social_network_preference_summary">Selecione a sua rede social preferida</string>
       <string name="informational_preferences">Informações adicionais</string>
         <string name="show_transitivity_preference_title">Visualizar transitividade</string>
-        <string name="show_transitivity_preference_summary">Mostrar \"melhor chute\" se um verbo recebe ou não um objeto.</string>
+        <string name="show_transitivity_preference_summary">Mostrar \"melhor chute\" se um verbo rege ou não um objeto.</string>
         <string name="show_additional_information_preference_title">Mostrar informações adicionais</string>
         <string name="show_additional_information_preference_summary">"Mostrar notas detalhadas em "</string>
         <string name="kwotd_preference_title">Notificação KWOTD</string>
-        <string name="kwotd_preference_summary">Notificar quando uma nova palavra Klingon do dia (KWOTD) estiver disponível no servidor hol.kag.org. Requer conexão com internet.</string>
-        <string name="update_db_preference_title">Atalização online do banco de dados</string>
+        <string name="kwotd_preference_summary">Notificar quando uma nova palavra klingon do dia (KWOTD) estiver disponível no servidor hol.kag.org. Requer conexão com internet.</string>
+        <string name="update_db_preference_title">Atualização online do banco de dados</string>
         <string name="update_db_preference_summary">Atualizar o banco de dados quando uma nova versão estiver disponível no servidor do github.io. Essa função requer conexão com a internet.</string>
       <string name="under_construction_preferences">Em construção</string>
         <string name="show_unsupported_features_preference_title">Funções não suportadas</string>
         <string name="show_unsupported_features_preference_summary">Não marque isso se você não é um testador beta.</string>
 
     <string name="warning">Atenção</string>
-    <string name="change_ui_language_warning">Alteração da linguage de exibição pode não estar complete ate que a aplicação seja reiniciada.</string>
+    <string name="change_ui_language_warning">A alteração da língua de exibição pode não estar completa até que o aplicativo seja reiniciado.</string>
 
     <!-- Choices for showing Klingon text using {pIqaD}. -->
-    <string name="font_latin">Off</string>
+    <string name="font_latin">Desligado</string>
     <string name="font_tng">TNG {pIqaD}</string>
     <string name="font_dsc">DSC {pIqaD}</string>
 
     <!-- Choices for secondary languages. -->
     <string name="secondary_language_none">Nenhum</string>
-    <string name="secondary_language_german">Alemão</string>
-    <string name="secondary_language_persian">Persa (beta)</string>
-    <string name="secondary_language_russian">Russo (beta)</string>
-    <string name="secondary_language_swedish">Sueco (beta)</string>
-    <string name="secondary_language_chinese_hong_kong">Chines de Hong Kong (beta)</string>
-    <string name="secondary_language_portuguese">Português</string>
-    <string name="secondary_language_finnish">Finlandês</string>
+    <string name="secondary_language_german">alemão</string>
+    <string name="secondary_language_persian">persa (beta)</string>
+    <string name="secondary_language_russian">russo (beta)</string>
+    <string name="secondary_language_swedish">sueco (beta)</string>
+    <string name="secondary_language_chinese_hong_kong">chinês de Hong Kong (beta)</string>
+    <string name="secondary_language_portuguese">português</string>
+    <string name="secondary_language_finnish">finlandês</string>
 
     <!-- Metadata labels and descriptions. -->
     <string name="label_see_alt_entry">Veja</string>
-    <string name="label_english">Inglês</string>
-    <string name="label_german">Alemão</string>
+    <string name="label_english">inglês</string>
+    <string name="label_german">alemão</string>
     <string name="label_synonyms">Sinônimos</string>
-    <string name="label_antonyms">Antônimo</string>
+    <string name="label_antonyms">Antônimos</string>
     <string name="label_see_also">Veja também</string>
     <string name="label_category">Categoria</string>
     <string name="label_analyze">Analisar</string>
@@ -174,33 +174,33 @@
     <string name="label_sources">Fonte(s)</string>
     <string name="label_transitivity">Transitividade</string>
       <string name="transitivity_ambi">O papel desempenhado pelo sujeito desse verbo muda dependendo se existe ou não um objeto direto.</string>
-      <string name="transitivity_intransitive">Esse verbo provavelmente não pode receber um objeto direto.</string>
-      <string name="transitivity_intransitive_confirmed">Este verbo não pode receber um objeto direto.</string>
-      <string name="transitivity_stative">Este verbo descreve um estado ou qualidade e não pode receber um objeto.</string>
-      <string name="transitivity_transitive">Esse verbo provavelmente pode levar um objeto direto.</string>
-      <string name="transitivity_transitive_confirmed">Este verbo pode levar um objeto direto.</string>
-      <string name="transitivity_unknown">Não se sabe se este verbo pode ter um objeto direto.</string>
+      <string name="transitivity_intransitive">Esse verbo provavelmente não pode reger um objeto direto.</string>
+      <string name="transitivity_intransitive_confirmed">Esse verbo não pode reger um objeto direto.</string>
+      <string name="transitivity_stative">Esse verbo descreve um estado ou qualidade e não pode reger um objeto.</string>
+      <string name="transitivity_transitive">Esse verbo provavelmente pode reger um objeto direto.</string>
+      <string name="transitivity_transitive_confirmed">Esse verbo pode reger um objeto direto.</string>
+      <string name="transitivity_unknown">Não se sabe se esse verbo pode reger um objeto direto.</string>
     <string name="label_additional_information">Informações adicionais</string>
-    <string name="info_being">Esta palavra refere-se a um ser capaz de linguagem. É preciso o sufixo plural {-pu\':n:suff}.</string>
-    <string name="info_body">Esta palavra refere-se a uma parte do corpo. É preciso o sufixo plural {-Du\':n:suff}.</string>
-    <string name="info_inherent_plural">Esta palavra é inerentemente plural. Sua forma singular é %1$s.</string>
-    <string name="info_singular_form">Esta palavra tem uma forma inerentemente plural em %1$s.</string>
-    <string name="warning_hypothetical">Aviso: Esta entrada é hipotética. Não use a menos que saiba o que está fazendo!</string>
-    <string name="warning_extended_canon">Aviso: Não se sabe se esta entrada foi aprovada por Marc Okrand. Não use a menos que saiba o que está fazendo!</string>
+    <string name="info_being">Essa palavra refere-se a um ser capaz de linguagem. É preciso o sufixo plural {-pu\':n:suff}.</string>
+    <string name="info_body">Essa palavra refere-se a uma parte do corpo. É preciso o sufixo plural {-Du\':n:suff}.</string>
+    <string name="info_inherent_plural">Essa palavra é inerentemente plural. Sua forma singular é %1$s.</string>
+    <string name="info_singular_form">Essa palavra tem uma forma inerentemente plural em %1$s.</string>
+    <string name="warning_hypothetical">Aviso: Esse verbete é hipotético. Não use a menos que saiba o que está fazendo!</string>
+    <string name="warning_extended_canon">Aviso: Não se sabe se esse verbete foi aprovado por Marc Okrand. Não use a menos que saiba o que está fazendo!</string>
 
     <!-- Bottom navigation menu. -->
     <string name="menu_previous">Anterior</string>
     <string name="menu_random">Aleatório</string>
-    <string name="menu_next">Proximo</string>
+    <string name="menu_next">Próximo</string>
 
     <!-- KWOTD notification. -->
-    <string name="kwotd_footer"><![CDATA[Palavra Klingon do dia trazida a você por <b>Hol \'ampaS</b>]]></string>
+    <string name="kwotd_footer"><![CDATA[Palavra klingon do dia trazida a você por <b>Hol \'ampaS</b>]]></string>
     <string name="kwotd_requires_internet">KWOTD será buscada quando a conexão com internet estiver disponível.</string>
     <string name="kwotd_fetching">Buscando KWOTD do servidor KAG...</string>
     <string name="kwotd_one_off_job_failed">Erro ao buscar KWOTD do servidor KAG.</string>
-    <string name="kwotd_notification_channel_name">Palaavra Klingon do Dia</string>
+    <string name="kwotd_notification_channel_name">Palavra klingon do dia</string>
 
     <!-- Update database notification. -->
-    <string name="update_db_requires_internet">Atualização do banco de dados será efetuada quando conexão com internet estiver disponível.</string>
+    <string name="update_db_requires_internet">A atualização do banco de dados será efetuada quando conexão com internet estiver disponível.</string>
     <string name="update_db_fetching">Verificando atualização no banco de dados...</string>
 </resources>
