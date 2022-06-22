@@ -2074,7 +2074,19 @@ public class KlingonContentProvider extends ContentProvider {
       "", "wa'", "cha'", "wej", "loS", "vagh", "jav", "Soch", "chorgh", "Hut"
     };
     static String[] numberModifierString = {
-      "", "maH", "vatlh", "SaD", "SanID", "netlh", "bIp", "'uy'", "Saghan"
+      "",
+      "maH",
+      "vatlh",
+      "SaD", "SanID",  // 1000 (thousand)
+      "netlh",
+      "bIp",
+      "'uy'",  // 1 000 000 (million)
+      "maH'uy'", "vatlhbIp",
+      "vatlh'uy'", "SaDbIp", "SanIDbIp",
+      "Saghan",  // 1 000 000 000 (billion)
+      "maHSaghan",
+      "vatlhSaghan", "bIp'uy'",
+      "SaDSaghan", "SanIDSaghan"  // 1 000 000 000 000 (trillion)
     };
     int mNumberDigit;
     int mNumberModifier;
@@ -2688,9 +2700,8 @@ public class KlingonContentProvider extends ContentProvider {
       Log.d(TAG, "Found: " + this.toString());
 
       // Determine if this is a number. Assume that a number is of the form
-      // "digit[modifier][suffix]",
-      // where digit is {wa'}, etc., modifier is a power of ten such as {maH}, and suffix is one of
-      // {-DIch} or {-logh}.
+      // "digit[modifier][suffix]", where digit is {wa'}, etc., modifier is a power of ten such as
+      // {maH}, and suffix is one of {-DIch} or {-logh}.
       if (mIsNounCandidate) {
 
         // Check for {-DIch} or {-logh}.
