@@ -2075,18 +2075,22 @@ public class KlingonContentProvider extends ContentProvider {
     };
     static String[] numberModifierString = {
       "",
-      "maH",
-      "vatlh",
-      "SaD", "SanID",  // 1000 (thousand)
-      "netlh",
-      "bIp",
-      "'uy'",  // 1 000 000 (million)
-      "maH'uy'", "vatlhbIp",
-      "vatlh'uy'", "SaDbIp", "SanIDbIp",
-      "Saghan",  // 1 000 000 000 (billion)
-      "maHSaghan",
-      "vatlhSaghan", "bIp'uy'",
-      "SaDSaghan", "SanIDSaghan"  // 1 000 000 000 000 (trillion)
+
+      // Since matching is greedy, compound number-forming elements have to come first.
+      "maH'uy'", "vatlhbIp",  // 10 000 000
+      "vatlh'uy'", "SaDbIp", "SanIDbIp",  // 100 000 000
+      "maHSaghan",  // 10 000 000 000
+      "vatlhSaghan", "bIp'uy'",  // 100 000 000 000
+      "SaDSaghan", "SanIDSaghan",  // 1 000 000 000 000
+
+      // Basic number-forming elements.
+      "maH",  // 10
+      "vatlh",  // 100
+      "SaD", "SanID",  // 1000
+      "netlh",  // 10 000
+      "bIp",  // 100 000
+      "'uy'",  // 1 000 000
+      "Saghan",  // 1 000 000 000
     };
     int mNumberDigit;
     int mNumberModifier;
