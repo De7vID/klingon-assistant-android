@@ -25,6 +25,7 @@
 <searchable xmlns:android="http://schemas.android.com/apk/res/android"
         android:label="@string/search_label"
         android:hint="@string/search_hint"
+        android:inputType="textNoSuggestions"
         android:searchSettingsDescription="@string/settings_description"
         android:searchSuggestAuthority="org.tlhInganHol.android.klingonassistant.KlingonContentProvider"
         android:searchSuggestIntentAction="android.intent.action.VIEW"
