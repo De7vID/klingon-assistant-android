@@ -90,15 +90,9 @@ public class EntryActivity extends BaseActivity
     super.onCreate(savedInstanceState);
 
     // TTS:
-    // Initialize text-to-speech. This is an asynchronous operation.
-    // The OnInitListener (second argument) is called after initialization completes.
     // Log.d(TAG, "Initialising TTS");
     clearTTS();
-    mTts =
-        new TextToSpeech(
-            this,
-            this, // TextToSpeech.OnInitListener
-            "org.tlhInganHol.android.klingonttsengine");
+    mTts = initTTS();
 
     setDrawerContentView(R.layout.entry_swipe);
 
@@ -183,18 +177,22 @@ public class EntryActivity extends BaseActivity
     super.onResume();
 
     // TTS:
-    // Initialize text-to-speech. This is an asynchronous operation.
-    // The OnInitListener (second argument) is called after initialization completes.
     // This is needed in onResume because we send the user to the Google Play Store to
     // install the TTS engine if it isn't already installed, so the status of the TTS
     // engine may change when this app resumes.
     // Log.d(TAG, "Initialising TTS");
     clearTTS();
-    mTts =
-        new TextToSpeech(
-            this,
-            this, // TextToSpeech.OnInitListener
-            "org.tlhInganHol.android.klingonttsengine"); // Requires API 14.
+    mTts = initTTS();
+  }
+
+  private TextToSpeech initTTS() {
+    // TTS:
+    // Initialize text-to-speech. This is an asynchronous operation.
+    // The OnInitListener (second argument) is called after initialization completes.
+    return new TextToSpeech(
+        this,
+        this, // TextToSpeech.OnInitListener
+        "org.tlhInganHol.android.klingonttsengine"); // Requires API 14.
   }
 
   private void clearTTS() {
