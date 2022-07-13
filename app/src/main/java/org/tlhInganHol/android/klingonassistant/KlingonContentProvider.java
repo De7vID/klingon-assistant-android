@@ -846,8 +846,7 @@ public class KlingonContentProvider extends ContentProvider {
 
           // No match to attributes.
         } else {
-          // Log error if part of speech could not be determined.
-          Log.e(TAG, "{" + mEntryName + "} has unrecognised attribute: \"" + attr + "\"");
+          Log.d(TAG, "{" + mEntryName + "} has unrecognised attribute: \"" + attr + "\"");
         }
       }
     }
