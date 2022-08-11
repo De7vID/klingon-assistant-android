@@ -32,7 +32,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.support.v4.app.NotificationCompat;
+import android.app.Notification;
 import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -51,8 +51,6 @@ import org.tlhInganHol.android.klingonassistant.KlingonAssistant;
 import org.tlhInganHol.android.klingonassistant.KlingonContentDatabase;
 import org.tlhInganHol.android.klingonassistant.KlingonContentProvider;
 import org.tlhInganHol.android.klingonassistant.R;
-
-// import android.support.v4.app.NotificationManagerCompat;
 
 public class KwotdService extends JobService {
   private static final String TAG = "KwotdService";
@@ -311,15 +309,15 @@ public class KwotdService extends JobService {
               Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
 
-        NotificationCompat.Builder builder =
-            new NotificationCompat.Builder(KwotdService.this)
+        Notification.Builder builder =
+            new Notification.Builder(KwotdService.this)
                 .setSmallIcon(R.drawable.ic_kwotd_notification)
                 .setLargeIcon(BitmapFactory.decodeResource(resources, R.drawable.ic_ka))
                 .setContentTitle(notificationTitle)
                 .setContentText(notificationText)
-                .setStyle(new NotificationCompat.BigTextStyle().bigText(notificationTextLong))
+                .setStyle(new Notification.BigTextStyle().bigText(notificationTextLong))
                 // Show on lock screen.
-                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .setAutoCancel(true);
         PendingIntent pendingIntent =
             PendingIntent.getActivity(
