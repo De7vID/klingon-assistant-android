@@ -374,8 +374,6 @@ public class BaseActivity extends AppCompatActivity
     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
     if (sharedPrefs.getBoolean(
         Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE, /* default */ false)) {
-      // MenuItem lessonsButton = menu.findItem(R.id.action_lessons);
-      // lessonsButton.setVisible(true);
 
       MenuItem kwotdButton = menu.findItem(R.id.action_kwotd);
       kwotdButton.setVisible(true);
@@ -559,7 +557,7 @@ public class BaseActivity extends AppCompatActivity
   }
 
   // Method to launch an external app or web site.
-  // TODO: Refactor the identical code in Preferences (and deprecated LessonActivity).
+  // TODO: Refactor the identical code in Preferences.
   protected void launchExternal(String externalUrl) {
     Intent intent = new Intent(Intent.ACTION_VIEW);
     // Set NEW_TASK so the external app or web site is independent.
@@ -658,11 +656,6 @@ public class BaseActivity extends AppCompatActivity
           }
           break;
           */
-        /*
-        case R.id.action_lessons:
-          startActivity(new Intent(this, LessonActivity.class));
-          return true;
-        */
       case R.id.action_kwotd:
         runKwotdServiceJob(/* isOneOffJob */ true);
         return true;
