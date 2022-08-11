@@ -39,7 +39,6 @@
           android:title="@string/menu_share"
           android:icon="@drawable/ic_menu_share"
           app:showAsAction="ifRoom"
-          app:actionProviderClass="android.support.v7.widget.ShareActionProvider"
           android:visible="false" />
 
     <!-- This is hidden unless the "unsupported features" option has been selected. -->
