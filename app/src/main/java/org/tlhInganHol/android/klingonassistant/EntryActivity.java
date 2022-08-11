@@ -32,10 +32,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.ShareActionProvider;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -60,10 +58,9 @@ public class EntryActivity extends BaseActivity
   // The parent query that this entry is a part of.
   // private String mParentQuery = null;
 
-  // The intent holding the data to be shared, and the associated UI and action provider.
+  // The intent holding the data to be shared, and the associated UI.
   private Intent mShareEntryIntent = null;
   MenuItem mShareButton = null;
-  ShareActionProvider mShareActionProvider;
 
   // Intents for the bottom navigation buttons.
   // Note that the renumber.py script ensures that the IDs of adjacent entries
@@ -223,12 +220,10 @@ public class EntryActivity extends BaseActivity
   public boolean onCreateOptionsMenu(Menu menu) {
     super.onCreateOptionsMenu(menu);
     mShareButton = menu.findItem(R.id.action_share);
-    mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(mShareButton);
 
     // This is also updated in onPageSelected.
-    if (mShareActionProvider != null && mShareEntryIntent != null) {
+    if (mShareEntryIntent != null) {
       // Enable "Share" button.
-      mShareActionProvider.setShareIntent(mShareEntryIntent);
       mShareButton.setVisible(true);
     }
 
@@ -269,25 +264,34 @@ public class EntryActivity extends BaseActivity
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
-    if (item.getItemId() == R.id.action_speak) {
-      // TTS:
-      if (!ttsInitialized) {
-        // The TTS engine is not installed (or disabled). Send user to Google Play Store or other
-        // market.
-        try {
-          launchExternal("market://details?id=org.tlhInganHol.android.klingonttsengine");
-        } catch (android.content.ActivityNotFoundException e) {
-          // Fall back to browser.
-          launchExternal(
-              "https://play.google.com/store/apps/details?id=org.tlhInganHol.android.klingonttsengine");
+    switch (item.getItemId()) {
+      case R.id.action_speak:
+        // TTS:
+        if (!ttsInitialized) {
+          // The TTS engine is not installed (or disabled). Send user to Google Play Store or other
+          // market.
+          try {
+            launchExternal("market://details?id=org.tlhInganHol.android.klingonttsengine");
+          } catch (android.content.ActivityNotFoundException e) {
+            // Fall back to browser.
+            launchExternal(
+                "https://play.google.com/store/apps/details?id=org.tlhInganHol.android.klingonttsengine");
+          }
+        } else if (mEntry != null) {
+          // The TTS engine is working, and there's something to say, say it.
+          // Log.d(TAG, "Speaking");
+          // Toast.makeText(getBaseContext(), mEntry.getEntryName(), Toast.LENGTH_LONG).show();
+          mTts.speak(mEntry.getEntryName(), TextToSpeech.QUEUE_FLUSH, null);
         }
-      } else if (mEntry != null) {
-        // The TTS engine is working, and there's something to say, say it.
-        // Log.d(TAG, "Speaking");
-        // Toast.makeText(getBaseContext(), mEntry.getEntryName(), Toast.LENGTH_LONG).show();
-        mTts.speak(mEntry.getEntryName(), TextToSpeech.QUEUE_FLUSH, null);
-      }
+        return true;
+      case R.id.action_share:
+        // Share using the Android Sharesheet.
+        Intent shareIntent = Intent.createChooser(mShareEntryIntent, getResources().getString(R.string.share_popup_title));
+        startActivity(shareIntent);
+        return true;
+      default:
     }
+
     return super.onOptionsItemSelected(item);
   }
 
@@ -379,9 +383,8 @@ public class EntryActivity extends BaseActivity
       // Update share menu and set the visibility of the share button. The intent is also set in
       // onCreate, while the visibility is also set in onCreateOptionsMenu.
       setShareEntryIntent(entry);
-      if (mShareActionProvider != null && mShareEntryIntent != null) {
+      if (mShareEntryIntent != null) {
         // Enable "Share" button. Note that mShareButton can be null if the device has been rotated.
-        mShareActionProvider.setShareIntent(mShareEntryIntent);
         if (mShareButton != null) {
           mShareButton.setVisible(true);
         }
