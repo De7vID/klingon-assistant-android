@@ -401,7 +401,7 @@ public class BaseActivity extends AppCompatActivity
   protected void setDrawerContentView(int layoutResId) {
     ConstraintLayout constraintLayout = (ConstraintLayout) findViewById(R.id.drawer_content);
     constraintLayout.removeAllViews();
-    LayoutInflater.from(getBaseContext()).inflate(layoutResId, constraintLayout, true);
+    LayoutInflater.from(BaseActivity.this).inflate(layoutResId, constraintLayout, true);
   }
 
   @SuppressWarnings("StatementWithEmptyBody")
