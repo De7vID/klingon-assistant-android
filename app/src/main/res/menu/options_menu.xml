@@ -20,9 +20,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <!-- Search must always been shown. -->
-    <!-- We don't use app:showAsAction="always|collapseActionView" and
-         app:actionViewClass="android.support.v7.widget.SearchView" because it's not
-         compatible with how we are implementing the search button. -->
+    <!-- We originally didn't use app:showAsAction="always|collapseActionView"
+         and app:actionViewClass="android.support.v7.widget.SearchView" because
+         it wasn't compatible with how we are implementing the search button.
+         This comment is probably obsolete and may or may not apply to
+         "androidx.appcompat.widget.SearchView". -->
     <item android:id="@+id/action_search"
           android:title="@string/menu_search"
           android:icon="@drawable/ic_menu_search"

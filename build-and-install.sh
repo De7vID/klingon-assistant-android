@@ -15,7 +15,7 @@ then
     echo
 
     # Push apk to device.
-    adb push ./app/build/outputs/apk/app-debug.apk /sdcard/
+    adb push ./app/build/outputs/apk/debug/app-debug.apk /sdcard/
 else
     echo ERROR: Failed to installDebug.
 fi

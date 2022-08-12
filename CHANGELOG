@@ -1,5 +1,6 @@
 CHANGELOG
 
+2022-08-12: Migrate from support library to androidx. This is a major (and backwards-incompatible) change.
 2022-06-22: Remove QUERY_ALL_PACKAGES permission. Turn off suggestions in search bar. Add parsing of compound number-forming elements.
 2021-11-09: Add {Qa} to two-letter verb shortlist. New vocabulary from {QelIS boqHarmey}.
 2021-10-08: Fix bug with parsing 4-letter complex words containing 2-letter verbs.

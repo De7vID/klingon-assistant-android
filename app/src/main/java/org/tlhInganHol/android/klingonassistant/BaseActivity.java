@@ -32,13 +32,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.NavigationView;
 import android.view.Gravity;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -55,12 +49,16 @@ import android.view.SubMenu;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import com.google.android.material.navigation.NavigationView;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import org.tlhInganHol.android.klingonassistant.service.KwotdService;
 import org.tlhInganHol.android.klingonassistant.service.UpdateDatabaseService;
-
-// import android.support.design.widget.Snackbar;
 
 public class BaseActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
