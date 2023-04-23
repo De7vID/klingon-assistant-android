@@ -6,7 +6,6 @@ keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
     compileSdkVersion 32
-    buildToolsVersion "32.0.0"
     defaultConfig {
         applicationId "org.tlhInganHol.android.klingonassistant"
         // We are targeting only Marshmallow and above.
