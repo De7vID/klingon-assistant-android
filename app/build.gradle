@@ -6,13 +6,12 @@ keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
     compileSdkVersion 32
-    buildToolsVersion "32.0.0"
     defaultConfig {
         applicationId "org.tlhInganHol.android.klingonassistant"
         // We are targeting only Marshmallow and above.
         minSdkVersion 23
-        // Can't increase to 32 because security changes will disable KWOTD.
-        targetSdkVersion 30
+        // Can't increase to 33 because notification permission changes will disable KWOTD.
+        targetSdkVersion 32
         versionCode 569
         versionName "2022.08.12a"
     }

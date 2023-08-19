@@ -58,9 +58,12 @@ public class KwotdService extends JobService {
   // Key for storing the previously retrieved data from hol.kag.org.
   private static final String KEY_KWORD_DATA = "kwotd_data";
 
-  // Key for indicating whether this is a "one-off" job. If set to true, the
-  // saved value of the previously retrieved data will be ignored and the newly
-  // fetched data will always be used.
+  // Key for indicating whether this is a "one-off" job (i.e., a job triggered
+  // from the menu rather than a scheduled job). If set to true, the saved
+  // value of the previously retrieved data will be ignored and the newly
+  // fetched data will always be used. (The previous value is used for the
+  // scheduled job to prevent showing the same KWOTD twice, if the server
+  // sends the same data it sent on the previous scheduled occasion.)
   public static final String KEY_IS_ONE_OFF_JOB = "restart_kwotd_job";
 
   // Pattern to extract the RSS.
@@ -321,7 +324,8 @@ public class KwotdService extends JobService {
                 .setAutoCancel(true);
         PendingIntent pendingIntent =
             PendingIntent.getActivity(
-                KwotdService.this, 0, entryIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                KwotdService.this, 0, entryIntent, PendingIntent.FLAG_UPDATE_CURRENT |
+                PendingIntent.FLAG_IMMUTABLE);
         builder.setContentIntent(pendingIntent);
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
