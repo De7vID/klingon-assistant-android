@@ -11,7 +11,7 @@ cd ..
 if [ $? -eq 0 ]
 then
     # Pause before pushing.
-    read -n1 -r -p "Press any key to copy apk to device..."
+    read -n1 -r -p "[Optional] Press any key to copy apk to device..."
     echo
 
     # Push apk to device.
