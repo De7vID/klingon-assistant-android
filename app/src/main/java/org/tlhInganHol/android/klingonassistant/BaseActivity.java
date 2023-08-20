@@ -16,6 +16,7 @@
 
 package org.tlhInganHol.android.klingonassistant;
 
+import android.Manifest;
 import android.app.SearchManager;
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
@@ -23,6 +24,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Typeface;
@@ -49,9 +51,12 @@ import android.view.SubMenu;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import com.google.android.material.navigation.NavigationView;
@@ -211,7 +216,7 @@ public class BaseActivity extends AppCompatActivity
 
     // Schedule the KWOTD service if it hasn't already been started.
     if (sharedPrefs.getBoolean(Preferences.KEY_KWOTD_CHECKBOX_PREFERENCE, /* default */ true)) {
-      runKwotdServiceJob(/* isOneOffJob */ false);
+      requestPermissionForKwotdServiceJob(/* isOneOffJob */ false);
     }
 
     // Schedule the update database service if it hasn't already been started.
@@ -232,7 +237,8 @@ public class BaseActivity extends AppCompatActivity
     updateLocaleConfiguration();
 
     // Schedule the KWOTD service if it hasn't already been started. It's necessary to do this here
-    // because the setting might have changed in Preferences.
+    // because the setting might have changed in Preferences. Note that we don't request permission
+    // here because the preference should already be set by the call in onCreate().
     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
     if (sharedPrefs.getBoolean(Preferences.KEY_KWOTD_CHECKBOX_PREFERENCE, /* default */ true)) {
       runKwotdServiceJob(/* isOneOffJob */ false);
@@ -407,69 +413,48 @@ public class BaseActivity extends AppCompatActivity
   public boolean onNavigationItemSelected(MenuItem item) {
     // Handle navigation view item clicks here.
 
-    switch (item.getItemId()) {
-      case R.id.pronunciation:
-        // Show "Pronunciation" screen.
-        displayHelp(QUERY_FOR_PRONUNCIATION);
-        break;
-      case R.id.prefixes:
-        // Show "Prefixes" screen.
-        displayHelp(QUERY_FOR_PREFIXES);
-        break;
-      case R.id.prefix_chart:
-        // Show "Prefix chart" screen.
-        displayPrefixChart();
-        break;
-      case R.id.noun_suffixes:
-        // Show "Noun Suffixes" screen.
-        displayHelp(QUERY_FOR_NOUN_SUFFIXES);
-        break;
-      case R.id.verb_suffixes:
-        // Show "Verb Suffixes" screen.
-        displayHelp(QUERY_FOR_VERB_SUFFIXES);
-        break;
-      case R.id.sources:
-        // Show "Sources" screen.
-        displaySources();
-        break;
+    int itemId = item.getItemId();
+    if (itemId == R.id.pronunciation) {// Show "Pronunciation" screen.
+      displayHelp(QUERY_FOR_PRONUNCIATION);
+    } else if (itemId == R.id.prefixes) {// Show "Prefixes" screen.
+      displayHelp(QUERY_FOR_PREFIXES);
+    } else if (itemId == R.id.prefix_chart) {// Show "Prefix chart" screen.
+      displayPrefixChart();
+    } else if (itemId == R.id.noun_suffixes) {// Show "Noun Suffixes" screen.
+      displayHelp(QUERY_FOR_NOUN_SUFFIXES);
+    } else if (itemId == R.id.verb_suffixes) {// Show "Verb Suffixes" screen.
+      displayHelp(QUERY_FOR_VERB_SUFFIXES);
+    } else if (itemId == R.id.sources) {// Show "Sources" screen.
+      displaySources();
 
-        // Handle media.
-      case R.id.media_1:
-        launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_1_list_id));
-        break;
-      case R.id.media_2:
-        launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_2_list_id));
-        break;
-      case R.id.media_3:
-        launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_3_list_id));
-        break;
-      case R.id.media_4:
-        launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_4_list_id));
-        break;
-      case R.id.media_5:
-        launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_5_list_id));
-        break;
-      case R.id.media_6:
-        launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_6_list_id));
-        break;
+    // Handle media.
+    } else if (itemId == R.id.media_1) {
+      launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_1_list_id));
+    } else if (itemId == R.id.media_2) {
+      launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_2_list_id));
+    } else if (itemId == R.id.media_3) {
+      launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_3_list_id));
+    } else if (itemId == R.id.media_4) {
+      launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_4_list_id));
+    } else if (itemId == R.id.media_5) {
+      launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_5_list_id));
+    } else if (itemId == R.id.media_6) {
+      launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_6_list_id));
 
-        // Handle KLI activities here.
-      case R.id.kli_lessons:
-        launchExternal("http://www.kli.org/learn-klingon-online/");
-        break;
+    // Handle KLI activities here.
+    } else if (itemId == R.id.kli_lessons) {
+      launchExternal("http://www.kli.org/learn-klingon-online/");
+    } else if (itemId == R.id.kli_questions) {
+      launchExternal("http://www.kli.org/questions/categories/");
 
-      case R.id.kli_questions:
-        launchExternal("http://www.kli.org/questions/categories/");
-        break;
-
-        // This is disabled because the KLI channel requires an invite.
+      // This is disabled because the KLI channel requires an invite.
         /*
         case R.id.kli_discord:
           launchExternal("https://discordapp.com/channels/235416538927202304/");
           break;
           */
 
-        // Handle social networks.
+      // Handle social networks.
         /*
         case R.id.gplus:
           // Launch Google+ Klingon speakers community.
@@ -492,51 +477,38 @@ public class BaseActivity extends AppCompatActivity
           break;
         */
 
-        // Handle classes of phrases.
-      case R.id.empire_union_day:
-        displaySearchResults(QUERY_FOR_EMPIRE_UNION_DAY);
-        break;
-        /*
-         * case R.id.idioms: displaySearchResults(QUERY_FOR_IDIOMS); return true;
-         */
-      case R.id.curse_warfare:
-        displaySearchResults(QUERY_FOR_CURSE_WARFARE);
-        break;
-      case R.id.nentay:
-        displaySearchResults(QUERY_FOR_NENTAY);
-        break;
-        /*
-         * case R.id.proverbs: displaySearchResults(QUERY_FOR_PROVERBS); return true;
-         */
-      case R.id.military_celebration:
-        displaySearchResults(QUERY_FOR_QI_LOP);
-        break;
-      case R.id.rejection:
-        displaySearchResults(QUERY_FOR_REJECTION);
-        break;
-      case R.id.replacement_proverbs:
-        displaySearchResults(QUERY_FOR_REPLACEMENT_PROVERBS);
-        break;
-      case R.id.secrecy_proverbs:
-        displaySearchResults(QUERY_FOR_SECRECY_PROVERBS);
-        break;
-      case R.id.toasts:
-        displaySearchResults(QUERY_FOR_TOASTS);
-        break;
-      case R.id.lyrics:
-        displaySearchResults(QUERY_FOR_LYRICS);
-        break;
-      case R.id.beginners_conversation:
-        displaySearchResults(QUERY_FOR_BEGINNERS_CONVERSATION);
-        break;
-      case R.id.jokes:
-        displaySearchResults(QUERY_FOR_JOKES);
-        break;
+    // Handle classes of phrases.
+    } else if (itemId == R.id.empire_union_day) {
+      displaySearchResults(QUERY_FOR_EMPIRE_UNION_DAY);
+      /*
+       * case R.id.idioms: displaySearchResults(QUERY_FOR_IDIOMS); return true;
+       */
+    } else if (itemId == R.id.curse_warfare) {
+      displaySearchResults(QUERY_FOR_CURSE_WARFARE);
+    } else if (itemId == R.id.nentay) {
+      displaySearchResults(QUERY_FOR_NENTAY);
+      /*
+       * case R.id.proverbs: displaySearchResults(QUERY_FOR_PROVERBS); return true;
+       */
+    } else if (itemId == R.id.military_celebration) {
+      displaySearchResults(QUERY_FOR_QI_LOP);
+    } else if (itemId == R.id.rejection) {
+      displaySearchResults(QUERY_FOR_REJECTION);
+    } else if (itemId == R.id.replacement_proverbs) {
+      displaySearchResults(QUERY_FOR_REPLACEMENT_PROVERBS);
+    } else if (itemId == R.id.secrecy_proverbs) {
+      displaySearchResults(QUERY_FOR_SECRECY_PROVERBS);
+    } else if (itemId == R.id.toasts) {
+      displaySearchResults(QUERY_FOR_TOASTS);
+    } else if (itemId == R.id.lyrics) {
+      displaySearchResults(QUERY_FOR_LYRICS);
+    } else if (itemId == R.id.beginners_conversation) {
+      displaySearchResults(QUERY_FOR_BEGINNERS_CONVERSATION);
+    } else if (itemId == R.id.jokes) {
+      displaySearchResults(QUERY_FOR_JOKES);
 
-        // Lists.
-        // TODO: Handle lists here.
-
-      default:
+      // Lists.
+      // TODO: Handle lists here.
     }
 
     if (mDrawer != null) {
@@ -631,14 +603,12 @@ public class BaseActivity extends AppCompatActivity
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     // noinspection SimplifiableIfStatement
-    switch (item.getItemId()) {
-      case R.id.action_search:
-        onSearchRequested();
-        return true;
-      case android.R.id.home:
-        // TODO: Toggle menu.
-        // mDrawer.toggleMenu();
-        break;
+    int itemId = item.getItemId();
+    if (itemId == R.id.action_search) {
+      onSearchRequested();
+      return true;
+    } else if (itemId == android.R.id.home) {// TODO: Toggle menu.
+      // mDrawer.toggleMenu();
         /*
         case R.id.social_network:
           SharedPreferences sharedPrefs =
@@ -654,27 +624,69 @@ public class BaseActivity extends AppCompatActivity
           }
           break;
           */
-      case R.id.action_kwotd:
-        runKwotdServiceJob(/* isOneOffJob */ true);
-        return true;
-      case R.id.action_update_db:
-        runUpdateDatabaseServiceJob(/* isOneOffJob */ true);
-        return true;
-      case R.id.action_autotranslate:
-        displaySearchResults(QUERY_FOR_AUTOTRANSLATED_DEFINITIONS);
-        return true;
-      case R.id.about:
-        // Show "About" screen.
-        displayHelp(QUERY_FOR_ABOUT);
-        return true;
-      case R.id.preferences:
-        // Show "Preferences" screen.
-        startActivity(new Intent(this, Preferences.class));
-        return true;
-      default:
+    } else if (itemId == R.id.action_kwotd) {
+      requestPermissionForKwotdServiceJob(/* isOneOffJob */ true);
+      return true;
+    } else if (itemId == R.id.action_update_db) {
+      runUpdateDatabaseServiceJob(/* isOneOffJob */ true);
+      return true;
+    } else if (itemId == R.id.action_autotranslate) {
+      displaySearchResults(QUERY_FOR_AUTOTRANSLATED_DEFINITIONS);
+      return true;
+    } else if (itemId == R.id.about) {// Show "About" screen.
+      displayHelp(QUERY_FOR_ABOUT);
+      return true;
+    } else if (itemId == R.id.preferences) {// Show "Preferences" screen.
+      startActivity(new Intent(this, Preferences.class));
+      return true;
     }
 
     return super.onOptionsItemSelected(item);
+  }
+
+  // Register the permissions callbacks, which handles the user's response to the systems
+  // permissions dialog.
+  // TODO: Combine the one-off job and scheduled job callbacks somehow.
+  private ActivityResultLauncher<String> oneOffJobPermissionLauncher =
+      registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+          if (isGranted) {
+              runKwotdServiceJob(/* isOneOffJob */ true);
+          } else {
+              // The user requested KWOTD but also refused notifications permission. Explain to
+              // the user why this permission is needed.
+              Toast.makeText(
+                      this,
+                      getResources().getString(R.string.kwotd_requires_notifications_permission),
+                      Toast.LENGTH_LONG)
+                  .show();
+          }
+      });
+  private ActivityResultLauncher<String> scheduledJobPermissionLauncher  =
+      registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+          if (isGranted) {
+              runKwotdServiceJob(/* isOneOffJob */ false);
+          } else {
+              // The user has denied notifications permission, so turn off KWOTD.
+              SharedPreferences.Editor sharedPrefsEd =
+                  PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit();
+              sharedPrefsEd.putBoolean(Preferences.KEY_KWOTD_CHECKBOX_PREFERENCE, false);
+              sharedPrefsEd.apply();
+          }
+      });
+
+  protected void requestPermissionForKwotdServiceJob(boolean isOneOffJob) {
+    // Starting in API 33, it is necessary to request the POST_NOTIFICATIONS permission to display
+    // the KWOTD notification.
+
+    if (ContextCompat.checkSelfPermission(
+        getBaseContext(), Manifest.permission.POST_NOTIFICATIONS) ==
+            PackageManager.PERMISSION_GRANTED) {
+        runKwotdServiceJob(isOneOffJob);
+    } else if (isOneOffJob) {
+        oneOffJobPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+    } else {
+        scheduledJobPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+    }
   }
 
   // Helper method to run the KWOTD service job. If isOneOffJob is set to true,

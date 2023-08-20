@@ -165,7 +165,7 @@
         <string name="show_additional_information_preference_title">Show additional information</string>
         <string name="show_additional_information_preference_summary">Display detailed notes on puns, jokes, errors, etc.</string>
         <string name="kwotd_preference_title">KWOTD notification</string>
-        <string name="kwotd_preference_summary">Notify when new Klingon Word of the Day (KWOTD) is available from hol.kag.org server. This requires Internet access.</string>
+        <string name="kwotd_preference_summary">Notify when new Klingon Word of the Day (KWOTD) is available from hol.kag.org server. This requires Internet access and notifications permission.</string>
         <string name="update_db_preference_title">Update database online</string>
         <string name="update_db_preference_summary">Update database when new version is available from github.io server. This requires Internet access.</string>
       <string name="under_construction_preferences">Under construction</string>
@@ -262,6 +262,7 @@
     <!-- KWOTD notification. -->
     <string name="kwotd_footer"><![CDATA[Klingon Word of the Day brought to you by <b>Hol \'ampaS</b>]]></string>
     <string name="kwotd_requires_internet">KWOTD will be fetched when an Internet connection is available.</string>
+    <string name="kwotd_requires_notifications_permission">KWOTD requires notifications permission.</string>
     <string name="kwotd_fetching">Fetching KWOTD from KAG server...</string>
     <string name="kwotd_one_off_job_failed">Failed to fetch KWOTD from KAG server.</string>
     <string name="kwotd_notification_channel_name">Klingon Word of the Day</string>

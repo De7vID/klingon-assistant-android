@@ -16,6 +16,7 @@
 
 package org.tlhInganHol.android.klingonassistant;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -264,32 +265,29 @@ public class EntryActivity extends BaseActivity
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
-    switch (item.getItemId()) {
-      case R.id.action_speak:
-        // TTS:
-        if (!ttsInitialized) {
-          // The TTS engine is not installed (or disabled). Send user to Google Play Store or other
-          // market.
-          try {
-            launchExternal("market://details?id=org.tlhInganHol.android.klingonttsengine");
-          } catch (android.content.ActivityNotFoundException e) {
-            // Fall back to browser.
-            launchExternal(
-                "https://play.google.com/store/apps/details?id=org.tlhInganHol.android.klingonttsengine");
-          }
-        } else if (mEntry != null) {
-          // The TTS engine is working, and there's something to say, say it.
-          // Log.d(TAG, "Speaking");
-          // Toast.makeText(getBaseContext(), mEntry.getEntryName(), Toast.LENGTH_LONG).show();
-          mTts.speak(mEntry.getEntryName(), TextToSpeech.QUEUE_FLUSH, null);
+    int itemId = item.getItemId();
+    if (itemId == R.id.action_speak) {// TTS:
+      if (!ttsInitialized) {
+        // The TTS engine is not installed (or disabled). Send user to Google Play Store or other
+        // market.
+        try {
+          launchExternal("market://details?id=org.tlhInganHol.android.klingonttsengine");
+        } catch (ActivityNotFoundException e) {
+          // Fall back to browser.
+          launchExternal(
+                  "https://play.google.com/store/apps/details?id=org.tlhInganHol.android.klingonttsengine");
         }
-        return true;
-      case R.id.action_share:
-        // Share using the Android Sharesheet.
-        Intent shareIntent = Intent.createChooser(mShareEntryIntent, getResources().getString(R.string.share_popup_title));
-        startActivity(shareIntent);
-        return true;
-      default:
+      } else if (mEntry != null) {
+        // The TTS engine is working, and there's something to say, say it.
+        // Log.d(TAG, "Speaking");
+        // Toast.makeText(getBaseContext(), mEntry.getEntryName(), Toast.LENGTH_LONG).show();
+        mTts.speak(mEntry.getEntryName(), TextToSpeech.QUEUE_FLUSH, null);
+      }
+      return true;
+    } else if (itemId == R.id.action_share) {// Share using the Android Sharesheet.
+      Intent shareIntent = Intent.createChooser(mShareEntryIntent, getResources().getString(R.string.share_popup_title));
+      startActivity(shareIntent);
+      return true;
     }
 
     return super.onOptionsItemSelected(item);
@@ -455,16 +453,13 @@ public class EntryActivity extends BaseActivity
         new BottomNavigationView.OnNavigationItemSelectedListener() {
           @Override
           public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-              case R.id.action_previous:
-                goToPreviousEntry();
-                break;
-              case R.id.action_random:
-                goToRandomEntry();
-                break;
-              case R.id.action_next:
-                goToNextEntry();
-                break;
+            int itemId = item.getItemId();
+            if (itemId == R.id.action_previous) {
+              goToPreviousEntry();
+            } else if (itemId == R.id.action_random) {
+              goToRandomEntry();
+            } else if (itemId == R.id.action_next) {
+              goToNextEntry();
             }
             return false;
           }
