@@ -9,11 +9,11 @@ android {
     compileSdkVersion 33
     defaultConfig {
         applicationId "org.tlhInganHol.android.klingonassistant"
-        // We are targeting only Marshmallow and above.
-        minSdkVersion 23
+        // We are targeting only Tiramisu and above, since changes to the permission system are not backwards-compatible.
+        minSdkVersion 33
         targetSdkVersion 33
-        versionCode 571
-        versionName "2023.08.18a"
+        versionCode 573
+        versionName "2023.08.18b"
     }
     buildFeatures {
         buildConfig = true
