@@ -36,6 +36,7 @@ import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -877,7 +878,8 @@ public class KlingonContentProvider extends ContentProvider {
         if (!attr.equals("")) {
           attr += separator;
         }
-        attr += maybeItalics(mContext.getResources().getString(R.string.attribute_regional), isHtml);
+        attr +=
+            maybeItalics(mContext.getResources().getString(R.string.attribute_regional), isHtml);
       }
       if (mIsSlang) {
         if (!attr.equals("")) {
@@ -890,8 +892,7 @@ public class KlingonContentProvider extends ContentProvider {
         if (!attr.equals("")) {
           attr += separator;
         }
-        attr += maybeItalics(mContext.getResources().getString(R.string.pos_name),
-            isHtml);
+        attr += maybeItalics(mContext.getResources().getString(R.string.pos_name), isHtml);
       }
       if (!attr.equals("")) {
         if (isHtml) {
@@ -921,7 +922,10 @@ public class KlingonContentProvider extends ContentProvider {
       String entryName = getEntryNameInKlingonFont();
       SpannableStringBuilder ssb = new SpannableStringBuilder(entryName);
       Typeface klingonTypeface = KlingonAssistant.getKlingonFontTypeface(mContext);
-      ssb.setSpan(new KlingonTypefaceSpan("", klingonTypeface), 0, entryName.length(),
+      ssb.setSpan(
+          new KlingonTypefaceSpan("", klingonTypeface),
+          0,
+          entryName.length(),
           Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
       // TODO: Refactor and combine this with the logic in getFormattedEntryName().
@@ -937,8 +941,11 @@ public class KlingonContentProvider extends ContentProvider {
       if (mIsArchaic) {
         end = start + archaic.length();
         attr.append(archaic);
-        attr.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), start,
-            start + archaic.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        attr.setSpan(
+            new StyleSpan(android.graphics.Typeface.ITALIC),
+            start,
+            start + archaic.length(),
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         start = end;
       }
       if (mIsRegional) {
@@ -948,8 +955,11 @@ public class KlingonContentProvider extends ContentProvider {
         }
         end = start + regional.length();
         attr.append(regional);
-        attr.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), start, start +
-            regional.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        attr.setSpan(
+            new StyleSpan(android.graphics.Typeface.ITALIC),
+            start,
+            start + regional.length(),
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         start = end;
       }
       if (mIsSlang) {
@@ -959,8 +969,11 @@ public class KlingonContentProvider extends ContentProvider {
         }
         end = start + slang.length();
         attr.append(slang);
-        attr.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), start,
-            start + slang.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        attr.setSpan(
+            new StyleSpan(android.graphics.Typeface.ITALIC),
+            start,
+            start + slang.length(),
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         start = end;
       }
       // While whether an entry is a name isn't actually an attribute, treat it as one.
@@ -971,14 +984,20 @@ public class KlingonContentProvider extends ContentProvider {
         }
         end = start + name.length();
         attr.append(name);
-        attr.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), start,
-            start + name.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        attr.setSpan(
+            new StyleSpan(android.graphics.Typeface.ITALIC),
+            start,
+            start + name.length(),
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         start = end;
       }
       if (!attr.toString().equals("")) {
         attr.append(")");
         attr = new SpannableStringBuilder(" (").append(attr);
-        attr.setSpan(new RelativeSizeSpan(0.5f), 0, attr.toString().length(),
+        attr.setSpan(
+            new RelativeSizeSpan(0.5f),
+            0,
+            attr.toString().length(),
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         ssb.append(attr);
       }
@@ -998,24 +1017,24 @@ public class KlingonContentProvider extends ContentProvider {
       String pos = basePartOfSpeechAbbreviations[mBasePartOfSpeech.ordinal()];
       if (mBasePartOfSpeech == BasePartOfSpeechEnum.NOUN) {
         if (mNounType == NounType.NUMBER) {
-          pos =  mContext.getResources().getString(R.string.pos_number);
+          pos = mContext.getResources().getString(R.string.pos_number);
         } else if (mNounType == NounType.NAME) {
-          pos =  mContext.getResources().getString(R.string.pos_name);
+          pos = mContext.getResources().getString(R.string.pos_name);
         } else if (mNounType == NounType.PRONOUN) {
-          pos =  mContext.getResources().getString(R.string.pos_pronoun);
+          pos = mContext.getResources().getString(R.string.pos_pronoun);
         } else {
-          pos =  mContext.getResources().getString(R.string.pos_noun);
+          pos = mContext.getResources().getString(R.string.pos_noun);
         }
       } else if (mBasePartOfSpeech == BasePartOfSpeechEnum.VERB) {
-        pos =  mContext.getResources().getString(R.string.pos_verb);
+        pos = mContext.getResources().getString(R.string.pos_verb);
       } else if (mBasePartOfSpeech == BasePartOfSpeechEnum.ADVERBIAL) {
-        pos =  mContext.getResources().getString(R.string.pos_adv);
+        pos = mContext.getResources().getString(R.string.pos_adv);
       } else if (mBasePartOfSpeech == BasePartOfSpeechEnum.CONJUNCTION) {
-        pos =  mContext.getResources().getString(R.string.pos_conj);
+        pos = mContext.getResources().getString(R.string.pos_conj);
       } else if (mBasePartOfSpeech == BasePartOfSpeechEnum.QUESTION) {
-        pos =  mContext.getResources().getString(R.string.pos_ques);
+        pos = mContext.getResources().getString(R.string.pos_ques);
       } else if (mBasePartOfSpeech == BasePartOfSpeechEnum.EXCLAMATION) {
-        pos =  mContext.getResources().getString(R.string.pos_excl);
+        pos = mContext.getResources().getString(R.string.pos_excl);
       }
       return pos;
     }
@@ -1101,7 +1120,7 @@ public class KlingonContentProvider extends ContentProvider {
       }
       final String pos = getSpecificPartOfSpeech();
 
-      final String defn =  mContext.getResources().getString(R.string.homophone_number);
+      final String defn = mContext.getResources().getString(R.string.homophone_number);
       if (isHtml) {
         // This is used in the "results found" string.
         String bracketedPos = " <small>(<i>" + pos + "</i>)";
@@ -1961,8 +1980,8 @@ public class KlingonContentProvider extends ContentProvider {
             && mTransitivity == VerbTransitivityType.HAS_TYPE_5_NOUN_SUFFIX
             && (candidate.isPronoun()
                 || candidate.getTransitivity() == VerbTransitivityType.TRANSITIVE
-                || (candidate.getTransitivity() == VerbTransitivityType.INTRANSITIVE &&
-                    candidate.mTransitivityConfirmed))) {
+                || (candidate.getTransitivity() == VerbTransitivityType.INTRANSITIVE
+                    && candidate.mTransitivityConfirmed))) {
           return false;
         }
       }
@@ -2080,20 +2099,26 @@ public class KlingonContentProvider extends ContentProvider {
       "",
 
       // Since matching is greedy, compound number-forming elements have to come first.
-      "maH'uy'", "vatlhbIp",  // 10 000 000
-      "vatlh'uy'", "SaDbIp", "SanIDbIp",  // 100 000 000
-      "maHSaghan",  // 10 000 000 000
-      "vatlhSaghan", "bIp'uy'",  // 100 000 000 000
-      "SaDSaghan", "SanIDSaghan",  // 1 000 000 000 000
+      "maH'uy'",
+      "vatlhbIp", // 10 000 000
+      "vatlh'uy'",
+      "SaDbIp",
+      "SanIDbIp", // 100 000 000
+      "maHSaghan", // 10 000 000 000
+      "vatlhSaghan",
+      "bIp'uy'", // 100 000 000 000
+      "SaDSaghan",
+      "SanIDSaghan", // 1 000 000 000 000
 
       // Basic number-forming elements.
-      "maH",  // 10
-      "vatlh",  // 100
-      "SaD", "SanID",  // 1000
-      "netlh",  // 10 000
-      "bIp",  // 100 000
-      "'uy'",  // 1 000 000
-      "Saghan",  // 1 000 000 000
+      "maH", // 10
+      "vatlh", // 100
+      "SaD",
+      "SanID", // 1000
+      "netlh", // 10 000
+      "bIp", // 100 000
+      "'uy'", // 1 000 000
+      "Saghan", // 1 000 000 000
     };
     int mNumberDigit;
     int mNumberModifier;
@@ -2313,8 +2338,8 @@ public class KlingonContentProvider extends ContentProvider {
           // A suffix was successfully stripped if there's something left. Also, if the suffix had
           // been {-oy}, check that the noun doesn't end in a vowel. The suffix {-oy} preceded by a
           // vowel is handled separately in maybeStripApostropheOy.
-          if (!partWithSuffixRemoved.equals("") &&
-              (suffixes[i] != "oy" || !partWithSuffixRemoved.matches(".*[aeIou]"))) {
+          if (!partWithSuffixRemoved.equals("")
+              && (suffixes[i] != "oy" || !partWithSuffixRemoved.matches(".*[aeIou]"))) {
             ComplexWord anotherComplexWord = new ComplexWord(partWithSuffixRemoved, this);
             // mSuffixLevel already decremented above.
             anotherComplexWord.mSuffixLevel = mSuffixLevel;
@@ -2332,17 +2357,17 @@ public class KlingonContentProvider extends ContentProvider {
 
     // Special-case processing for the suffix {-oy} when preceded by a vowel.
     public ComplexWord maybeStripApostropheOy() {
-        if (mSuffixLevel == 1 && mIsNounCandidate && mUnparsedPart.endsWith("'oy")) {
-            // Remove "'oy" from the end.
-            String partWithSuffixRemoved = mUnparsedPart.substring(0, mUnparsedPart.length() - 3);
-            if (partWithSuffixRemoved.matches(".*[aeIou]")) {
-                ComplexWord anotherComplexWord = new ComplexWord(partWithSuffixRemoved, this);
-                anotherComplexWord.mSuffixLevel = 0;  // No more suffixes.
-                anotherComplexWord.mNounSuffixes[0] = 3;  // Index of "oy".
-                return anotherComplexWord;
-             }
+      if (mSuffixLevel == 1 && mIsNounCandidate && mUnparsedPart.endsWith("'oy")) {
+        // Remove "'oy" from the end.
+        String partWithSuffixRemoved = mUnparsedPart.substring(0, mUnparsedPart.length() - 3);
+        if (partWithSuffixRemoved.matches(".*[aeIou]")) {
+          ComplexWord anotherComplexWord = new ComplexWord(partWithSuffixRemoved, this);
+          anotherComplexWord.mSuffixLevel = 0; // No more suffixes.
+          anotherComplexWord.mNounSuffixes[0] = 3; // Index of "oy".
+          return anotherComplexWord;
         }
-        return null;
+      }
+      return null;
     }
 
     private boolean hasNoMoreSuffixes() {
@@ -2867,8 +2892,8 @@ public class KlingonContentProvider extends ContentProvider {
     // e.g., {ghu'oy} could be {ghu} + {-'oy} or {ghu'} + {-oy}.
     ComplexWord apostropheOyComplexWord = complexWord.maybeStripApostropheOy();
     if (apostropheOyComplexWord != null) {
-        // "'oy" was stripped, branch using it as a new candidate.
-        stripSuffix(apostropheOyComplexWord, complexWordsList);
+      // "'oy" was stripped, branch using it as a new candidate.
+      stripSuffix(apostropheOyComplexWord, complexWordsList);
     }
 
     // Attempt to strip one level of suffix.

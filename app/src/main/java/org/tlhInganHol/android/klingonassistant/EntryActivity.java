@@ -30,15 +30,18 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -266,7 +269,7 @@ public class EntryActivity extends BaseActivity
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     int itemId = item.getItemId();
-    if (itemId == R.id.action_speak) {// TTS:
+    if (itemId == R.id.action_speak) { // TTS:
       if (!ttsInitialized) {
         // The TTS engine is not installed (or disabled). Send user to Google Play Store or other
         // market.
@@ -275,7 +278,7 @@ public class EntryActivity extends BaseActivity
         } catch (ActivityNotFoundException e) {
           // Fall back to browser.
           launchExternal(
-                  "https://play.google.com/store/apps/details?id=org.tlhInganHol.android.klingonttsengine");
+              "https://play.google.com/store/apps/details?id=org.tlhInganHol.android.klingonttsengine");
         }
       } else if (mEntry != null) {
         // The TTS engine is working, and there's something to say, say it.
@@ -284,8 +287,10 @@ public class EntryActivity extends BaseActivity
         mTts.speak(mEntry.getEntryName(), TextToSpeech.QUEUE_FLUSH, null);
       }
       return true;
-    } else if (itemId == R.id.action_share) {// Share using the Android Sharesheet.
-      Intent shareIntent = Intent.createChooser(mShareEntryIntent, getResources().getString(R.string.share_popup_title));
+    } else if (itemId == R.id.action_share) { // Share using the Android Sharesheet.
+      Intent shareIntent =
+          Intent.createChooser(
+              mShareEntryIntent, getResources().getString(R.string.share_popup_title));
       startActivity(shareIntent);
       return true;
     }
@@ -479,9 +484,10 @@ public class EntryActivity extends BaseActivity
     FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
     // Show the "edit" button for secondary languages other than German, Portuguese, and Finnish,
     // but also show for these languages if unsupported features are enabled.
-    if (mEntry != null && !editLang.equals("NONE") &&
-        (showUnsupportedFeatures ||
-         (!editLang.equals("de") && !editLang.equals("pt") && !editLang.equals("fi")))) {
+    if (mEntry != null
+        && !editLang.equals("NONE")
+        && (showUnsupportedFeatures
+            || (!editLang.equals("de") && !editLang.equals("pt") && !editLang.equals("fi")))) {
       fab.setVisibility(View.VISIBLE);
       fab.setOnClickListener(
           new View.OnClickListener() {

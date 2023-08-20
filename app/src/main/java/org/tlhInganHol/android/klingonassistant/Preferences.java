@@ -37,7 +37,9 @@ import android.text.style.TypefaceSpan;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+
 import androidx.appcompat.widget.Toolbar;
+
 import java.util.Locale;
 
 public class Preferences extends AppCompatPreferenceActivity
@@ -218,31 +220,34 @@ public class Preferences extends AppCompatPreferenceActivity
         getPreferenceScreen().findPreference(KEY_DATA_CHANGELOG_BUTTON_PREFERENCE);
     dataChangelogButtonPreference.setOnPreferenceClickListener(
         new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(
-                    getBaseContext());
-                String installedVersion =
-                    sharedPrefs.getString(
-                        KlingonContentDatabase.KEY_INSTALLED_DATABASE_VERSION,
-                        /* default */ KlingonContentDatabase.getBundledDatabaseVersion());
-                launchExternal("https://github.com/De7vID/klingon-assistant-data/commits/master@{" +
-                    installedVersion + "}");
-                return true;
-            }
+          @Override
+          public boolean onPreferenceClick(Preference preference) {
+            SharedPreferences sharedPrefs =
+                PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+            String installedVersion =
+                sharedPrefs.getString(
+                    KlingonContentDatabase.KEY_INSTALLED_DATABASE_VERSION,
+                    /* default */ KlingonContentDatabase.getBundledDatabaseVersion());
+            launchExternal(
+                "https://github.com/De7vID/klingon-assistant-data/commits/master@{"
+                    + installedVersion
+                    + "}");
+            return true;
+          }
         });
     Preference codeChangelogButtonPreference =
         getPreferenceScreen().findPreference(KEY_CODE_CHANGELOG_BUTTON_PREFERENCE);
     codeChangelogButtonPreference.setOnPreferenceClickListener(
         new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                // The bundled database version is the app's built date.
-                launchExternal(
-                    "https://github.com/De7vID/klingon-assistant-android/commits/master@{" +
-                    KlingonContentDatabase.getBundledDatabaseVersion() + "}");
-                return true;
-            }
+          @Override
+          public boolean onPreferenceClick(Preference preference) {
+            // The bundled database version is the app's built date.
+            launchExternal(
+                "https://github.com/De7vID/klingon-assistant-android/commits/master@{"
+                    + KlingonContentDatabase.getBundledDatabaseVersion()
+                    + "}");
+            return true;
+          }
         });
   }
 

@@ -39,7 +39,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.fragment.app.Fragment;
+
 import java.util.regex.Matcher;
 
 public class EntryFragment extends Fragment {
@@ -183,7 +185,7 @@ public class EntryFragment extends Fragment {
         notes += "\n\n" + entry.getNotes();
       } else if (notes.equals("-")) {
         // If the non-English notes is just the string "-", this indicates that the display of
-        // notes should be suppressed. 
+        // notes should be suppressed.
         notes = "";
       }
     } else {
