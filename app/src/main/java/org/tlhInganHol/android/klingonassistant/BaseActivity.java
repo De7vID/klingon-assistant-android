@@ -51,6 +51,7 @@ import android.view.SubMenu;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
@@ -59,9 +60,12 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+
 import com.google.android.material.navigation.NavigationView;
+
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
+
 import org.tlhInganHol.android.klingonassistant.service.KwotdService;
 import org.tlhInganHol.android.klingonassistant.service.UpdateDatabaseService;
 
@@ -414,20 +418,20 @@ public class BaseActivity extends AppCompatActivity
     // Handle navigation view item clicks here.
 
     int itemId = item.getItemId();
-    if (itemId == R.id.pronunciation) {// Show "Pronunciation" screen.
+    if (itemId == R.id.pronunciation) { // Show "Pronunciation" screen.
       displayHelp(QUERY_FOR_PRONUNCIATION);
-    } else if (itemId == R.id.prefixes) {// Show "Prefixes" screen.
+    } else if (itemId == R.id.prefixes) { // Show "Prefixes" screen.
       displayHelp(QUERY_FOR_PREFIXES);
-    } else if (itemId == R.id.prefix_chart) {// Show "Prefix chart" screen.
+    } else if (itemId == R.id.prefix_chart) { // Show "Prefix chart" screen.
       displayPrefixChart();
-    } else if (itemId == R.id.noun_suffixes) {// Show "Noun Suffixes" screen.
+    } else if (itemId == R.id.noun_suffixes) { // Show "Noun Suffixes" screen.
       displayHelp(QUERY_FOR_NOUN_SUFFIXES);
-    } else if (itemId == R.id.verb_suffixes) {// Show "Verb Suffixes" screen.
+    } else if (itemId == R.id.verb_suffixes) { // Show "Verb Suffixes" screen.
       displayHelp(QUERY_FOR_VERB_SUFFIXES);
-    } else if (itemId == R.id.sources) {// Show "Sources" screen.
+    } else if (itemId == R.id.sources) { // Show "Sources" screen.
       displaySources();
 
-    // Handle media.
+      // Handle media.
     } else if (itemId == R.id.media_1) {
       launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_1_list_id));
     } else if (itemId == R.id.media_2) {
@@ -441,43 +445,43 @@ public class BaseActivity extends AppCompatActivity
     } else if (itemId == R.id.media_6) {
       launchYouTubePlaylist(getBaseContext().getResources().getString(R.string.media_6_list_id));
 
-    // Handle KLI activities here.
+      // Handle KLI activities here.
     } else if (itemId == R.id.kli_lessons) {
       launchExternal("http://www.kli.org/learn-klingon-online/");
     } else if (itemId == R.id.kli_questions) {
       launchExternal("http://www.kli.org/questions/categories/");
 
       // This is disabled because the KLI channel requires an invite.
-        /*
-        case R.id.kli_discord:
-          launchExternal("https://discordapp.com/channels/235416538927202304/");
-          break;
-          */
-
-      // Handle social networks.
-        /*
-        case R.id.gplus:
-          // Launch Google+ Klingon speakers community.
-          launchExternal("https://plus.google.com/communities/108380135139365833546");
-          break;
-
-        case R.id.facebook:
-          // Launch Facebook "Learn Klingon" group.
-          launchFacebook("LearnKlingon");
-          break;
-
-        case R.id.kag:
-          // Launch KAG Communications.
-          launchExternal("http://www.kag.org/groups/hol-ampas/forum/");
-          break;
-
-        case R.id.kidc:
-          // Launch KIDC's Klingon Imperial Forums.
-          launchExternal("http://www.klingon.org/smboard/index.php?board=6.0");
-          break;
+      /*
+      case R.id.kli_discord:
+        launchExternal("https://discordapp.com/channels/235416538927202304/");
+        break;
         */
 
-    // Handle classes of phrases.
+      // Handle social networks.
+      /*
+      case R.id.gplus:
+        // Launch Google+ Klingon speakers community.
+        launchExternal("https://plus.google.com/communities/108380135139365833546");
+        break;
+
+      case R.id.facebook:
+        // Launch Facebook "Learn Klingon" group.
+        launchFacebook("LearnKlingon");
+        break;
+
+      case R.id.kag:
+        // Launch KAG Communications.
+        launchExternal("http://www.kag.org/groups/hol-ampas/forum/");
+        break;
+
+      case R.id.kidc:
+        // Launch KIDC's Klingon Imperial Forums.
+        launchExternal("http://www.klingon.org/smboard/index.php?board=6.0");
+        break;
+      */
+
+      // Handle classes of phrases.
     } else if (itemId == R.id.empire_union_day) {
       displaySearchResults(QUERY_FOR_EMPIRE_UNION_DAY);
       /*
@@ -607,23 +611,23 @@ public class BaseActivity extends AppCompatActivity
     if (itemId == R.id.action_search) {
       onSearchRequested();
       return true;
-    } else if (itemId == android.R.id.home) {// TODO: Toggle menu.
+    } else if (itemId == android.R.id.home) { // TODO: Toggle menu.
       // mDrawer.toggleMenu();
-        /*
-        case R.id.social_network:
-          SharedPreferences sharedPrefs =
-              PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-          if (sharedPrefs
-              .getString(Preferences.KEY_SOCIAL_NETWORK_LIST_PREFERENCE, "gplus")
-              .equals("gplus")) {
-            // Launch Google+ Klingon speakers community.
-            launchExternal("https://plus.google.com/communities/108380135139365833546");
-          } else {
-            // Launch Facebook "Learn Klingon" group.
-            launchFacebook("LearnKlingon");
-          }
-          break;
-          */
+      /*
+      case R.id.social_network:
+        SharedPreferences sharedPrefs =
+            PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        if (sharedPrefs
+            .getString(Preferences.KEY_SOCIAL_NETWORK_LIST_PREFERENCE, "gplus")
+            .equals("gplus")) {
+          // Launch Google+ Klingon speakers community.
+          launchExternal("https://plus.google.com/communities/108380135139365833546");
+        } else {
+          // Launch Facebook "Learn Klingon" group.
+          launchFacebook("LearnKlingon");
+        }
+        break;
+        */
     } else if (itemId == R.id.action_kwotd) {
       requestPermissionForKwotdServiceJob(/* isOneOffJob */ true);
       return true;
@@ -633,10 +637,10 @@ public class BaseActivity extends AppCompatActivity
     } else if (itemId == R.id.action_autotranslate) {
       displaySearchResults(QUERY_FOR_AUTOTRANSLATED_DEFINITIONS);
       return true;
-    } else if (itemId == R.id.about) {// Show "About" screen.
+    } else if (itemId == R.id.about) { // Show "About" screen.
       displayHelp(QUERY_FOR_ABOUT);
       return true;
-    } else if (itemId == R.id.preferences) {// Show "Preferences" screen.
+    } else if (itemId == R.id.preferences) { // Show "Preferences" screen.
       startActivity(new Intent(this, Preferences.class));
       return true;
     }
@@ -648,10 +652,12 @@ public class BaseActivity extends AppCompatActivity
   // permissions dialog.
   // TODO: Combine the one-off job and scheduled job callbacks somehow.
   private ActivityResultLauncher<String> oneOffJobPermissionLauncher =
-      registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-          if (isGranted) {
+      registerForActivityResult(
+          new ActivityResultContracts.RequestPermission(),
+          isGranted -> {
+            if (isGranted) {
               runKwotdServiceJob(/* isOneOffJob */ true);
-          } else {
+            } else {
               // The user requested KWOTD but also refused notifications permission. Explain to
               // the user why this permission is needed.
               Toast.makeText(
@@ -659,43 +665,46 @@ public class BaseActivity extends AppCompatActivity
                       getResources().getString(R.string.kwotd_requires_notifications_permission),
                       Toast.LENGTH_LONG)
                   .show();
-          }
-      });
-  private ActivityResultLauncher<String> scheduledJobPermissionLauncher  =
-      registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-          if (isGranted) {
+            }
+          });
+  private ActivityResultLauncher<String> scheduledJobPermissionLauncher =
+      registerForActivityResult(
+          new ActivityResultContracts.RequestPermission(),
+          isGranted -> {
+            if (isGranted) {
               runKwotdServiceJob(/* isOneOffJob */ false);
-          } else {
+            } else {
               // The user has denied notifications permission, so turn off KWOTD if it is on, and
               // inform the user.
-              SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-              if (sharedPrefs.getBoolean(Preferences.KEY_KWOTD_CHECKBOX_PREFERENCE, /* default */ true)) {
-                  SharedPreferences.Editor sharedPrefsEd =
-                      PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit();
-                  sharedPrefsEd.putBoolean(Preferences.KEY_KWOTD_CHECKBOX_PREFERENCE, false);
-                  sharedPrefsEd.apply();
+              SharedPreferences sharedPrefs =
+                  PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+              if (sharedPrefs.getBoolean(
+                  Preferences.KEY_KWOTD_CHECKBOX_PREFERENCE, /* default */ true)) {
+                SharedPreferences.Editor sharedPrefsEd =
+                    PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit();
+                sharedPrefsEd.putBoolean(Preferences.KEY_KWOTD_CHECKBOX_PREFERENCE, false);
+                sharedPrefsEd.apply();
 
-                  Toast.makeText(
-                          this,
-                          getResources().getString(R.string.kwotd_requires_notifications_permission),
-                          Toast.LENGTH_LONG)
-                      .show();
+                Toast.makeText(
+                        this,
+                        getResources().getString(R.string.kwotd_requires_notifications_permission),
+                        Toast.LENGTH_LONG)
+                    .show();
               }
-          }
-      });
+            }
+          });
 
   protected void requestPermissionForKwotdServiceJob(boolean isOneOffJob) {
     // Starting in API 33, it is necessary to request the POST_NOTIFICATIONS permission to display
     // the KWOTD notification.
 
-    if (ContextCompat.checkSelfPermission(
-        getBaseContext(), Manifest.permission.POST_NOTIFICATIONS) ==
-            PackageManager.PERMISSION_GRANTED) {
-        runKwotdServiceJob(isOneOffJob);
+    if (ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.POST_NOTIFICATIONS)
+        == PackageManager.PERMISSION_GRANTED) {
+      runKwotdServiceJob(isOneOffJob);
     } else if (isOneOffJob) {
-        oneOffJobPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+      oneOffJobPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
     } else {
-        scheduledJobPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+      scheduledJobPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
     }
   }
 

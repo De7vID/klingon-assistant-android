@@ -23,6 +23,7 @@ import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -32,6 +33,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipInputStream;
+
 import org.json.JSONObject;
 import org.tlhInganHol.android.klingonassistant.KlingonContentDatabase;
 

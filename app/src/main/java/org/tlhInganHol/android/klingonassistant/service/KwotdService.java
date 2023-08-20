@@ -39,12 +39,14 @@ import android.text.Spanned;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import org.json.JSONObject;
 import org.tlhInganHol.android.klingonassistant.EntryActivity;
 import org.tlhInganHol.android.klingonassistant.KlingonAssistant;
@@ -324,8 +326,10 @@ public class KwotdService extends JobService {
                 .setAutoCancel(true);
         PendingIntent pendingIntent =
             PendingIntent.getActivity(
-                KwotdService.this, 0, entryIntent, PendingIntent.FLAG_UPDATE_CURRENT |
-                PendingIntent.FLAG_IMMUTABLE);
+                KwotdService.this,
+                0,
+                entryIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         builder.setContentIntent(pendingIntent);
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 

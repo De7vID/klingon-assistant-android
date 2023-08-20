@@ -31,6 +31,7 @@ import android.preference.PreferenceManager;
 import android.provider.BaseColumns;
 import android.util.Log;
 import android.widget.Toast;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -393,8 +394,8 @@ public class KlingonContentDatabase {
         .trim();
   }
 
-  private boolean IsPotentialComplexWordOrSentence(KlingonContentProvider.Entry queryEntry,
-      String query) {
+  private boolean IsPotentialComplexWordOrSentence(
+      KlingonContentProvider.Entry queryEntry, String query) {
     // If the POS is unknown and the query is greater than 4 characters, try to parse it
     // as a complex word or sentence. Most queries of 4 characters or fewer are not complex,
     // so for efficiency reasons we don't try to parse them, but there are a few exceptional
@@ -408,7 +409,7 @@ public class KlingonContentDatabase {
       // complex word. This check needs to be updated whenever a 2-letter verb is added to the
       // database.
       if (query.length() == 4) {
-        switch(query.substring(2,4)) {
+        switch (query.substring(2, 4)) {
           case "Da":
           case "lu":
           case "Qa":

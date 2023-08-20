@@ -41,6 +41,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TwoLineListItem;
+
 import java.util.Locale;
 
 /**
@@ -264,9 +265,10 @@ public class KlingonAssistant extends BaseActivity {
           PreferenceManager.getDefaultSharedPreferences(getBaseContext());
       if (Preferences.useKlingonFont(getBaseContext())) {
         // Preference is set to display this in {pIqaD}!
-        view.getText1().setText(
-            new SpannableStringBuilder(Html.fromHtml(indent1)).append(
-                entry.getFormattedEntryNameInKlingonFont()));
+        view.getText1()
+            .setText(
+                new SpannableStringBuilder(Html.fromHtml(indent1))
+                    .append(entry.getFormattedEntryNameInKlingonFont()));
       } else {
         // Use serif for the entry, so capital-I and lowercase-l are distinguishable.
         view.getText1().setTypeface(Typeface.SERIF);
@@ -337,9 +339,12 @@ public class KlingonAssistant extends BaseActivity {
     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
     KlingonContentProvider.Entry queryEntry =
         new KlingonContentProvider.Entry(query, getBaseContext());
-    boolean qWillBeRemapped = queryEntry.getEntryName().indexOf('q') != -1 &&
-            sharedPrefs.getBoolean(Preferences.KEY_XIFAN_HOL_CHECKBOX_PREFERENCE, /* default */ false) &&
-            sharedPrefs.getBoolean(Preferences.KEY_SWAP_QS_CHECKBOX_PREFERENCE, /* default */ false);
+    boolean qWillBeRemapped =
+        queryEntry.getEntryName().indexOf('q') != -1
+            && sharedPrefs.getBoolean(
+                Preferences.KEY_XIFAN_HOL_CHECKBOX_PREFERENCE, /* default */ false)
+            && sharedPrefs.getBoolean(
+                Preferences.KEY_SWAP_QS_CHECKBOX_PREFERENCE, /* default */ false);
     String entryNameWithPoS =
         queryEntry.getEntryName() + queryEntry.getBracketedPartOfSpeech(/* isHtml */ true);
     if (!overrideXifanHol && qWillBeRemapped) {
@@ -384,7 +389,7 @@ public class KlingonAssistant extends BaseActivity {
         // is currently enabled by the user with q mapped to Q, then we ensure that if the user
         // edits the search query, that it performs a search with "xifan hol" overridden again.
         if (overrideXifanHol && qWillBeRemapped) {
-            mPrepopulatedQuery = "+" + mPrepopulatedQuery;
+          mPrepopulatedQuery = "+" + mPrepopulatedQuery;
         }
       }
       mTextView.setText(Html.fromHtml(countString));
