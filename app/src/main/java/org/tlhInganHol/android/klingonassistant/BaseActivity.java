@@ -666,11 +666,21 @@ public class BaseActivity extends AppCompatActivity
           if (isGranted) {
               runKwotdServiceJob(/* isOneOffJob */ false);
           } else {
-              // The user has denied notifications permission, so turn off KWOTD.
-              SharedPreferences.Editor sharedPrefsEd =
-                  PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit();
-              sharedPrefsEd.putBoolean(Preferences.KEY_KWOTD_CHECKBOX_PREFERENCE, false);
-              sharedPrefsEd.apply();
+              // The user has denied notifications permission, so turn off KWOTD if it is on, and
+              // inform the user.
+              SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+              if (sharedPrefs.getBoolean(Preferences.KEY_KWOTD_CHECKBOX_PREFERENCE, /* default */ true)) {
+                  SharedPreferences.Editor sharedPrefsEd =
+                      PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit();
+                  sharedPrefsEd.putBoolean(Preferences.KEY_KWOTD_CHECKBOX_PREFERENCE, false);
+                  sharedPrefsEd.apply();
+
+                  Toast.makeText(
+                          this,
+                          getResources().getString(R.string.kwotd_requires_notifications_permission),
+                          Toast.LENGTH_LONG)
+                      .show();
+              }
           }
       });
 
