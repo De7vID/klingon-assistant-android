@@ -25,6 +25,9 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!-- Needed in API 33 to show the KWOTD notification. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <!-- Needed in API 30 to query the TTS. -->
     <queries>
         <package android:name="org.tlhInganHol.android.klingonttsengine" />
