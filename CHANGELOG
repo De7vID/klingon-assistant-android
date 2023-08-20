@@ -1,5 +1,6 @@
 CHANGELOG
 
+2023-08-20: Set target and compile SDK to API 33. Add notifications permission to app and upgrade gradle to 8.1, both of which are required for API 33.
 2022-08-12: Migrate from support library to androidx. This is a major (and backwards-incompatible) change.
 2022-06-22: Remove QUERY_ALL_PACKAGES permission. Turn off suggestions in search bar. Add parsing of compound number-forming elements.
 2021-11-09: Add {Qa} to two-letter verb shortlist. New vocabulary from {QelIS boqHarmey}.
