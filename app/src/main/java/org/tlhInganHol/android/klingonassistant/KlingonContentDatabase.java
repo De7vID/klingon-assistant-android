@@ -1209,7 +1209,7 @@ public class KlingonContentDatabase {
   /**
    * Returns a cursor for one entry given its _id.
    *
-   * @param entryName The name of the entry to search for
+   * @param entryId The ID of the entry to search for
    * @param columns The columns to include, if null then all are included
    * @return Cursor over all entries that match, or null if none found.
    */
