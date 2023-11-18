@@ -482,8 +482,9 @@ public class EntryActivity extends BaseActivity
         sharedPrefs.getBoolean(
             Preferences.KEY_SHOW_UNSUPPORTED_FEATURES_CHECKBOX_PREFERENCE, /* default */ false);
     FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    // Show the "edit" button for secondary languages other than German, Portuguese, and Finnish,
-    // but also show for these languages if unsupported features are enabled.
+    // Show the "edit" button for secondary languages other than German, Portuguese, and Finnish
+    // (as these are complete except for the addition of new words), but also show for these
+    // languages if unsupported features are enabled.
     if (mEntry != null
         && !editLang.equals("NONE")
         && (showUnsupportedFeatures
@@ -515,6 +516,9 @@ public class EntryActivity extends BaseActivity
                   break;
                 case "fi":
                   definitionTranslation = mEntry.getDefinition_FI();
+                  break;
+                case "fr":
+                  definitionTranslation = mEntry.getDefinition_FR();
                   break;
               }
               // Open a form with fields filled in.

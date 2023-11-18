@@ -44,6 +44,7 @@
     <item>@string/secondary_language_russian</item>
     <item>@string/secondary_language_chinese_hong_kong</item>
     <item>@string/secondary_language_persian</item>
+    <item>@string/secondary_language_french</item>
   </string-array>
 
   <string-array name="secondaryLanguageChoicesValues">
@@ -55,5 +56,6 @@
     <item>ru</item>
     <item>zh-HK</item>
     <item>fa</item>
+    <item>fr</item>
   </string-array>
 </resources>

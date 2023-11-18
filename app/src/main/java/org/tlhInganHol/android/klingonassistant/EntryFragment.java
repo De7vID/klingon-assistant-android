@@ -141,6 +141,7 @@ public class EntryFragment extends Fragment {
       String definition_ZH_HK = entry.getDefinition_ZH_HK();
       String definition_PT = entry.getDefinition_PT();
       String definition_FI = entry.getDefinition_FI();
+      String definition_FR = entry.getDefinition_FR();
 
       // Show the other-language definition here only if it isn't already shown as the primary
       // definition (and the experimental flag is set to true).
@@ -165,6 +166,9 @@ public class EntryFragment extends Fragment {
       }
       if (!definition_FI.equals("") && !definition_FI.equals(otherLanguageDefinition)) {
         expandedDefinition += "\nfi: " + definition_FI;
+      }
+      if (!definition_FR.equals("") && !definition_FR.equals(otherLanguageDefinition)) {
+        expandedDefinition += "\nfr: " + definition_FR;
       }
     }
 

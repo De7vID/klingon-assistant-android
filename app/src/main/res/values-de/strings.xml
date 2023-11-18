@@ -170,6 +170,7 @@
     <string name="secondary_language_chinese_hong_kong">Hong Kong Chinesisch (beta)</string>
     <string name="secondary_language_portuguese">Portugiesisch</string>
     <string name="secondary_language_finnish">Finnisch</string>
+    <string name="secondary_language_french">Französisch (beta)</string>
 
     <!-- Metadata labels and descriptions. -->
     <string name="label_see_alt_entry">Siehe</string>

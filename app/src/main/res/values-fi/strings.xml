@@ -193,6 +193,7 @@
     <string name="secondary_language_chinese_hong_kong">Hong Kongin kiina (beta)</string>
     <string name="secondary_language_portuguese">portugali</string>
     <string name="secondary_language_finnish">suomi</string>
+    <string name="secondary_language_french">ranska (beta)</string>
 
     <!-- Entry parts of speech and attributes. -->
     <string name="pos_noun">subs</string>
