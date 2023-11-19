@@ -13,7 +13,7 @@ android {
         minSdkVersion 33
         targetSdkVersion 33
         versionCode 573
-        versionName "2023.08.18b"
+        versionName "2023.11.20a"
     }
     buildFeatures {
         buildConfig = true

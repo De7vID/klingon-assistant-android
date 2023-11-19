@@ -195,6 +195,7 @@
     <string name="secondary_language_chinese_hong_kong">Hong Kong Chinese (beta)</string>
     <string name="secondary_language_portuguese">Portuguese</string>
     <string name="secondary_language_finnish">Finnish</string>
+    <string name="secondary_language_french">French (beta)</string>
 
     <!-- Entry parts of speech and attributes. -->
     <string name="pos_noun">n</string>

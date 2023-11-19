@@ -104,6 +104,8 @@ public class Preferences extends AppCompatPreferenceActivity
       return "pt";
     } else if (language == new Locale("fi").getLanguage()) {
       return "fi";
+    } else if (language == Locale.FRENCH.getLanguage()) {
+      return "fr";
     }
     return "NONE";
   }

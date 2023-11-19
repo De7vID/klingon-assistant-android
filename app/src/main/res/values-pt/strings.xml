@@ -159,6 +159,7 @@
     <string name="secondary_language_chinese_hong_kong">chinês de Hong Kong (beta)</string>
     <string name="secondary_language_portuguese">português</string>
     <string name="secondary_language_finnish">finlandês</string>
+    <string name="secondary_language_french">francesa (beta)</string>
 
     <!-- Metadata labels and descriptions. -->
     <string name="label_see_alt_entry">Veja</string>
