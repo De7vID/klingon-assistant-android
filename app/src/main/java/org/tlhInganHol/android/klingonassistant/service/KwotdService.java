@@ -265,6 +265,7 @@ public class KwotdService extends JobService {
                       + "/get_entry_by_id/"
                       + cursor.getString(KlingonContentDatabase.COLUMN_ID));
           entryIntent = new Intent(KwotdService.this, EntryActivity.class);
+          entryIntent.setAction(Intent.ACTION_VIEW);
           entryIntent.setData(uri);
 
           entry = new KlingonContentProvider.Entry(cursor, KwotdService.this);

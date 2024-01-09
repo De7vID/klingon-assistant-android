@@ -555,6 +555,7 @@ public class EntryActivity extends BaseActivity
       Intent entryIntent = new Intent(this, EntryActivity.class);
 
       // Form the URI for the entry.
+      entryIntent.setAction(Intent.ACTION_VIEW);
       entryIntent.setData(uri);
 
       return entryIntent;
@@ -571,6 +572,7 @@ public class EntryActivity extends BaseActivity
   private void goToRandomEntry() {
     Uri uri = Uri.parse(KlingonContentProvider.CONTENT_URI + "/get_random_entry");
     Intent randomEntryIntent = new Intent(this, EntryActivity.class);
+    randomEntryIntent.setAction(Intent.ACTION_VIEW);
     randomEntryIntent.setData(uri);
     startActivity(randomEntryIntent);
   }

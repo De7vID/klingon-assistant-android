@@ -808,6 +808,7 @@ public class KlingonContentProvider extends ContentProvider {
           mIsExtendedCanon = true;
         } else if (attr.equals("nolink")) {
           mDoNotLink = true;
+
         } else if (attr.equals("noanki")) {
           // This is an attribute which does not appear in the database and is not used by this app.
           // It's used by the export_to_anki.py script to exclude entries which should be skipped
@@ -820,6 +821,9 @@ public class KlingonContentProvider extends ContentProvider {
           // This is an attribute which does not appear in the database and is not used by this app.
           // It's used by the export_to_anki.py script to tag KLCP1 (Klingon Language Certification
           // Program level 1) vocabulary.
+        } else if (attr.equals("terran")) {
+          // This is an attribute which does not appear in the database and is not used by this app.
+          // It's used to tag Terran loanwords so they can be grouped separatedly.
 
           // We have only a few homophonous entries.
         } else if (attr.equals("1")) {
