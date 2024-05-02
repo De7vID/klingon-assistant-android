@@ -9,7 +9,8 @@ android {
     compileSdkVersion 33
     defaultConfig {
         applicationId "org.tlhInganHol.android.klingonassistant"
-        // We are targeting only Tiramisu and above, since changes to the permission system are not backwards-compatible.
+        // Target only Tiramisu (33) and above on the Google Play Store, since changes to the permission system are not backwards-compatible.
+        // On the Amazon Appstore, target Marshmallow (23) and above.
         minSdkVersion 33
         targetSdkVersion 33
         versionCode 575
