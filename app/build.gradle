@@ -6,15 +6,15 @@ keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
     namespace "org.tlhInganHol.android.klingonassistant"
-    compileSdkVersion 33
+    compileSdkVersion 34
     defaultConfig {
         applicationId "org.tlhInganHol.android.klingonassistant"
         // Target only Tiramisu (33) and above on the Google Play Store, since changes to the permission system are not backwards-compatible.
         // On the Amazon Appstore, target Marshmallow (23) and above.
-        minSdkVersion 33
-        targetSdkVersion 33
-        versionCode 575
-        versionName "2023.11.20b"
+        minSdkVersion 34
+        targetSdkVersion 34
+        versionCode 577
+        versionName "2024.07.14a"
     }
     buildFeatures {
         buildConfig = true
