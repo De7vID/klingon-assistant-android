@@ -1,5 +1,6 @@
 CHANGELOG
 
+2024-07-29: New vocabulary from qep'a' 31 (2024).
 2024-07-14: Set target, compile, and min SDK to API 34. Required by Google Play.
 2023-11-20: Add support for French (fr) language.
 2023-08-20: Set target, compile, and min SDK to API 33. Add notifications permission to app and upgrade gradle to 8.1, both of which are required for API 33. Split off API_23 branch, as the new permissions system is not backwards-compatible.
