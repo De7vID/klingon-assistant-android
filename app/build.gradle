@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'eclipse'
 
 def keystorePropertiesFile = rootProject.file("../keystore.properties")
 def keystoreProperties = new Properties()
@@ -41,6 +42,15 @@ android {
         }
     }
 }
+
+// First, open any source Java file (with the following line commentd out) to
+// run jdtls and generate the project files, including app/.classpath. Next,
+// add a kind "src" pointing to "src/main/java" and a kind "lib" pointing to
+// "$ANDROID_HOME/platforms/android-xx/android.jar" to app/.classpath. Finally,
+// uncomment the following line to prevent buildship from clobbering the
+// app/.classpath file when opening a source Java file.
+// TODO: There has to be a better way to do this!
+// eclipse.classpath.break_buildship = true
 
 allprojects {
     repositories {
