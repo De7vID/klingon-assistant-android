@@ -187,16 +187,16 @@ public class KwotdService extends JobService {
           // Log.d(TAG, object.toString());
 
           // Note that JSONException is thrown if a mapping doesn't exist.
-          kword = object.getString("kword");
-          type = object.getString("type");
-          eword = object.getString("eword");
+          kword = object.getString("kword").trim();
+          type = object.getString("type").trim();
+          eword = object.getString("eword").trim();
         } else {
           // Log.d(TAG, data);
           Matcher m = KWOTD_RSS_PATTERN.matcher(data);
           if (m.find()) {
-            kword = m.group(1);
-            type = m.group(2);
-            eword = m.group(3);
+            kword = m.group(1).trim();
+            type = m.group(2).trim();
+            eword = m.group(3).trim();
           } else {
             throw new IOException("Failed to extract data from RSS: " + sb.toString());
           }
