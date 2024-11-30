@@ -460,11 +460,6 @@ public class BaseActivity extends AppCompatActivity
 
       // Handle social networks.
       /*
-      case R.id.gplus:
-        // Launch Google+ Klingon speakers community.
-        launchExternal("https://plus.google.com/communities/108380135139365833546");
-        break;
-
       case R.id.facebook:
         // Launch Facebook "Learn Klingon" group.
         launchFacebook("LearnKlingon");
@@ -614,19 +609,9 @@ public class BaseActivity extends AppCompatActivity
     } else if (itemId == android.R.id.home) { // TODO: Toggle menu.
       // mDrawer.toggleMenu();
       /*
-      case R.id.social_network:
-        SharedPreferences sharedPrefs =
-            PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        if (sharedPrefs
-            .getString(Preferences.KEY_SOCIAL_NETWORK_LIST_PREFERENCE, "gplus")
-            .equals("gplus")) {
-          // Launch Google+ Klingon speakers community.
-          launchExternal("https://plus.google.com/communities/108380135139365833546");
-        } else {
-          // Launch Facebook "Learn Klingon" group.
-          launchFacebook("LearnKlingon");
-        }
-        break;
+      } else if (itemId == R.id.social_network) {
+        // Launch Facebook "Learn Klingon" group.
+        launchFacebook("LearnKlingon");
         */
     } else if (itemId == R.id.action_kwotd) {
       requestPermissionForKwotdServiceJob(/* isOneOffJob */ true);
