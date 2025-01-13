@@ -289,8 +289,9 @@ public class KlingonContentProvider extends ContentProvider {
 
   public static String convertStringToKlingonFont(String s) {
     // Strip anything we don't recognise.
-    // This pattern should be kept mostly in sync with ENTRY_PATTERN. Note that "ü" and "+" will
-    // never be in an entry name.
+    // This pattern should be kept in sync with ENTRY_PATTERN, with one
+    // exception: "ü" can appear in a source name (because of "Saarbrücken"),
+    // but will never be in an entry name.
     String klingonString = s.replaceAll("[^A-Za-z0-9 '\\\":;,\\.\\-?!_/()@=%&\\*]", "");
 
     // This is a hack: change the separators between words and their affixes.
@@ -364,10 +365,9 @@ public class KlingonContentProvider extends ContentProvider {
     // The logging tag can be at most 23 characters. "KlingonContentProvider.Entry" was too long.
     String TAG = "KCP.Entry";
 
-    // Pattern for matching entry in text. The letter "ü" is needed to match "Saarbrücken". The "+"
-    // is needed for "Google+".
+    // Pattern for matching entry in text. The letter "ü" is needed to match "Saarbrücken".
     public static Pattern ENTRY_PATTERN =
-        Pattern.compile("\\{[A-Za-zü0-9 '\\\":;,\\.\\-?!_/()@=%&\\*\\+]+\\}");
+        Pattern.compile("\\{[A-Za-zü0-9 '\\\":;,\\.\\-?!_/()@=%&\\*]+\\}");
 
     // Used for analysis of entries with components.
     // It cannot occur in a link (we cannot use "//" for example because it occurs in URL links,

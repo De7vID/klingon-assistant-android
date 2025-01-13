@@ -7,6 +7,9 @@ build/
 captures/
 .externalNativeBuild
 
+# Virtual environment.
+.venv
+
 # Don't store the binary of the database.
 app/src/main/assets/qawHaq.db
 
