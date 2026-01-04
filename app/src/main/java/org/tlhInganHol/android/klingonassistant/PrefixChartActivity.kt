@@ -14,39 +14,33 @@
  * limitations under the License.
  */
 
-package org.tlhInganHol.android.klingonassistant;
+package org.tlhInganHol.android.klingonassistant
 
-import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.widget.TextView;
+import android.os.Bundle
+import android.widget.TextView
 
 /** Displays the prefix chart. */
-public class PrefixChartActivity extends BaseActivity {
-  // private static final String TAG = "PrefixChartActivity";
+class PrefixChartActivity : BaseActivity() {
+    // private val TAG = "PrefixChartActivity"
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    setDrawerContentView(R.layout.prefix_chart);
+        setDrawerContentView(R.layout.prefix_chart)
 
-    Resources resources = getResources();
-    TextView entryTitle = (TextView) findViewById(R.id.entry_title);
+        val resources = resources
+        val entryTitle = findViewById<TextView>(R.id.entry_title)
 
-    // Set the title.
-    entryTitle.invalidate();
-    if (Preferences.useKlingonUI(getBaseContext())
-        && Preferences.useKlingonFont(getBaseContext())) {
-      // Klingon (in {pIqaD}).
-      entryTitle.setTypeface(KlingonAssistant.getKlingonFontTypeface(getBaseContext()));
-      entryTitle.setText(
-          KlingonContentProvider.convertStringToKlingonFont(
-              resources.getString(R.string.menu_prefix_chart)));
-    } else {
-      entryTitle.setText(resources.getString(R.string.menu_prefix_chart));
+        // Set the title.
+        entryTitle.invalidate()
+        if (Preferences.useKlingonUI(baseContext) && Preferences.useKlingonFont(baseContext)) {
+            // Klingon (in {pIqaD}).
+            entryTitle.typeface = KlingonAssistant.getKlingonFontTypeface(baseContext)
+            entryTitle.text = KlingonContentProvider.convertStringToKlingonFont(
+                resources.getString(R.string.menu_prefix_chart)
+            )
+        } else {
+            entryTitle.text = resources.getString(R.string.menu_prefix_chart)
+        }
     }
-  }
 }
