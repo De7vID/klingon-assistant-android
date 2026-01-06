@@ -206,7 +206,7 @@ public class KlingonContentDatabase {
 
   // This should be kept in sync with the version number in the data/VERSION
   // file used to generate the database which is bundled into the app.
-  private static final int BUNDLED_DATABASE_VERSION = 202508160;
+  private static final int BUNDLED_DATABASE_VERSION = 202601030;
 
   // Metadata about the installed database, and the updated database, if any.
   public static final String KEY_INSTALLED_DATABASE_VERSION = "installed_database_version";
@@ -349,11 +349,11 @@ public class KlingonContentDatabase {
         // At this point, "ngH" is definitely {ng} + {H}, but "ngh" might be either {n} + {gh} or
         // {ng} + {H}. Furthermore, "ng" might be {ng} or {n} + {gh}.
         // These are the possible words with {n} + {gh}: {nenghep}, {QIngheb}, {tlhonghaD}
-        // These are the possible words with {ng} + {H}: {chungHa'wI'}, {mangHom}, {qengHoD},
-        // {tungHa'}, {vengHom}. Instead of checking both, cheat by hardcoding the possibilities.
-        // This means this code has to be updated whenever an entry with {ngH} or {ngh} is
-        // added to the database.
-        .replaceAll("(chung|mang|qeng|tung|veng)h", "$1H")
+        // These are the possible words with {ng} + {H}: {chungHa'wI'}, {mangHom}, {ngengHom},
+        // {qengHoD}, {tungHa'}, {vengHom}. Instead of checking both, cheat by hardcoding the
+        // possibilities. This means this code has to be updated whenever an entry with {ngH} or
+        // {ngh} is added to the database.
+        .replaceAll("(chung|mang|ngeng|qeng|tung|veng)h", "$1H")
         .replaceAll("Hanguq", "Hanghuq")
         .replaceAll("nengep", "nenghep")
         .replaceAll("QIngeb", "QIngheb")

@@ -19,6 +19,9 @@ app/src/main/assets/qawHaq.db
 # Local configuration file (sdk path, etc)
 local.properties
 
+# Produced by Kotlin Language Server
+kls_database.db
+
 # Produced by jdtls
 app/bin
 .project

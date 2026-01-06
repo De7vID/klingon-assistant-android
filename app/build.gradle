@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'eclipse'
 
 def keystorePropertiesFile = rootProject.file("../keystore.properties")
@@ -15,7 +16,7 @@ android {
         minSdkVersion 33
         targetSdkVersion 35
         versionCode 581
-        versionName "2025.08.16a"
+        versionName "2026.01.03a"
     }
     buildFeatures {
         buildConfig = true
@@ -40,6 +41,10 @@ android {
         release {
             signingConfig signingConfigs.release
         }
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
 
