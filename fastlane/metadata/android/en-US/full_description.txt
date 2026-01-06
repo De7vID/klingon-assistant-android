@@ -1,0 +1,11 @@
+tlhIngan Hol boQwI' / Klingon Language Assistant is a lexicon dictionary, canon search tool, and grammar analyser for the Klingon language (<pre>tlhIngan Hol</pre>) devised by Marc Okrand for Star Trek's warrior race, and spoken by characters on The Big Bang Theory and Star Trek: Discovery. It can parse Klingon grammar and serve as an aid in Klingon-to-English translation. However, it is NOT a general-purpose English-to-Klingon translator. You will need to know some Klingon already to make use of it for that purpose.
+
+To hear the sounds of Klingon, it is recommended to install the Klingon Text-To-Speech Engine. To analyse sentences from an app such as Duolingo, highlight the Klingon text, then click "share" and select <pre>boQwI'</pre> as the target.
+
+If you encounter any problems, or have any suggestions, there is a link to send me email directly from the menu under "Help".
+
+This project is open sourced: http://github.com/De7vID/klingon-assistant-android/
+
+Please support the Klingon language by purchasing "The Klingon Dictionary", "Klingon for the Galactic Traveler", "The Klingon Way", "Conversational Klingon", "Power Klingon", and other Klingon- and Star Trek-related products from Pocket Books, Simon & Schuster, and Paramount/Viacom/CBS Entertainment.
+
+Klingon, Star Trek, and related marks are trademarks of CBS Studios, Inc., and are used under "fair use" guidelines.
